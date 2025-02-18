@@ -103,12 +103,12 @@ function ParticlesComponent() {
           <br />
           <button className='leanBut'>Learn More</button>
         </motion.span>
-             <Particles
+             {/* <Particles
         id="tsparticles"
         options={options}
         particlesLoaded={particlesLoaded}
         className="particles-bg" // Add a CSS class
-      />
+      /> */}
       </div>
     </div>
 

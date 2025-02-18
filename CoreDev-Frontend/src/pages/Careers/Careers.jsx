@@ -44,16 +44,16 @@ function Careers() {
             </div>
             <div className='butCont'  >
             <motion.a 
-  className="applyBut"
-  href="https://coredev.orangepayplus.com/job/hiring/coredev-solutions-inc"
-  target="_blank" // Opens in a new tab
-  rel="noopener noreferrer" // Security best practice
-  whileHover={{ scale: 1.03 }}
-  whileTap={{ scale: 0.9 }}
-  transition={{ duration: 0.3 }}
->
-  Apply Now!
-</motion.a>
+                className="applyBut"
+                href="https://coredev.orangepayplus.com/job/hiring/coredev-solutions-inc"
+                target="_blank" // Opens in a new tab
+                rel="noopener noreferrer" // Security best practice
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.9 }}
+                transition={{ duration: 0.3 }}
+                >
+                Apply Now!
+                </motion.a>
 
             </div>
         </div>

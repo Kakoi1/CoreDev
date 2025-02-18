@@ -8,7 +8,13 @@
 
     background-color: var(--black);
 }
- .footer-wrapper{
+.footerCont h2, .footerCont h3{
+    font-family: "Raleway", sans-serif !important;
+}
+.footerCont li, .footerCont p{
+    font-family: "Open Sans", sans-serif !important;
+}
+.footer-wrapper{
     width: 100%;
     max-width: 1300px;
     margin: 0 auto;
