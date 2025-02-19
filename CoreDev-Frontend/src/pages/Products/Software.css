@@ -49,7 +49,7 @@ body {
     padding: 1.5rem;
     border-radius: 12px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    height: 700px;
+    height: auto;
     width: 39%;
     overflow: auto;
   }
@@ -90,16 +90,29 @@ body {
   .IacWrap h4 {
     font-family: "Raleway", sans-serif; 
     font-size: 1.25rem ;
+    margin-top: 0;
+  }
+
+  .IacWrap-btn {
+    background-color: #ff6c00;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-family: "Open-Sans", sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
   }
   
 
   
   /* Features Section */
   .featureWrap {
-    padding: 1rem;
+    padding: .5rem;
     border-radius: 10px;
-    width: 70%;
-    margin: 0 auto;
+    width: 90%;
    
   }
   
@@ -141,8 +154,8 @@ body {
     line-height: 1.5;
   }
   .iacc {
-    height: 74px;
-    width: 74px;
+    height: 100px;
+    width: 100px;
   }
   .projectDetail::-webkit-scrollbar {
     width: 8px; /* Width of the scrollbar */
