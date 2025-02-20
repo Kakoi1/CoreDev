@@ -1,31 +1,32 @@
 import "./Hardware.css";
 import React from "react";
-import Cams from "../../assets/cams.png";
-import Bio from '../../assets/bio.png';
-import Cloud from '../../assets/cloud.png';
-import Fw from '../../assets/fw.png';
-import Laptop from '../../assets/laptop.png';
-import Net from '../../assets/net.png';
-import Pc from '../../assets/pc.png';
-import Printer from '../../assets/print.png';
-import Servers from '../../assets/server.png';
-import Wifi from '../../assets/wifi.png';
+import { NavLink } from 'react-router-dom';
+import FW from "../../assets/fw-v2.png";
+import PC from "../../assets/pc-v2.png";
+import Laptop from "../../assets/laptop-v2.png";
+import Server from "../../assets/server-v2.png";
+import Wifi from "../../assets/wifi-v2.png";
+import Cams from "../../assets/cams-v2.png";
+import Printer from "../../assets/print-v2.png";
+import Net from "../../assets/net-v2.png";
+import Bio from "../../assets/biometrics-v2.png";
+import Cloud from "../../assets/cloud-v2.png";
 import { easeInOut, motion } from 'framer-motion';
 
 const Hardware = () => {
     
     const hardComp = [
-        { pictures: Pc, name: 'Desktop Computers' },
-        { pictures: Laptop, name: 'Laptop Computers' },
-        { pictures: Servers, name: 'Physical Servers' },
-        { pictures: Net, name: 'Network Devices' },
-        { pictures: Fw, name: 'Firewall Devices' },
-        { pictures: Cloud, name: 'Cloud Services' },
-        { pictures: Printer, name: 'Printers & Scanners' },
-        { pictures: Cams, name: 'CCTV Cameras' },
-        { pictures: Wifi, name: 'Wireless Internet' },
-        { pictures: Bio, name: 'Time and Attendance & Biometrics' },
-    ];
+        { pictures: PC, name: "Desktop Computers", url:'computer' },
+        { pictures: Laptop, name: "Laptop Computers", url:'laptop' },
+        { pictures: Server, name: "Physical Servers", url:'server' },
+        { pictures: Net, name: "Network Devices", url:'router' },
+        { pictures: FW, name: "Firewall Devices", url:'firewall' },
+        { pictures: Cloud, name: "Cloud Services", url:'cloud' },
+        { pictures: Printer, name: "Printers & Scanners", url:'printer' },
+        { pictures: Cams, name: "CCTV Cameras", url:'cctv' },
+        { pictures: Wifi, name: "Wireless Internet", url:'wifi' },
+        { pictures: Bio, name: "Time and Attendance & Biometrics", url:'TAB' },
+    ];  
 
     return (
         <div className="HardwareContainer">
@@ -33,7 +34,7 @@ const Hardware = () => {
 
             <div className="HardWrapper">
                 {hardComp.map((item, index) => (
-                     
+                   
                     <motion.div 
                         key={index} 
                         whileHover={{ scale: 1.03 }}
@@ -49,8 +50,10 @@ const Hardware = () => {
                         }}
                         className="hardware"
                     >
+                        <NavLink to={item.url}>
                         <h4 style={{ textAlign: 'center' }}>{item.name}</h4>
                         <img src={item.pictures} alt={item.name} loading="lazy" />
+                        </NavLink>
                     </motion.div>
                  
                 ))}

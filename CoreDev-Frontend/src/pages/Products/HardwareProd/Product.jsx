@@ -8,35 +8,76 @@ function Product() {
   const API_URL = `http://localhost:8000/api/hardware/${category}`;
 
   const [hardwares, setHardware] = useState([]);
+  const [nameCategory, setCategory] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [selectedItem, setSelectedItem] = useState(null); // For overlay
+  const [selectedItem, setSelectedItem] = useState(null);
+  const [retry, setRetry] = useState(0); // Retry counter
 
+  // Fetch data with retry logic
   useEffect(() => {
-    axios
-      .get(API_URL)
-      .then((response) => {
-        setHardware(response.data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("Error fetching data:", err);
-        setError("Failed to load data. Please try again.");
-        setLoading(false);
-      });
-  }, [category]);
-  const handleOverlayClick = (event) => {
+    const fetchData = () => {
+      axios
+        .get(API_URL)
+        .then((response) => {
+          setHardware(response.data);
+          setLoading(false);
+          setError(null); // Clear error on success
+        })
+        .catch((err) => {
+          console.error("Error fetching data:", err);
+          setError("Failed to load data. Retrying...");
+          setLoading(true);
+
+          // Retry fetching every 3 seconds if it fails
+          setTimeout(() => {
+            setRetry((prev) => prev + 1); // Increment retry count
+          }, 3000);
+        });
+    };
+
+    fetchData();
+  }, [category, retry]); // Runs when category changes or retry count updates
+
+  // Handle click outside content to close overlay
+  const handleOverlayClick = () => {
     setSelectedItem(null);
   };
+
+  // Prevent click inside content from closing overlay
   const handleContentClick = (event) => {
-    event.stopPropagation(); // Stops the click from reaching the parent (overlay)
+    event.stopPropagation();
   };
-  if (loading) return <p>Loading...</p>;
+
+  // Set name category dynamically
+  useEffect(() => {
+    const categoryNames = {
+      computer: "Computer Desktop",
+      laptop: "Laptop Computer",
+      server: "Physical Server",
+      router: "Network Devices",
+      firewall: "Firewall Devices",
+      cloud: "Cloud Services",
+      printer: "Printers & Scanners",
+      cctv: "CCTV Cameras",
+      wifi: "Wireless Internet",
+      TAB: "Time and Attendance & Biometrics",
+    };
+    setCategory(categoryNames[category] || "Unknown Category");
+  }, [category]);
+
+  if (loading) return  <div className="loader-container">
+  <div class="loadingio-spinner-gear-nq4q5u6dq7r"><div class="ldio-x2uulkbinbj">
+    <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div></div>
+    <p>{error}</p>
+    <br />
+    </div>  ;
   if (error) return <p>{error}</p>;
 
   return (
     <div className="product-container">
-      <h2>Hardware in {category} Category</h2>
+      <h2>{nameCategory}</h2>
       <div className="grid-container">
         {hardwares.length > 0 ? (
           hardwares.map((item, index) => (
@@ -46,7 +87,7 @@ function Product() {
                 alt={item.name}
                 className="product-image"
               />
-              <h3 style={{textWrap: 'word-break'}} className="product-name">{item.name}</h3>
+              <h3 className="product-name">{item.name}</h3>
             </div>
           ))
         ) : (
@@ -57,15 +98,15 @@ function Product() {
       {/* Overlay when an item is clicked */}
       {selectedItem && (
         <div className="overlay" onClick={handleOverlayClick}>
-        <div className="overlay-content" onClick={handleContentClick}>
-          <span className="close-btn" onClick={() => setSelectedItem(null)}>&times;</span>
-          <img
-            src={`http://localhost:5173/src/assets/hardwareImage/${selectedItem.image}`}
-            alt={selectedItem.name}
-            className="overlay-image"
-          />
-          <h3>{selectedItem.name}</h3>
-          <p>{selectedItem.description}</p>
+          <div className="overlay-content" onClick={handleContentClick}>
+            <span className="close-btn" onClick={() => setSelectedItem(null)}>&times;</span>
+            <img
+              src={`http://localhost:5173/src/assets/hardwareImage/${selectedItem.image}`}
+              alt={selectedItem.name}
+              className="overlay-image"
+            />
+            <h3>{selectedItem.name}</h3>
+            <p>{selectedItem.description}</p>
             <br />
             <a className="emailUs" href="mailto:info@coredev.ph">Email Us</a>
           </div>

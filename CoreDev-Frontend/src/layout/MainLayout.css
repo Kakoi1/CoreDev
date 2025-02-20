@@ -3,6 +3,9 @@
     --orange: #ff6c00;
     --gray: #d3d3d3; /* New gray color for hover */
 }
+body{
+  background-color: #f1f8ff;
+}
 
 .progress-bar{
     transform-origin: left;

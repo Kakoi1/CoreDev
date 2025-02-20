@@ -6,7 +6,7 @@
 .HardwareContainer h2 {
     font-size: 2rem;
     color: #ff6c00;
-    letter-spacing: 15px;
+    font-family: "Raleway", sans-serif !important;
     text-shadow: -1px 1px #080707;
     margin-bottom: 1.5rem;
   }
@@ -32,7 +32,7 @@ body {
   .hardware h4 {
     font-size: 1.25rem;
     color: #ff6c00;
-    font-family: 'Roboto Mono', serif;
+    font-family: "Raleway", sans-serif !important;
   }
   .HardwareContainer .HardWrapper{
     display: flex;
