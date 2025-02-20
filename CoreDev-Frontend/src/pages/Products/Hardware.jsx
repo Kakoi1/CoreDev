@@ -11,26 +11,25 @@ import Printer from '../../assets/print.png';
 import Servers from '../../assets/server.png';
 import Wifi from '../../assets/wifi.png';
 import { easeInOut, motion } from 'framer-motion';
-import { NavLink } from 'react-router-dom';
 
 const Hardware = () => {
     
     const hardComp = [
-        { pictures: Pc, name: 'Desktop Computers', url:'computer' },
-        { pictures: Laptop, name: 'Laptop Computers' , url:'computer'},
-        { pictures: Servers, name: 'Physical Servers' , url:'computer'},
-        { pictures: Net, name: 'Network Devices' , url:'computer'},
-        { pictures: Fw, name: 'Firewall Devices' , url:'computer'},
-        { pictures: Cloud, name: 'Cloud Services' , url:'computer'},
-        { pictures: Printer, name: 'Printers & Scanners' , url:'computer'},
-        { pictures: Cams, name: 'CCTV Cameras' , url:'computer'},
-        { pictures: Wifi, name: 'Wireless Internet' , url:'computer'},
-        { pictures: Bio, name: 'Time and Attendance & Biometrics' , url:'computer'},
+        { pictures: Pc, name: 'Desktop Computers' },
+        { pictures: Laptop, name: 'Laptop Computers' },
+        { pictures: Servers, name: 'Physical Servers' },
+        { pictures: Net, name: 'Network Devices' },
+        { pictures: Fw, name: 'Firewall Devices' },
+        { pictures: Cloud, name: 'Cloud Services' },
+        { pictures: Printer, name: 'Printers & Scanners' },
+        { pictures: Cams, name: 'CCTV Cameras' },
+        { pictures: Wifi, name: 'Wireless Internet' },
+        { pictures: Bio, name: 'Time and Attendance & Biometrics' },
     ];
 
     return (
         <div className="HardwareContainer">
-            <h2 style={{ textAlign: 'center' }}>Hardware Products</h2>
+            <h2 style={{ textAlign: "center" }}>Hardware Products</h2>
 
             <div className="HardWrapper">
                 {hardComp.map((item, index) => (
@@ -50,10 +49,8 @@ const Hardware = () => {
                         }}
                         className="hardware"
                     >
-                      <NavLink to={item.url}>
                         <h4 style={{ textAlign: 'center' }}>{item.name}</h4>
                         <img src={item.pictures} alt={item.name} loading="lazy" />
-                        </NavLink>
                     </motion.div>
                  
                 ))}

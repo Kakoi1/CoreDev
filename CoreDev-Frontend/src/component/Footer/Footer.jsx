@@ -1,4 +1,4 @@
-import './Footer.css';
+import './footer.css';
 import { FaFacebook, FaLinkedin } from "react-icons/fa";
 import { useState } from 'react';
 import { FiChevronsRight } from "react-icons/fi";
