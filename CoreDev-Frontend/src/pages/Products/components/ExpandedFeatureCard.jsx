@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
 
-export const ExpandableFeatureCard = ({ secondItem, index }) => {
+export const ExpandableFeatureCard = ({ secondItem }) => {
   const [isExpanded, setIsExpanded] = useState(false)
 
   const toggleExpand = () => setIsExpanded(!isExpanded)

@@ -1,5 +1,4 @@
 import "./Software.css";
-import React from "react";
 import iAccs from "../../assets/ais.png";
 import Eservice from "../../assets/eservices.png";
 import Hris from "../../assets/hris.png";
@@ -8,7 +7,7 @@ import Que from "../../assets/que.png";
 import Voting from "../../assets/voting.png";
 import { RiCodepenFill } from "react-icons/ri";
 import { PiMoneyBold } from "react-icons/pi";
-import { easeInOut, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import ExpandableFeatureCard from "./components/ExpandedFeatureCard";
 
 const Software = () => {
@@ -222,10 +221,10 @@ const Software = () => {
                         className="Soft-item"
                     >
                         <PiMoneyBold />
-                        <h4>Loans System</h4>
+                        <h4 className="">Loans System</h4>
                         <ul>
                             {Loans.map((item3, index) => (
-                                <li key={index}>{item3}</li>
+                                <li key={index}>{item3}</li>    
                             ))}
                         </ul>
                     </motion.div>
@@ -234,7 +233,7 @@ const Software = () => {
 
             <div className="pastProj">
                 {second.map((secondItem, index) => (
-                    <ExpandableFeatureCard secondItem={secondItem} index={index} key={index} />
+                    <ExpandableFeatureCard secondItem={secondItem} key={index} />
                 ))}
             </div>
         </div>
