@@ -132,7 +132,7 @@ function Clients() {
             }}
              key={client.id} style={{ textAlign: "center" }} className="clientItem">
               <motion.img
-                src={`src/assets/clients/${client.image}`} // Fixed Path: Use Public Folder
+                src={`src/assets/clients/${client.image}`} 
                 alt={client.name}
                 initial={{ scale: 1 }}
             whileHover={{ scale: 1.03 }}
