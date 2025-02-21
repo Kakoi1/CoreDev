@@ -41,7 +41,7 @@ body{
     transition: transform 0.3s ease-in-out;
     background-color: white;
     width: 45%;
-    padding: 10px;
+    padding: 45px;
     max-width: 300px;
   }
   
@@ -51,8 +51,8 @@ body{
   
   /* Product image */
   .product-image {
-    width: 200px;
-    height: 170px;
+    width: 300px;
+    height: 200px;
     /* object-fit: cover; */
     border-radius: 10px;
   }

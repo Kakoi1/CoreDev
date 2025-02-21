@@ -1,0 +1,37 @@
+import { useLocation, useNavigate } from "react-router-dom";
+import React from "react";
+import "./ProductDetails.css";
+
+function ProductDetails() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { selectedItem } = location.state || {}; 
+
+  if (!selectedItem) {
+    return (
+      <div className="product-details-container">
+        <p>No product selected.</p>
+        <button onClick={() => navigate(-1)}>Go Back</button>
+      </div>
+    );
+  }
+
+  return (
+    <div className="product-details-container">
+      <h2>{selectedItem.name}</h2>
+      <img
+        src={`http://localhost:5173/src/assets/hardwareImage/${selectedItem.image}`}
+        alt={selectedItem.name}
+        className="product-details-image"
+      />
+      <p>{selectedItem.description}</p>
+      <a className="emailUs" href="mailto:info@coredev.ph">Email Us</a>
+      <br />
+      <button onClick={() => navigate(-1)} className="back-btn">
+        ← Back to Products
+      </button>
+    </div>
+  );
+}
+
+export default ProductDetails;
