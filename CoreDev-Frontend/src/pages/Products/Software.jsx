@@ -1,10 +1,5 @@
 import "./Software.css";
 import iAccs from "../../assets/ais.png";
-import Eservice from "../../assets/eservices.png";
-import Hris from "../../assets/hris.png";
-import Pos from "../../assets/pos.png";
-import Que from "../../assets/que.png";
-import Voting from "../../assets/voting.png";
 import { RiCodepenFill } from "react-icons/ri";
 import { PiMoneyBold } from "react-icons/pi";
 import { motion } from "framer-motion";
@@ -12,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 
 const Software = () => {
     const navigate = useNavigate();
-
 
     const Accounting = [
         "General Ledger",
@@ -51,7 +45,6 @@ const Software = () => {
 
     const second = [
         {
-            pic: <Hris />,
             picUrl: "/assets/hris.png",
             title: "Orange Pay Plus (HRIS)",
             icon: <RiCodepenFill />,
@@ -66,7 +59,6 @@ const Software = () => {
             ],
         },
         {
-            pic: <Eservice />,
             picUrl: "/assets/eservices.png",
             title: "E-Services Portal",
             icon: <RiCodepenFill />,
@@ -81,7 +73,6 @@ const Software = () => {
             ],
         },
         {
-            pic: <Voting />,
             picUrl: "/assets/voting.png",
             title: "Online Voting System",
             icon: <RiCodepenFill />,
@@ -96,7 +87,6 @@ const Software = () => {
             ],
         },
         {
-            pic: <Que />,
             picUrl: "/assets/que.png",
             title: "Online Queuing System",
             icon: <RiCodepenFill />,
@@ -112,7 +102,6 @@ const Software = () => {
             ],
         },
         {
-            pic: <Pos />,
             picUrl: "/assets/pos.png",
             title: "Point-of-Sale",
             icon: <RiCodepenFill />,
@@ -128,6 +117,64 @@ const Software = () => {
                 "Supplier Maintenance",
                 "Physical Inventory",
                 "Ordering System",
+            ],
+        },
+
+        {
+            picUrl: "/assets/online-membership-system.png",
+            title: "Online Membership System",
+            icon: <RiCodepenFill />,
+            description: "An easy and convenient way to enroll new members of your cooperative. Allow future clients to fill out application forms, attend webinars and submit documents online via the Online Membership System",
+            feature: [
+                "Stand alone System ",
+                "Allow online membership application",
+                "Allow applicant to upload supporting documents",
+                "Alloe applicant to take selfie photo for identification",
+                "Capable of uploading video seminar",
+                "Applicant will be able to monitor the status of membership application",
+                "Capable for sending application updates via E-mail or SMS",
+                "Mobile Responsive",
+            ],
+        },
+        {
+            picUrl: "/assets/online-help-desk.png",
+            title: "Online Help Desk System",
+            icon: <RiCodepenFill />,
+            description: " Manage your client's concerns by letting them raise and resolve their issues online via our Online Help Desk System",
+            feature: [
+                "Allow members to raise issues and concerns with ticket number online ",
+                "Capable for sending ticket updates via E-Mail or SMS",
+                "Members can reply and upload files on the specific concerns",
+                "Members can monitor ticket status",
+                "Mobile Responsive"
+            ],
+        },
+        {
+            picUrl: "/assets/coop-wallet.png",
+            title: "Coop Wallet",
+            icon: <RiCodepenFill />,
+            description: "A web Application that allows you to check, transfer, save and withdraw your funds.",
+            feature: [
+                "Can add/deposit cash",
+                "Can WithdrawCash",
+                "Can Apply for an Instant Loan",
+                "Can be Customized",
+                "Mobile Responsive"
+            ],
+        },
+        {
+            picUrl: "/assets/online-payment-gateway.png",
+            title: "Online Payment Gateway",
+            icon: <RiCodepenFill />,
+            description: "Allow your members/clients to enjoy their quality time by letting them pay online with our Online Payment Gateway and increase your collection efficiency.",
+            feature: [
+                "Easy access to current balances",
+                "Secure online payment solutions",
+                "Online Banking",
+                "Bank Over-the-Counter(OTC)",
+                "Over-the-counter Nonbanks/Bayad Centers",
+                "Auto posting to current accounts",
+                "Mobile Responsive"
             ],
         },
     ];
@@ -260,7 +307,7 @@ const Software = () => {
                                     whileHover={{ scale: 1.2 }}
                                     transition={{ duration: 0.3 }}
                                     className="iacc"
-                                    src={secondItem.pic.type}
+                                    src={secondItem.picUrl}
                                     alt={secondItem.title}
                                 />
                                 <div>
