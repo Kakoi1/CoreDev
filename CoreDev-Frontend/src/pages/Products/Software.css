@@ -26,14 +26,12 @@ body {
   /* Project Section */
   .pastProj {
     display: flex;
-    flex-wrap: wrap; /* Allows items to wrap to the next line if needed */
-    justify-content: center; /* Centers items horizontally */
+    flex-wrap: wrap;/* Allows items to wrap to the next line if needed */
+    justify-content: space-between; /* Centers items horizontally */
     align-items: center; /* Centers items vertically */
-    gap: 2rem; /* Adds spacing between items */
-    width: 80%;
-    max-width: 1300px;
-    margin: 30px auto;
-    padding: 15px;
+    gap: 2rem; 
+    width: 100%;
+    padding: 2rem 0;
   }
   
   .pastProj h4 {
@@ -48,8 +46,8 @@ body {
     padding: 1.5rem;
     border-radius: 12px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    height: auto;
-    width: 39%;
+    height: 320px;
+    width:33.5rem;
     overflow: auto;
   }
   
@@ -68,7 +66,7 @@ body {
     gap: 2rem;
     border-radius: 10px;
     background-color: white;
-    box-shadow: 2px 3px 5px rgb(110, 110, 110);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   }
   
   /* Iac Section */
@@ -94,15 +92,14 @@ body {
 
   .IacWrap-btn {
     background-color: #ff6c00;
-    border: none;
-    outline: none;
     color: white;
-    padding: 0.5rem 1rem;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
     border-radius: 5px;
-    font-family: "Open-Sans", sans-serif;
-    font-size: 14px;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: background-color 0.3s ease;
   }
   
 
@@ -119,9 +116,9 @@ body {
   .divWrap {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 1.5rem;
-    padding: 10px;
+    justify-content: space-around;
+    gap: 2rem;
+    margin: 1rem;
   }
   
   .Soft-item {

@@ -8,9 +8,12 @@ import Voting from "../../assets/voting.png";
 import { RiCodepenFill } from "react-icons/ri";
 import { PiMoneyBold } from "react-icons/pi";
 import { motion } from "framer-motion";
-import ExpandableFeatureCard from "./components/ExpandedFeatureCard";
+import { useNavigate } from "react-router-dom";
 
 const Software = () => {
+    const navigate = useNavigate();
+
+
     const Accounting = [
         "General Ledger",
         "Subsidiary Ledger",
@@ -49,6 +52,7 @@ const Software = () => {
     const second = [
         {
             pic: <Hris />,
+            picUrl: "/assets/hris.png",
             title: "Orange Pay Plus (HRIS)",
             icon: <RiCodepenFill />,
             description:
@@ -63,6 +67,7 @@ const Software = () => {
         },
         {
             pic: <Eservice />,
+            picUrl: "/assets/eservices.png",
             title: "E-Services Portal",
             icon: <RiCodepenFill />,
             description:
@@ -77,6 +82,7 @@ const Software = () => {
         },
         {
             pic: <Voting />,
+            picUrl: "/assets/voting.png",
             title: "Online Voting System",
             icon: <RiCodepenFill />,
             description:
@@ -91,6 +97,7 @@ const Software = () => {
         },
         {
             pic: <Que />,
+            picUrl: "/assets/que.png",
             title: "Online Queuing System",
             icon: <RiCodepenFill />,
             description:
@@ -106,6 +113,7 @@ const Software = () => {
         },
         {
             pic: <Pos />,
+            picUrl: "/assets/pos.png",
             title: "Point-of-Sale",
             icon: <RiCodepenFill />,
             description:
@@ -131,7 +139,7 @@ const Software = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{
-                    type: "spring",
+                    type: "",
                     stiffness: 200,
                     damping: 10,
                     delay: 1 * 0.2,
@@ -158,82 +166,134 @@ const Software = () => {
                             <br /> needs for more than 3 decades!
                         </p>
                     </div>
-                </div>
-                <div className="divWrap">
-                    <motion.div
-                        whileHover={{ scale: 1.03 }}
-                        whileTap={{ scale: 0.9 }}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{
-                            type: "spring",
-                            stiffness: 200,
-                            damping: 10,
-                            duration: 0.3,
-                            delay: 1 * 0.2, // Ensure each item appears sequentially
-                        }}
-                        className="Soft-item"
-                    >
-                        <RiCodepenFill />
-                        <h4>Core Accounting System</h4>
-                        <ul>
-                            {Accounting.map((item1, index) => (
-                                <li key={index}>{item1}</li>
-                            ))}
-                        </ul>
-                    </motion.div>
+                    <div className="divWrap">
+                        <motion.div
+                            whileTap={{ scale: 0.9 }}
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{
+                                type: "",
+                                stiffness: 200,
+                                damping: 10,
+                                duration: 0.3,
+                                delay: 1 * 0.2, // Ensure each item appears sequentially
+                            }}
+                            className="Soft-item"
+                        >
+                            <RiCodepenFill />
+                            <h4>Core Accounting System</h4>
+                            <ul>
+                                {Accounting.map((item1, index) => (
+                                    <li key={index}>{item1}</li>
+                                ))}
+                            </ul>
+                        </motion.div>
 
-                    <motion.div
-                        whileHover={{ scale: 1.03 }}
-                        whileTap={{ scale: 0.9 }}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{
-                            type: "spring",
-                            stiffness: 200,
-                            damping: 10,
-                            duration: 0.3,
-                            delay: 1 * 0.2, // Ensure each item appears sequentially
-                        }}
-                        className="Soft-item"
-                    >
-                        <PiMoneyBold />
-                        <h4>Saving / Deposits System</h4>
-                        <ul>
-                            {Saving.map((item2, index) => (
-                                <li key={index}>{item2}</li>
-                            ))}
-                        </ul>
-                    </motion.div>
+                        <motion.div
+                            whileTap={{ scale: 0.9 }}
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{
+                                type: "",
+                                stiffness: 200,
+                                damping: 10,
+                                duration: 0.3,
+                                delay: 1 * 0.2, // Ensure each item appears sequentially
+                            }}
+                            className="Soft-item"
+                        >
+                            <PiMoneyBold />
+                            <h4>Saving / Deposits System</h4>
+                            <ul>
+                                {Saving.map((item2, index) => (
+                                    <li key={index}>{item2}</li>
+                                ))}
+                            </ul>
+                        </motion.div>
 
-                    <motion.div
-                        whileHover={{ scale: 1.03 }}
-                        whileTap={{ scale: 0.9 }}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{
-                            type: "spring",
-                            stiffness: 200,
-                            damping: 10,
-                            duration: 0.3,
-                            delay: 1 * 0.2, // Ensure each item appears sequentially
-                        }}
-                        className="Soft-item"
-                    >
-                        <PiMoneyBold />
-                        <h4 className="">Loans System</h4>
-                        <ul>
-                            {Loans.map((item3, index) => (
-                                <li key={index}>{item3}</li>    
-                            ))}
-                        </ul>
-                    </motion.div>
+                        <motion.div
+                            whileTap={{ scale: 0.9 }}
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{
+                                type: "",
+                                stiffness: 200,
+                                damping: 10,
+                                duration: 0.3,
+                                delay: 1 * 0.2, // Ensure each item appears sequentially
+                            }}
+                            className="Soft-item"
+                        >
+                            <PiMoneyBold />
+                            <h4 className="">Loans System</h4>
+                            <ul>
+                                {Loans.map((item3, index) => (
+                                    <li key={index}>{item3}</li>
+                                ))}
+                            </ul>
+                        </motion.div>
+                    </div>
                 </div>
             </motion.div>
 
             <div className="pastProj">
                 {second.map((secondItem, index) => (
-                    <ExpandableFeatureCard secondItem={secondItem} key={index} />
+                    <motion.div
+                        layout
+                        whileTap={{ scale: 0.9 }}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{
+                            layout: { duration: 0.3 },
+                            type: "",
+                            stiffness: 200,
+                            damping: 10,
+                            duration: 0.3,
+                            delay: 1 * 0.2,
+                        }}
+                        key={index}
+                        className="projectDetail"
+                    >
+                        <div className="projWrap">
+                            <div className="IacWrap">
+                                <motion.img
+                                    whileHover={{ scale: 1.2 }}
+                                    transition={{ duration: 0.3 }}
+                                    className="iacc"
+                                    src={secondItem.pic.type}
+                                    alt={secondItem.title}
+                                />
+                                <div>
+                                    <h4>{secondItem.title}</h4>
+                                    <p>{secondItem.description}</p>
+                                </div>
+                                <div>
+                                    <button
+                                        className="IacWrap-btn"
+                                        onClick={() =>
+                                            navigate(
+                                                `/products/software/${encodeURIComponent(
+                                                    secondItem.title
+                                                )}`,
+                                                {
+                                                    state: {
+                                                        pic: secondItem.picUrl,
+                                                        title: secondItem.title,
+                                                        description:
+                                                            secondItem.description,
+                                                        feature:
+                                                            secondItem.feature,
+                                                    },
+                                                }
+                                            )
+                                        }
+                                    >
+                                        Learn more
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </motion.div>
                 ))}
             </div>
         </div>
