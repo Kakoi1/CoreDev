@@ -1,16 +1,13 @@
 import "./Software.css";
 import iAccs from "../../assets/ais.png";
-import Eservice from "../../assets/eservices.png";
-import Hris from "../../assets/hris.png";
-import Pos from "../../assets/pos.png";
-import Que from "../../assets/que.png";
-import Voting from "../../assets/voting.png";
 import { RiCodepenFill } from "react-icons/ri";
 import { PiMoneyBold } from "react-icons/pi";
 import { motion } from "framer-motion";
-import ExpandableFeatureCard from "./components/ExpandedFeatureCard";
+import { useNavigate } from "react-router-dom";
 
 const Software = () => {
+    const navigate = useNavigate();
+
     const Accounting = [
         "General Ledger",
         "Subsidiary Ledger",
@@ -48,7 +45,7 @@ const Software = () => {
 
     const second = [
         {
-            pic: <Hris />,
+            picUrl: "/assets/hris.png",
             title: "Orange Pay Plus (HRIS)",
             icon: <RiCodepenFill />,
             description:
@@ -62,7 +59,7 @@ const Software = () => {
             ],
         },
         {
-            pic: <Eservice />,
+            picUrl: "/assets/eservices.png",
             title: "E-Services Portal",
             icon: <RiCodepenFill />,
             description:
@@ -76,7 +73,7 @@ const Software = () => {
             ],
         },
         {
-            pic: <Voting />,
+            picUrl: "/assets/voting.png",
             title: "Online Voting System",
             icon: <RiCodepenFill />,
             description:
@@ -90,7 +87,7 @@ const Software = () => {
             ],
         },
         {
-            pic: <Que />,
+            picUrl: "/assets/que.png",
             title: "Online Queuing System",
             icon: <RiCodepenFill />,
             description:
@@ -105,7 +102,7 @@ const Software = () => {
             ],
         },
         {
-            pic: <Pos />,
+            picUrl: "/assets/pos.png",
             title: "Point-of-Sale",
             icon: <RiCodepenFill />,
             description:
@@ -122,6 +119,64 @@ const Software = () => {
                 "Ordering System",
             ],
         },
+
+        {
+            picUrl: "/assets/online-membership-system.png",
+            title: "Online Membership System",
+            icon: <RiCodepenFill />,
+            description: "An easy and convenient way to enroll new members of your cooperative. Allow future clients to fill out application forms, attend webinars and submit documents online via the Online Membership System",
+            feature: [
+                "Stand alone System ",
+                "Allow online membership application",
+                "Allow applicant to upload supporting documents",
+                "Alloe applicant to take selfie photo for identification",
+                "Capable of uploading video seminar",
+                "Applicant will be able to monitor the status of membership application",
+                "Capable for sending application updates via E-mail or SMS",
+                "Mobile Responsive",
+            ],
+        },
+        {
+            picUrl: "/assets/online-help-desk.png",
+            title: "Online Help Desk System",
+            icon: <RiCodepenFill />,
+            description: " Manage your client's concerns by letting them raise and resolve their issues online via our Online Help Desk System",
+            feature: [
+                "Allow members to raise issues and concerns with ticket number online ",
+                "Capable for sending ticket updates via E-Mail or SMS",
+                "Members can reply and upload files on the specific concerns",
+                "Members can monitor ticket status",
+                "Mobile Responsive"
+            ],
+        },
+        {
+            picUrl: "/assets/coop-wallet.png",
+            title: "Coop Wallet",
+            icon: <RiCodepenFill />,
+            description: "A web Application that allows you to check, transfer, save and withdraw your funds.",
+            feature: [
+                "Can add/deposit cash",
+                "Can WithdrawCash",
+                "Can Apply for an Instant Loan",
+                "Can be Customized",
+                "Mobile Responsive"
+            ],
+        },
+        {
+            picUrl: "/assets/online-payment-gateway.png",
+            title: "Online Payment Gateway",
+            icon: <RiCodepenFill />,
+            description: "Allow your members/clients to enjoy their quality time by letting them pay online with our Online Payment Gateway and increase your collection efficiency.",
+            feature: [
+                "Easy access to current balances",
+                "Secure online payment solutions",
+                "Online Banking",
+                "Bank Over-the-Counter(OTC)",
+                "Over-the-counter Nonbanks/Bayad Centers",
+                "Auto posting to current accounts",
+                "Mobile Responsive"
+            ],
+        },
     ];
 
     return (
@@ -131,7 +186,7 @@ const Software = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{
-                    type: "spring",
+                    type: "",
                     stiffness: 200,
                     damping: 10,
                     delay: 1 * 0.2,
@@ -158,82 +213,134 @@ const Software = () => {
                             <br /> needs for more than 3 decades!
                         </p>
                     </div>
-                </div>
-                <div className="divWrap">
-                    <motion.div
-                        whileHover={{ scale: 1.03 }}
-                        whileTap={{ scale: 0.9 }}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{
-                            type: "spring",
-                            stiffness: 200,
-                            damping: 10,
-                            duration: 0.3,
-                            delay: 1 * 0.2, // Ensure each item appears sequentially
-                        }}
-                        className="Soft-item"
-                    >
-                        <RiCodepenFill />
-                        <h4>Core Accounting System</h4>
-                        <ul>
-                            {Accounting.map((item1, index) => (
-                                <li key={index}>{item1}</li>
-                            ))}
-                        </ul>
-                    </motion.div>
+                    <div className="divWrap">
+                        <motion.div
+                            whileTap={{ scale: 0.9 }}
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{
+                                type: "",
+                                stiffness: 200,
+                                damping: 10,
+                                duration: 0.3,
+                                delay: 1 * 0.2, // Ensure each item appears sequentially
+                            }}
+                            className="Soft-item"
+                        >
+                            <RiCodepenFill />
+                            <h4>Core Accounting System</h4>
+                            <ul>
+                                {Accounting.map((item1, index) => (
+                                    <li key={index}>{item1}</li>
+                                ))}
+                            </ul>
+                        </motion.div>
 
-                    <motion.div
-                        whileHover={{ scale: 1.03 }}
-                        whileTap={{ scale: 0.9 }}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{
-                            type: "spring",
-                            stiffness: 200,
-                            damping: 10,
-                            duration: 0.3,
-                            delay: 1 * 0.2, // Ensure each item appears sequentially
-                        }}
-                        className="Soft-item"
-                    >
-                        <PiMoneyBold />
-                        <h4>Saving / Deposits System</h4>
-                        <ul>
-                            {Saving.map((item2, index) => (
-                                <li key={index}>{item2}</li>
-                            ))}
-                        </ul>
-                    </motion.div>
+                        <motion.div
+                            whileTap={{ scale: 0.9 }}
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{
+                                type: "",
+                                stiffness: 200,
+                                damping: 10,
+                                duration: 0.3,
+                                delay: 1 * 0.2, // Ensure each item appears sequentially
+                            }}
+                            className="Soft-item"
+                        >
+                            <PiMoneyBold />
+                            <h4>Saving / Deposits System</h4>
+                            <ul>
+                                {Saving.map((item2, index) => (
+                                    <li key={index}>{item2}</li>
+                                ))}
+                            </ul>
+                        </motion.div>
 
-                    <motion.div
-                        whileHover={{ scale: 1.03 }}
-                        whileTap={{ scale: 0.9 }}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{
-                            type: "spring",
-                            stiffness: 200,
-                            damping: 10,
-                            duration: 0.3,
-                            delay: 1 * 0.2, // Ensure each item appears sequentially
-                        }}
-                        className="Soft-item"
-                    >
-                        <PiMoneyBold />
-                        <h4 className="">Loans System</h4>
-                        <ul>
-                            {Loans.map((item3, index) => (
-                                <li key={index}>{item3}</li>    
-                            ))}
-                        </ul>
-                    </motion.div>
+                        <motion.div
+                            whileTap={{ scale: 0.9 }}
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{
+                                type: "",
+                                stiffness: 200,
+                                damping: 10,
+                                duration: 0.3,
+                                delay: 1 * 0.2, // Ensure each item appears sequentially
+                            }}
+                            className="Soft-item"
+                        >
+                            <PiMoneyBold />
+                            <h4 className="">Loans System</h4>
+                            <ul>
+                                {Loans.map((item3, index) => (
+                                    <li key={index}>{item3}</li>
+                                ))}
+                            </ul>
+                        </motion.div>
+                    </div>
                 </div>
             </motion.div>
 
             <div className="pastProj">
                 {second.map((secondItem, index) => (
-                    <ExpandableFeatureCard secondItem={secondItem} key={index} />
+                    <motion.div
+                        layout
+                        whileTap={{ scale: 0.9 }}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{
+                            layout: { duration: 0.3 },
+                            type: "",
+                            stiffness: 200,
+                            damping: 10,
+                            duration: 0.3,
+                            delay: 1 * 0.2,
+                        }}
+                        key={index}
+                        className="projectDetail"
+                    >
+                        <div className="projWrap">
+                            <div className="IacWrap">
+                                <motion.img
+                                    whileHover={{ scale: 1.2 }}
+                                    transition={{ duration: 0.3 }}
+                                    className="iacc"
+                                    src={secondItem.picUrl}
+                                    alt={secondItem.title}
+                                />
+                                <div>
+                                    <h4>{secondItem.title}</h4>
+                                    <p>{secondItem.description}</p>
+                                </div>
+                                <div>
+                                    <button
+                                        className="IacWrap-btn"
+                                        onClick={() =>
+                                            navigate(
+                                                `/products/software/${encodeURIComponent(
+                                                    secondItem.title
+                                                )}`,
+                                                {
+                                                    state: {
+                                                        pic: secondItem.picUrl,
+                                                        title: secondItem.title,
+                                                        description:
+                                                            secondItem.description,
+                                                        feature:
+                                                            secondItem.feature,
+                                                    },
+                                                }
+                                            )
+                                        }
+                                    >
+                                        Learn more
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </motion.div>
                 ))}
             </div>
         </div>
