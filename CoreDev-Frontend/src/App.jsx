@@ -10,6 +10,7 @@ const HardwarePage = lazy(() => import('./pages/Products/Hardware'));
 const HardwareProductPage = lazy(() => import('./pages/Products/HardwareProd/Product'));
 const ProductDetailsPage = lazy(() => import('./pages/Products/HardwareProd/ProductDetails')); // New Page
 const ClientPage = lazy(() => import('./pages/Clients/Clients'));
+const ContactPage = lazy(() => import('./pages/contactus/Contact-us'));
 
 
 function App() {
@@ -21,9 +22,12 @@ function App() {
           <Route path="/" element={<HomePage/>}></Route>
           <Route path="/Products/Software" element={<SoftwarePage/>}></Route>
           <Route path="/Products/Hardware" element={<HardwarePage/>}></Route>
+          <Route path="/Products/Software/:product" element={<SoftwareProductPage/>}></Route>
           <Route path="/Clients" element={<ClientPage/>}></Route>
           <Route path="/careers" element={<CareerPage/>}></Route>
+          <Route path="/Contact-us" element={<ContactPage/>}></Route>
           <Route path="/Products/Hardware/:category" element={<HardwareProductPage/>}></Route>
+          <Route path="/Products/Hardware/details" element={<ProductDetailsPage />} > </Route>
         </Route>
        </Routes>
       </BrowserRouter>

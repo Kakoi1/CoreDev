@@ -89,22 +89,7 @@ function Product() {
       </div>
 
       {/* Overlay when an item is clicked */}
-      {selectedItem && (
-        <div className="overlay" onClick={handleOverlayClick}>
-          <div className="overlay-content" onClick={handleContentClick}>
-            <span className="close-btn" onClick={() => setSelectedItem(null)}>&times;</span>
-            <img
-              src={`http://localhost:5173/src/assets/hardwareImage/${selectedItem.image}`}
-              alt={selectedItem.name}
-              className="overlay-image"
-            />
-            <h3>{selectedItem.name}</h3>
-            <p>{selectedItem.description}</p>
-            <br />
-            <a className="emailUs" href="mailto:info@coredev.ph">Email Us</a>
-          </div>
-        </div>
-      )}
+     
     </div>
   );
 }
