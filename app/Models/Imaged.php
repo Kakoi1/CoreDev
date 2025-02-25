@@ -9,5 +9,6 @@ class Imaged extends Model
     protected $fillable = [
         'name',
         'image',
+        'category'
     ];
 }

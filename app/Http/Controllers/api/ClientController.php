@@ -11,8 +11,10 @@ class ClientController extends Controller
 {
     public function index()
     {
-        $clients = Imaged::paginate(10); // Change '5' to the number of items per page
-        return response()->json($clients);
+        $clients = Imaged::paginate(10);
+        $allClient = Imaged::all();
+        // Change '5' to the number of items per page
+        return response()->json(['client' => $clients, 'allclient' => $allClient]);
     }
     public function hardware($category)
     {

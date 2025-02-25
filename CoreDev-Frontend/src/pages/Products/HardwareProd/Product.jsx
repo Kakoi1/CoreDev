@@ -99,7 +99,6 @@ function Product() {
       {selectedItem && (
         <div className="overlay" onClick={handleOverlayClick}>
           <div className="overlay-content" onClick={handleContentClick}>
-            <span className="close-btn" onClick={() => setSelectedItem(null)}>&times;</span>
             <img
               src={`http://localhost:5173/src/assets/hardwareImage/${selectedItem.image}`}
               alt={selectedItem.name}

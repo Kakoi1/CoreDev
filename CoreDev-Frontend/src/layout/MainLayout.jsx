@@ -23,7 +23,7 @@ const MainLayout = () => {
       setTimeout(() => {
         setIsSplit(true); // Start split animation
       }, 500);
-    }, 1800); // Loader stays for 3 seconds
+    }, 1500); // Loader stays for 3 seconds
 
     return () => clearTimeout(timer);
   }, [location.pathname]); // Run effect on every page visit

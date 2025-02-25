@@ -14,12 +14,18 @@
 .inner h2{
     font-size: 2rem;
     color: #ff6c00;
-    letter-spacing: 15px;
+    font-family: "Raleway", sans-serif !important;
     text-shadow: -1px 1px #080707;
     margin-bottom: 1.5rem;
 }
+.textcont h2{
+    font-size: 2rem;;
+    font-family: "Raleway", sans-serif !important;
+    margin-bottom: 1.5rem;
+}
+
 p{
-    font-family: 'Inter', serif;
+    font-family: 'Open Sans', sans-serif;
 }
 .textcont{
     background-color: rgba(0, 0, 0, 0.535);
@@ -48,7 +54,7 @@ p{
 .courses h4{
     font-size: 1.25rem;
     color: #ff6c00;
-    font-family: 'Roboto Mono', serif;
+    font-family: "Raleway", sans-serif;
 }
 .courseCont{
     display: flex;
@@ -86,7 +92,7 @@ p{
     border: none;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: 'Roboto Mono', serif;
+    font-family: "Raleway", sans-serif;
     display: flex; /* CSS3 */
   align-items: center; /* Vertical align */
   justify-content: center;
