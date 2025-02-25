@@ -18,6 +18,9 @@ function ProductDetails() {
 
   return (
     <div className="product-details-container">
+        <button onClick={() => navigate(-1)} className="back-btn">
+        ← Back to Hardware Products
+      </button>
       <h2>{selectedItem.name}</h2>
       <img
         src={`http://localhost:5173/src/assets/hardwareImage/${selectedItem.image}`}
@@ -27,9 +30,7 @@ function ProductDetails() {
       <p>{selectedItem.description}</p>
       <a className="emailUs" href="mailto:info@coredev.ph">Email Us</a>
       <br />
-      <button onClick={() => navigate(-1)} className="back-btn">
-        ← Back to Products
-      </button>
+      
     </div>
   );
 }

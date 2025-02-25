@@ -29,7 +29,7 @@ const Hardware = () => {
     ];  
 
     return (
-        <div className="HardwareContainer">
+        <div className="HardwareContainer" >
             <h2 style={{ textAlign: "center" }}>Hardware Products</h2>
 
             <div className="HardWrapper">

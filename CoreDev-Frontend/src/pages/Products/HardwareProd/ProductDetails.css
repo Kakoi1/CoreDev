@@ -30,20 +30,22 @@
     font-family: 'Open Sans', 'sans-serif' !important;
 }
 
-/* Email Us Button */
+
 .emailUs {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: #ff6600; 
-    color: white;
-    text-decoration: none;
-    border: 2px solid #cc5200; 
-    border-radius: 5px;
-    font-weight: bold;
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
     font-family: 'Open Sans', 'sans-serif' !important;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 12px 32px;
+    border-radius: 50px;
+    transition: 0.5s;
+    line-height: 1;
+    margin: 10px;
+    color: #fff;
+    background-color: #ff6600;
+    animation-delay: 0.8s;
+    border: 2px solid #ff6600;
 }
 
 .emailUs:hover {
@@ -53,16 +55,16 @@
 
 /* Back to Products Button */
 .back-btn {
-    display: inline-block;
-    margin-top: 20px;
+    display: flex;
+    margin-top: 10px;
     padding: 10px 20px;
-    background-color: #6b6969; 
+    background-color: #ff6600; 
     color: white;
     text-decoration: none;
     border: 2px solid #ff6600; 
     border-radius: 5px;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     font-family: 'Open Sans', 'sans-serif' !important;
