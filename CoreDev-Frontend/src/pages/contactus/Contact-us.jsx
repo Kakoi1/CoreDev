@@ -110,7 +110,23 @@ const Contact = () => {
         center: locations[0].position,
         zoom: 15,
       });
+      const minZoom = 15; 
+      const maxZoom = 20;
+      mapInstance.addListener('zoom_changed', () => {
+        const currentZoom = mapInstance.getZoom();
+    
+        // Prevent zooming out beyond minZoom
+        if (currentZoom < minZoom) {
+          mapInstance.setZoom(minZoom);
+        }
+    
+        // Optional: Prevent zooming in beyond maxZoom
+        if (currentZoom > maxZoom) {
+          mapInstance.setZoom(maxZoom);
+        }
+      });
       setMap(mapInstance); 
+
 
       locations.forEach((location) => {
         const marker = new window.google.maps.Marker({
@@ -131,6 +147,10 @@ const Contact = () => {
           getAddressFromCoordinates(location.position.lat, location.position.lng);
         });
       });
+
+      // Set the first location as selected by default
+      setSelectedMarker(locations[0]);
+      getAddressFromCoordinates(locations[0].position.lat, locations[0].position.lng);
     };
 
 
@@ -138,7 +158,6 @@ const Contact = () => {
       document.head.removeChild(script);
     };
   }, []);
-console.log(selectedMarker);
 
   return (
       <div className='contactCont'>

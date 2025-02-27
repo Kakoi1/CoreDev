@@ -75,6 +75,9 @@ const Links = ({ closeMenu }) => {
                 <NavLink to="/Clients">Clients</NavLink>
             </li>
             <li className='navigation-link' onClick={closeMenu}>
+                <NavLink to="/Partners">Partners</NavLink>
+            </li>
+            <li className='navigation-link' onClick={closeMenu}>
                 <NavLink to="/careers">Careers</NavLink>
             </li>
             <li className='navigation-link sub' onClick={() => toggleDropdown('about')}>

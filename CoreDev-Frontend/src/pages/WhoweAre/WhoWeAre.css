@@ -1,0 +1,173 @@
+.imageWrap{
+    padding: 303px 0;
+    /* background: #ecf6fe; */
+    /* margin-top: -95px; */
+    background: url(../../assets/teamImg.png) center no-repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 100px;
+    
+}
+/* *{
+    border:  solid;
+} */
+.About-Cont{
+    width: 100%;
+    /* max-width: 1300px; */
+}
+body{
+    background-color: #f1f8ff;
+}
+.textcont h2{
+    font-size: 2rem;;
+    font-family: "Raleway", sans-serif !important;
+    margin-bottom: 1.5rem;
+}
+.credoCont h4{
+    font-size: 1.25rem;
+    color: #ff6c00;
+    font-family: "Raleway", sans-serif;
+}
+
+p{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 28px;
+    margin-bottom: 10px;
+}
+.textcont p{
+    /* font-weight: bold; */
+    font-size: 18px;
+    line-height: 20px;
+}
+.textcont{
+    background-color: rgba(0, 0, 0, 0.535);
+    color: white;
+    padding: 30px;
+    position: relative;
+    bottom: -380px;
+    letter-spacing: 3px;
+}
+.credoCont{
+    /* display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: center; */
+    display: flex;
+        flex-direction: row-reverse;
+        padding: 20px;
+        justify-content: center;
+        gap: 20px;
+        max-width: 1500px;
+        margin: 0 auto;
+}
+.credoCont svg{
+    width: 54px;
+    height: 54px;
+    color: #ff6c00;
+    margin: 0 auto;
+}
+.credo-top p{
+    width: 50%;
+    margin: 0 auto;
+    color: #777777;
+}
+.credo-top div{
+    width: 100%;
+    padding: 10px;
+    /* border: solid; */
+    box-shadow: 1px 3px 3px rgba(68, 67, 67, 0.402);
+    border-radius: 8px;
+    max-width: 500px;
+}
+.credo-top{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    text-align: center;
+    /* margin-bottom: 20px; */
+    flex-direction: column;
+}
+.values p{
+    width:100%;
+    margin: 0 auto;
+    color: #777777;
+    margin-bottom: 10px;
+}
+.values{
+    text-align: center;
+    display: flex;
+    width: 75%;
+    max-width: 1000px;
+    /* border: solid; */
+    border-radius: 8px;
+    box-shadow: 1px 3px 3px rgba(68, 67, 67, 0.402);
+    margin-bottom: 20px;
+    padding: 10px;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: center;
+}
+.storyCont{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.storyContent{
+    box-shadow: 1px 3px 3px rgba(68, 67, 67, 0.402);
+    padding: 10px;
+    width: 70%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+.storyContent .story-content{
+    color: #777777;
+    margin-bottom: 10px;
+    line-height: 28px;
+}
+.logoCont{
+    text-align: center;
+    margin-bottom: 30px;
+    line-height: 28px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+.logoCont img{
+    width: 100%;
+    height: 70px;
+}
+.logoCont h4{
+    font-size: 1.25rem;
+    color: #ff6c00;
+    font-family: "Raleway", sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+    .credo-top{
+        display: block;
+    }
+    .credoCont{
+        display: block;
+    }
+    .credo-top div{
+        width: 100%;
+        max-width: 1000px;
+        margin-bottom: 30px;
+    }
+    .values{
+        width: 100%;
+    }
+    .textcont p{
+        /* font-weight: bold; */
+        font-size: 15px;
+        line-height: 15px;
+    }
+    .storyContent{
+        width: 100%;
+    }
+
+}

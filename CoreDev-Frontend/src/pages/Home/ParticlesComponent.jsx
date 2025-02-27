@@ -98,6 +98,7 @@ function ParticlesComponent() {
           initial={{ opacity: 0, x: -200 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 4 }}
+          className="motion-text"
         >
           The Premier <br /> Software Solutions <br /> Provider <br /> in the <br /> Philippines.
           <br />

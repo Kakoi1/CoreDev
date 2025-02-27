@@ -19,13 +19,14 @@
       height: 200px;
       width: 200px;
       margin: 1.5rem;
+      margin-top: -10px;
     }
     .HardwareContainer .HardWrapper .hardware{
       background-color: white;
       padding: 1.5rem;
       border-radius: 12px;
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-      height: 350px;
+      height: 260px;
       display: flex;
       width: 300px;
       flex-direction: column;
@@ -36,7 +37,10 @@
       font-size: 1.25rem;
       color: #ff6c00;
       font-family: 'Raleway',sans-serif;
-      padding: 0;
+      padding-top: 0;
+      margin-top: 50px;
+     
+  
     }
     .HardwareContainer .HardWrapper{
       display: flex;
