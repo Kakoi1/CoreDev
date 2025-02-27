@@ -15,13 +15,7 @@ function Clients() {
   const [selectedCategory, setSelectedCategory] = useState("All"); // Default: show all categories
 
   // Define the categories
-  const partners = [
-    {name: 'Globe', imgs: 'globe.png'},
-    {name: 'Smart', imgs: 'smart.png'},
-    {name: 'Dragon Pay', imgs: 'dragon.png'},
-    {name: 'Pesopay', imgs: 'peso.png'},
-    {name: 'UnionBank', imgs: 'ub.png'},
-  ]
+  
 
   const categories = [
     "All",
@@ -142,16 +136,6 @@ function Clients() {
           </tbody>
         </motion.table>
       )}
-
-<div className="partners-container">
-      {partners.map((partner, index) => (
-        <div key={index} className="partner-card">
-          <img src={'src/assets/'+partner.imgs} alt={partner.name} className="partner-logo" />
-          <p className="partner-name">{partner.name}</p>
-        </div>
-      ))}
-    </div>
-
     </div>
   );
 }

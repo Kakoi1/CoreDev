@@ -8,10 +8,11 @@ const SoftwarePage = lazy(() => import('./pages/Products/Software'));
 const SoftwareProductPage = lazy(() => import('./pages/Products/SoftwareProduct/SoftwareProduct'));
 const HardwarePage = lazy(() => import('./pages/Products/Hardware'));
 const HardwareProductPage = lazy(() => import('./pages/Products/HardwareProd/Product'));
-const ProductDetailsPage = lazy(() => import('./pages/Products/HardwareProd/ProductDetails')); // New Page
+const ProductDetailsPage = lazy(() => import('./pages/Products/HardwareProd/ProductDetails'));
 const ClientPage = lazy(() => import('./pages/Clients/Clients'));
 const ContactPage = lazy(() => import('./pages/contactus/Contact-us'));
 const AboutPage = lazy(() => import('./pages/WhoweAre/WhoWeAre'));
+const PartnerPage = lazy(() => import ('./pages/Partners/Partners'));
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path="/Products/Hardware" element={<HardwarePage/>}></Route>
           <Route path="/Products/Software/:product" element={<SoftwareProductPage/>}></Route>
           <Route path="/Clients" element={<ClientPage/>}></Route>
+          <Route path="/partners" element={<PartnerPage/>}></Route>
           <Route path="/careers" element={<CareerPage/>}></Route>
           <Route path="/Contact-us" element={<ContactPage/>}></Route>
           <Route path="/about/who-we-are" element={<AboutPage/>}></Route>
