@@ -24,7 +24,7 @@ font-family: "Open-Sans", sans-serif;
 }
 .navigation-container {
     width: 100%;
-    max-width: 1300px;
+    max-width: 1500px;
     margin: 0 auto;
     background-color: var(--black);
     padding: 10px 5px;
