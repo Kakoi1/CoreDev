@@ -81,6 +81,13 @@ function Product() {
                 className="product-image"
               />
               <h3 className="product-name">{item.name}</h3>
+
+              <button 
+                className="see-details-btn" 
+                onClick={() => navigate("/Products/Hardware/details", { state: { selectedItem: item } })}
+              >
+                See Details
+              </button>
             </div>
           ))
         ) : (

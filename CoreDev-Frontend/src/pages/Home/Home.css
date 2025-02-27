@@ -388,4 +388,25 @@ body{
     padding: 10px;
     margin-top: 40px;
   }
+
+  .photo-wrapper {
+    position: relative;  /* Ensure relative positioning */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center align */
+    height: 80vh;
+    width: 100%;
+}
+
+  .motion-text {
+    position: absolute;
+    top: 50%;  /* Center vertically */
+    left: 200px; /* Adjust this to align with your navigation logo */
+    transform: translateY(-50%);
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 2.5rem;
+    text-align: left;
+}
   
