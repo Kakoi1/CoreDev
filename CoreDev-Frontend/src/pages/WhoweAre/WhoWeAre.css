@@ -1,11 +1,13 @@
-.imageWrap{
-    height: 80vh;
-    width: 100%;
-    /* background-image: url(src/assets/coreDev-Team-Edited-2.png); */
-    background: linear-gradient(0deg, rgb(13 6 1 / 82%), rgb(49 46 46 / 13%)), url(../../assets/teamImg.png) top center no-repeat;
+.imageWrap1{
+    padding: 303px 0;
+    height: 80%;
+    /* background: #ecf6fe; */
+    /* margin-top: -95px; */
+    background:  linear-gradient(0deg, rgb(13 6 1 / 82%), rgba(49, 46, 46, 0.041)), url(../../assets/teamImg.png) center no-repeat;
+    background-repeat: no-repeat;
     background-size: cover;
-    background-position: bottom;
-    overflow: hidden;
+    margin-bottom: 100px;
+    
 }
 /* *{
     border:  solid;
@@ -17,7 +19,7 @@
 body{
     background-color: #f1f8ff;
 }
-.textcont h2{
+.textcont1 h2{
     font-size: 2rem;;
     font-family: "Raleway", sans-serif !important;
     margin-bottom: 1.5rem;
@@ -34,12 +36,12 @@ p{
     line-height: 28px;
     margin-bottom: 10px;
 }
-.textcont p{
+.textcont1 p{
     /* font-weight: bold; */
     font-size: 18px;
     line-height: 20px;
 }
-.textcont{
+.textcont1{
     background-color: rgba(0, 0, 0, 0.535);
     color: white;
     padding: 30px;

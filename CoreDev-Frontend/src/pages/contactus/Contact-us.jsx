@@ -27,7 +27,7 @@ const ContactInfo = () => {
       <div className="contact-container">
         {details.map((item, index) => (
           <div className="contact-card" key={index}>
-            <div className="icon"><BiLocationPlus /></div>
+            <div className="icon1"><BiLocationPlus /></div>
             <div className="contact-details">
               <h4>{item.island} Office:</h4>
               <p className="address">{item.address}</p>
@@ -39,7 +39,7 @@ const ContactInfo = () => {
 
       <div className="extra-contact">
         <div className="contact-item">
-          <div className="icon">
+          <div className="icon1">
             <BiMailSend className="icon" />
           </div>
          <div className="contact-details">
@@ -49,7 +49,7 @@ const ContactInfo = () => {
         </div>
 
         <div className="contact-item">
-          <div className="icon">
+          <div className="icon1">
             <BiLogoFacebook className="icon" />
           </div>
           <div className="contact-details">

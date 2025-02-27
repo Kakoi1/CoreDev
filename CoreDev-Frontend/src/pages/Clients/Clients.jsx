@@ -62,6 +62,11 @@ function Clients() {
       ? clients
       : clients.filter((client) => client.category === selectedCategory);
 
+      const fadeInUpVariants = {
+        hidden: { opacity: 0, y: 50 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+      };
+
   return (
     <div className="ClientCont">
       <h2>Clients</h2>
@@ -115,9 +120,10 @@ function Clients() {
             {filteredClients.map((client) => (
               <motion.tr
                 key={client.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3 }}
+                initial='hidden'
+                whileInView='visible'
+                viewport={{ once: true, amount: 0.5 }}
+                variants={fadeInUpVariants}
               >
                 <td>
                   <motion.img
