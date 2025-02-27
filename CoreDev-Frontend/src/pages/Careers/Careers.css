@@ -1,7 +1,5 @@
 .imageWrap{
     padding: 303px 0;
-    /* background: #ecf6fe; */
-    /* margin-top: -95px; */
     background: url(../../assets/teamImg.png) center no-repeat;
     background-repeat: no-repeat;
     background-size: cover;
@@ -11,12 +9,16 @@
 .careerCont{
     width: 100%;
 }
+
 .inner h2{
-    font-size: 2rem;
-    color: #ff6c00;
+    font-size: 3rem;
+    color: #353635;
     font-family: "Raleway", sans-serif !important;
-    text-shadow: -1px 1px #080707;
     margin-bottom: 1.5rem;
+}
+
+.inner span {
+    color: #ff6c00;
 }
 .textcont h2{
     font-size: 2rem;;
@@ -109,4 +111,80 @@ p{
     padding: 20px;
     display: flex;
     
+  }
+
+  .inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .job-wrapper{
+    background-color: #fdfcfb;
+    font-family: "Raleway", sans-serif !important;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: .5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 80%;
+  }
+  .job-wrapper .job {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .job-wrapper .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: .5rem;
+  }
+
+  .job-wrapper .job-type {
+    font-size: 1rem;
+    color: #353635;
+    opacity: .5;
+}
+
+  .job-wrapper button {
+    background-color: #ff6c00;
+    color: #fdfcfb;
+    border: none;
+    border-radius: 1rem;
+    padding: .5rem;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+  }
+
+  .job-wrapper button:hover {
+    transform: scale(1.05);
+  }
+
+  .job-wrapper > p {
+    color: var(--orange)
+  }
+
+  .job-wrapper > p:hover {
+    display: inline-block;
+    text-decoration: underline;
+  }
+
+  .job-info {
+    display: flex;
+    gap:1rem;
+    align-items: center;
+  }
+
+  .job-info > .job-type > .icon {
+    margin: 0 .5rem;
+  }
+
+  .job-details > h4 {
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .job-details .icon {
+    color: var(--orange)
   }

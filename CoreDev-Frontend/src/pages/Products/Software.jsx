@@ -1,46 +1,59 @@
 import "./Software.css";
 import iAccs from "../../assets/ais.png";
 import { RiCodepenFill } from "react-icons/ri";
-import { PiMoneyBold } from "react-icons/pi";
-import { motion } from "framer-motion";
+import { RiCheckLine } from "react-icons/ri";
+import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const Software = () => {
     const navigate = useNavigate();
+    const [isExpanded, setIsExpanded] = useState(false);
 
-    const Accounting = [
-        "General Ledger",
-        "Subsidiary Ledger",
-        "Back Office Transaction",
-        "Front Office Transaction",
-        "Financial Statements",
-        "Fixed Asset Management",
-        "Overriding System",
-        "Aging of Receivables",
-        "Regulating agency reports (BIR, BSP, CDA, CISA)",
-    ];
-    const Saving = [
-        "Savings, Share Capital, Time Deposit, Special Deposit",
-        "Interest/Witholding Tax on Deposits Processing",
-        "Accrual of Interest on Deposits Processing",
-        "Automatic Rollover of Time Deposits",
-        "Dormancy Management",
-        "Dividend and Patronage Refund Processing",
-    ];
-    const Loans = [
-        "Analysis of Loans Receivable",
-        "Aging of Loans Receivable",
-        "Collection Efficiency",
-        "Loans Application/Processing Module",
-        "Collector/Account Office Management",
-        "Unearned Interest Amortization Processing",
-        "Holiday Management",
-        "Amortization Schedule Calculator",
-        "Interest Rebates System",
-        "Batch Printing/Email of Reminder/Demand Letters",
-        "Interest and Penalty Worksheet",
-        "Loans History",
-        "Client Credit Rating",
+    const softwareFeatures = [
+        {
+            title: "Core Accounting System",
+            features: [
+                "General Ledger",
+                "Subsidiary Ledger",
+                "Back Office Transaction",
+                "Front Office Transaction",
+                "Financial Statements",
+                "Fixed Asset Management",
+                "Overriding System",
+                "Aging of Receivables",
+                "Regulating agency reports (BIR, BSP, CDA, CISA)",
+            ],
+        },
+        {
+            title: "Saving / Deposits System",
+            features: [
+                "Savings, Share Capital, Time Deposit, Special Deposit",
+                "Interest/Witholding Tax on Deposits Processing",
+                "Accrual of Interest on Deposits Processing",
+                "Automatic Rollover of Time Deposits",
+                "Dormancy Management",
+                "Dividend and Patronage Refund Processing",
+            ],
+        },
+        {
+            title: "Loan System",
+            features: [
+                "Analysis of Loans Receivable",
+                "Aging of Loans Receivable",
+                "Collection Efficiency",
+                "Loans Application/Processing Module",
+                "Collector/Account Office Management",
+                "Unearned Interest Amortization Processing",
+                "Holiday Management",
+                "Amortization Schedule Calculator",
+                "Interest Rebates System",
+                "Batch Printing/Email of Reminder/Demand Letters",
+                "Interest and Penalty Worksheet",
+                "Loans History",
+                "Client Credit Rating",
+            ],
+        },
     ];
 
     const second = [
@@ -124,7 +137,8 @@ const Software = () => {
             picUrl: "/assets/online-membership-system.png",
             title: "Online Membership System",
             icon: <RiCodepenFill />,
-            description: "An easy and convenient way to enroll new members of your cooperative. Allow future clients to fill out application forms, attend webinars and submit documents online via the Online Membership System",
+            description:
+                "An easy and convenient way to enroll new members of your cooperative. Allow future clients to fill out application forms, attend webinars and submit documents online via the Online Membership System",
             feature: [
                 "Stand alone System ",
                 "Allow online membership application",
@@ -140,33 +154,36 @@ const Software = () => {
             picUrl: "/assets/online-help-desk.png",
             title: "Online Help Desk System",
             icon: <RiCodepenFill />,
-            description: " Manage your client's concerns by letting them raise and resolve their issues online via our Online Help Desk System",
+            description:
+                " Manage your client's concerns by letting them raise and resolve their issues online via our Online Help Desk System",
             feature: [
                 "Allow members to raise issues and concerns with ticket number online ",
                 "Capable for sending ticket updates via E-Mail or SMS",
                 "Members can reply and upload files on the specific concerns",
                 "Members can monitor ticket status",
-                "Mobile Responsive"
+                "Mobile Responsive",
             ],
         },
         {
             picUrl: "/assets/coop-wallet.png",
             title: "Coop Wallet",
             icon: <RiCodepenFill />,
-            description: "A web Application that allows you to check, transfer, save and withdraw your funds.",
+            description:
+                "A web Application that allows you to check, transfer, save and withdraw your funds.",
             feature: [
                 "Can add/deposit cash",
                 "Can WithdrawCash",
                 "Can Apply for an Instant Loan",
                 "Can be Customized",
-                "Mobile Responsive"
+                "Mobile Responsive",
             ],
         },
         {
             picUrl: "/assets/online-payment-gateway.png",
             title: "Online Payment Gateway",
             icon: <RiCodepenFill />,
-            description: "Allow your members/clients to enjoy their quality time by letting them pay online with our Online Payment Gateway and increase your collection efficiency.",
+            description:
+                "Allow your members/clients to enjoy their quality time by letting them pay online with our Online Payment Gateway and increase your collection efficiency.",
             feature: [
                 "Easy access to current balances",
                 "Secure online payment solutions",
@@ -174,14 +191,13 @@ const Software = () => {
                 "Bank Over-the-Counter(OTC)",
                 "Over-the-counter Nonbanks/Bayad Centers",
                 "Auto posting to current accounts",
-                "Mobile Responsive"
+                "Mobile Responsive",
             ],
         },
     ];
 
     return (
         <div className="SoftwareContainer">
-            <h2 style={{ textAlign: "center" }}>Software Products</h2>
             <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -205,84 +221,64 @@ const Software = () => {
                         height={74}
                     />
                     <div>
-                        <h4>iAccs</h4>
+                        <h4 className="iaccs-title">Integrated Accounting System</h4>
                         <p>
                             The Most Trusted and Secured Integrated accounting
-                            and <br />
+                            and
                             banking system designed for bank and cooperative{" "}
-                            <br /> needs for more than 3 decades!
+                             needs for more than 3 decades!
                         </p>
-                    </div>
-                    <div className="divWrap">
-                        <motion.div
-                            whileTap={{ scale: 0.9 }}
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{
-                                type: "",
-                                stiffness: 200,
-                                damping: 10,
-                                duration: 0.3,
-                                delay: 1 * 0.2, // Ensure each item appears sequentially
-                            }}
-                            className="Soft-item"
-                        >
-                            <RiCodepenFill />
-                            <h4>Core Accounting System</h4>
-                            <ul>
-                                {Accounting.map((item1, index) => (
-                                    <li key={index}>{item1}</li>
-                                ))}
-                            </ul>
-                        </motion.div>
-
-                        <motion.div
-                            whileTap={{ scale: 0.9 }}
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{
-                                type: "",
-                                stiffness: 200,
-                                damping: 10,
-                                duration: 0.3,
-                                delay: 1 * 0.2, // Ensure each item appears sequentially
-                            }}
-                            className="Soft-item"
-                        >
-                            <PiMoneyBold />
-                            <h4>Saving / Deposits System</h4>
-                            <ul>
-                                {Saving.map((item2, index) => (
-                                    <li key={index}>{item2}</li>
-                                ))}
-                            </ul>
-                        </motion.div>
-
-                        <motion.div
-                            whileTap={{ scale: 0.9 }}
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{
-                                type: "",
-                                stiffness: 200,
-                                damping: 10,
-                                duration: 0.3,
-                                delay: 1 * 0.2, // Ensure each item appears sequentially
-                            }}
-                            className="Soft-item"
-                        >
-                            <PiMoneyBold />
-                            <h4 className="">Loans System</h4>
-                            <ul>
-                                {Loans.map((item3, index) => (
-                                    <li key={index}>{item3}</li>
-                                ))}
-                            </ul>
-                        </motion.div>
+                        <button className="IacWrap-btn" onClick={() => setIsExpanded(!isExpanded)}>{isExpanded ? "Hide Details" : "Learn more"}</button>
+                        <AnimatePresence>
+                            {isExpanded && (
+                                <motion.div
+                                    layout
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                    transition={{ duration: 0.3 }}
+                                    className="divWrap"
+                                >
+                                    {softwareFeatures.map((software, index) => (
+                                        <motion.div
+                                            key={index}
+                                            whileTap={{ scale: 0.9 }}
+                                            initial={{ opacity: 0, scale: 0.8 }}
+                                            whileInView={{
+                                                opacity: 1,
+                                                scale: 1,
+                                            }}
+                                            transition={{
+                                                type: "",
+                                                stiffness: 200,
+                                                damping: 10,
+                                                duration: 0.3,
+                                                delay: 1 * 0.2,
+                                            }}
+                                            className="Soft-item"
+                                        >
+                                            <RiCodepenFill />
+                                            <h4>{software.title}</h4>
+                                            <ul>
+                                                {software.features.map(
+                                                    (feature, index) => (
+                                                        <li key={index}>
+                                                            <RiCheckLine className="icon" />
+                                                            {feature}
+                                                        </li>
+                                                    )
+                                                )}
+                                            </ul>
+                                        </motion.div>
+                                    ))}
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
                     </div>
                 </div>
             </motion.div>
 
+            <h1 className="product-title">Our Products</h1>
             <div className="pastProj">
                 {second.map((secondItem, index) => (
                     <motion.div
@@ -302,7 +298,7 @@ const Software = () => {
                         className="projectDetail"
                     >
                         <div className="projWrap">
-                            <div className="IacWrap">
+                            <div className="">
                                 <motion.img
                                     whileHover={{ scale: 1.2 }}
                                     transition={{ duration: 0.3 }}
