@@ -1,64 +1,200 @@
-import React from 'react'
-import './Careers.css'
-import { motion } from "framer-motion";
+/* eslint-disable react/prop-types */
+import "./Careers.css";
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
+import { RiCheckLine } from "react-icons/ri";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import { MdWorkHistory } from "react-icons/md";
+
 function Careers() {
 
-    const courseDetails = [
-        {name: 'Accountancy', pic: 'src/assets/career/ac.png'},
-        {name: 'Accounting Technology', pic: 'src/assets/career/acit.png'},
-        {name: 'Management Accounting', pic: 'src/assets/career/man.png'},
-        {name: 'Information Technology', pic: 'src/assets/career/it.png'},
-        {name: 'Computer Science', pic: 'src/assets/career/cs.png'},
-    ]
-  return (
-    <div className='careerCont'>
-        <div className='imageWrap'>
-            <div className='textcont'>
-                <h2>CAREER OPPORTUNITIES</h2>
-                <hr />
-                <p>Stable yourself with your abilities. <br />Be a part of our amazing team!</p>
+    const jobOffers = [
+        {
+            title: "Software Implementor",
+            type: "Full-time position",
+            descriptions: [
+                "Graduate of any related Accounting Course",
+                [
+                    "Accounting Technology",
+                    "Accountancy",
+                    "Management Accounting",
+                ],
+                "Graduate of any related Infromation Technology Courses",
+                ["Information Technology", "Computer Science"],
+            ],
+            address: "Cebu",
+            link: "https://coredev.orangepayplus.com/job/hiring/coredev-solutions-inc",
+        },
+        {
+            title: "Software Implementor",
+            type: "Full-time position",
+            descriptions: [
+                "Graduate of any related Accounting Course",
+                [
+                    "Accounting Technology",
+                    "Accountancy",
+                    "Management Accounting",
+                ],
+                "Graduate of any related Infromation Technology Courses",
+                ["Information Technology", "Computer Science"],
+            ],
+            address: "Imus, Cavite",
+            link: "https://coredev.orangepayplus.com/job/hiring/coredev-solutions-inc",
+        },
+        {
+            title: "Software Implementor",
+            type: "Full-time position",
+            descriptions: [
+                "Graduate of any related Accounting Course",
+                [
+                    "Accounting Technology",
+                    "Accountancy",
+                    "Management Accounting",
+                ],
+                "Graduate of any related Infromation Technology Courses",
+                ["Information Technology", "Computer Science"],
+            ],
+            address: "Davao, City",
+            link: "https://coredev.orangepayplus.com/job/hiring/coredev-solutions-inc",
+        },
+        {
+            title: "Software Programmer",
+            type: "Full-time position",
+            descriptions: [
+                "Graduate of any related Information Technology Courses",
+                ["Information Technology", "Computer Science"],
+            ],
+            address: "Davao, City",
+            link: "https://coredev.orangepayplus.com/job/hiring/coredev-solutions-inc",
+        },
+        {
+            title: "Accounting Staff",
+            type: "Full-time position",
+            descriptions: [
+                "Candidate should have good communication and presentation skills",
+                "Problem solving and analytical thinking",
+                "Abillity to work under pressure",
+                "Ambitious and Self motivated",
+                "Monitoring and solving problems related to the system  implementation",
+                "With good and pleasing personality, good communication skills",
+                "Willing to travel around the Philippines",
+                "Can work with less supervision",
+            ],
+            address: "Cebu",
+            link: "https://coredev.orangepayplus.com/job/hiring/coredev-solutions-inc",
+        },
+    ];
+    return (
+        <div className="careerCont">
+            <div className="imageWrap">
+                <div className="textcont">
+                    <h2>CAREER OPPORTUNITIES</h2>
+                    <hr />
+                    <p>
+                        Stable yourself with your abilities. <br />
+                        Be a part of our amazing team!
+                    </p>
+                </div>
             </div>
-        </div>
-        <div className='inner'>
-            <h2 style={{textAlign: 'center'}}>We are looking for a Graduate of these courses:</h2>
-            <div className='courseCont'>
-                {courseDetails.map((details, index) =>  
-                <motion.div 
-                key={index} 
-                        whileHover={{ scale: 1.03 }}
-                        whileTap={{ scale: 0.9 }}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ 
-                            type: "spring", 
-                            stiffness: 200, 
-                            damping: 10, 
-                            duration: 0.3, 
-                            delay: index * 0.1 // Sequential appearance effect
-                        }}
-                className='courses'>
-                    <img src={details.pic} alt={details.name} />
-                    <h4>{details.name}</h4>
-                </motion.div>
-            )}
-            </div>
-            <div className='butCont'  >
-            <motion.a 
-                className="applyBut"
-                href="https://coredev.orangepayplus.com/job/hiring/coredev-solutions-inc"
-                target="_blank" // Opens in a new tab
-                rel="noopener noreferrer" // Security best practice
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.9 }}
-                transition={{ duration: 0.3 }}
-                >
-                Apply Now!
-                </motion.a>
+            <motion.div className="inner">
+                <h2 style={{ textAlign: "center" }}>
+                    Are You Ready <span>To Become One Of Us?</span>
+                </h2>
 
-            </div>
+                {jobOffers.map((job, index) => (
+                    <JobOfferCard
+                        key={index}
+                        title={job.title}
+                        descriptions={job.descriptions}
+                        type={job.type}
+                        address={job.address}
+                        link={job.link}
+                    />
+                ))}
+
+            </motion.div>
         </div>
-    </div>
-  )
+    );
 }
 
-export default Careers
+const JobOfferCard = ({ title, type, descriptions, address, link }) => {
+    const [showDetails, setShowDetails] = useState(false);
+    return (
+        <motion.div
+            layout
+            whileTap={{ scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+                layout: { duration: 0.3 },
+                type: "",
+                stiffness: 200,
+                damping: 10,
+                duration: 0.3,
+                delay: 0.2,
+            }}
+            className="job-wrapper"
+        >
+            <div className="job">
+                <div>
+                    <div className="title">{title}</div>
+                    <div className="job-info">
+                        <div className="job-type">
+                            <MdWorkHistory className="icon"/>
+                            {type}
+                        </div>
+                        <div className="job-type">
+                            <FaMapMarkerAlt className="icon"/>
+                            {address}
+                        </div>
+                    </div>
+                </div>
+                <button>Apply Now</button>
+            </div>
+            <p onClick={() => setShowDetails(!showDetails)}>
+                {showDetails ? "Hide Details" : "Show Details"}
+            </p>
+            <AnimatePresence>
+                {showDetails && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="job-details"
+                    >
+                        <h4>Qualifications</h4>
+                        {descriptions.map((description, index) =>
+                            Array.isArray(description) ? (
+                                <ul key={index}>
+                                    {description.map(
+                                        (sub_qualification, index) => (
+                                            <li key={index}>
+                                                {sub_qualification}
+                                            </li>
+                                        )
+                                    )}
+                                </ul>
+                            ) : (
+                                <p key={index}>
+                                    <RiCheckLine className="icon" />{" "}
+                                    {description}
+                                </p>
+                            )
+                        )}
+
+                        <a
+                            href={link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Apply Now
+                        </a>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </motion.div>
+    );
+};
+
+export default Careers;
