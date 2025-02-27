@@ -1,12 +1,11 @@
 .imageWrap{
-    padding: 303px 0;
-    /* background: #ecf6fe; */
-    /* margin-top: -95px; */
-    background: url(../../assets/teamImg.png) center no-repeat;
-    background-repeat: no-repeat;
+    height: 80vh;
+    width: 100%;
+    /* background-image: url(src/assets/coreDev-Team-Edited-2.png); */
+    background: linear-gradient(0deg, rgb(13 6 1 / 82%), rgb(49 46 46 / 13%)), url(../../assets/teamImg.png) top center no-repeat;
     background-size: cover;
-    margin-bottom: 100px;
-    
+    background-position: bottom;
+    overflow: hidden;
 }
 /* *{
     border:  solid;
