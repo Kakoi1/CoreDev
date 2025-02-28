@@ -1,0 +1,17 @@
+.policyWrap{
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 20px;
+  line-height: 28px;
+}
+.policyCont{
+  width: 100%;
+}
+.policyCont h1,.policyCont h2,.policyCont h3, .policyCont h4{
+  font-family: "Raleway", sans-serif !important;
+  color: rgb(7, 3, 53);
+}
+.policyCont p, .policyCont li{
+  font-family: 'Open Sans', sans-serif;
+  color: #777777;
+}

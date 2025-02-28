@@ -29,7 +29,7 @@ const ContactInfo = () => {
           <div className="contact-card" key={index}>
             <div className="icon1"><BiLocationPlus /></div>
             <div className="contact-details">
-              <h4>{item.island} Office:</h4>
+              <h4>{item.island} Branch:</h4>
               <p className="address">{item.address}</p>
               <p className="tel">Tel No: {item.tel}</p>
             </div>
@@ -70,9 +70,9 @@ const Contact = () => {
   const [map, setMap] = useState(null);
 
   const locations = [
-    { id: 1,  cid: '9153839079113836537',name: 'CoreDev Solutions Inc.', position: { lat: 10.298937561572044, lng: 123.8892060572453 } },
-    { id: 2,  cid: '17502278350547099942',name: 'coreDev Solutions Inc - Davao', position: { lat: 7.108080517350672, lng: 125.61502033701797} },
-    { id: 3, cid: '18355226061558763366',name: 'coreDev Solutions Inc - Cavite', position: { lat: 14.385910117402625, lng: 120.94084551047905 } },
+    { id: 1,  cid: '9153839079113836537', otherNmae: 'Main Branch',name: 'CoreDev Solutions Inc.', position: { lat: 10.298937561572044, lng: 123.8892060572453 } },
+    { id: 2,  cid: '17502278350547099942', otherNmae: 'Mindanao Branch',name: 'coreDev Solutions Inc - Davao', position: { lat: 7.108080517350672, lng: 125.61502033701797} },
+    { id: 3, cid: '18355226061558763366', otherNmae: 'Luzon Branch',name: 'coreDev Solutions Inc - Cavite', position: { lat: 14.385910117402625, lng: 120.94084551047905 } },
   ];
 
   const getAddressFromCoordinates = async (lat, lng) => {
@@ -175,7 +175,7 @@ const Contact = () => {
               onClick={() => handleButtonClick(location)}
               style={{ margin: '5px', padding: '10px', fontSize: '16px' }}
             >
-              {location.name}
+              {location.otherNmae}
             </button>
           ))}
         </div>

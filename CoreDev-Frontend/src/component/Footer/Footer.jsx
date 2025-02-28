@@ -2,12 +2,20 @@ import './footer.css';
 import { FaFacebook, FaLinkedin } from "react-icons/fa";
 import { useState } from 'react';
 import { FiChevronsRight } from "react-icons/fi";
+import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
     const [footer, setFooter] = useState({
         links: {
             label: "USEFUL LINKS",
-            links: ["Home", "Products", "Clients", "Careers", "Contact", "About"]
+            links: [
+                { label: 'Home', redirect: '/' },
+                { label: 'Products', redirect: '/Products/Software' },
+                { label: 'Clients', redirect: '/Clients' },
+                { label: 'Careers', redirect: '/careers' },
+                { label: 'Contact', redirect: '/Contact-us' },
+                { label: 'Privacy Policy', redirect: '/Privacy-policy' },
+              ],
         },
         services: {
             label: "OUR SERVICES",
@@ -19,8 +27,8 @@ const Footer = () => {
             follow: {
                 label: "FOLLOW US",
                 links: [
-                    { icon: <FaFacebook color='#ff6c00' />, link: "" },
-                    { icon: <FaLinkedin color='#ff6c00' />, link: "" }
+                    { icon: <FaFacebook color='#ff6c00' />, link: "https://www.facebook.com/coredev/" },
+                    { icon: <FaLinkedin color='#ff6c00' />, link: "https://www.linkedin.com/company/coredev-solutions-inc-" }
                 ]
             }
         },
@@ -38,7 +46,7 @@ const Footer = () => {
                 <ul className="custom-list">
                     {footer.links.links.map((item, index) => (
                         <li key={index}>
-                            <FiChevronsRight /> {item}
+                            <FiChevronsRight /><NavLink to={item.redirect}> {item.label}</NavLink>
                         </li>
                     ))}
                 </ul>
@@ -61,7 +69,7 @@ const Footer = () => {
                 <h3>{footer.contact.follow.label}</h3>
                 <div className='links-wrapper'>
                     {footer.contact.follow.links.map((item, index) => (
-                        <a key={index} href={item.link}>{item.icon}</a>
+                        <a key={index} target='_blank' href={item.link}>{item.icon}</a>
                     ))}
                 </div>
             </div>

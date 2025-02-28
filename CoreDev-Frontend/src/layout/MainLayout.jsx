@@ -42,7 +42,7 @@ const MainLayout = () => {
   };
 
   return (
-    <>
+    <div>
       {isLoading && (
         <div id="loader-wrapper">
 
@@ -79,7 +79,7 @@ const MainLayout = () => {
         <Footer />
         {yAxis > 150 && <FaArrowAltCircleUp className="backTop" onClick={backToTop} />}
       </div>
-    </>
+    </div>
   );
 };
 
