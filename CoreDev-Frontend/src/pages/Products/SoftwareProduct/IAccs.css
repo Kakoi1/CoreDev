@@ -1,0 +1,48 @@
+
+.divWrap {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 2rem;
+}
+
+.Soft-item {
+  background-color: white;
+  border-radius: 10px;
+  padding: 2rem;
+  width: calc(30% - 1rem);
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.Soft-item:hover {
+  transform: translateY(-5px);
+}
+
+.Soft-item h4 {
+  color: var(--black);
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+}
+
+.Soft-item ul {
+  list-style-type: none;
+  padding-left: 1.25rem;
+  font-family: 'Open-Sans', sans-serif !important;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.icon {
+  font-size: 1.5rem;
+  margin: 0 .5rem;
+  color: var(--orange);
+}
+
+.icon-head {
+  
+  font-size: 2.5rem;
+  color: var(--orange);
+}
