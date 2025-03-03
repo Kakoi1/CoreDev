@@ -1,9 +1,10 @@
 .imageWrap{
     padding: 303px 0;
-    background: url(../../assets/teamImg.png) center no-repeat;
+    background:  linear-gradient(0deg, rgb(13 6 1 / 82%), rgb(49, 46, 46, 0.041)),url(../../assets/teamImg.png) center no-repeat;
     background-repeat: no-repeat;
     background-size: cover;
     margin-bottom: 100px;
+    height: 80%;
     
 }
 .careerCont{

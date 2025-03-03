@@ -17,13 +17,13 @@ function WhoWeAre() {
     <div className='About-Cont'>
       {/* Image and Text Section */}
       <motion.div
-        className='imageWrap'
+        className='imageWrap1'
         initial='hidden'
         whileInView='visible'
         viewport={{ once: true, amount: 0.5 }}
         variants={fadeInUpVariants}
       >
-        <div className='textcont'>
+        <div className='textcont1'>
           <h2>WHO WE ARE</h2>
           <hr />
           <div style={{ width: '80%' }}>

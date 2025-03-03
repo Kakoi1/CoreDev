@@ -5,7 +5,7 @@
 }
 
 .footerCont{
-
+    height: 100%;
     background-color: var(--black);
 }
 .footerCont h2, .footerCont h3{
@@ -18,7 +18,8 @@
     width: 100%;
     max-width: 1500px;
     margin: 0 auto;
-    height: 30vh;
+  
+    height: 100%;
     background-color: var(--black);
     display: flex;
     color: white;
@@ -26,6 +27,12 @@
     font-family: 'Inter', serif;
     gap: 10px;
     /* background-color: red; */
+}
+.links-wrapper a{
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
 }
 
  .footer-wrapper h2{

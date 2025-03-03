@@ -77,7 +77,7 @@ font-family: "Open-Sans", sans-serif;
     transition: transform 0.3s ease; 
 }
 
-.navigation-container ul .navigation-link, a {
+.navigation-container ul .navigation-link, .navCont a {
     text-decoration: none;
     color: white;
     font-size: 0.9rem;

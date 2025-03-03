@@ -10,7 +10,7 @@ body{
 }
 .home-container .photo-wrapper{
     height: 80vh;
-    width: 100%;
+    /* width: 100%; */
     /* background-image: url('src/assets/coreDev-Team-Edited-2.png'); */
     background: linear-gradient(0deg, rgb(13 6 1 / 82%), rgb(49 46 46 / 13%)), url(src/assets/coreDev-Team-Edited-2.png) top center no-repeat;
     background-size: cover;
