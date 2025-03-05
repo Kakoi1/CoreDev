@@ -50,7 +50,7 @@ const Hardware = () => {
                         }}
                         className="hardware"
                     >
-                        <NavLink to={item.url}>
+                        <NavLink to={item.url} style={{ textDecoration: 'none'}}>
                         <h4 style={{ textAlign: 'center' }}>{item.name}</h4>
                         <img src={item.pictures} alt={item.name} loading="lazy" />
                         </NavLink>
