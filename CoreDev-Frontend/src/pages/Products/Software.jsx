@@ -162,6 +162,8 @@ const Software = () => {
             >
                 <div className="IacWrap">
                     <motion.img
+                     onClick={() => window.open('https://www.coredev.ph/iaccs/', '_blank') }
+                        whileHover={{ scale: 1.2 }}
                         whileTap={{ scale: 0.9 }}
                         transition={{ duration: 0.3 }}
                         className="iaccs"
@@ -169,7 +171,12 @@ const Software = () => {
                         alt=""
                     />
                     <div>
-                        <h4 className="iaccs-title">iAccs 2013</h4>
+                        <motion.h4
+                         onClick={() => window.open('https://www.coredev.ph/iaccs/', '_blank') }
+                          whileHover={{ scale: 1.03 }}
+                        whileTap={{ scale: 1.0 }}
+                        transition={{ duration: 0.3 }}
+                        className="iaccs-title">iAccs 2013</motion.h4>
                         <p>
                             The Most Trusted and Secured Integrated accounting
                             and

@@ -8,5 +8,5 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::get('/clients', [ClientController::class, 'index']);
+Route::get('/clients/{type}', [ClientController::class, 'index']);
 Route::get('/hardware/{category}', [ClientController::class, 'hardware']);

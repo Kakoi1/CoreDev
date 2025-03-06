@@ -9,12 +9,18 @@ use Illuminate\Http\Request;
 
 class ClientController extends Controller
 {
-    public function index()
+    public function index($type)
     {
-        $clients = Imaged::paginate(10);
-        $allClient = Imaged::all();
+        if ($type == 'All') {
+            $clients = Imaged::paginate(10);
+            $allClient = Imaged::all();
+        } else {
+            $clients = Imaged::where('category', $type)->paginate(10);
+            $allClient = Imaged::all();
+        }
+
         // Change '5' to the number of items per page
-        return response()->json(['client' => $clients, 'allclient' => $allClient]);
+        return response()->json($clients);
     }
     public function hardware($category)
     {

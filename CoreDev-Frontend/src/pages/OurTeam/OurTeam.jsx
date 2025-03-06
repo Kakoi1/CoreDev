@@ -12,17 +12,13 @@ function OurTeam() {
         },
         {
             name: "Rosendo Requino Jr.",
-            position: "Chief Operating Officer",
+            position: "Hardware Sales Head",
             image: "/assets/rosendo.png",
         },
-        {
-            name: "Bernardo Pangilinan",
-            position: "Chief Software Architect",
-            image: "/assets/bernardo.png",
-        },
+       
         {
             name: "Mark Anthony del Coro",
-            position: "R&D Head",
+            position: "DevOps Head",
             image: "/assets/mark.png",
         },
         {

@@ -92,8 +92,12 @@ body {
     text-transform: uppercase;
     margin-top: 0;
     margin-bottom: 1rem;
+    cursor: pointer;
   }
 
+.IacWrap div > .iaccs-title:hover{
+  color: #ff6c00;
+}
   .IacWrap div > h4 {
     font-family: "Raleway", sans-serif; 
     color: var(--black);

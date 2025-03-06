@@ -23,7 +23,7 @@ font-family: "Open-Sans", sans-serif;
     color: white;
 }
 .navigation-container {
-    width: 100%;
+    /* width: 100%; */
     max-width: 1500px;
     margin: 0 auto;
     background-color: var(--black);
