@@ -3,41 +3,6 @@ import { motion } from "framer-motion";
 import { IoCheckmarkDone } from "react-icons/io5";
 
 const iAccs = () => {
-    const softwareDetails = [
-        {
-            type: "Modules",
-            description: [
-                "Core Accounting System",
-                "Deposits System (Linked to Core Accounting)",
-                "Loan System (Linked to Core Accounting)",
-                "Sales & Inventory with POS (Linked to Core Accounting)",
-            ],
-        },
-        {
-            type: "Add ons Systems",
-            description: [
-                "Point of Sale",
-                "E-Services Portal",
-                "SMS Plus (Gateway)",
-                "Online Payment Gateway",
-                "Coop Wallet",
-                "Workflow System",
-                "Online Membership",
-                "Online Queuing System",
-                "Online Voting System",
-                "Help Desk System",
-                "OrangePay Plus (HRIS)",
-            ],
-        },
-        {
-            type: "Others Services",
-            description: [
-                "Website Design and Domain Hosting",
-                "Cloud Server",
-                "Computer peripherals",
-            ],
-        },
-    ];
 
     const softwareFeatures = [
         {
@@ -107,21 +72,6 @@ const iAccs = () => {
                     &quot;An Accounting Software for Cooperatives, Banks,
                     Lending Institutions, Financial Institutions&quot;
                 </p>
-                <div className="hero">
-                    {softwareDetails.map((software, index) => (
-                        <div key={index} className={`wrapper div-${index}`}>
-                            <h3>{software.type}</h3>
-                            <ul className={`list-${index}`}>
-                                {software.description.map((desc, index) => (
-                                    <li key={index}>
-                                        <IoCheckmarkDone className="icon" />
-                                        {desc}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    ))}
-                </div>
             </div>
 
             <motion.div
