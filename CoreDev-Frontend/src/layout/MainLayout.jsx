@@ -13,6 +13,8 @@ const MainLayout = () => {
   const [isSplit, setIsSplit] = useState(false);
   const location = useLocation(); // Detect page change
 
+  
+
   useEffect(() => {
     // Reset loader and animation on each route change
     setIsLoading(true);
@@ -72,7 +74,7 @@ const MainLayout = () => {
       )}
 
       {/* Main Content */}
-      <div className="main-container">
+      <div className="main-container" onLoad={backToTop}>
         <motion.div className="progress-bar" style={{ scaleX: scrollYProgress }}></motion.div>
         <Navigation />
         <Outlet />

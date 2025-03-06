@@ -28,7 +28,7 @@
     gap: 10px;
     /* background-color: red; */
 }
-.links-wrapper a{
+.links-wrapper a, .custom-list a{
     font-size: 1rem;
     font-weight: bold;
     text-decoration: none;
