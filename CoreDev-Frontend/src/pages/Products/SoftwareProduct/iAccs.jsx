@@ -1,8 +1,44 @@
-import "./IAccs.css"
+import "./IAccs.css";
 import { motion } from "framer-motion";
-import { RiCheckLine, RiCodepenFill } from "react-icons/ri";
+import { IoCheckmarkDone } from "react-icons/io5";
 
 const iAccs = () => {
+    const softwareDetails = [
+        {
+            type: "Modules",
+            description: [
+                "Core Accounting System",
+                "Deposits System (Linked to Core Accounting)",
+                "Loan System (Linked to Core Accounting)",
+                "Sales & Inventory with POS (Linked to Core Accounting)",
+            ],
+        },
+        {
+            type: "Add ons Systems",
+            description: [
+                "Point of Sale",
+                "E-Services Portal",
+                "SMS Plus (Gateway)",
+                "Online Payment Gateway",
+                "Coop Wallet",
+                "Workflow System",
+                "Online Membership",
+                "Online Queuing System",
+                "Online Voting System",
+                "Help Desk System",
+                "OrangePay Plus (HRIS)",
+            ],
+        },
+        {
+            type: "Others Services",
+            description: [
+                "Website Design and Domain Hosting",
+                "Cloud Server",
+                "Computer peripherals",
+            ],
+        },
+    ];
+
     const softwareFeatures = [
         {
             title: "Core Accounting System",
@@ -19,7 +55,7 @@ const iAccs = () => {
             ],
         },
         {
-            title: "Saving / Deposits System",
+            title: "Deposits System (Linked to Core Accounting)",
             features: [
                 "Savings, Share Capital, Time Deposit, Special Deposit",
                 "Interest/Witholding Tax on Deposits Processing",
@@ -30,7 +66,7 @@ const iAccs = () => {
             ],
         },
         {
-            title: "Loan System",
+            title: "Loan System (Linked to Core Accounting)",
             features: [
                 "Analysis of Loans Receivable",
                 "Aging of Loans Receivable",
@@ -47,48 +83,93 @@ const iAccs = () => {
                 "Client Credit Rating",
             ],
         },
+        {
+            title: "Sales & Inventory with POS (Linked to Core Accounting)",
+            features: [
+                "Item Maintenance",
+                "Receiving/Return",
+                "Point on Sale",
+                "Inventory",
+                "Stocks Warehousing/Transfer",
+                "Purchase Order",
+                "Supplier Maintenance",
+                "Physical Inventory",
+                "Ordering System",
+            ],
+        },
     ];
 
     return (
-        <motion.div
-            layout
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="divWrap"
-        >
-            {softwareFeatures.map((software, index) => (
-                <motion.div
-                    key={index}
-                    whileTap={{ scale: 0.9 }}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{
-                        opacity: 1,
-                        scale: 1,
-                    }}
-                    transition={{
-                        type: "",
-                        stiffness: 200,
-                        damping: 10,
-                        duration: 0.3,
-                        delay: 1 * 0.2,
-                    }}
-                    className="Soft-item"
-                >
-                    <RiCodepenFill className="icon-head"/>
-                    <h4>{software.title}</h4>
-                    <ul>
-                        {software.features.map((feature, index) => (
-                            <li key={index}>
-                                <RiCheckLine className="icon" />
-                                {feature}
-                            </li>
-                        ))}
-                    </ul>
-                </motion.div>
-            ))}
-        </motion.div>
+        <>
+            <div className="hero-wrapper">
+                <h2>(INTEGRATED ACCOUNTING SYSTEM)</h2>
+                <p>
+                    &quot;An Accounting Software for Cooperatives, Banks,
+                    Lending Institutions, Financial Institutions&quot;
+                </p>
+                <div className="hero">
+                    {softwareDetails.map((software, index) => (
+                        <div key={index} className={`wrapper div-${index}`}>
+                            <h3>{software.type}</h3>
+                            <ul className={`list-${index}`}>
+                                {software.description.map((desc, index) => (
+                                    <li key={index}>
+                                        <IoCheckmarkDone className="icon" />
+                                        {desc}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            <motion.div
+                layout
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="feature"
+            >
+                <p className="ffeatureont-raleway m-5">IACCS-IX (Integrated Accounting System)</p>
+                <h2 className="font-raleway m-5 p-1">Our Features</h2>
+                <div className="divWrap">
+                    {softwareFeatures.map((software, index) => (
+                        <motion.div
+                            key={index}
+                            whileTap={{ scale: 0.9 }}
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{
+                                opacity: 1,
+                                scale: 1,
+                            }}
+                            transition={{
+                                type: "",
+                                stiffness: 200,
+                                damping: 10,
+                                duration: 0.3,
+                                delay: index * 0.2,
+                            }}
+                            className="Soft-item"
+                        >
+                            <div className="head">
+                                {/* <RiCodepenFill className="icon-head" /> */}
+                                <h4>{software.title}</h4>
+                            </div>
+                            <ul>
+                                {software.features.map((feature, index) => (
+                                    <li key={index}>
+                                        <IoCheckmarkDone className="icon" />
+                                        {feature}
+                                    </li>
+                                ))}
+                            </ul>
+                        </motion.div>
+                    ))}
+                </div>
+            </motion.div>
+        </>
     );
 };
 

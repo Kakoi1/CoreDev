@@ -114,12 +114,18 @@ body {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 1rem;
-    transition: background-color 0.3s ease;
+  }
+
+
+  .IacWrap-btn:hover > .icon{
+    transform: scale(1.2);
   }
 
   .IacWrap-btn .icon {
     color: whitesmoke;
     font-size: 1.5rem;
+    transition: .3s ease;
+
   }
   
 

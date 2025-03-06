@@ -182,14 +182,6 @@ const JobOfferCard = ({ title, type, descriptions, address, link }) => {
                                 </p>
                             )
                         )}
-
-                        <a
-                            href={link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Apply Now
-                        </a>
                     </motion.div>
                 )}
             </AnimatePresence>
