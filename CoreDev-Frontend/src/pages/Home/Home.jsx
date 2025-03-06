@@ -2,20 +2,55 @@ import './Home.css';
 import teamPhoto from '../../assets/coreDev-Team-Edited-2.png';
 import { useNavigate } from "react-router-dom";
 import ParticlesComponent from './ParticlesComponent';
+import Carousel from './Carousel';
 import { FaLaptopCode } from "react-icons/fa";
 import { BiServer } from "react-icons/bi";
 import { BsHeadset } from "react-icons/bs";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { easeInOut, motion } from 'framer-motion';
 import pcIcon from '../../assets/pc-icon.png';
 import { FiTool } from "react-icons/fi";
 import { TfiEmail } from "react-icons/tfi";
 import { FaFacebook } from "react-icons/fa";
+import axios from "axios";
 
-
+const MAX_RETRIES = 3;
+const RETRY_DELAY = 3000;
 
 const Home = () => {
+
       const navigate = useNavigate();
+      const [logo, setLogo] = useState([]);
+      const [loading, setLoading] = useState(true);
+       const [retryCount, setRetryCount] = useState(0);
+        const [error, setError] = useState(null);
+
+      const fetchLogo = async (attempt = 1) => {
+        setLoading(true);
+        setError(null);
+    
+        try {
+          const response = await axios.get('http://localhost:8000/api/Client-Logo');
+          setLogo(response.data);
+          setLoading(false);
+        } catch (err) {
+          console.error(`Error fetching clients (Attempt ${attempt}):`, err);
+    
+          if (attempt < MAX_RETRIES) {
+            setTimeout(() => {
+              setRetryCount(attempt); // Trigger re-fetch with increased attempt count
+            }, RETRY_DELAY);
+          } else {
+            setError("Failed to fetch clients. Please try again later.");
+            setLoading(false);
+          }
+        }
+      };
+
+       useEffect(() => {
+          fetchLogo(retryCount + 1);
+        }, [retryCount]);
+
     const [services] = useState([
         {
             name: "Software Development",
@@ -39,6 +74,10 @@ const Home = () => {
             link: '/Contact-us'
         }
     ]);
+
+
+    console.log(logo);
+
     
     return (
         
@@ -110,36 +149,8 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div className='reach-us-wrapper'>
-                <div className="left">
-                    <h2 className='header'>Reach Us</h2>
-                    <p className='description'>
-                        For any inquiries, concerns, or requests for further information, please do not hesitate to contact us. 
-                        We are committed to providing excellent customer service and will be happy to assist you. 
-                        Our contact details are listed below.
-                    </p>
-                    <div className='contact'>
-                        <a href="mailto:info@coredev.ph">
-                            <TfiEmail className='icon' color='#ff6c00'/> info@coredev.ph
-                        </a>
-                    </div>
-                    <div className='contact'>
-                        <a href="https://web.facebook.com/coredev" target="_blank" rel="noopener noreferrer">
-                            <FaFacebook color='#ff6c00' className='icon'/> facebook.com/coredev
-                        </a>
-                    </div>
-                </div>
-                <div className="right">
-                    <form action="">
-                        <div className='fullname'>
-                            <input type="text" name="first_name" placeholder='First Name' required />
-                            <input type="text" name="last_name" placeholder='Last Name' required />
-                        </div>
-                        <input type="email" name="email" placeholder='Email' required />
-                        <textarea name="message" placeholder='Your Message' required></textarea>
-                        <button className='submit-btn' type="submit">Submit</button>
-                    </form>
-                </div>
+            <div className='logo-wrapper'>
+                    <Carousel images={logo}/>
             </div>
         </div>
     );

@@ -22,7 +22,7 @@ const Footer = () => {
         },
         services: {
             label: "OUR SERVICES",
-            services: [{label:"Software Development", link: '/Products/Software'}, {label:"Hardware Distributor",link: '/Products/Software'}, {label:"Service Provider", link: '/Products/Software'}],
+            services: [{label:"Software Development", link: '/Products/Software'}, {label:"Hardware Distributor",link: '/Products/Software'}, {label:"Service Provider", link: '/Contact-us'}],
         },
         contact: {
             label: "EMAIL US",

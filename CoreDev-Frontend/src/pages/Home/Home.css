@@ -192,120 +192,6 @@ body{
     width: 330px;
 }
 
-.home-container .reach-us-wrapper{
-    /* width: 100%; */
-    max-width: 1300px;
-    margin: 0 auto;
-    color: black;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px;
-    /* height: 80vh; */
-    font-family: "Open-Sans", sans-serif;
-    gap: 40px;
-}
-
-.home-container .reach-us-wrapper .left{
-    /* color: black !important; */
-    letter-spacing: 1px;
-    line-height: 40px;
-    font-weight: lighter;
-    flex: 1
-}
-
-.home-container .reach-us-wrapper .left .header{
-    font-family: "Raleway", sans-serif !important;
-    color: var(--orange);
-    font-size: 4.1rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-    font-family: "Open-Sans", sans-serif;
-    
-}
-
-.home-container .reach-us-wrapper .left .description{
-    font-weight: 200;
-    font-size: 1.2rem;
-    color: #777777;
-}
-
-.home-container .reach-us-wrapper .left .contact {
-    display: flex;
-    gap: 15px;
-    justify-content: start;
-}
-.home-container .reach-us-wrapper .left .contact a{
-
-    color: blue;
-    text-decoration: underline;
-    font-weight: 200;
-    font-family: "Open-Sans", sans-serif;
-  
-}
-.home-container .reach-us-wrapper .left .contact .icon{
-    margin-right: 5px;
-}
-
-.home-container .reach-us-wrapper .right{
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    
-}
-
-.home-container .reach-us-wrapper .right form{
-    display: flex;
-    gap: 4px;
-    flex-direction: column;
-    font-family: "Open-Sans", sans-serif;
-    width: 80%;
-   
-}
-.home-container .reach-us-wrapper .right form input, textarea{
-    padding: 15px 10px;
-    border-radius: 5px;
-    border: 2px solid rgb(162, 161, 161);
-    font-family: "Open-Sans", sans-serif;
-    
-   
-}
-.home-container .reach-us-wrapper .right form textarea{
-    resize: vertical;
-    min-height: 100px;
-}
-
-.home-container .reach-us-wrapper .right form button{
-    background-color: var(--orange);
-    padding: 10px;
-    border: none;
-    color: white;
-    font-size: 1rem;
-    letter-spacing: 1px;
-    cursor: pointer;
-    font-weight: 200;
-    border-radius: 8px;
-}
-
-.home-container .reach-us-wrapper .right form button:hover{
-    background-color: #dd5e04;
-}
-
-.home-container .reach-us-wrapper .right form input::placeholder, textarea::placeholder{
-    font-weight: 200;
-}
-
-.home-container .reach-us-wrapper .right form .fullname{
-    
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-}
-.home-container .reach-us-wrapper .right form .fullname input{
-    width: 100%;
-
-}
-
 @media (max-width: 800px){
     .home-container .photo-wrapper span {
         font-size: 1.9rem; 
@@ -348,31 +234,10 @@ body{
         margin: 0 auto;
     }
 
-    .home-container .reach-us-wrapper {
-        flex-direction: column;
-        height: auto;
-    }
-    .home-container .reach-us-wrapper .header{
-        text-align: center;
-    }
-
-    .home-container .reach-us-wrapper p{
-        text-align: justify;
-        padding: 10px;
-        line-height: 30px;
-        text-indent: 20px;
-    }
-
-    .home-container .reach-us-wrapper .right{
-        justify-content: center;
-    }
-
-    .home-container .reach-us-wrapper .right form{
-        width: 100%;
-    }
-
   
 }
+
+
 
 /* @media (max-width: 700px){
     .home-container .photo-wrapper span {
@@ -409,7 +274,43 @@ body{
     position: absolute;
     left: 50%; /* Adjust based on logo placement */
     top: 35%; /* Adjust vertical positioning */
-    z-index: 10;
+    /* z-index: 10; */
     text-align: left;
 }
+  /* YourComponent.css */
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
   
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .picture img {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+  }
+  
+  .detail {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .detail h3 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  
+  .detail span {
+    font-size: 1rem;
+    color: #666;
+  }
