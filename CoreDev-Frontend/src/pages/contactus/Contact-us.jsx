@@ -6,12 +6,7 @@ import "./Contact-us.css";
 const ContactInfo = () => {
   const details = [
     {
-      island: "Luzon",
-      address: "4th Floor DACCO MPC Building #40 Anabu Road Anabu II-B City of Imus, Cavite",
-      tel: "(046) - 501 6596",
-    },
-    {
-      island: "Visayas",
+      island: "Main",
       address: "96 J. Alcantara Street, Brgy. Sambag 1, Cebu City",
       tel: "(032) - 328-2694 GLOBE | (032) - 234-5954 PLDT",
     },
@@ -19,6 +14,11 @@ const ContactInfo = () => {
       island: "Mindanao",
       address: "11B, Cherry Tree Street, Palm Drive, Buhangin Davao City, Davao Del Sur",
       tel: "(082) - 233 9306",
+    },
+    {
+      island: "Luzon",
+      address: "4th Floor DACCO MPC Building #40 Anabu Road Anabu II-B City of Imus, Cavite",
+      tel: "(046) - 501 6596",
     },
   ];
 
@@ -167,7 +167,7 @@ const Contact = () => {
         <h2>Where To Find Us.</h2>
         <div className='mapCont'>
 
-        <div className="tab-container" style={{ marginBottom: '20px', float: 'right' }}>
+        <div className="tab-container" style={{ marginBottom: '-15px', float: 'right' }}>
           {locations.map((location) => (
             <button
               key={location.id}

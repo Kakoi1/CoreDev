@@ -1,5 +1,6 @@
 import './Home.css';        
 import teamPhoto from '../../assets/coreDev-Team-Edited-2.png';
+import { useNavigate } from "react-router-dom";
 import ParticlesComponent from './ParticlesComponent';
 import { FaLaptopCode } from "react-icons/fa";
 import { BiServer } from "react-icons/bi";
@@ -14,25 +15,28 @@ import { FaFacebook } from "react-icons/fa";
 
 
 const Home = () => {
-    
+      const navigate = useNavigate();
     const [services] = useState([
         {
             name: "Software Development",
             icon: <FaLaptopCode className='icon' />,
             description: "We offer more than just accounting and banking software solutions – our diverse software products are tailored to meet your needs.",
-            label: "Explore"
+            label: "Explore",
+            link: '/Products/Software'
         },
         {
             name: "Hardware Distributor",
             icon: <BiServer className='icon' />,
             description: "We've broadened our product range to meet our clients' demands, offering computer peripherals, servers, and different types of printers like Passbook and POS printers.",
-            label: "Explore"
+            label: "Explore",
+            link: '/Products/Hardware'
         },
         {   
             name: "Service Provider",
             icon: <BsHeadset className='icon' />,
             description: "We provide 24/7 technical support to our valued clients. Feel free to contact us any time of the day. We are at your service.",
-            label: "Contact"
+            label: "Contact",
+            link: '/Contact-us'
         }
     ]);
     
@@ -63,6 +67,9 @@ const Home = () => {
                             </div>
                             <div className='bottom'>
                                 <motion.button
+                                  onClick={() =>
+                                    navigate(item.link)
+                                  }
                                     type='button'
                                     whileHover={{ scale: 1.2 }}
                                     whileTap={{ scale: 0.9 }}
@@ -91,7 +98,11 @@ const Home = () => {
                             transition={{ duration: 0.3 }}
                         >
                             <FiTool />
-                            <span>Join Now</span>
+                            <span
+                            onClick={() =>
+                                navigate("/careers")
+                              } 
+                            >Join Now</span>
                         </motion.button>
                     </div>
                     <div className="right">
