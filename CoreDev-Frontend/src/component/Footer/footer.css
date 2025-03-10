@@ -14,6 +14,13 @@
 .footerCont li, .footerCont p{
     font-family: "Open Sans", sans-serif !important;
 }
+.CopyRight{
+    padding: 30px;
+    text-align: center;
+    color: white;
+    font-family: "Raleway", sans-serif !important;
+    text-wrap: wrap ;
+}
 .footer-wrapper{
     /* width: 100%; */
     max-width: 1500px;

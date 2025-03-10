@@ -22,7 +22,7 @@ const Footer = () => {
         },
         services: {
             label: "OUR SERVICES",
-            services: [{label:"Software Development", link: '/Products/Software'}, {label:"Hardware Distributor",link: '/Products/Software'}, {label:"Service Provider", link: '/Products/Software'}],
+            services: [{label:"Software Development", link: '/Products/Software'}, {label:"Hardware Distributor",link: '/Products/Software'}, {label:"Service Provider", link: '/Contact-us'}],
         },
         contact: {
             label: "EMAIL US",
@@ -81,6 +81,9 @@ const Footer = () => {
                 <h2>{footer.about.label}</h2>
                 <p>{footer.about.description}</p>
             </div>
+            </footer>
+            <footer className='CopyRight'>
+            © Copyright coreDev Solutions, Inc.. All Rights Reserved 2025
             </footer>
         </div>
     );
