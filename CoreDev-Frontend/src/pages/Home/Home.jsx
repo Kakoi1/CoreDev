@@ -149,8 +149,15 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div className='logo-wrapper'>
-                    <Carousel images={logo}/>
+            <h1 className='ClientLogo' style={{textAlign: 'center'}}>Our Clients</h1>
+            <div className='logo-wrapper'  >
+               
+                    <Carousel images={logo} />
+            </div>
+            <div className="motoCont">
+                <div className='Textcontent'>
+                <h1>INNOVATING YOUR FUTURE</h1>
+                </div>
             </div>
         </div>
     );

@@ -82,6 +82,9 @@ const Footer = () => {
                 <p>{footer.about.description}</p>
             </div>
             </footer>
+            <footer className='CopyRight'>
+            © Copyright coreDev Solutions, Inc.. All Rights Reserved 2025
+            </footer>
         </div>
     );
 };

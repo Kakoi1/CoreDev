@@ -236,7 +236,54 @@ body{
 
   
 }
+.ClientLogo{
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+    color: #dd5e04;
+    margin-top: 40px;
+}
+.Textcontent{
+    text-align:center;
+    color:#ffffff;
+    font-family: "Raleway", sans-serif;
+    letter-spacing: 15px;
+    /* padding-top:200px; */
+}
+.Textcontent h1 {
+    color: hsl(0, 0%, 28%);
+    font-size: 50px!important;
+    font-weight: bold!important;
+    font-family: monospace;
+    letter-spacing: 7px!important;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 64px;
+    background: linear-gradient(to right, hsl(24, 100%, 50%) 0, hsl(0, 0%, 100%) 10%, hsl(24, 100%, 50%) 20%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3s infinite linear;
+}
 
+@keyframes shine {
+    0% {
+        background-position: 0;
+    }
+    100% {
+        background-position: 795px;
+    }
+}   
+.motoCont{
+    margin-top: 40px;
+    background: linear-gradient(rgb(68 70 72 / 0%), rgb(0, 0, 0)), url(../../assets/teamImg.png) fixed center center;
+    background-attachment: fixed;
+    background-size: cover;
+    /* height: 30vh; */
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 /* @media (max-width: 700px){

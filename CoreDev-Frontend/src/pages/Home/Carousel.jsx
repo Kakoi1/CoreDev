@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-// Import Swiper React components
+import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
@@ -13,6 +13,7 @@ import './Carousel.css';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 export default function App({ images }) {
+  const navigate = useNavigate();
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
 
@@ -64,11 +65,11 @@ export default function App({ images }) {
       >
         {images.map((image, index) => (
           <SwiperSlide key={index}>
-            <div className="slide-content">
+            <div className="slide-content" onClick={() => navigate("/Clients")} >
               <img src={`src/assets/clients/${image.image}`} alt={image.alt || `Slide ${index + 1}`} />
               {/* Overlay for each image */}
-              <div className="overlay">
-                <h3>{image.name}</h3>
+              <div className="overlay" >
+                {/* <h3  >{image.name}</h3> */}
               </div>
             </div>
           </SwiperSlide>
