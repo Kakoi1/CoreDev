@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import "./SoftwareProduct.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import { RiCodepenFill } from "react-icons/ri";
+import { FaArrowLeftLong } from "react-icons/fa6";
 
 export const SoftwareProduct = () => {
     const location = useLocation();
@@ -25,7 +26,8 @@ export const SoftwareProduct = () => {
                 className="project-detail"
             >
                 <div className="image-wrap">
-                    <img
+                    <motion.img
+                        whileHover={{scale: 1.1}}
                         className="software-image"
                         src={[softwareProduct.pic]}
                         alt={softwareProduct.title}
@@ -36,7 +38,7 @@ export const SoftwareProduct = () => {
                     </div>
                 </div>
                 <button className="back-button" onClick={() => navigate(-1)}>
-                    Back to Software Products
+                    <FaArrowLeftLong className="back-icon" /> Back to Software Products
                 </button>
                 <div className="proj-wrap">
                     <div className="Iac-wrap">

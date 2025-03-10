@@ -82,7 +82,7 @@ const iAccs = () => {
                 transition={{ duration: 0.3 }}
                 className="feature"
             >
-                <p className="ffeatureont-raleway m-5">IACCS-IX (Integrated Accounting System)</p>
+                <p className="font-raleway m-5">IACCS-IX (Integrated Accounting System)</p>
                 <h2 className="font-raleway m-5 p-1">Our Features</h2>
                 <div className="divWrap">
                     {softwareFeatures.map((software, index) => (

@@ -12,8 +12,12 @@
 
 .hero-wrapper > p{
   font-size: 1.5rem;
-  font-weight: 800;
+  font-weight: 500;
   opacity: .7
+}
+
+.hero-wrapper > h2, .feature > h2 {
+  color: var(--black);
 }
 
 
@@ -31,13 +35,16 @@
 
 .feature > h2 {
   font-size: 1.75rem;
-  color: var(--black);
   text-transform: uppercase;
 }
 
 .feature > p {
   color: var(--black);
-  opacity: .5
+  opacity: .5;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: underline var(--orange);
+  text-underline-offset: .3rem;
 }
 
 .divWrap {
@@ -59,7 +66,6 @@
   border-radius: 5px;
   border: 2px solid var(--orange);
   overflow: hidden;
-  width: calc(30% - 1rem);
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
 }
@@ -122,10 +128,6 @@
     grid-template-columns: repeat(2, 1fr);
     margin: 2rem;
   }
-
-  .Soft-item {
-    width: 100%;
-  }
 }
 
 @media only screen and (min-width: 992px) {
@@ -141,7 +143,7 @@
     display: grid;
     grid-template-columns: repeat(1fr, 2);
   }
-  .feature, .divWrap {
+  .feature {
     display:block;
   }
 
