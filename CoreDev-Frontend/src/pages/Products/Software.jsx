@@ -1,5 +1,4 @@
 import "./Software.css";
-import iAccs from "../../assets/ais.png";
 import { RiCodepenFill } from "react-icons/ri";
 import { IoMdOpen } from "react-icons/io";
 import { motion } from "framer-motion";
@@ -168,10 +167,8 @@ const Software = () => {
                         whileTap={{ scale: 0.9 }}
                         transition={{ duration: 0.3 }}
                         className="iaccs"
-                        src={iAccs}
+                        src="/assets/iacss-logo.png"
                         alt=""
-                        width={74}
-                        height={74}
                     />
                     <div>
                         <motion.h4

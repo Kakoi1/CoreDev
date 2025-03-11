@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { BiLocationPlus } from 'react-icons/bi';
-import './MileStone.css';
+import "./Milestone.css";
 import { motion, useInView } from 'framer-motion';
 
 function MileStone() {

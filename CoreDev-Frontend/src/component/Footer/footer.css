@@ -18,6 +18,13 @@
     font-family: "Raleway", sans-serif !important;
     
 }
+.CopyRight{
+    padding: 30px;
+    text-align: center;
+    color: white;
+    font-family: "Raleway", sans-serif !important;
+    text-wrap: wrap ;
+}
 .footer-wrapper{
     max-width: 1200px;
     margin: 0 auto;
@@ -29,7 +36,7 @@
     font-family: 'Inter', serif;
     justify-content: space-between;
 }
-.links-wrapper a{
+.links-wrapper a, .custom-list a{
     font-size: 1rem;
     font-weight: lighter;
     text-decoration: none;

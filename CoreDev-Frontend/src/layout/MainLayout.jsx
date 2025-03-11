@@ -14,13 +14,16 @@ const MainLayout = () => {
   const [isSplit, setIsSplit] = useState(false);
   const location = useLocation(); // Detect page change
 
+  
+
   useEffect(() => {
     // Reset loader and animation on each route change
     setIsLoading(true);
     setIsSplit(false);
 
     const timer = setTimeout(() => {
-      setIsLoading(false); // Hide loader
+      setIsLoading(false); 
+      backToTop()// Hide loader
       setTimeout(() => {
         setIsSplit(true); // Start split animation
       }, 500);
@@ -73,7 +76,7 @@ const MainLayout = () => {
       )}
 
       {/* Main Content */}
-      <div className="main-container">
+      <div className="main-container" onLoad={backToTop}>
         <motion.div className="progress-bar" style={{ scaleX: scrollYProgress }}></motion.div>
         <TopBar/>
         <Navigation />

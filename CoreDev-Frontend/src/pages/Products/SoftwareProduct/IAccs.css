@@ -1,16 +1,71 @@
+.hero-wrapper {
+  font-family: "Raleway", sans-serif;
+  color: var(--black);
+  margin: 2rem 5rem;
+}
+
+.hero-wrapper > h2 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 3rem;
+}
+
+.hero-wrapper > p{
+  font-size: 1.5rem;
+  font-weight: 500;
+  opacity: .7
+}
+
+.hero-wrapper > h2, .feature > h2 {
+  color: var(--black);
+}
+
+
+.font-raleway {
+  font-family: "Raleway", sans-serif;
+}
+
+.m-5 {
+  margin: 0 5rem;
+}
+
+.p-1 {
+  padding: 1rem 0;
+}
+
+.feature > h2 {
+  font-size: 1.75rem;
+  text-transform: uppercase;
+}
+
+.feature > p {
+  color: var(--black);
+  opacity: .5;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: underline var(--orange);
+  text-underline-offset: .3rem;
+}
 
 .divWrap {
   display: flex;
   justify-content: center;
   gap: 2rem;
-  padding: 2rem 2rem;
+  margin: 2rem 5rem;
+}
+
+.head {
+  background: var(--orange);
+  opacity: .9;
+  padding: 2rem;
+  text-align: center;;
 }
 
 .Soft-item {
   background-color: white;
-  border-radius: 10px;
-  padding: 2rem;
-  width: calc(30% - 1rem);
+  border-radius: 5px;
+  border: 2px solid var(--orange);
+  overflow: hidden;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
 }
@@ -20,8 +75,8 @@
 }
 
 .Soft-item h4 {
-  color: var(--black);
-  font-size: 1.5rem;
+  color: whitesmoke;
+  font-size: 1rem;
   font-weight: 900;
   margin: 0;
   font-family: "Raleway", sans-serif;
@@ -33,6 +88,7 @@
   font-family: 'Open-Sans', sans-serif !important;
   font-size: 14px;
   line-height: 1.5;
+  padding: 1rem;
 }
 
 .icon {
@@ -45,4 +101,54 @@
   
   font-size: 2.5rem;
   color: var(--orange);
+}
+
+@media only screen and (max-width: 768px){
+
+  .wrapper > .list-1{
+    display: block;
+  }
+
+  .divWrap {
+    display: block;
+    /* margin: 2rem; */
+  }
+
+  .Soft-item {
+    width: 100%;
+    margin: 2rem 0;
+  }
+
+
+}
+
+@media only screen and (min-width: 768px){
+  .divWrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 2rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .divWrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 2rem 5rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .wrapper > .list-1{
+    display: grid;
+    grid-template-columns: repeat(1fr, 2);
+  }
+  .feature {
+    display:block;
+  }
+
+  .Soft-item {
+    margin: 2rem 0;
+  }
+  
 }

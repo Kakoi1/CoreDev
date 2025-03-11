@@ -27,4 +27,11 @@ class ClientController extends Controller
         $hardware = Hardware::where('category', $category)->get();
         return response()->json($hardware);
     }
+
+    public function homeLogo()
+    {
+        $logo = Imaged::take(30)->get();
+
+        return response()->json($logo);
+    }
 }

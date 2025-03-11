@@ -10,3 +10,4 @@ Route::get('/user', function (Request $request) {
 
 Route::get('/clients/{type}', [ClientController::class, 'index']);
 Route::get('/hardware/{category}', [ClientController::class, 'hardware']);
+Route::get('/Client-Logo', [ClientController::class, 'homeLogo']);

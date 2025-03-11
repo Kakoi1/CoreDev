@@ -1,65 +1,61 @@
 /* Global Styles */
 body {
     background-color: #f1f8ff;
-    
-  }
-  .SoftwareContainer li,  .SoftwareContainer p{
-  font-family: "Open-Sans", sans-serif;
-  font-size: 15px;
-  line-height: 21px;
-  margin-bottom: 0;
-  color: #777777;
-  /* font-weight:600; */
 }
-.SoftwareContainer h4,  .SoftwareContainer h2{
-  font-family: "Raleway", sans-serif;
-  font-weight: bolder !important;
+.SoftwareContainer li,
+.SoftwareContainer p {
+    font-family: "Open-Sans", sans-serif;
+    font-size: 15px;
+    line-height: 21px;
+    margin-bottom: 0;
+    color: #777777;
+    /* font-weight:600; */
 }
-  /* Headings */
-  .SoftwareContainer h2 {
+.SoftwareContainer h4,
+.SoftwareContainer h2 {
+    font-family: "Raleway", sans-serif;
+    font-weight: bolder !important;
+}
+/* Headings */
+.SoftwareContainer h2 {
     font-size: 2rem;
     color: #ff6c00;
     text-shadow: -1px 1px #080707;
     margin-bottom: 1.5rem;
-  }
-  
-  /* Project Section */
-  .pastProj {
-    display: flex;
-    flex-wrap: wrap;/* Allows items to wrap to the next line if needed */
-    justify-content: space-between; /* Centers items horizontally */
-    align-items: center; /* Centers items vertically */
-    gap: 2rem; 
-    width: 100%;
+}
+
+/* Project Section */
+.pastProj {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
     padding: 2rem 0;
-  }
-  
-  .pastProj h4 {
+}
+
+.pastProj h4 {
     font-size: 1.25rem;
     color: #ff6c00;
     font-family: "Raleway", sans-serif;
-  }
-  
-  /* Project Details */
-  .projectDetail {
+}
+
+/* Project Details */
+.projectDetail {
     background-color: white;
     padding: 1.5rem;
     border-radius: 12px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    height: 320px;
-    width:33.5rem;
     overflow: auto;
-  }
-  
-  /* Software Container */
-  .SoftwareContainer {
+}
+
+/* Software Container */
+.SoftwareContainer {
     padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
-  }
-  
-  /* Wrapper */
-  .SoftWrap {
+}
+
+/* Wrapper */
+.SoftWrap {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
@@ -67,25 +63,25 @@ body {
     padding: 1rem;
     background-color: white;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Iac Section */
-  .IacWrap {
+}
+
+/* Iac Section */
+.IacWrap {
     align-items: center;
     padding: 1rem;
     gap: 1rem;
     flex-wrap: wrap;
-    width: 100%
-  }
-  
-  .IacWrap p {
+    width: 100%;
+}
+
+.IacWrap p {
     font-size: 1rem;
     font-family: "Raleway", sans-serif;
     margin: 1rem 0;
     padding: 0;
-  }
+}
 
-  .IacWrap div > .iaccs-title{
+.IacWrap div > .iaccs-title {
     font-family: "Raleway", sans-serif;
     font-size: 2rem;
     color: var(--black);
@@ -93,19 +89,19 @@ body {
     margin-top: 0;
     margin-bottom: 1rem;
     cursor: pointer;
-  }
-
-.IacWrap div > .iaccs-title:hover{
-  color: #ff6c00;
 }
-  .IacWrap div > h4 {
-    font-family: "Raleway", sans-serif; 
+
+.IacWrap div > .iaccs-title:hover {
+    color: #ff6c00;
+}
+.IacWrap div > h4 {
+    font-family: "Raleway", sans-serif;
     color: var(--black);
     text-transform: uppercase;
     margin-top: 0;
-  }
+}
 
-  .IacWrap-btn {
+.IacWrap-btn {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -118,31 +114,32 @@ body {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 1rem;
-    transition: background-color 0.3s ease;
-  }
+}
 
-  .IacWrap-btn .icon {
+.IacWrap-btn:hover > .icon {
+    transform: scale(1.2);
+}
+
+.IacWrap-btn .icon {
     color: whitesmoke;
     font-size: 1.5rem;
-  }
-  
+    transition: 0.3s ease;
+}
 
-  
-  /* Features Section */
-  .featureWrap {
-    padding: .5rem;
+/* Features Section */
+.featureWrap {
+    padding: 0.5rem;
     border-radius: 10px;
     width: 90%;
-   
-  }
-  
-  /* Soft Items */
+}
 
-  .iacc {
+/* Soft Items */
+
+.iacc {
     height: 100px;
     width: 100px;
-  }
-  .projectDetail::-webkit-scrollbar {
+}
+.projectDetail::-webkit-scrollbar {
     width: 8px; /* Width of the scrollbar */
 }
 
@@ -160,40 +157,52 @@ body {
 }
 
 .product-title {
-  font-size: 1.5rem;
-  font-family: "Raleway", sans-serif;
-  color: var(--black);
-  text-transform: uppercase;
-  margin-top: 4rem;
-  margin-bottom: 0;
+    font-size: 1.75rem;
+    font-family: "Raleway", sans-serif;
+    color: var(--black);
+    text-transform: uppercase;
+    margin-top: 4rem;
+    margin-bottom: 0;
 }
-  
-  /* Media Queries */
-  @media screen and (max-width: 768px) {
+
+.SoftwareContainer svg {
+  color: #ff6c00;
+  font-size: 30px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
     .divWrap {
-      display: block;
-      width: 100%;
+        display: block;
+        width: 100%;
     }
-  
+
     .Soft-item {
-      width: 80%;
-      margin: 0 auto;
-      margin-bottom: 20px;
+        width: 80%;
+        margin: 0 auto;
+        margin-bottom: 20px;
     }
-  
+
     .IacWrap {
-      justify-content: center;
+        justify-content: center;
     }
     .iacc {
-       height: 130px !important;
-       width: 130px !important;
-       margin: 0 auto;
-      }
-      .projectDetail{
-        width: 100%;
-      }
+        height: 130px !important;
+        width: 130px !important;
+        margin: 0 auto;
+    }
+    .projectDetail{
+      margin: 2rem 0;
+    }
+
+    .pastProj {
+      display: block;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+  .SoftWrap img {
+    display: none;
   }
-  .SoftwareContainer svg{
-    color: #ff6c00;
-    font-size: 30px;
-  }
+}
+

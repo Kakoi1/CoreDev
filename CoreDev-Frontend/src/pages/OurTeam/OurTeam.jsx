@@ -3,6 +3,9 @@ import "./OurTeam.css";
 import { motion } from "framer-motion";
 import { FaEnvelope } from "react-icons/fa";
 
+
+import OrganizationalChart from "./OrganizationalChart";
+
 function OurTeam() {
     const Teams = [
         {
@@ -15,7 +18,7 @@ function OurTeam() {
             position: "Hardware Sales Head",
             image: "/assets/rosendo.png",
         },
-       
+
         {
             name: "Mark Anthony del Coro",
             position: "DevOps Head",
@@ -27,6 +30,7 @@ function OurTeam() {
             image: "/assets/charrie.png",
         },
     ];
+
     return (
         <div className="careerCont">
             <div className="imageWrap">
@@ -63,6 +67,14 @@ function OurTeam() {
                     ))}
                 </motion.div>
             </motion.div>
+            <div className="organizational-chart-container">
+                <h1>
+                    <span>CoreDev</span> Organizational Chart
+                </h1>
+                <div className="organizational-chart">
+                   <OrganizationalChart/>
+                </div>
+            </div>
         </div>
     );
 }
