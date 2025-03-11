@@ -162,7 +162,6 @@ const Software = () => {
             >
                 <div className="IacWrap">
                     <motion.img
-                     onClick={() => window.open('https://www.coredev.ph/iaccs/', '_blank') }
                         whileHover={{ scale: 1.2 }}
                         whileTap={{ scale: 0.9 }}
                         transition={{ duration: 0.3 }}
@@ -172,7 +171,6 @@ const Software = () => {
                     />
                     <div>
                         <motion.h4
-                         onClick={() => window.open('https://www.coredev.ph/iaccs/', '_blank') }
                           whileHover={{ scale: 1.03 }}
                         whileTap={{ scale: 1.0 }}
                         transition={{ duration: 0.3 }}

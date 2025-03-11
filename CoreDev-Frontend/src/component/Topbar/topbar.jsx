@@ -7,13 +7,13 @@ const TopBar = () => {
     return (
         <div className="top-bar">
             <div className="contact-info">
-                <TfiEmail className="icon" /> <span>info@coredev.ph</span>
-                <FaMobileAlt className="icon" /> <span>24/7 : Customer Service</span>
+               <span> <TfiEmail className="icon" /> info@coredev.ph</span>
+                <span> <FaMobileAlt className="icon" />24/7 : Customer Service</span>
             </div>
-            <div className="social-icons">
+            {/* <div className="social-icons">
                 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
-            </div>
+            </div> */}
         </div>
     );
 };

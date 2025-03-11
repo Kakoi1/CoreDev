@@ -235,6 +235,11 @@ justify-content: center;
   font-size: 2.75rem;
   text-align: center;
 }
+.organizational-card small{
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: "Open-Sans", sans-serif;
+}
 
 .organizational-chart-container span {
   color: var(--orange)

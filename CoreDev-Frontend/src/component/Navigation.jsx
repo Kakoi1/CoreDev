@@ -21,7 +21,7 @@ const Navigation = () => {
 
     useEffect(() => {
         const handleResize = () => {
-            setIsMobile(window.innerWidth <= 868);
+            setIsMobile(window.innerWidth <= 1200);
         };
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);

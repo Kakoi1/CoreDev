@@ -19,14 +19,16 @@
     
 }
 .CopyRight{
-    padding: 30px;
+    padding: 20px;
     text-align: center;
     color: white;
     font-family: "Raleway", sans-serif !important;
     text-wrap: wrap ;
+    border-top: solid;
+    border-color: rgba(255, 255, 255, 0.261);
 }
 .footer-wrapper{
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
     height: 100%;
     background-color: var(--black);
@@ -79,7 +81,7 @@
 .contact-wrapper p::after {
     content: "";
     display: block;
-    width: 100px;
+    width: 200px;
     height: 2px;
     background: white;
     margin-top: 5px;
@@ -95,7 +97,9 @@
     font-size: 20px;
    
 }
-
+.links-wrapper a{
+    margin-right: 7px;
+}
 .footer-wrapper .contact-wrapper .links-wrapper{
     
     justify-content: center;
@@ -105,6 +109,7 @@
     .footer-wrapper {
         height: auto;
         flex-direction: column;
-        align-items: center;
+        /* align-items: center; */
     }
+  
 }

@@ -62,8 +62,8 @@ const OrganizationalChart = () => {
                             label={
                                 <StyledNode>
                                     <div className="organizational-card">
-                                        <h3>Al A. Caputol</h3>
-                                        <small>Chief Execute Officer</small>
+                                        {/* <h3>Al A. Caputol</h3> */}
+                                        <h3>Chief Execute Officer</h3>
                                     </div>
                                 </StyledNode>
                             }
@@ -72,10 +72,10 @@ const OrganizationalChart = () => {
                                 label={
                                     <StyledNode>
                                         <div className="organizational-card">
-                                            <h3>Jeyreuben Singco</h3>
-                                            <small>
+                                            {/* <h3>Jeyreuben Singco</h3> */}
+                                            <h3>
                                                 Chief Execute Officer / In
-                                            </small>
+                                            </h3>
                                         </div>
                                     </StyledNode>
                                 }
@@ -84,8 +84,8 @@ const OrganizationalChart = () => {
                                     label={
                                         <StyledNode>
                                             <div className="organizational-card">
-                                                <h3>Mark Anthony Del Coro</h3>
-                                                <small>Devsops Head</small>
+                                                {/* <h3>Mark Anthony Del Coro</h3> */}
+                                                <h3>Devsops Head</h3>
                                             </div>
                                         </StyledNode>
                                     }
@@ -94,8 +94,8 @@ const OrganizationalChart = () => {
                                     label={
                                         <StyledNode>
                                             <div className="organizational-card">
-                                                <h3>Jun Requino</h3>
-                                                <small>Tech Head</small>
+                                                {/* <h3>Jun Requino</h3> */}
+                                                <h3>Tech Head</h3>
                                             </div>
                                         </StyledNode>
                                     }
@@ -104,10 +104,10 @@ const OrganizationalChart = () => {
                                         label={
                                             <StyledNode>
                                                 <div className="organizational-card">
-                                                    <h3>Glenda Zamora</h3>
-                                                    <small>
+                                                    {/* <h3>Glenda Zamora</h3> */}
+                                                    <h3>
                                                         Hardware Staff
-                                                    </small>
+                                                    </h3>
                                                 </div>
                                             </StyledNode>
                                         }
@@ -116,10 +116,10 @@ const OrganizationalChart = () => {
                                         label={
                                             <StyledNode>
                                                 <div className="organizational-card">
-                                                    <h3>Loschen Bacus</h3>
-                                                    <small>
+                                                    {/* <h3>Loschen Bacus</h3> */}
+                                                    <h3>
                                                         Hardware Staff
-                                                    </small>
+                                                    </h3>
                                                 </div>
                                             </StyledNode>
                                         }
@@ -129,8 +129,8 @@ const OrganizationalChart = () => {
                                     label={
                                         <StyledNode>
                                             <div className="organizational-card">
-                                                <h3>Bree Dingding</h3>
-                                                <small>R & D Head</small>
+                                                {/* <h3>Bree Dingding</h3> */}
+                                                <h3>R & D Head</h3>
                                             </div>
                                         </StyledNode>
                                     }
@@ -139,8 +139,8 @@ const OrganizationalChart = () => {
                                         label={
                                             <StyledNode>
                                                 <div className="organizational-card">
-                                                    <h3>Diza Jean Tambalos</h3>
-                                                    <small>Sr.Programmer</small>
+                                                    {/* <h3>Diza Jean Tambalos</h3> */}
+                                                    <h3>Sr.Programmer</h3>
                                                 </div>
                                             </StyledNode>
                                         }
@@ -149,8 +149,8 @@ const OrganizationalChart = () => {
                                         label={
                                             <StyledNode>
                                                 <div className="organizational-card">
-                                                    <h3>Clyde Ortega</h3>
-                                                    <small>Sr.Programmer</small>
+                                                    {/* <h3>Clyde Ortega</h3> */}
+                                                    <h3>Sr.Programmer</h3>
                                                 </div>
                                             </StyledNode>
                                         }
@@ -159,8 +159,8 @@ const OrganizationalChart = () => {
                                         label={
                                             <StyledNode>
                                                 <div className="organizational-card">
-                                                    <h3>Juner Tadlip</h3>
-                                                    <small>Sr.Programmer</small>
+                                                    {/* <h3>Juner Tadlip</h3> */}
+                                                    <h3>Sr.Programmer</h3>
                                                 </div>
                                             </StyledNode>
                                         }
@@ -170,8 +170,8 @@ const OrganizationalChart = () => {
                                     label={
                                         <StyledNode>
                                             <div className="organizational-card">
-                                                <h3>Ella Mae Dindin</h3>
-                                                <small>Team ACES</small>
+                                                {/* <h3>Ella Mae Dindin</h3> */}
+                                                <h3>Team ACES</h3>
                                             </div>
                                         </StyledNode>
                                     }
@@ -180,8 +180,8 @@ const OrganizationalChart = () => {
                                     label={
                                         <StyledNode>
                                             <div className="organizational-card">
-                                                <h3>Jomar Belarma</h3>
-                                                <small>Team AGILE</small>
+                                                {/* <h3>Jomar Belarma</h3> */}
+                                                <h3>Team AGILE</h3>
                                             </div>
                                         </StyledNode>
                                     }
@@ -190,8 +190,8 @@ const OrganizationalChart = () => {
                                     label={
                                         <StyledNode>
                                             <div className="organizational-card">
-                                                <h3>Joram Palma</h3>
-                                                <small>Team MEGA</small>
+                                                {/* <h3>Joram Palma</h3> */}
+                                                <h3>Team MEGA</h3>
                                             </div>
                                         </StyledNode>
                                     }
@@ -201,8 +201,8 @@ const OrganizationalChart = () => {
                                     label={
                                         <StyledNode>
                                             <div className="organizational-card">
-                                                <h3>Deodomie Bitang</h3>
-                                                <small>AOM - Luzon</small>
+                                                {/* <h3>Deodomie Bitang</h3> */}
+                                                <h3>AOM - Luzon</h3>
                                             </div>
                                         </StyledNode>
                                     }
@@ -211,10 +211,10 @@ const OrganizationalChart = () => {
                                         label={
                                             <StyledNode>
                                                 <div className="organizational-card">
-                                                    <h3>Nina Paz Humoc</h3>
-                                                    <small>
+                                                    {/* <h3>Nina Paz Humoc</h3> */}
+                                                    <h3>
                                                         Team Divergent
-                                                    </small>
+                                                    </h3>
                                                 </div>
                                             </StyledNode>
                                         }
@@ -224,8 +224,8 @@ const OrganizationalChart = () => {
                                     label={
                                         <StyledNode>
                                             <div className="organizational-card">
-                                                <h3>April Rose Casa...</h3>
-                                                <small>AOM Mindanao</small>
+                                                {/* <h3>April Rose Casa...</h3> */}
+                                                <h3>AOM Mindanao</h3>
                                             </div>
                                         </StyledNode>
                                     }
@@ -234,8 +234,8 @@ const OrganizationalChart = () => {
                                         label={
                                             <StyledNode>
                                                 <div className="organizational-card">
-                                                    <h3>Sheremay Mongaya</h3>
-                                                    <small>Team CMA</small>
+                                                    {/* <h3>Sheremay Mongaya</h3> */}
+                                                    <h3>Team CMA</h3>
                                                 </div>
                                             </StyledNode>
                                         }
@@ -244,8 +244,8 @@ const OrganizationalChart = () => {
                                         label={
                                             <StyledNode>
                                                 <div className="organizational-card">
-                                                    <h3>Icee Evon Pelarada</h3>
-                                                    <small>Team CPA</small>
+                                                    {/* <h3>Icee Evon Pelarada</h3> */}
+                                                    <h3>Team CPA</h3>
                                                 </div>
                                             </StyledNode>
                                         }
@@ -255,8 +255,8 @@ const OrganizationalChart = () => {
                                     label={
                                         <StyledNode>
                                             <div className="organizational-card">
-                                                <h3>Rachel Navarro</h3>
-                                                <small>Marketing Head</small>
+                                                {/* <h3>Rachel Navarro</h3> */}
+                                                <h3>Marketing Head</h3>
                                             </div>
                                         </StyledNode>
                                     }
@@ -266,7 +266,7 @@ const OrganizationalChart = () => {
                                 label={
                                     <StyledNode>
                                         <div className="organizational-card">
-                                            <h3>Charrie H. Caputol</h3>
+                                            {/* <h3>Charrie H. Caputol</h3> */}
                                             <small>
                                                 {" "}
                                                 Chief Finance Officer / HRD
@@ -279,8 +279,8 @@ const OrganizationalChart = () => {
                                     label={
                                         <StyledNode>
                                             <div className="organizational-card">
-                                                <h3>Clarisa H. Ismael</h3>
-                                                <small>Head Finance</small>
+                                                {/* <h3>Clarisa H. Ismael</h3> */}
+                                                <h3>Head Finance</h3>
                                             </div>
                                         </StyledNode>
                                     }
@@ -289,10 +289,10 @@ const OrganizationalChart = () => {
                                         label={
                                             <StyledNode>
                                                 <div className="organizational-card">
-                                                    <h3>
+                                                    {/* <h3>
                                                         Rosemarie V. Coronado
-                                                    </h3>
-                                                    <small>Bookeeper</small>
+                                                    </h3> */}
+                                                    <h3>Bookeeper</h3>
                                                 </div>
                                             </StyledNode>
                                         }
@@ -301,10 +301,10 @@ const OrganizationalChart = () => {
                                         label={
                                             <StyledNode>
                                                 <div className="organizational-card">
-                                                    <h3>Hannabel Endrina</h3>
-                                                    <small>
+                                                    {/* <h3>Hannabel Endrina</h3> */}
+                                                    <h3>
                                                         Billing / Collection
-                                                    </small>
+                                                    </h3>
                                                 </div>
                                             </StyledNode>
                                         }
@@ -313,10 +313,10 @@ const OrganizationalChart = () => {
                                         label={
                                             <StyledNode>
                                                 <div className="organizational-card">
-                                                    <h3>Alyssa Viodor</h3>
-                                                    <small>
+                                                    {/* <h3>Alyssa Viodor</h3> */}
+                                                    <h3>
                                                         Accounting Staff
-                                                    </small>
+                                                    </h3>
                                                 </div>
                                             </StyledNode>
                                         }
@@ -325,10 +325,10 @@ const OrganizationalChart = () => {
                                         label={
                                             <StyledNode>
                                                 <div className="organizational-card">
-                                                    <h3>Jasmin Yurag</h3>
-                                                    <small>
+                                                    {/* <h3>Jasmin Yurag</h3> */}
+                                                    <h3>
                                                         Liaison Officer
-                                                    </small>
+                                                    </h3>
                                                 </div>
                                             </StyledNode>
                                         }
@@ -338,8 +338,8 @@ const OrganizationalChart = () => {
                                     label={
                                         <StyledNode>
                                             <div className="organizational-card">
-                                                <h3>Catherine H. Salgados</h3>
-                                                <small>HR Manager</small>
+                                                {/* <h3>Catherine H. Salgados</h3> */}
+                                                <h3>HR Manager</h3>
                                             </div>
                                         </StyledNode>
                                     }
@@ -348,8 +348,8 @@ const OrganizationalChart = () => {
                                         label={
                                             <StyledNode>
                                                 <div className="organizational-card">
-                                                    <h3>Alchame Mae Caputol</h3>
-                                                    <small>HR Assistant</small>
+                                                    {/* <h3>Alchame Mae Caputol</h3> */}
+                                                    <h3>HR Assistant</h3>
                                                 </div>
                                             </StyledNode>
                                         }

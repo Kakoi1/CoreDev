@@ -6,15 +6,20 @@
     color: white;
     padding: 8px 20px;
     font-size: 14px;
+ 
 }
 
 .contact-info {
+    background-color: #ff6c00;
+    width: 100%;
     display: flex;
     gap: 5px;
-    margin-left: 125px;
+    margin: 0 auto;
+    /* margin-left: 125px; */
     color: white;
     font-family: "Open Sans", sans-serif;
     font-size: 14px;
+    max-width: 1300px;
 }
 
 .social-icons {
@@ -35,4 +40,9 @@
 
 .icon {
     margin-right: 5px;
+}
+@media (max-width: 800px){
+    .contact-info{
+        flex-direction: column;
+    }
 }

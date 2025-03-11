@@ -69,7 +69,7 @@ const Footer = () => {
             <div className='contact-wrapper'>
                 <h2>{footer.contact.label}</h2>
                 <p>{footer.contact.email}</p>
-                <h3>{footer.contact.follow.label}</h3>
+                <h3 style={{fontWeight: 'bold'}}>{footer.contact.follow.label}</h3>
                 <div className='links-wrapper'>
                     {footer.contact.follow.links.map((item, index) => (
                         <a key={index} target='_blank' href={item.link}>{item.icon}</a>

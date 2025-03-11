@@ -1,6 +1,7 @@
 import './Home.css';        
 import teamPhoto from '../../assets/coreDev-Team-Edited-2.png';
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import ParticlesComponent from './ParticlesComponent';
 import Carousel from './Carousel';
 import { FaLaptopCode } from "react-icons/fa";
@@ -54,19 +55,22 @@ const Home = () => {
             name: "Software Development",
             icon: <FaLaptopCode className='icon' />,
             description: "We offer more than just accounting and banking software solutions – our diverse software products are tailored to meet your needs.",
-            label: "Explore our Software Solutions"
+            label: "Explore our Software Solutions",
+            link: '/Products/Software'
         },
         {
             name: "Hardware Distributor",
             icon: <BiServer className='icon' />,
             description: "We've broadened our product range to meet our clients' demands, offering computer peripherals, servers, and different types of printers like Passbook and POS printers.",
-            label: "View Hardware Listing"
+            label: "View Hardware Listing",
+             link: '/Products/Hardware'
         },
         {   
             name: "Service Provider",
             icon: <BsHeadset className='icon' />,
             description: "We provide 24/7 technical support to our valued clients. Feel free to contact us any time of the day. We are at your service.",
-            label: "Get in touch"
+            label: "Get in touch",
+             link: '/Contact-us'
         }
     ]);
 
@@ -80,7 +84,7 @@ const Home = () => {
             <ParticlesComponent />
 
             <div className='services-wrapper'>
-                <h1 className='service-header'>OUR SERVICES</h1>
+                <h1 className='service-header'><span>OUR</span> SERVICES</h1>
                 <div className='service-list'>
                     {services.map((item, index) => (
                         <motion.div 
@@ -159,7 +163,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <h1 className='ClientLogo' style={{textAlign: 'center'}}>Our Clients</h1>
+            <h1 className='ClientLogo' style={{textAlign: 'center'}}><span>Our</span> Clients</h1>
             <div className='logo-wrapper'  >
                
                     <Carousel images={logo} />

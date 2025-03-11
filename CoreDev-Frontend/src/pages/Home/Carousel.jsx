@@ -65,11 +65,11 @@ export default function App({ images }) {
       >
         {images.map((image, index) => (
           <SwiperSlide key={index}>
-            <div className="slide-content" onClick={() => navigate("/Clients")} >
+            <div className="slide-content" >
               <img src={`src/assets/clients/${image.image}`} alt={image.alt || `Slide ${index + 1}`} />
               {/* Overlay for each image */}
               <div className="overlay" >
-                {/* <h3  >{image.name}</h3> */}
+                <h3  onClick={() => navigate("/Clients")} >{image.name}</h3>
               </div>
             </div>
           </SwiperSlide>
