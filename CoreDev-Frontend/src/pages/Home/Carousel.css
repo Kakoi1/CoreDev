@@ -65,14 +65,14 @@
 }
 
 /* Overlay styling */
-.overlay {
+.slide-content .overlay {
   position: absolute;
-  top: 0;
+  top: 3;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent black background */
-  opacity: 0.7;
+  background-color: rgba(0, 0, 0, 0.657); /* Semi-transparent black background */
+  opacity: 0;
   color: white;
   display: flex;
   justify-content: center;
@@ -86,9 +86,10 @@
 
 /* On hover, show the overlay */
 .swiper-slide:hover .overlay {
-  opacity: 0; /* Make overlay visible */
+  opacity: 1; /* Make overlay visible */
   border-radius: 120px;
     transition: 500ms ease-out; 
+    font-family:  "Raleway", sans-serif;
 }
 
 /* Text styling for the overlay */

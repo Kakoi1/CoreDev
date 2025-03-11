@@ -1,6 +1,7 @@
 import './Home.css';        
 import teamPhoto from '../../assets/coreDev-Team-Edited-2.png';
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import ParticlesComponent from './ParticlesComponent';
 import Carousel from './Carousel';
 import { FaLaptopCode } from "react-icons/fa";
@@ -12,10 +13,8 @@ import pcIcon from '../../assets/pc-icon.png';
 import { FiTool } from "react-icons/fi";
 import { TfiEmail } from "react-icons/tfi";
 import { FaFacebook } from "react-icons/fa";
-import axios from "axios";
 
-const MAX_RETRIES = 3;
-const RETRY_DELAY = 3000;
+
 
 const Home = () => {
 
@@ -56,22 +55,22 @@ const Home = () => {
             name: "Software Development",
             icon: <FaLaptopCode className='icon' />,
             description: "We offer more than just accounting and banking software solutions – our diverse software products are tailored to meet your needs.",
-            label: "Explore",
+            label: "Explore our Software Solutions",
             link: '/Products/Software'
         },
         {
             name: "Hardware Distributor",
             icon: <BiServer className='icon' />,
             description: "We've broadened our product range to meet our clients' demands, offering computer peripherals, servers, and different types of printers like Passbook and POS printers.",
-            label: "Explore",
-            link: '/Products/Hardware'
+            label: "View Hardware Listing",
+             link: '/Products/Hardware'
         },
         {   
             name: "Service Provider",
             icon: <BsHeadset className='icon' />,
             description: "We provide 24/7 technical support to our valued clients. Feel free to contact us any time of the day. We are at your service.",
-            label: "Contact",
-            link: '/Contact-us'
+            label: "Get in touch",
+             link: '/Contact-us'
         }
     ]);
 
@@ -80,16 +79,12 @@ const Home = () => {
 
     
     return (
-        
         <div className="home-container">
-            <ParticlesComponent >
-             
-            </ParticlesComponent>
-
-               
+          
+            <ParticlesComponent />
 
             <div className='services-wrapper'>
-                <h1 className='service-header'>Services</h1>
+                <h1 className='service-header'><span>OUR</span> SERVICES</h1>
                 <div className='service-list'>
                     {services.map((item, index) => (
                         <motion.div 
@@ -102,7 +97,14 @@ const Home = () => {
                             <div className='top'>
                                 {item.icon}
                                 <h3 className='service-item-header'>{item.name}</h3>
-                                <p className='description'>{item.description}</p>
+                                <motion.p 
+                                    className='description'
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.6, ease: easeInOut, delay: index * 0.3 }}
+                                >
+                                    {item.description}
+                                </motion.p>
                             </div>
                             <div className='bottom'>
                                 <motion.button
@@ -110,8 +112,9 @@ const Home = () => {
                                     navigate(item.link)
                                   }
                                     type='button'
-                                    whileHover={{ scale: 1.2 }}
-                                    whileTap={{ scale: 0.9 }}
+                                    className='outlined-button' // Added class for styling
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
                                     transition={{ duration: 0.3 }}
                                 >               
                                     {item.label}
@@ -124,12 +127,23 @@ const Home = () => {
             <div className='sido'>
                 <div className="join-us-wrapper">
                     <div className='left'>
-                        <h2 className='header'>Be Part of Our Growing Team</h2>
-                        <p>
+                        <motion.h2 
+                            className='header'
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, ease: easeInOut, delay: 0.2 }}
+                        >
+                            Be Part of Our Growing Team
+                        </motion.h2>
+                        <motion.p 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, ease: easeInOut, delay: 0.4 }}
+                        >
                             We believe that our people are our greatest asset. At coreDev, we foster a culture of collaboration, 
                             innovation, and mutual respect. We're always looking for talented individuals who share our values and are 
                             excited to contribute to our mission.
-                        </p>
+                        </motion.p>
                         <motion.button 
                             className='join-btn'
                             whileHover={{ scale: 1.2 }}
@@ -149,7 +163,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <h1 className='ClientLogo' style={{textAlign: 'center'}}>Our Clients</h1>
+            <h1 className='ClientLogo' style={{textAlign: 'center'}}><span>Our</span> Clients</h1>
             <div className='logo-wrapper'  >
                
                     <Carousel images={logo} />

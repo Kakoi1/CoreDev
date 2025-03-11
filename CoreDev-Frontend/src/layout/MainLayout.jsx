@@ -4,7 +4,8 @@ import { Outlet, useLocation } from "react-router-dom"; // Detect route changes
 import Navigation from "../component/Navigation";
 import { motion, useScroll } from "framer-motion";
 import Footer from "../component/Footer/Footer";
-import { FaArrowAltCircleUp } from "react-icons/fa";
+import { FaArrowAltCircleUp } from "react-icons/fa";  
+import TopBar from "../component/Topbar/topbar";
 
 const MainLayout = () => {
   const { scrollYProgress } = useScroll();
@@ -77,6 +78,7 @@ const MainLayout = () => {
       {/* Main Content */}
       <div className="main-container" onLoad={backToTop}>
         <motion.div className="progress-bar" style={{ scaleX: scrollYProgress }}></motion.div>
+        <TopBar/>
         <Navigation />
         <Outlet />
         <Footer />

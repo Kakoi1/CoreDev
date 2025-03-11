@@ -10,26 +10,31 @@ body{
 }
 .home-container .photo-wrapper{
     height: 80vh;
-    /* width: 100%; */
-    /* background-image: url('src/assets/coreDev-Team-Edited-2.png'); */
     background: linear-gradient(0deg, rgb(13 6 1 / 82%), rgb(49 46 46 / 13%)), url(src/assets/coreDev-Team-Edited-2.png) top center no-repeat;
     background-size: cover;
     background-position: bottom;
     overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .home-container .photo-wrapper span{
     position: absolute;
-    top: 35%;
-    transform: translateY(-50%) ;
-    left: 70px;
+    top: 30%;
+    left: 150px;
+    transform: translateY(-50%);
     font-family: "Raleway", sans-serif;
     font-weight: bold;
     color: white;
-    font-size: 2.5rem;
-    font-weight: bolder;
+    font-size: 50px;
+    text-shadow: 1px 1px 3px black;
+}
+.motion-text{
+    z-index: 0 !important;
 }
 .leanBut{
-    font-family: 'Open Sans', 'sans-serif' !important;
+    font-family: 'Open Sans', sans-serif !important;
     font-weight: 500;
     font-size: 14px;
     letter-spacing: 1px;
@@ -41,8 +46,6 @@ body{
     margin: 10px;
     color: #fff;
     background-color: #3536355f;
-    -webkit-animation-delay: 0.8s;
-    animation-delay: 0.8s;
     border: 2px solid #dd5e04;
 }
 .leanBut:hover{
@@ -58,10 +61,10 @@ body{
 .home-container .services-wrapper{
     font-family: "Open-Sans", sans-serif;
     padding: 20px;
-    /* width: 100%; */
-    max-width: 1300px;
-    margin: 0 auto;
-    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    grid-area: 10px;
+    
 }
 
 .home-container .services-wrapper .service-header{
@@ -73,11 +76,11 @@ body{
 
 .home-container .services-wrapper .service-list{
     display: flex;
-    justify-content: space-evenly; /* Aligns with the left side */
+    justify-content: center; /* Aligns with the left side */
     align-items: center;
-    gap: 20px;
+    gap: 50px;
     margin-top: 40px;
-    font-family: 'Open Sans', 'sans-serif'; 
+    font-family: 'Open Sans', 'sans-serif' ;
 }
 .service-item-header{
     font-family: "Raleway", sans-serif !important;
@@ -87,15 +90,16 @@ body{
 
 .home-container .services-wrapper .service-list .service-item{
     text-align: center;
-    border: 1px solid rgba(128, 128, 128, 0.644);
+    border: 1px solid #dd5e04;
     padding: 20px 30px;
-    box-shadow: 0px 0px 3px rgba(128, 128, 128, 0.521);
+    box-shadow: 0px 0px 3px rgba(229, 139, 3, 0.521);
     min-height: 350px;
     max-width: 300px;
     border-radius: 5px;
-    position: relative;
+    /* position: relative;  */
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .home-container .services-wrapper .service-list .service-item .top{
@@ -122,21 +126,42 @@ body{
     color: #777777;
 }
 
-.home-container .services-wrapper .service-list .service-item button{
+.home-container .services-wrapper .service-list .service-item button {
     cursor: pointer;
-    padding: 12px 25px;
-    background-color: var(--orange);
-    font-weight: lighter;
-    letter-spacing: 1px;
+    width: 280px; /* Fixed width */
+    height: 50px; /* Fixed height */
     border-radius: 5px;
-    border: none;
+    border: 2px solid #ff6c00;
     color: white;
-    
-
+    background: linear-gradient(to bottom, #ff9c50, #ff6c00);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 8px;
+    margin-left: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
+
+
+
+
+.home-container .services-wrapper .service-list .service-item button:hover {
+    background: linear-gradient(to bottom, #ff6c00, #cc5200);
+    border-color: #cc5200;
+    transform: scale(1.05);
+}
+   
 .sido{
     width: 100%;
     background-color: var(--black);
+} 
+
+.home-container .services-wrapper .service-list .service-item button svg {
+    font-size: 18px;
 }
 
 .home-container .join-us-wrapper{
@@ -149,14 +174,14 @@ body{
     justify-content: center;
     align-items: center;
     padding: 20px;
-    margin-top: 40px;
 }
 
 .home-container .join-us-wrapper .right{
     flex: 1;
     display: flex;
-    justify-content: flex-end;
+    justify-content:center;
     align-items: center;
+    /* margin-left: 200px; */
 }
 
 .home-container .join-us-wrapper .left{
@@ -177,7 +202,7 @@ body{
 
 .home-container .join-us-wrapper .left .join-btn{
     padding: 10px 15px;
-    background-color: var(--orange);
+    background: linear-gradient(to bottom, #ff9c50, #ff6c00); /* Orange gradient */
     border: none;
     border-radius: 5px;
     color: white;
@@ -190,6 +215,175 @@ body{
 .home-container .join-us-wrapper .right img{
     height: 330px;
     width: 330px;
+}
+
+.home-container .reach-us-wrapper{
+    /* width: 100%; */
+    max-width: 1300px;
+    margin: 0 auto;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    /* height: 80vh; */
+    font-family: "Open-Sans", sans-serif;
+    gap: 40px;
+}
+
+.home-container .reach-us-wrapper .left{
+    /* color: black !important; */
+    letter-spacing: 1px;
+    line-height: 40px;
+    font-weight: lighter;
+    flex: 1
+}
+
+.home-container .reach-us-wrapper .left .header{
+    font-family: "Raleway", sans-serif !important;
+    color: var(--orange);
+    font-size: 4.1rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-family: "Open-Sans", sans-serif;
+    
+}
+
+.home-container .reach-us-wrapper .left .description{
+    font-weight: 200;
+    font-size: 1.2rem;
+    color: #777777;
+}
+
+.home-container .reach-us-wrapper .left .contact {
+    display: flex;
+    gap: 15px;
+    justify-content: start;
+}
+.home-container .reach-us-wrapper .left .contact a{
+
+    color: blue;
+    text-decoration: underline;
+    font-weight: 200;
+    font-family: "Open-Sans", sans-serif;
+  
+}
+.home-container .reach-us-wrapper .left .contact .icon{
+    margin-right: 5px;
+}
+
+.home-container .reach-us-wrapper .right{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.home-container .reach-us-wrapper .right form{
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+    font-family: "Open-Sans", sans-serif;
+    width: 80%;
+   
+}
+.home-container .reach-us-wrapper .right form input, textarea{
+    padding: 15px 10px;
+    border-radius: 5px;
+    border: 2px solid rgb(162, 161, 161);
+    font-family: "Open-Sans", sans-serif;
+    
+   
+}
+.home-container .reach-us-wrapper .right form textarea{
+    resize: vertical;
+    min-height: 100px;
+}
+
+.home-container .reach-us-wrapper .right form button{
+    background-color: var(--orange);
+    padding: 10px;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    font-weight: 200;
+    border-radius: 8px;
+}
+
+.home-container .reach-us-wrapper .right form button:hover{
+    background-color: #dd5e04;
+}
+
+.home-container .reach-us-wrapper .right form input::placeholder, textarea::placeholder{
+    font-weight: 200;
+}
+
+.home-container .reach-us-wrapper .right form .fullname{
+    
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.home-container .reach-us-wrapper .right form .fullname input{
+    width: 100%;
+
+}
+@media (max-width: 1170px){
+  .home-container .photo-wrapper span {
+        font-size: 1.9rem; 
+        left: 10px;
+    }
+
+    .home-container .services-wrapper .service-list {
+        /* flex-direction: column; */
+        flex-wrap: wrap;justify-content: center;
+    }
+    
+    .home-container .services-wrapper .service-list .service-item {
+        /* flex-direction: column; */
+        /* width: 100%; */
+    }
+    .home-container .services-wrapper .service-list .service-item button {
+        width: auto;
+        text-wrap: wrap;
+        margin:  0 auto;
+    }
+
+
+    .home-container .join-us-wrapper {
+        flex-direction: column; 
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .home-container .join-us-wrapper .left, 
+    .home-container .join-us-wrapper .right {
+        width: 100%; 
+        margin-bottom: 15px;
+    }
+
+    .home-container .join-us-wrapper .header{
+        text-align: center;
+        line-height: 50px;
+    }
+
+    .home-container .join-us-wrapper .left button{
+        display: block;
+        margin: 0 auto;
+    }
+
+    .home-container .join-us-wrapper .left p{
+        text-align: justify;
+        padding: 10px;
+        text-indent: 20px;
+    }
+
+    .home-container .join-us-wrapper .right img{
+        display: block;
+        margin: 0 auto;
+    }
 }
 
 @media (max-width: 800px){
@@ -234,7 +428,10 @@ body{
         margin: 0 auto;
     }
 
-  
+    .Textcontent h1 {
+        padding: 0 !important;
+        font-size: 40px!important;
+    }
 }
 .ClientLogo{
     text-align: center;
@@ -242,6 +439,9 @@ body{
     font-weight: bold;
     color: #dd5e04;
     margin-top: 40px;
+}
+.ClientLogo span, .services-wrapper span{
+color: #353635;
 }
 .Textcontent{
     text-align:center;
@@ -252,7 +452,7 @@ body{
 }
 .Textcontent h1 {
     color: hsl(0, 0%, 28%);
-    font-size: 50px!important;
+    font-size: 50px;
     font-weight: bold!important;
     font-family: monospace;
     letter-spacing: 7px!important;
@@ -293,9 +493,9 @@ body{
     }
 }
  */
+
  #tsparticles {
-    /* border: 5px solid; */
-    position: absolute;
+    position: fixed;
     width: 80%;
     height: 70%;
     top: 50%;
@@ -306,22 +506,26 @@ body{
   }
 
   .photo-wrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
+    position: relative;  
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Align left */
+    justify-content: center; 
+    height: 80vh;
+    width: 100%;
 }
 
   .motion-text {
-    font-size: 3rem;
+    position: absolute;
+    top: 50%;
+    left: 200px;
+    transform: translateY(-50%);
+    font-family: "Raleway", sans-serif;
     font-weight: bold;
     color: white;
     position: absolute;
     left: 50%; /* Adjust based on logo placement */
     top: 35%; /* Adjust vertical positioning */
-    /* z-index: 10; */
+    z-index: 10;
     text-align: left;
 }
   /* YourComponent.css */

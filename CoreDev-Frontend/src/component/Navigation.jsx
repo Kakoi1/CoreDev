@@ -6,6 +6,8 @@ import { LuMinimize2 } from "react-icons/lu";
 import { useEffect, useState } from 'react';
 import coreDevIcon from '../assets/coredev.png';
 
+
+
 const backToTop = () => {
     window.scrollTo({
         top: 0,
@@ -19,7 +21,7 @@ const Navigation = () => {
 
     useEffect(() => {
         const handleResize = () => {
-            setIsMobile(window.innerWidth <= 868);
+            setIsMobile(window.innerWidth <= 1200);
         };
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
@@ -30,6 +32,7 @@ const Navigation = () => {
     };
 
     return (
+        
         <div className='navCont'>        
             <nav className="navigation-container">
                 <div className='brand'>
@@ -60,6 +63,9 @@ const Links = ({ closeMenu }) => {
     };
 
     return (
+
+        
+        
         <ul onClick={backToTop}>
             <li className='navigation-link' onClick={closeMenu}>
                 <NavLink to="/">Home</NavLink>
