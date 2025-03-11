@@ -27,8 +27,8 @@ function ProductDetails() {
         alt={selectedItem.name}
         className="product-details-image"
       />
-      <p>{selectedItem.description}</p>
-      <a className="emailUs" href="mailto:info@coredev.ph">Email Us</a>
+      <p>{selectedItem.description }</p>
+      <a className="emailUs" style={{ textDecoration: 'none'}} href="mailto:info@coredev.ph">Email Us</a>
       <br />
       
     </div>

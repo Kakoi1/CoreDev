@@ -100,7 +100,7 @@ function ParticlesComponent() {
           transition={{ duration: 4 }}
           className="motion-text"
         >
-          The Premier <br /> Software Solutions <br /> Provider <br /> in the <br /> Philippines.
+          The Premier <br /> Software Solutions <br /> Provider in the <br /> Philippines.
           <br />
           <button className='leanBut'>Learn More</button>
         </motion.span>

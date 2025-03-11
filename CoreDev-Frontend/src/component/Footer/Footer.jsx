@@ -23,7 +23,7 @@ const Footer = () => {
         },
         contact: {
             label: "EMAIL US",
-            email: "info@coredev.ph",
+            email: <a href="mailto:info@coredev.ph">info@coredev.ph</a>,
             follow: {
                 label: "FOLLOW US",
                 links: [

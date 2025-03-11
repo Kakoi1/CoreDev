@@ -1,37 +1,39 @@
 :root {
     --black: #353635;
     --orange: #ff6c00;
-    --gray: #d3d3d3; /* New gray color for hover */
+    --gray: #d3d3d3;
 }
-.navCont{
-width: 100%;
-background-color: var(--black);
-position: relative;
-position: sticky;
-top: 0;
-left: 0;
-right: 0;
-z-index: 10;
-font-family: "Open-Sans", sans-serif;
+
+.navCont {
+    width: 100%;
+    background-color: var(--black);
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    font-family: "Open-Sans", sans-serif;
 }
-.navIcon{
+
+.navIcon {
     padding: 20px;
     width: 80%;
 }
-.navIcon svg{
+
+.navIcon svg {
     float: right;
     color: white;
 }
+
 .navigation-container {
-    /* width: 100%; */
-    max-width: 1500px;
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
     background-color: var(--black);
     padding: 10px 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     border-bottom: 1px solid rgba(255, 255, 255, 0.541);
 }
 
@@ -42,7 +44,6 @@ font-family: "Open-Sans", sans-serif;
 }
 
 .navigation-container .brand span {
-    font-family: "Raleway", sans-serif !important;
     color: white;
     font-weight: 700;
 }
@@ -55,11 +56,10 @@ font-family: "Open-Sans", sans-serif;
 .navigation-container .brand img {
     width: 100px;
     height: 70px;
-    filter: 
-        drop-shadow(0px 7px 2px #70310497)
-        drop-shadow(0px 7px 2px #3f3939c3);
+    filter: drop-shadow(0px 7px 2px #70310497) drop-shadow(0px 7px 2px #3f3939c3);
 }
 
+/* Navigation links */
 .navigation-container ul {
     list-style: none;
     display: flex;
@@ -70,94 +70,97 @@ font-family: "Open-Sans", sans-serif;
 }
 
 .navigation-container ul .navigation-link {
-    position: relative; 
-  
+    position: relative;
 }
-.navigation-container ul .navigation-link .caret{
-    transition: transform 0.3s ease; 
+
+.navigation-container ul .navigation-link .caret {
+    transition: transform 0.3s ease;
 }
 
 .navigation-container ul .navigation-link, .navCont a {
     text-decoration: none;
     color: white;
-    font-size: 0.9rem;
     letter-spacing: 1px;
-    font-family: "Raleway", sans-serif !important;
-    font-weight: 700;
-    position: relative; 
-    padding: 5px;
-    transition: transform 0.3s ease; 
-    
+    font-family: "Roboto", sans-serif !important;
+    position: relative;
+    padding: 10px;
+    transition: transform 0.3s ease;
+    font-size: 15px;
 }
 
-.navigation-container ul .navigation-link:hover .caret{
-    transform: rotate(180deg);
-}
-
+/* Hover underline effect */
 .navigation-container ul .navigation-link:after {
     content: '';
-    position: absolute; 
-    left: 0; 
-    bottom: -5px; 
-    width: 100%; 
-    height: 2px; 
-    background-color: var(--orange); 
-    transform: scaleX(0); 
-    transition: transform 0.3s ease; 
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--orange);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
 }
 
 .navigation-container ul .navigation-link:hover::after {
-    transform: scaleX(1); 
+    transform: scaleX(1);
 }
 
-
+/* ----- Dropdown Styling (Updated) ----- */
 .dropdown {
-    display: none; 
-    position: absolute; 
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 220px;
     background-color: white;
-    border: 1px solid black;
-    border-radius: 4px; 
-    margin-top: 10px; 
-    z-index: 1000;
-    font-weight: 300;
-    width: auto; 
-    transition: 0.3s ease-in-out;
-    left: -5px;
-    /* min-width: 180px;
-    max-width: 300px; */
+    border-radius: 1px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease, transform 0.2s ease-in-out;
+    opacity: 0;
+    transform: translateY(10px);
+    border-top: 6px solid #ff6c00;
+
 }
 
+/* Show dropdown on hover */
 .navigation-link.sub:hover .dropdown {
-    display: block; 
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
 }
 
+/* Dropdown links */
 .dropdown a {
-    word-break: keep-all; 
-    white-space: nowrap; 
-    display: block; 
-    padding: 20px;
-    color: black; 
-    text-decoration: none; 
+    display: block;
+    padding: 12px 20px;
+    color: black;
+    font-size: 15px;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
-
+/* Hover effect */
 .dropdown a:hover {
-    color: var(--orange);
-    font-weight: bold;
+    background-color: #fa964f;
+    color: white;
 }
 
-.menu-bar{
+/* Subtle border between dropdown items */
+.dropdown a:not(:last-child) {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Mobile Menu */
+.menu-bar {
     cursor: pointer;
     transition: 0.3s ease-in-out;
-    
 }
 
-.menu-bar:hover{
-   transform: scale(1.1);
+.menu-bar:hover {
+    transform: scale(1.1);
 }
 
-
-.mobile-links{
+.mobile-links {
     position: fixed;
     top: 70px;
     background-color: black;
@@ -171,21 +174,50 @@ font-family: "Open-Sans", sans-serif;
     height: 200vh;
     background-color: var(--orange);
 }
-.mobile-links ul{
+
+.mobile-links ul {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-@media (max-width: 800px){
+/* Responsive adjustments */
+@media (max-width: 800px) {
     .navigation-container .brand img {
         width: 70px;
         height: 40px;
     }
 }
-@media (max-width: 950px){
-    .navigation-container ul .navigation-link, a{
+
+@media (max-width: 950px) {
+    .navigation-container ul .navigation-link, a {
         font-size: 0.7rem;
     }
 }
 
+.home-container .services-wrapper .service-list .service-item button {
+    cursor: pointer;
+    padding: 12px 25px;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    border-radius: 30px;
+    border: 2px solid #ff6c00;
+    color: white;
+    background: linear-gradient(to bottom, #ff9c50, #ff6c00);
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+}
+
+.home-container .services-wrapper .service-list .service-item button:hover {
+    background: linear-gradient(to bottom, #ff6c00, #cc5200);
+    border-color: #cc5200;
+    transform: scale(1.05);
+}
+
+.home-container .services-wrapper .service-list .service-item button svg {
+    font-size: 18px;
+}
