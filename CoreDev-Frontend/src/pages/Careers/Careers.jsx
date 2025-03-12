@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import "./Careers.css";
+import { useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { RiCheckLine } from "react-icons/ri";
@@ -7,7 +8,7 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import { MdWorkHistory } from "react-icons/md";
 
 function Careers() {
-
+    
     const jobOffers = [
         {
             title: "Software Implementor",
@@ -118,6 +119,7 @@ function Careers() {
 }
 
 const JobOfferCard = ({ title, type, descriptions, address, link }) => {
+    const navigate = useNavigate();
     const [showDetails, setShowDetails] = useState(false);
     return (
         <motion.div
@@ -149,7 +151,7 @@ const JobOfferCard = ({ title, type, descriptions, address, link }) => {
                         </div>
                     </div>
                 </div>
-                <button>Apply Now</button>
+               <button onClick={() => window.open(link, '_blank')}>Apply Now</button>
             </div>
             <p onClick={() => setShowDetails(!showDetails)}>
                 {showDetails ? "Hide Details" : "Show Details"}
