@@ -36,8 +36,8 @@ const Footer = () => {
             }
         },
         about: {
-            label: "About CoreDev",
-            description: "We aim to provide a-one-stop-shop to our valued clients, from Hardware, Software and Service provider! Just name it, and you'll have it!"
+            label: "About coreDev Solutions Inc.",
+            description: "We strive to be your trusted one-stop solution for all your technology needs—offering comprehensive hardware, software, and service solutions. Whatever you require, we deliver."
         }
     });
 

@@ -1,12 +1,12 @@
 .imageWrap1{
-    padding: 303px 0;
-    height: 80%;
+    padding: 100px 0;
+    height: 50%;
     /* background: #ecf6fe; */
     /* margin-top: -95px; */
     background:  linear-gradient(0deg, rgb(13 6 1 / 82%), rgba(49, 46, 46, 0.041)), url(../../assets/teamImg.png) center no-repeat;
     background-repeat: no-repeat;
     background-size: cover;
-    margin-bottom: 100px;
+    margin-bottom: 300px;
     
 }
 /* *{
@@ -23,6 +23,7 @@ body{
     font-size: 2rem;
     font-family: "Raleway", sans-serif !important;
     margin-bottom: 1.5rem;
+    margin-left: 130px;
 }
 .credoCont h4{
     font-size: 1.25rem;
@@ -40,6 +41,7 @@ p{
     /* font-weight: bold; */
     font-size: 18px;
     line-height: 20px;
+    margin-left: 130px;
 }
 .textcont1{
     background-color: rgba(0, 0, 0, 0.535);
@@ -48,6 +50,7 @@ p{
     position: relative;
     bottom: -380px;
     letter-spacing: 3px;
+    
 }
 .credoCont{
     /* display: flex;
