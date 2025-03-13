@@ -85,7 +85,7 @@
 }
 
 /* On hover, show the overlay */
-.swiper-slide:hover .overlay {
+.swiper-slide:hover .slide-content .overlay {
   opacity: 1; /* Make overlay visible */
   border-radius: 120px;
     transition: 500ms ease-out; 
@@ -93,19 +93,20 @@
 }
 
 /* Text styling for the overlay */
-.overlay h3 {
+.slide-content .overlay h3 {
+  margin-top: 10px;
   font-size: 1.1rem;
   font-weight: bold;
   margin: 0 auto;
   word-wrap: break-word;
-  width: 150px;
+  width: 120px;
   cursor: pointer;
 }
-.overlay h3:hover{
+.slide-content .overlay h3:hover{
   text-decoration: underline;
 }
 
-.overlay span {
+.slide-content .overlay span {
   font-size: 1.2em;
   margin-top: 10px;
   font-weight: lighter;
