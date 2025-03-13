@@ -53,27 +53,16 @@ const OrganizationalChart = () => {
                 <>
                     <Controls />
                     <TransformComponent>
-                        <Tree
-                            className="tree"
-                            lineWidth={"2px"}
-                            lineColor={"#ff6a003c"}
-                            lineBorderRadius={"10px"}
-                            scale={"50%"}
-                            label={
-                                <StyledNode>
-                                    <div className="organizational-card">
-                                        <small>Chief Execute Officer</small>
-                                    </div>
-                                </StyledNode>
-                            }
-                        >
-                            <TreeNode
+                            <Tree
+                                className="tree"
+                                lineWidth={"2px"}
+                                lineColor={"#ff6a003c"}
+                                lineBorderRadius={"10px"}
+                                scale={"50%"}
                                 label={
                                     <StyledNode>
                                         <div className="organizational-card">
-                                            <small>
-                                                Chief Operation Officer / In
-                                            </small>
+                                            <small>Chief Execute Officer</small>
                                         </div>
                                     </StyledNode>
                                 }
@@ -82,16 +71,10 @@ const OrganizationalChart = () => {
                                     label={
                                         <StyledNode>
                                             <div className="organizational-card">
-                                                <small>Devsops Head</small>
-                                            </div>
-                                        </StyledNode>
-                                    }
-                                />
-                                <TreeNode
-                                    label={
-                                        <StyledNode>
-                                            <div className="organizational-card">
-                                                <small>Tech Head</small>
+                                                <small>
+                                                    Chief Operation Officer /
+                                                    Information Head
+                                                </small>
                                             </div>
                                         </StyledNode>
                                     }
@@ -100,28 +83,16 @@ const OrganizationalChart = () => {
                                         label={
                                             <StyledNode>
                                                 <div className="organizational-card">
-                                                    <small>
-                                                        Hardware Staff
-                                                    </small>
+                                                    <small>DevOps Head</small>
                                                 </div>
                                             </StyledNode>
                                         }
                                     />
-                                </TreeNode>
-                                <TreeNode
-                                    label={
-                                        <StyledNode>
-                                            <div className="organizational-card">
-                                                <small>R & D Head</small>
-                                            </div>
-                                        </StyledNode>
-                                    }
-                                >
                                     <TreeNode
                                         label={
                                             <StyledNode>
                                                 <div className="organizational-card">
-                                                    <small>Sr.Programmer</small>
+                                                    <small>Tech Head</small>
                                                 </div>
                                             </StyledNode>
                                         }
@@ -131,59 +102,114 @@ const OrganizationalChart = () => {
                                                 <StyledNode>
                                                     <div className="organizational-card">
                                                         <small>
-                                                            Jr.Programmer
+                                                            Hardware Staff
                                                         </small>
                                                     </div>
                                                 </StyledNode>
                                             }
                                         />
                                     </TreeNode>
-
-                                   
-                                </TreeNode>
-                                <TreeNode
-                                    label={
-                                        <StyledNode>
-                                            <div className="organizational-card">
-                                                <small>Team ACES</small>
-                                            </div>
-                                        </StyledNode>
-                                    }
-                                />
-                                <TreeNode
-                                    label={
-                                        <StyledNode>
-                                            <div className="organizational-card">
-                                                <small>Team AGILE</small>
-                                            </div>
-                                        </StyledNode>
-                                    }
-                                />
-                                <TreeNode
-                                    label={
-                                        <StyledNode>
-                                            <div className="organizational-card">
-                                                <small>Team MEGA</small>
-                                            </div>
-                                        </StyledNode>
-                                    }
-                                />
-
-                                <TreeNode
-                                    label={
-                                        <StyledNode>
-                                            <div className="organizational-card">
-                                                <small>AOM - Luzon</small>
-                                            </div>
-                                        </StyledNode>
-                                    }
-                                >
+                                    <TreeNode
+                                        label={
+                                            <StyledNode>
+                                                <div className="organizational-card">
+                                                    <small>R & D Head</small>
+                                                </div>
+                                            </StyledNode>
+                                        }
+                                    >
+                                        <TreeNode
+                                            label={
+                                                <StyledNode>
+                                                    <div className="organizational-card">
+                                                        <small>
+                                                            Sr. Programmer
+                                                        </small>
+                                                    </div>
+                                                </StyledNode>
+                                            }
+                                        >
+                                            <TreeNode
+                                                label={
+                                                    <StyledNode>
+                                                        <div className="organizational-card">
+                                                            <small>
+                                                                Jr. Programmer
+                                                            </small>
+                                                        </div>
+                                                    </StyledNode>
+                                                }
+                                            />
+                                        </TreeNode>
+                                    </TreeNode>
+                                    <TreeNode
+                                        label={
+                                            <StyledNode>
+                                                <div className="organizational-card">
+                                                    <small>Area Operation Manager - Luzon</small>
+                                                </div>
+                                            </StyledNode>
+                                        }
+                                    >
+                                        <TreeNode
+                                            label={
+                                                <StyledNode>
+                                                    <div className="organizational-card">
+                                                        <small>
+                                                            Team Luzon
+                                                        </small>
+                                                    </div>
+                                                </StyledNode>
+                                            }
+                                        />
+                                    </TreeNode>
+                                    <TreeNode
+                                        label={
+                                            <StyledNode>
+                                                <div className="organizational-card">
+                                                    <small>Area Operation Manager - Visayas</small>
+                                                </div>
+                                            </StyledNode>
+                                        }
+                                    >
+                                        <TreeNode
+                                            label={
+                                                <StyledNode>
+                                                    <div className="organizational-card">
+                                                        <small>
+                                                            Team Visayas
+                                                        </small>
+                                                    </div>
+                                                </StyledNode>
+                                            }
+                                        />
+                                    </TreeNode>
+                                    
+                                    <TreeNode
+                                        label={
+                                            <StyledNode>
+                                                <div className="organizational-card">
+                                                    <small>Area Operation Manager - Mindanao</small>
+                                                </div>
+                                            </StyledNode>
+                                        }
+                                    >
+                                        <TreeNode
+                                            label={
+                                                <StyledNode>
+                                                    <div className="organizational-card">
+                                                        <small>Team Mindanao</small>
+                                                    </div>
+                                                </StyledNode>
+                                            }
+                                        />
+                                    </TreeNode>
                                     <TreeNode
                                         label={
                                             <StyledNode>
                                                 <div className="organizational-card">
                                                     <small>
-                                                        Team Divergent
+                                                        Marketing Head
                                                     </small>
                                                 </div>
                                             </StyledNode>
@@ -194,7 +220,9 @@ const OrganizationalChart = () => {
                                     label={
                                         <StyledNode>
                                             <div className="organizational-card">
-                                                <small>AOM Mindanao</small>
+                                                <small>
+                                                    Chief Finance Officer / HRD
+                                                </small>
                                             </div>
                                         </StyledNode>
                                     }
@@ -203,115 +231,77 @@ const OrganizationalChart = () => {
                                         label={
                                             <StyledNode>
                                                 <div className="organizational-card">
-                                                    <small>Team CMA</small>
+                                                    <small>Head Finance</small>
                                                 </div>
                                             </StyledNode>
                                         }
-                                    />
+                                    >
+                                        <TreeNode
+                                            label={
+                                                <StyledNode>
+                                                    <div className="organizational-card">
+                                                        <small>Bookeeper</small>
+                                                    </div>
+                                                </StyledNode>
+                                            }
+                                        />
+                                        <TreeNode
+                                            label={
+                                                <StyledNode>
+                                                    <div className="organizational-card">
+                                                        <small>
+                                                            Billing / Collection
+                                                        </small>
+                                                    </div>
+                                                </StyledNode>
+                                            }
+                                        />
+                                        <TreeNode
+                                            label={
+                                                <StyledNode>
+                                                    <div className="organizational-card">
+                                                        <small>
+                                                            Accounting Staff
+                                                        </small>
+                                                    </div>
+                                                </StyledNode>
+                                            }
+                                        />
+                                        <TreeNode
+                                            label={
+                                                <StyledNode>
+                                                    <div className="organizational-card">
+                                                        <small>
+                                                            Liaison Officer
+                                                        </small>
+                                                    </div>
+                                                </StyledNode>
+                                            }
+                                        />
+                                    </TreeNode>
                                     <TreeNode
                                         label={
                                             <StyledNode>
                                                 <div className="organizational-card">
-                                                    <small>Team CPA</small>
+                                                    <small>HR Manager</small>
                                                 </div>
                                             </StyledNode>
                                         }
-                                    />
+                                    >
+                                        <TreeNode
+                                            label={
+                                                <StyledNode>
+                                                    <div className="organizational-card">
+                                                        <small>
+                                                            HR Assistant
+                                                        </small>
+                                                    </div>
+                                                </StyledNode>
+                                            }
+                                        />
+                                    </TreeNode>
                                 </TreeNode>
-                                <TreeNode
-                                    label={
-                                        <StyledNode>
-                                            <div className="organizational-card">
-                                                <small>Marketing Head</small>
-                                            </div>
-                                        </StyledNode>
-                                    }
-                                />
-                            </TreeNode>
-                            <TreeNode
-                                label={
-                                    <StyledNode>
-                                        <div className="organizational-card">
-                                            <small>
-                                                Chief Finance Officer / HRD
-                                            </small>
-                                        </div>
-                                    </StyledNode>
-                                }
-                            >
-                                <TreeNode
-                                    label={
-                                        <StyledNode>
-                                            <div className="organizational-card">
-                                                <small>Head Finance</small>
-                                            </div>
-                                        </StyledNode>
-                                    }
-                                >
-                                    <TreeNode
-                                        label={
-                                            <StyledNode>
-                                                <div className="organizational-card">
-                                                    <small>Bookeeper</small>
-                                                </div>
-                                            </StyledNode>
-                                        }
-                                    />
-                                    <TreeNode
-                                        label={
-                                            <StyledNode>
-                                                <div className="organizational-card">
-                                                    <small>
-                                                        Billing / Collection
-                                                    </small>
-                                                </div>
-                                            </StyledNode>
-                                        }
-                                    />
-                                    <TreeNode
-                                        label={
-                                            <StyledNode>
-                                                <div className="organizational-card">
-                                                    <small>
-                                                        Accounting Staff
-                                                    </small>
-                                                </div>
-                                            </StyledNode>
-                                        }
-                                    />
-                                    <TreeNode
-                                        label={
-                                            <StyledNode>
-                                                <div className="organizational-card">
-                                                    <small>
-                                                        Liaison Officer
-                                                    </small>
-                                                </div>
-                                            </StyledNode>
-                                        }
-                                    />
-                                </TreeNode>
-                                <TreeNode
-                                    label={
-                                        <StyledNode>
-                                            <div className="organizational-card">
-                                                <small>HR Manager</small>
-                                            </div>
-                                        </StyledNode>
-                                    }
-                                >
-                                    <TreeNode
-                                        label={
-                                            <StyledNode>
-                                                <div className="organizational-card">
-                                                    <small>HR Assistant</small>
-                                                </div>
-                                            </StyledNode>
-                                        }
-                                    />
-                                </TreeNode>
-                            </TreeNode>
-                        </Tree>
+                            </Tree>
                     </TransformComponent>
                 </>
             )}
