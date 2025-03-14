@@ -74,9 +74,6 @@ const Home = () => {
         }
     ]);
 
-
-    console.log(logo);
-
     
     return (
         <div className="home-container">

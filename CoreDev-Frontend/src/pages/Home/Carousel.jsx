@@ -27,16 +27,15 @@ export default function App({ images }) {
       <Swiper
         spaceBetween={30} // Space between slides
         // loop={true}
-        autoplay={{
-          delay: 5000, // Time between slides in milliseconds
-          disableOnInteraction: false, // Keep autoplay even after user interaction
-        }}
+        // autoplay={{
+        //   delay: 5000, // Time between slides in milliseconds
+        //   disableOnInteraction: false, // Keep autoplay even after user interaction
+        // }}
         pagination={{
           clickable: true, // Allow click on pagination
         }}
         navigation={false} // Disable navigation buttons
         modules={[Autoplay, Pagination]} // Exclude Navigation module
-        onAutoplayTimeLeft={onAutoplayTimeLeft} // Track autoplay time progress
         className="mySwiper"
         speed={800}
         breakpoints={{
@@ -69,7 +68,7 @@ export default function App({ images }) {
               <img src={`src/assets/clients/${image.image}`} alt={image.alt || `Slide ${index + 1}`} />
               {/* Overlay for each image */}
               <div className="overlay" >
-                <h3  onClick={() => navigate("/Clients")} >{image.name}</h3>
+                <h3  onClick={() => navigate("/Clients")} >{image.truncated_name}</h3>
               </div>
             </div>
           </SwiperSlide>

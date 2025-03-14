@@ -23,19 +23,22 @@
   background: transparent;
   align-items: center;
   text-align: center;
+  background-color: #9c999900;
   /* padding: 10px; */
   box-sizing: border-box;
   position: relative; /* Make sure overlay is positioned relative to the slide */
   overflow: hidden; /* Ensure overlay doesn't go outside the slide */
   transition: transform 0.3s ease; /* Smooth transition for interactions */
-  border-radius: 120px;
+  /* border-radius: 120px; */
   height: 200px;
   width: 200px !important;
   margin-right: 10px;
   cursor: pointer;
+  
 }
 .swiper-wrapper {
   gap: 30px;
+  padding: 10px;
 }
 
 /* Container for slide content */
@@ -47,12 +50,10 @@
   justify-content: center;
   border-radius: 10px;
   overflow: hidden;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for a card-like effect */
+  background-color: #ffffff00;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  */
   padding: 20px;
-  /* height: 100%;
-  width: 100%; */
-  border-radius: 120px;
+  /* border-radius: 120px; */
 }
 
 /* Image styling */
@@ -67,7 +68,7 @@
 /* Overlay styling */
 .slide-content .overlay {
   position: absolute;
-  top: 3;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
@@ -79,9 +80,9 @@
   align-items: center;
   flex-direction: column;
   height: 100%;
-  padding: 20px;
-  border-radius: 120px;
-  transition: opacity 0.3s ease; /* Smooth transition for the overlay appearance */
+  padding: 0px;
+  /* border-radius: 120px; */
+  /* Smooth transition for the overlay appearance */
 }
 
 /* On hover, show the overlay */
@@ -90,8 +91,13 @@
   border-radius: 120px;
     transition: 500ms ease-out; 
     font-family:  "Raleway", sans-serif;
+ 
 }
-
+.swiper-slide:hover{
+  border-radius: 120px;
+  transition: opacity 0.3s ease;
+  transition: 500ms ease-out; 
+}
 /* Text styling for the overlay */
 .slide-content .overlay h3 {
   margin-top: 10px;
@@ -99,7 +105,7 @@
   font-weight: bold;
   margin: 0 auto;
   word-wrap: break-word;
-  width: 120px;
+  width: 180px;
   cursor: pointer;
 }
 .slide-content .overlay h3:hover{
@@ -158,7 +164,7 @@
 .swiper-pagination-bullet {
   background-color: rgba(21, 21, 21, 0.854);
   position: relative;
-  top: -210px;
+  top: -220px;
   margin: 0 auto;
 }
 

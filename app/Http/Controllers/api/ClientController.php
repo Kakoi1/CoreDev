@@ -5,6 +5,7 @@ namespace App\Http\Controllers\api;
 use App\Http\Controllers\Controller;
 use App\Models\Hardware;
 use App\Models\Imaged;
+use DB;
 use Illuminate\Http\Request;
 
 class ClientController extends Controller
@@ -30,7 +31,16 @@ class ClientController extends Controller
 
     public function homeLogo()
     {
-        $logo = Imaged::take(30)->get();
+        $truncatedLength = 35;
+        $logo = Imaged::take(30)  
+        ->select('*')
+        ->selectRaw('
+        CASE
+            WHEN LENGTH(name) > ? THEN CONCAT(LEFT(name, ?), "...")
+            ELSE name
+        END as truncated_name
+    ', [$truncatedLength, $truncatedLength])
+        ->get();
 
         return response()->json($logo);
     }

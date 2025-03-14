@@ -4,7 +4,9 @@ import teamPhoto from '../../assets/coreDev-Team-Edited-2.png';
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import { easeInOut, motion } from 'framer-motion';
+import { useNavigate } from "react-router-dom";
 function ParticlesComponent() {
+        const navigate = useNavigate();
    const [init, setInit] = useState(false);
    useEffect(() => {
     initParticlesEngine(async (engine) => {
@@ -102,7 +104,7 @@ function ParticlesComponent() {
         >
           The Premier <br /> Software Solutions <br /> Provider in the <br /> Philippines.
           <br />
-          <button className='leanBut'>Learn More</button>
+          <button onClick={() => navigate('/about/who-we-are')} className='leanBut'>Learn More</button>
         </motion.span>
              {/* <Particles
         id="tsparticles"
