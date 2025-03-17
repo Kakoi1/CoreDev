@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import "./OurTeam.css";
 import { motion } from "framer-motion";
-import { FaEnvelope } from "react-icons/fa";
+import { FaEnvelope, FaArrowDown } from "react-icons/fa";
 
 
 import OrganizationalChart from "./OrganizationalChart";
@@ -36,9 +36,13 @@ function OurTeam() {
             <div className="imageWrap">
                 <div className="textcont">
                     <h2>OUR TEAM</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quas laborum sed. Animi esse officia impedit similique nam voluptatum unde obcaecati corporis? Voluptatum corporis eligendi commodi natus cumque, deleniti exercitationem.</p>
+                    <a href="#inner">
+                        <FaArrowDown className="icon" />
+                    </a>
                 </div>
             </div>
-            <motion.div className="inner">
+            <motion.div className="inner" id="inner">
                 <h2 style={{ textAlign: "center" }}>
                     Pillars of <span>CORE DEV SOLUTIONS INC.</span>
                 </h2>
@@ -72,7 +76,7 @@ function OurTeam() {
                     <span>CoreDev</span> Organizational Chart
                 </h1>
                 <div className="organizational-chart">
-                   <OrganizationalChart/>
+                    <OrganizationalChart />
                 </div>
             </div>
         </div>
