@@ -77,7 +77,7 @@ const OrganizationalChart = () => {
                                             <FaUser className="organizational-icon" />
                                             <small>
                                                 Chief Operation Officer /
-                                                Information Head
+                                                Implementation Head
                                             </small>
                                         </div>
                                     </StyledNode>
@@ -178,7 +178,7 @@ const OrganizationalChart = () => {
                                                 <div className="organizational-card">
                                                     <FaUser className="organizational-icon" />
 
-                                                    <small>Team Luzon</small>
+                                                    <small>Luzon Implementation Team</small>
                                                 </div>
                                             </StyledNode>
                                         }
@@ -191,25 +191,12 @@ const OrganizationalChart = () => {
                                                 <FaUser className="organizational-icon" />
 
                                                 <small>
-                                                    Area Operation Manager -
-                                                    Visayas
+                                                    Visayas Implementation Team
                                                 </small>
                                             </div>
                                         </StyledNode>
                                     }
-                                >
-                                    <TreeNode
-                                        label={
-                                            <StyledNode>
-                                                <div className="organizational-card">
-                                                    <FaUser className="organizational-icon" />
-
-                                                    <small>Team Visayas</small>
-                                                </div>
-                                            </StyledNode>
-                                        }
-                                    />
-                                </TreeNode>
+                                />
 
                                 <TreeNode
                                     label={
@@ -231,7 +218,7 @@ const OrganizationalChart = () => {
                                                 <div className="organizational-card">
                                                     <FaUser className="organizational-icon" />
 
-                                                    <small>Team Mindanao</small>
+                                                    <small>Mindanao Implementation Team</small>
                                                 </div>
                                             </StyledNode>
                                         }
@@ -256,7 +243,7 @@ const OrganizationalChart = () => {
                                             <FaUser className="organizational-icon" />
 
                                             <small>
-                                                Chief Finance Officer / HRD
+                                                Chief Finance Officer / HR Director
                                             </small>
                                         </div>
                                     </StyledNode>
@@ -317,7 +304,7 @@ const OrganizationalChart = () => {
                                                     <FaUser className="organizational-icon" />
 
                                                     <small>
-                                                        Liaison Officer
+                                                        Liason Officer
                                                     </small>
                                                 </div>
                                             </StyledNode>
