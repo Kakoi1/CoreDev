@@ -89,8 +89,8 @@ function Careers() {
                 <div className="textcont">
                     <h2>Career Opportunities</h2>
                     <p>
-                        Stable yourself with your abilities. Be a part of our
-                        <strong> amazing team!</strong>
+                        Stable yourself with your abilities. Be a part of our <strong> amazing team!</strong>
+                        
                     </p>
                     <a href="#job">
                         <FaArrowDown className="icon" />

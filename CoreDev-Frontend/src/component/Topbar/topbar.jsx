@@ -1,22 +1,24 @@
 import React from 'react';
 import { TfiEmail } from "react-icons/tfi";
 import { FaFacebook, FaLinkedin, FaMobileAlt } from "react-icons/fa"; 
+import { NavLink } from 'react-router-dom';
 import './topbar.css';
 
 const TopBar = () => {
     return (
         <div className="top-bar">
             <div className="contact-info">
-               <span> <TfiEmail className="icon" /> info@coredev.ph</span>
-                <span> <FaMobileAlt className="icon" />24/7 : Customer Service</span>
+               <span> 
+                   <TfiEmail className="icon"/>
+                   <a href="mailto:info@coredev.ph">info@coredev.ph</a>
+               </span>
+               <span> 
+                   <FaMobileAlt className="icon" />
+                   <NavLink to="/Contact-us" className="contact-link">24/7 : Contact Us</NavLink>
+               </span>
             </div>
-            {/* <div className="social-icons">
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
-            </div> */}
         </div>
     );
 };
 
 export default TopBar;
-    

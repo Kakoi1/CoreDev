@@ -46,6 +46,7 @@ body {
     font-size: 4rem;
     font-family: "Raleway", sans-serif !important;
     margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 3px black;
 }
 .textcont1 > a {
     text-decoration: none;
@@ -72,6 +73,7 @@ body {
 .textcont1 > div > p {
     font-family: "Open Sans", sans-serif;
     font-size: 1rem;
+    margin-left: 30px;
 }
 .textcont1 p {
     font-size: 1rem;
@@ -83,8 +85,10 @@ body {
     padding: 20px;
     justify-content: center;
     gap: 20px;
-    max-width: 1500px;
-    padding-top: 7.5rem;
+    max-width: 1300px;
+    margin-left: 85px;
+    
+    /* padding-top: 7.5rem; */
 }
 .credoCont svg {
     width: 54px;
@@ -100,7 +104,7 @@ body {
 .credo-top div {
     width: 100%;
     padding: 10px;
-    box-shadow: 1px 3px 3px rgba(68, 67, 67, 0.402);
+    box-shadow: 1px 1px 1px 1px rgba(255, 132, 9, 0.402);
     border-radius: 8px;
     max-width: 500px;
 }
@@ -123,7 +127,7 @@ body {
     width: 75%;
     max-width: 1000px;
     border-radius: 8px;
-    box-shadow: 1px 3px 3px rgba(68, 67, 67, 0.402);
+    box-shadow: 1px 1px 1px 1px rgba(255, 132, 9, 0.402);
     margin-bottom: 20px;
     padding: 10px;
     margin: 0 auto;
@@ -137,12 +141,13 @@ body {
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
+    
 }
 .storyContent {
-    box-shadow: 1px 3px 3px rgba(68, 67, 67, 0.402);
+    box-shadow: 2px 2px 2px 2px rgba(255, 132, 9, 0.402);
     padding: 10px;
-    width: 70%;
-    max-width: 1000px;
+    width: 87%;
+    /* max-width: 1000px; */
     margin: 0 auto;
     border-radius: 8px;
 }

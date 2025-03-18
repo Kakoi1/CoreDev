@@ -21,6 +21,7 @@
     width: 200px;
     height: 225px;
     margin-bottom: 100px;
+    border: 2px solid #dd5e04;
   }
   
   .partner-card:hover {
