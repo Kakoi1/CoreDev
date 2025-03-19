@@ -34,7 +34,7 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 90%;
+    width: 75%;
     color: white;
     padding: 30px;
     letter-spacing: 3px;
@@ -73,7 +73,7 @@ body {
 .textcont1 > div > p {
     font-family: "Open Sans", sans-serif;
     font-size: 1rem;
-    margin-left: 30px;
+    margin-left: 50px;
 }
 .textcont1 p {
     font-size: 1rem;
@@ -86,7 +86,7 @@ body {
     justify-content: center;
     gap: 20px;
     max-width: 1300px;
-    margin-left: 85px;
+    margin-left: 270px;
     
     /* padding-top: 7.5rem; */
 }
@@ -146,7 +146,7 @@ body {
 .storyContent {
     box-shadow: 2px 2px 2px 2px rgba(255, 132, 9, 0.402);
     padding: 10px;
-    width: 87%;
+    width: 70%;
     /* max-width: 1000px; */
     margin: 0 auto;
     border-radius: 8px;

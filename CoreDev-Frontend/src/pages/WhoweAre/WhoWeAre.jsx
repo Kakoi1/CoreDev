@@ -59,7 +59,7 @@ function WhoWeAre() {
                             like never before.
                         </p>
                     </div>
-                    <a href="#credoCont">
+                    <a href="#StoryCont">
                         <FaArrowDown className="icon" />
                     </a>
                 </div>
@@ -67,6 +67,7 @@ function WhoWeAre() {
 
             <motion.div
                 className="storyCont"
+                id="StoryCont"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.5 }}

@@ -97,6 +97,10 @@ p{
 p {
     font-family: "Open Sans", sans-serif;
 }
+p strong{
+    color: #ff6c00;
+
+}
 
 .courseCont img {
     height: 250px;
@@ -202,7 +206,7 @@ p {
     margin: 1rem;
     border-radius: 0.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 82%;
+    width: 65%;
     
   }
   .job-wrapper .job {
