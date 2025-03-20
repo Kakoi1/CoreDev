@@ -161,7 +161,7 @@ p {
     padding: 1rem;
     margin: 1rem;
     border-radius: 0.5rem;
-    width: 80%;
+    width: 69%;
 }
 .team-wrapper .team {
     display: flex;
@@ -254,7 +254,7 @@ p {
 
 .organizational-chart-container {
     background-color: white;
-    margin: 2rem 9.5rem;
+    margin: 2rem 18.5rem;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 1rem;
@@ -268,32 +268,43 @@ p {
     text-align: center;
 }
 
-.organizational-card small{
-  font-size: 2rem;
-  font-weight: bold;
-  font-family: "Open-Sans", sans-serif;
-  transition: 0.3s;
+.organizational-node {
+    padding: 2rem 2.25rem;
+    border-radius: 0.5rem;
+    display: inline-block;
+    margin: 0 1rem;
+    background-color: #fbbb80;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    color: var(--black);
+}
+
+.organizational-card small {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: "Open-Sans", sans-serif;
+    transition: 0.3s;
 }
 
 .organizational-card:hover small {
-  transform: scale(1.4);
+    transform: scale(1.4);
 }
 
 .organizational-card {
-  position: relative;
+    position: relative;
 }
 
 .organizational-icon {
-  position: absolute;
-  left: 50%;
-  top: -3rem;
-  transform: translate(-50%);
-  background-color: var(--orange);
-  color: var(--black);
-  font-size: 1rem;
-  padding: .5rem;
-  border-radius: 100%;
-  z-index:1;
+    position: absolute;
+    left: 50%;
+    top: -3rem;
+    transform: translate(-50%);
+    background-color: var(--orange);
+    color: var(--black);
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 100%;
+    z-index: 1;
 }
 
 .organizational-chart-container span {
