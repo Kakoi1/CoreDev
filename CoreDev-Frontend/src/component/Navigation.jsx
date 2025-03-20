@@ -37,7 +37,7 @@ const Navigation = () => {
             <nav className="navigation-container">
                 <div className='brand'>
                     <img src={coreDevIcon} alt="CoreDev Logo" />
-                    <span>CoreDev <br /> Solutions Inc.</span>
+                    {/* <span>CoreDev <br /> Solutions Inc.</span> */}
                 </div>
                 {!isMobile ? <Links /> : (
                     <>
