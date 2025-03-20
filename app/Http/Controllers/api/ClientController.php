@@ -31,16 +31,8 @@ class ClientController extends Controller
 
     public function homeLogo()
     {
-        $truncatedLength = 35;
-        $logo = Imaged::take(30)  
-        ->select('*')
-        ->selectRaw('
-        CASE
-            WHEN LENGTH(name) > ? THEN CONCAT(LEFT(name, ?), "...")
-            ELSE name
-        END as truncated_name
-    ', [$truncatedLength, $truncatedLength])
-        ->get();
+        $logo = Imaged::take(30)
+            ->get();
 
         return response()->json($logo);
     }

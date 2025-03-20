@@ -3,6 +3,11 @@
     --orange: #ff6c00;
     --gray: #d3d3d3; /* New gray color for hover */
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 body{
   background-color: #f1f8ff;
   margin: 0;

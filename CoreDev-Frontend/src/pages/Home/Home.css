@@ -22,7 +22,7 @@ body{
 .home-container .photo-wrapper span{
     position: absolute;
     top: 30%;
-    left: 150px;
+    left: 290px;
     transform: translateY(-50%);
     font-family: "Raleway", sans-serif;
     font-weight: bold;
@@ -61,7 +61,7 @@ body{
 .home-container .services-wrapper{
     font-family: "Open-Sans", sans-serif;
     padding: 20px;
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto 40px;
     grid-area: 10px;
     
@@ -78,7 +78,7 @@ body{
     display: flex;
     justify-content: center; /* Aligns with the left side */
     align-items: center;
-    gap: 50px;
+    gap: 110px;
     margin-top: 40px;
     font-family: 'Open Sans', 'sans-serif' ;
 }
@@ -181,7 +181,7 @@ body{
     display: flex;
     justify-content:center;
     align-items: center;
-    /* margin-left: 200px; */
+
 }
 
 .home-container .join-us-wrapper .left{
@@ -215,6 +215,7 @@ body{
 .home-container .join-us-wrapper .right img{
     height: 330px;
     width: 330px;
+  
 }
 
 .home-container .reach-us-wrapper{

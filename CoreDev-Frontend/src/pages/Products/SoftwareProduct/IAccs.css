@@ -8,16 +8,19 @@
   font-size: 2rem;
   font-weight: 900;
   margin-bottom: 3rem;
+  margin-left: 25px;
 }
 
 .hero-wrapper > p{
   font-size: 1.5rem;
   font-weight: 500;
-  opacity: .7
+  opacity: .7;  
+  margin-left: 25px;
 }
 
 .hero-wrapper > h2, .feature > h2 {
   color: var(--black);
+  
 }
 
 
@@ -45,6 +48,7 @@
   letter-spacing: 2px;
   text-decoration: underline var(--orange);
   text-underline-offset: .3rem;
+
 }
 
 .divWrap {

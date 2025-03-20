@@ -20,6 +20,16 @@
     font-family: "Open Sans", sans-serif;
     font-size: 14px;
     max-width: 1300px;
+    cursor: pointer;
+}
+
+.contact-info a {
+    text-decoration: none;
+    color: white;
+}
+.contact-info a:hover{
+    text-decoration: underline;
+    /* text-indent: ; */
 }
 
 .social-icons {
@@ -40,6 +50,8 @@
 
 .icon {
     margin-right: 5px;
+    color: black;
+
 }
 @media (max-width: 800px){
     .contact-info{

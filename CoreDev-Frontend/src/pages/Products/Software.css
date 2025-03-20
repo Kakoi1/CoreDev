@@ -50,7 +50,7 @@ body {
 /* Software Container */
 .SoftwareContainer {
     padding: 2rem;
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
 }
 
@@ -105,9 +105,9 @@ body {
     display: flex;
     align-items: center;
     gap: 1rem;
-    background-color: #ff6c00;
+    background: linear-gradient(to bottom, #ff9c50, #ff6c00); /* Orange gradient */
     color: white;
-    border: none;
+    border: 2px solid #dd5e04;
     padding: 10px 20px;
     font-size: 16px;
     font-weight: bold;

@@ -1,14 +1,12 @@
 /* eslint-disable react/prop-types */
 import "./Careers.css";
-import { useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { RiCheckLine } from "react-icons/ri";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaMapMarkerAlt, FaArrowDown } from "react-icons/fa";
 import { MdWorkHistory } from "react-icons/md";
 
 function Careers() {
-    
     const jobOffers = [
         {
             title: "Software Implementor",
@@ -89,15 +87,17 @@ function Careers() {
         <div className="careerCont">
             <div className="imageWrap">
                 <div className="textcont">
-                    <h2>CAREER OPPORTUNITIES</h2>
-                    <hr />
+                    <h2>Career Opportunities</h2>
                     <p>
-                        Stable yourself with your abilities. <br />
-                        Be a part of our amazing team!
+                        Stable yourself with your abilities. Be a part of our <strong> amazing team!</strong>
+                        
                     </p>
+                    <a href="#job">
+                        <FaArrowDown className="icon" />
+                    </a>
                 </div>
             </div>
-            <motion.div className="inner">
+            <motion.div className="inner" id="job">
                 <h2 style={{ textAlign: "center" }}>
                     Are You Ready <span>To Become One Of Us?</span>
                 </h2>
@@ -112,14 +112,12 @@ function Careers() {
                         link={job.link}
                     />
                 ))}
-
             </motion.div>
         </div>
     );
 }
 
 const JobOfferCard = ({ title, type, descriptions, address, link }) => {
-    const navigate = useNavigate();
     const [showDetails, setShowDetails] = useState(false);
     return (
         <motion.div
@@ -142,16 +140,18 @@ const JobOfferCard = ({ title, type, descriptions, address, link }) => {
                     <div className="title">{title}</div>
                     <div className="job-info">
                         <div className="job-type">
-                            <MdWorkHistory className="icon"/>
+                            <MdWorkHistory className="icon" />
                             {type}
                         </div>
                         <div className="job-type">
-                            <FaMapMarkerAlt className="icon"/>
+                            <FaMapMarkerAlt className="icon" />
                             {address}
                         </div>
                     </div>
                 </div>
-               <button onClick={() => window.open(link, '_blank')}>Apply Now</button>
+                <button onClick={() => window.open(link, "_blank")}>
+                    Apply Now
+                </button>
             </div>
             <p onClick={() => setShowDetails(!showDetails)}>
                 {showDetails ? "Hide Details" : "Show Details"}
