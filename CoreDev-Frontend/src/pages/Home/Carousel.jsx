@@ -26,11 +26,11 @@ export default function App({ images }) {
     <>
       <Swiper
         spaceBetween={30} // Space between slides
-        // loop={true}
-        // autoplay={{
-        //   delay: 5000, // Time between slides in milliseconds
-        //   disableOnInteraction: false, // Keep autoplay even after user interaction
-        // }}
+        loop={true}
+        autoplay={{
+          delay: 5000, // Time between slides in milliseconds
+          disableOnInteraction: false, // Keep autoplay even after user interaction
+        }}
         pagination={{
           clickable: true, // Allow click on pagination
         }}
@@ -65,10 +65,11 @@ export default function App({ images }) {
         {images.map((image, index) => (
           <SwiperSlide key={index}>
             <div className="slide-content" >
-              <img src={`src/assets/clients/${image.image}`} alt={image.alt || `Slide ${index + 1}`} />
+              <img src={`src/assets/clients/${image.image}`} title={image.name}  alt={image.name}/>
+              <div class="tooltip" id="tooltip">{}</div>
               {/* Overlay for each image */}
               <div className="overlay" >
-                <h3  onClick={() => navigate("/Clients")} >{image.truncated_name}</h3>
+                {/* <h3  onClick={() => navigate("/Clients")} >{image.name}</h3> */}
               </div>
             </div>
           </SwiperSlide>

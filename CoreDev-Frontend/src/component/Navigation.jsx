@@ -30,7 +30,7 @@ const Navigation = () => {
     const toggleMenu = () => {
         setShowLinks(!showLinks);
     };
-console.log(showLinks);
+// console.log(showLinks);
 
     return (
         <div className='navCont'>        

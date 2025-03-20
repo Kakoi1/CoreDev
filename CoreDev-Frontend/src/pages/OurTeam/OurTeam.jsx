@@ -96,9 +96,9 @@ const TeamCard = ({ name, position, image }) => {
                 <div className="team-position info">
                     <p>{position}</p>
                 </div>
-                <div className="message-icon">
+                {/* <div className="message-icon">
                     <FaEnvelope />
-                </div>
+                </div> */}
             </div>
         </div>
     );

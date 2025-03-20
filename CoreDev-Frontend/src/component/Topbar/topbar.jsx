@@ -14,7 +14,7 @@ const TopBar = () => {
                </span>
                <span> 
                    <FaMobileAlt className="icon" />
-                   <NavLink to="/Contact-us" className="contact-link">24/7 : Contact Us</NavLink>
+                   <NavLink to="/Contact-us" className="contact-link">24/7 : Customer Service</NavLink>
                </span>
             </div>
         </div>
