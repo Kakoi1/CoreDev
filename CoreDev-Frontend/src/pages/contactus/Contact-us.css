@@ -32,7 +32,7 @@ body{
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.icon1 {
+.icon1 svg {
   font-size: 24px;
   color: #ff6a00;
   margin-bottom: -15px;

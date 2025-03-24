@@ -25,7 +25,8 @@ export default function App({ images }) {
   return (
     <>
       <Swiper
-        spaceBetween={30} // Space between slides
+        spaceBetween={70} // Space between slides
+        slidesPerView={5}
         loop={true}
         autoplay={{
           delay: 5000, // Time between slides in milliseconds
@@ -39,34 +40,33 @@ export default function App({ images }) {
         className="mySwiper"
         speed={800}
         breakpoints={{
-          // Default to 7 slides per view
-          320: {
-            slidesPerView: 1, // 1 slide on very small screens (e.g., mobile)
-            spaceBetween: 10, // Space between slides on mobile
+          400: {
+            slidesPerView: 2,
+            spaceBetween: 10,
           },
-          480: {
-            slidesPerView: 2, // 2 slides on small screens
-            spaceBetween: 15, // Space between slides
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 30,
           },
           768: {
-            slidesPerView: 3, // 3 slides on medium-sized screens
-            spaceBetween: 20, // Space between slides
+            slidesPerView: 3,
+            spaceBetween: 45,
           },
           1024: {
-            slidesPerView: 5, // 5 slides on larger screens
-            spaceBetween: 25, // Space between slides
+            slidesPerView: 4,
+            spaceBetween: 55,
           },
-          1200: {
-            slidesPerView: 7, // 7 slides on very large screens
-            spaceBetween: 30, // Space between slides
+          1224: {
+            slidesPerView: 5,
+            spaceBetween: 70,
           },
         }}
       >
         {images.map((image, index) => (
           <SwiperSlide key={index}>
             <div className="slide-content" >
-              <img src={`src/assets/clients/${image.image}`} title={image.name}  alt={image.name}/>
-              <div class="tooltip" id="tooltip">{}</div>
+              <img onClick={() => navigate("/Clients")} src={`src/assets/clients/${image.image}`} title={image.name}  alt={image.name}/>
+              <div className="tooltip" id="tooltip">{}</div>
               {/* Overlay for each image */}
               <div className="overlay" >
                 {/* <h3  onClick={() => navigate("/Clients")} >{image.name}</h3> */}

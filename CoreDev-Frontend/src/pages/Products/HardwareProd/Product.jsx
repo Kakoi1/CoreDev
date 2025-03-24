@@ -6,7 +6,7 @@ import "./Product.css"; // Import the CSS file
 function Product() {
   const { category } = useParams();
   const navigate = useNavigate();
-  const API_URL = `http://localhost:8000/api/hardware/${category}`;
+  const API_URL = import.meta.env.VITE_APP_URL+`api/hardware/${category}`;
 
   const [hardwares, setHardware] = useState([]);
   const [nameCategory, setCategory] = useState(null);

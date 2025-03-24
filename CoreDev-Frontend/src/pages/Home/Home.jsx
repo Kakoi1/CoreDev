@@ -14,9 +14,11 @@ import { FiTool } from "react-icons/fi";
 import { TfiEmail } from "react-icons/tfi";
 import { FaFacebook } from "react-icons/fa";
 
-
+const MAX_RETRIES = 3; // Maximum retry attempts
+const RETRY_DELAY = 3000;
 
 const Home = () => {
+
 
       const navigate = useNavigate();
       const [logo, setLogo] = useState([]);
@@ -29,7 +31,7 @@ const Home = () => {
         setError(null);
     
         try {
-          const response = await axios.get('http://localhost:8000/api/Client-Logo');
+          const response = await axios.get(import.meta.env.VITE_APP_URL+'api/Client-Logo');
           setLogo(response.data);
           setLoading(false);
         } catch (err) {
@@ -162,8 +164,27 @@ const Home = () => {
             </div>
             <h1 className='ClientLogo' style={{textAlign: 'center'}}><span>Our</span> Clients</h1>
             <div className='logo-wrapper'  >
-               
+            {loading && (
+                <div className="loader-container">
+                <div className="loadingio-spinner-gear-nq4q5u6dq7r">
+                    <div className="ldio-x2uulkbinbj">
+                    <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                    </div>
+                </div>
+                </div>
+            )}
+
+            {error && (
+                <div className="errorCont">
+                <p style={{ color: "red", textAlign: "center" }}>{error}</p>
+                <button className="retryBut" onClick={() => setRetryCount(0)}>
+                    Retry
+                </button>
+                </div>
+            )}
+            {!loading && !error && (
                     <Carousel images={logo} />
+            )}
             </div>
             <div className="motoCont">
                 <div className='Textcontent'>

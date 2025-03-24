@@ -3,7 +3,7 @@ import axios from "axios";
 import "./Clients.css";
 import { motion } from "framer-motion";
 
-const API_URL = "http://localhost:8000/api/clients/"; // Laravel API
+const API_URL = import.meta.env.VITE_APP_URL+"api/clients/"; // Laravel API
 const MAX_RETRIES = 3; // Maximum retry attempts
 const RETRY_DELAY = 3000; // 3 seconds delay before retry
 
