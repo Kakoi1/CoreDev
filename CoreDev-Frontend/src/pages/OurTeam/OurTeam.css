@@ -165,7 +165,7 @@ p {
 }
 .team-wrapper .team {
     display: flex;
-    align-items: start;
+    align-items: center;
     justify-content: start;
     background-color: white;
     color: var(--black);
@@ -211,30 +211,25 @@ p {
 }
 
 .team-name > h3 {
-    font-size: 1.75rem;
+    font-size: 2rem;
     margin: 0;
     padding: 0;
+}
+
+.team-info > p {
+    font-size: 1rem;
 }
 
 .team .team-info {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .team-info .info {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-}
-
-.team-info .message-icon {
-    color: var(--orange);
-    padding: 0.5rem;
-    border-radius: 100%;
-    width: 1rem;
-    height: 1rem;
-    background-color: #fbbb80;
-    transition: 0.3s ease-in-out;
 }
 
 .team-info .message-icon:hover {
@@ -347,7 +342,7 @@ p {
     gap: 10px;
     padding: 12px 16px;
     border-radius: 8px;
-    z-index: 1000;
+    z-index: 1;
 }
 
 .tools button {
@@ -380,5 +375,23 @@ p {
 
     .tools button {
         width: 100%;
+    }
+
+    .organizational-chart-container{
+        margin: .5rem;
+    }
+
+    .team-wrapper {
+        display: block;
+        margin: 0 .5rem;
+    }
+
+    .team{
+        margin: .5rem 0;
+    }
+
+    .textcont{
+        padding: .5rem;
+        margin: .5rem;
     }
 }
