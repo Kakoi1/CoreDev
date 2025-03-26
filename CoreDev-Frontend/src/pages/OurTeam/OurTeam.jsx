@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import "./OurTeam.css";
 import { motion } from "framer-motion";
-import { FaEnvelope, FaArrowDown } from "react-icons/fa";
+import { FaArrowDown } from "react-icons/fa";
 
 
 import OrganizationalChart from "./OrganizationalChart";
@@ -96,9 +96,7 @@ const TeamCard = ({ name, position, image }) => {
                 <div className="team-position info">
                     <p>{position}</p>
                 </div>
-                {/* <div className="message-icon">
-                    <FaEnvelope />
-                </div> */}
+            
             </div>
         </div>
     );

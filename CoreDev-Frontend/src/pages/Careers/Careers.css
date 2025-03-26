@@ -19,11 +19,7 @@ html {
     transform: translate(-50%, -50%);
     height: 100%;
     width: 100%;
-    background: linear-gradient(
-        0deg,
-        rgb(13 6 1 / 82%),
-        rgb(49, 46, 46, 0.50)
-    );
+    background: linear-gradient(0deg, rgb(13 6 1 / 82%), rgb(49, 46, 46, 0.5));
 }
 .careerCont {
     width: 100%;
@@ -41,19 +37,19 @@ html {
 }
 
 .textcont {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  padding: 20px;
-  letter-spacing: 3px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 80%; /* Increase width to make content expand */
-  max-width: 800px; /* Adjust max-width to prevent overflow */
-  text-align: center; /* Ensure text remains centered */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    padding: 20px;
+    letter-spacing: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%; /* Increase width to make content expand */
+    max-width: 800px; /* Adjust max-width to prevent overflow */
+    text-align: center; /* Ensure text remains centered */
 }
 
 .textcont h2 {
@@ -65,14 +61,14 @@ html {
     margin-left: 85px;
     text-shadow: 1px 1px 3px black;
 }
-.textcont p{
-  font-family: 'Open Sans', sans-serif;
-  margin-left: 85px;
+.textcont p {
+    font-family: "Open Sans", sans-serif;
+    margin-left: 85px;
     cursor: pointer;
 }
 
-p{
-    font-family: 'Open Sans', sans-serif;
+p {
+    font-family: "Open Sans", sans-serif;
     cursor: pointer;
 }
 
@@ -80,15 +76,13 @@ p{
     text-decoration: none;
     color: white;
     padding: 20px;
-    /* position: relative; */
     bottom: -380px;
     letter-spacing: 3px;
-   
 }
 
 .textcont > a > .icon {
     font-size: 3rem;
-    padding: .5rem;
+    padding: 0.5rem;
     border-radius: 100%;
     background-color: var(--orange);
     margin-top: 1rem;
@@ -135,28 +129,6 @@ p strong{
     padding: 15px;
 }
 
-.job-wrapper .title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-}
-
-.job-wrapper .job-type {
-    font-size: 1rem;
-    color: #353635;
-    opacity: 0.5;
-}
-@media screen and (max-width: 768px) {
-    .courses {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-    }
-    .courses img {
-        height: 200px;
-        width: 200px;
-    }
-}
 .applyBut {
     width: 80%;
     margin: 0 auto;
@@ -195,9 +167,6 @@ p strong{
     align-items: center;
 }
 
-.inner > h2 {
-    /* padding-top: 5rem; */
-}
 
 .job-wrapper {
     background-color: #fdfcfb;
@@ -206,17 +175,20 @@ p strong{
     margin: 1rem;
     border-radius: 0.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 65%;
-    
-  }
-  .job-wrapper .job {
+    width: 82%;
+}
+.job-wrapper .job {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-  .job-wrapper button {
-    background: linear-gradient(to bottom, #ff9c50, #ff6c00); /* Orange gradient */
+.job-wrapper button {
+    background: linear-gradient(
+        to bottom,
+        #ff9c50,
+        #ff6c00
+    ); 
     color: #fdfcfb;
     border: none;
     border-radius: 1rem;
@@ -225,15 +197,24 @@ p strong{
     cursor: pointer;
     width: 200px;
     height: 50px;
-    border: 2px solid orange;   
+    border: 2px solid orange;
     font-family: "Raleway", sans-serif;
     font-size: 16px;
-    
-  }
+}
 
-
-  .job-wrapper button:hover {
+.job-wrapper button:hover {
     transform: scale(1.05);
+}
+.job-wrapper .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.job-wrapper .job-type {
+    font-size: 1rem;
+    color: #353635;
+    opacity: 0.5;
 }
 
 .job-wrapper > p {
@@ -263,4 +244,43 @@ p strong{
 
 .job-details .icon {
     color: var(--orange);
+}
+
+@media screen and (max-width: 768px) {
+    .courses {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+    .courses img {
+        height: 200px;
+        width: 200px;
+    }
+
+    .textcont > h2 {
+        font-size: 2rem;
+        display: block;
+        margin: 0;
+    }
+
+    .textcont > p{
+        margin: 1rem 0;
+    }
+
+    .job-wrapper {
+        padding: 1rem;
+    }
+
+    .job-info {
+        display: block;
+    }
+
+    .job-wrapper .job {
+        display: block;
+    }
+
+    .job > button {
+        width: 100%;
+        margin-top: 1rem;
+    } 
 }
