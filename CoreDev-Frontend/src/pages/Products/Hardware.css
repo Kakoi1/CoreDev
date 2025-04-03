@@ -4,6 +4,12 @@
       margin: 0 auto;
       
   }
+
+  :root {
+    --black: #353635;
+    --orange: #ff6c00;
+    --gray: #d3d3d3; /* New gray color for hover */
+  }
   .HardwareContainer h2 {
     font-size: 2rem;
     color: #ff6c00;
@@ -67,4 +73,11 @@
     }
     .HardwareContainer .HardWrapper .hardware h4 a {
       text-decoration: none;
+    }
+    .dark-mode .hardware{
+      background-color: var(--black) !important;
+      border: solid 1px !important;
+    }
+    .dark-mode .hardware h4{
+      color: var(--orange);
     }

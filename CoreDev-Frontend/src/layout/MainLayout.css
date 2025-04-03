@@ -15,11 +15,12 @@ body{
   box-sizing: border-box;
 }
 
+
 .progress-bar{
     transform-origin: left;
-    background-color: var(--orange);
+    background-color: var(--black);
     z-index: 10000;
-    position: sticky;
+    position: fixed;
     top: 0;
     width: 100%;
     height: 2px;
@@ -142,4 +143,13 @@ body{
   .section-right {
     right: 0;
   }
+.dark-mode .split-section{
+  background-color: var(--black) !important;
+}
+.dark-mode #loader-wrapper{
+  background: var(--black);
+}
+.dark-mode .progress-bar{
+  background-color: var(--orange);
+}
   

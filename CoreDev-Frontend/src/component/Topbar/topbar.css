@@ -10,7 +10,7 @@
 }
 
 .contact-info {
-    background-color: #ff6c00;
+    /* background-color: #ff6c00; */
     width: 100%;
     display: flex;
     gap: 5px;
@@ -49,12 +49,20 @@
 }
 
 .icon {
-    margin-right: 5px;
-    color: black;
+    margin-right: 7px;
+    margin-top: 2px;
+    color: var(--black);
+    font-weight: bold;
 
 }
 @media (max-width: 800px){
     .contact-info{
         flex-direction: column;
     }
+}
+.dark-mode .top-bar{
+    background-color: var(--black);
+}
+.dark-mode .top-bar svg{
+    color: var(--orange);
 }

@@ -60,4 +60,8 @@
     margin-top: 4rem;
     font-family: "Raleway", sans-serif;
   }
+  .dark-mode .partner-card{
+    background-color: var(--gray);
+    border: solid 1px var(--black);
+  }
   

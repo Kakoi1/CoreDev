@@ -59,6 +59,7 @@ const MainLayout = () => {
 
       {!isLoading && !isSplit && (
         <div className="split-screen">
+ 
           <motion.div
             initial={{ y: 0 }}
             animate={{ y: "-100%" }}

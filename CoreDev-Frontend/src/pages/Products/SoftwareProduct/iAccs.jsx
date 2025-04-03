@@ -65,7 +65,7 @@ const iAccs = () => {
     ];
 
     return (
-        <>
+        <div className="iAccsCont">
             <div className="hero-wrapper">
                 <h2>(INTEGRATED ACCOUNTING SYSTEM)</h2>
                 <p>
@@ -83,7 +83,7 @@ const iAccs = () => {
                 className="feature"
             >
                 <p className="font-raleway m-5">IACCS-IX (Integrated Accounting System)</p>
-                <h2 className="font-raleway m-5 p-1">Our Features</h2>
+                <h2 className="font-raleway m-5 p-1"><span>Our</span> Features</h2>
                 <div className="divWrap">
                     {softwareFeatures.map((software, index) => (
                         <motion.div
@@ -119,7 +119,7 @@ const iAccs = () => {
                     ))}
                 </div>
             </motion.div>
-        </>
+        </div>
     );
 };
 

@@ -131,7 +131,7 @@ body {
   justify-content: center;
   gap: 10px;
   /* width: 70%; */
-  background-color: #ffffff;
+  background-color: #ffffff00;
   margin: 0 auto;
   max-width: 1000px;
   border-radius: 8px;
@@ -147,6 +147,7 @@ body {
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
   margin-bottom: -30px;
+  background-color: white;
 }
 
 .clientItem img {
@@ -158,6 +159,7 @@ body {
 
 .clientItem:hover img {
   transform: scale(1.1); /* Slight zoom effect */
+  transition: 0.3s ease-in;
 }
 
 /* .clientItem .overlay {
@@ -269,7 +271,8 @@ transform-origin: 0 0; /* see note above */
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: #f0f0f0;
+  background-color: var(--black);
+  color: white;
   cursor: pointer;
   transition:  0.3s ease;
   font-weight: bold;
@@ -287,4 +290,20 @@ transform-origin: 0 0; /* see note above */
   color:#ffffff;
   border-bottom: solid;
   transition: 0.2s ease-in;
+}
+.dark-mode .category-buttons button{
+  background-color: transparent;
+  border: solid 1px;
+}
+.dark-mode .category-buttons .active{
+  background-color: var(--orange);
+}
+.dark-mode .clientItem {
+  background-color: var(--black);
+  color: white;
+  border: solid 1px;
+}
+.dark-mode .clientItem:hover{
+  color: var(--orange);
+  background-color: rgba(223, 217, 217, 0.524);
 }

@@ -186,7 +186,7 @@ const Software = () => {
                 </div>
             </motion.div>
 
-            <h1 className="product-title">Our Products</h1>
+            <h1 className="product-title"><span>Our</span> Products</h1>
             <div className="pastProj">
                 {second.map((secondItem, index) => (
                     <motion.div

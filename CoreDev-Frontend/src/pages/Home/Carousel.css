@@ -195,3 +195,6 @@ padding: 10px;
     border-radius: 120px;
   }
 } */
+ .dark-mode .slide-content .overlay{
+  background-color: rgba(0, 0, 0, 0.153);
+ }

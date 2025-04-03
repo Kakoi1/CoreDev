@@ -244,3 +244,7 @@ body{
 .see-details-btn:hover {
   background-color: #e65c00;
 }
+.dark-mode .product-card{
+  background-color: var(--black);
+  border: solid 1px;
+}

@@ -1,7 +1,18 @@
+:root {
+  --black: #353635;
+  --orange: #ff6c00;
+  --gray: #d3d3d3; /* New gray color for hover */
+}
 .hero-wrapper {
   font-family: "Raleway", sans-serif;
   color: var(--black);
-  margin: 2rem 5rem;
+  /* margin: 2rem 5rem; */
+  padding: 10px;
+}
+.iAccsCont{
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0;
 }
 
 .hero-wrapper > h2 {
@@ -39,6 +50,10 @@
 .feature > h2 {
   font-size: 1.75rem;
   text-transform: uppercase;
+  color: var(--orange) !important;
+}
+.feature span{
+  color: var(--black);
 }
 
 .feature > p {
@@ -155,4 +170,19 @@
     margin: 2rem 0;
   }
   
+}
+.dark-mode .hero-wrapper h2{
+  color: var(--gray);
+}
+.dark-mode .hero-wrapper p{
+  color: var(--orange);
+}
+.dark-mode .feature p{
+  color: var(--orange);
+} 
+.dark-mode .Soft-item{
+  background-color: var(--black);
+}
+.dark-mode .feature span{
+  color: var(--gray);
 }

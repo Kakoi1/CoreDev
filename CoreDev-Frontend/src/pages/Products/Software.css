@@ -159,10 +159,13 @@ body {
 .product-title {
     font-size: 1.75rem;
     font-family: "Raleway", sans-serif;
-    color: var(--black);
+    color: var(--orange);
     text-transform: uppercase;
     margin-top: 4rem;
     margin-bottom: 0;
+}
+.product-title span{
+    color: var(--black);
 }
 
 .SoftwareContainer svg {
@@ -205,4 +208,26 @@ body {
     display: none;
   }
 }
-
+.dark-mode .SoftWrap{
+    background-color: var(--black);
+    border: solid 1px;
+}
+.dark-mode .iaccs-title{
+    color: var(--orange) !important;
+}
+.dark-mode .iaccs-title:hover{
+    color: var(--gray) !important;
+}
+.dark-mode .SoftWrap p{
+    color: white;
+}
+.dark-mode .product-title span{
+    color: var(--gray);
+}
+.dark-mode .projectDetail{
+    background-color: var(--black);
+    border: solid 1px;
+}
+.dark-mode .projectDetail p{
+    color: white;
+}

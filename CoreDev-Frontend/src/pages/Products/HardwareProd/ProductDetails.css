@@ -15,8 +15,9 @@
 }
 
 .product-details-image {
-    width: 100%;
+    /* width: 100%; */
     max-width: 500px; 
+    border-radius: 10px;
     height: 400px; 
     object-fit: contain; 
     border-radius: 8px;
@@ -70,6 +71,7 @@
     font-family: 'Open Sans', 'sans-serif' !important;
 }
 
+
 .back-btn:hover {
     background-color: #ff6600;
     border-color: #ff6600;
@@ -85,4 +87,11 @@
         max-width: 100%;
         height: auto;
     }
+}
+.dark-mode .product-details-container{
+    background-color: var(--black);
+    border: solid 1px;
+}
+.dark-mode .product-details-container p{
+    color: white;
 }

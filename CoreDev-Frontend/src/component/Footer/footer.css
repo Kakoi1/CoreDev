@@ -113,3 +113,41 @@
     }
   
 }
+.footer-wrapper .contact-wrapper a:hover{
+    text-decoration: underline;
+}
+.dark-mode .footerCont .footer-wrapper,
+.dark-mode .footerCont{
+background-color: var(--orange);
+}
+.dark-mode .footerCont  {
+    color: black;
+}
+.dark-mode h2 {
+    border-left: 5px solid var(--black);
+}
+.dark-mode .footer-wrapper .custom-list a{
+    color: var(--black);
+    font-weight: bold;
+}
+.dark-mode .footer-wrapper .custom-list li svg{
+    color: white;
+}
+.dark-mode .contact-wrapper p::after{
+    background: var(--black);
+}
+.dark-mode .footer-wrapper .contact-wrapper a{
+    color: var(--black);
+}
+.dark-mode .footer-wrapper .contact-wrapper a:hover{
+    text-decoration: underline;
+}
+.dark-mode .footer-wrapper .links-wrapper svg{
+    color: var(--black) !important;
+}
+.dark-mode .footer-wrapper .about-wrapper p{
+    color: var(--black);
+}
+.dark-mode .CopyRight{
+    background-color: var(--black);
+}

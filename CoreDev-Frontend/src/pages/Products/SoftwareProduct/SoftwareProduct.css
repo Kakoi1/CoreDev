@@ -5,7 +5,11 @@
   align-items: center;
   margin: 1rem;
 }
-
+:root {
+  --black: #353635;
+  --orange: #ff6c00;
+  --gray: #d3d3d3; /* New gray color for hover */
+}
 .project-detail {
   background-color: #ffffff;
   border-radius: 8px;
@@ -148,4 +152,23 @@
     flex: 1;
   }
 }
-
+.dark-mode .project-detail{
+  background-color: var(--black);
+  border: solid 1px;
+}
+.dark-mode .project-info h4{
+ color: var(--orange);
+}
+.dark-mode .project-info p{
+  color: white;
+}
+.dark-mode .feature-wrap{
+  background-color: var(--black);
+  border: solid .5px;
+}
+.dark-mode .feature-wrap h4{
+  color: var(--orange);
+}
+.dark-mode .feature-wrap li{
+  color: white;
+}

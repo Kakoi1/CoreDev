@@ -8,7 +8,7 @@
     width: 100%;
     background-color: var(--black);
     position: sticky;
-    top: 0;
+    top: 2px;
     left: 0;
     right: 0;
     z-index: 10;
@@ -148,6 +148,7 @@
     transform: translateY(10px);
     border-top: 6px solid #ff6c00;
     z-index: 10;
+    border-radius: 8px;
 }
 
 /* Show dropdown on hover */
@@ -280,4 +281,41 @@
 
 .home-container .services-wrapper .service-list .service-item button svg {
     font-size: 18px;
+}
+.dark-mode .navCont{
+    background-color: var(--orange);
+}
+.dark-mode .navCont nav{
+    background-color: var(--orange);
+}
+.dark-mode .brand span::first-line{
+    color: var(--black);
+}
+.dark-mode .navCont svg,
+.dark-mode .navCont a{
+    color: var(--black);
+    font-weight: bold;
+}
+.dark-mode .dropdown{
+    background-color: var(--black);
+    border: solid 1px;
+}
+.dark-mode .dropdown a{
+    color: white;
+}
+.dark-mode .dropdown a:hover{
+    color: black;
+}
+.dark-mode .mobile-links{
+    background-color: var(--orange);
+}
+.dark-mode .navigation-container ul .navigation-link:after{
+    background-color: white;
+}
+.dark-mode .mobile-links span::first-line{
+    color: var(--black);
+}
+.dark-mode .mobile-links hr{
+    background-color: var(--black);
+    height: 1px; border: 0;
 }
