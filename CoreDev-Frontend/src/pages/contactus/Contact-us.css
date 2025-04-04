@@ -122,6 +122,11 @@ body{
     max-width: 1300px;
     margin: auto;
     font-family: 'Arial', sans-serif;
+    max-height: 600px;
+    margin-bottom: 40px;
+  }
+  .contactCont span{
+    color: var(--black);
   }
   
   /* Tab Navigation */
@@ -310,5 +315,43 @@ body{
     width: 50px;
     position: relative;
     left: 45px;
+  }
+  .dark-mode .contactCont span{
+    color: white;
+  }
+  .dark-mode .contact-item,
+  .dark-mode .contact-card{
+    background-color: var(--black);
+    border: solid 1px;
+    box-shadow: none;
+  }
+  .dark-mode .contact-item .contact-details h4,
+  .dark-mode .contact-card .contact-details h4{
+    color: var(--orange);
+  }
+  .dark-mode .contact-card .contact-details p{
+    color: var(--gray);
+  }
+  .dark-mode .contact-item .contact-details a{
+    color: var(--gray);
+  }
+  .contact-item .contact-details a:hover{
+    text-decoration: underline;
+  }
+  .dark-mode .mapCont{
+    background-color: var(--black);
+    border: solid 1px;
+  }
+  .dark-mode .tab-button{
+    color: var(--gray);
+  }
+  .dark-mode .tab-button.active{
+    color: var(--orange);
+  }
+  .contactCont span{
+    color: var(--black);
+  }
+  .dark-mode .contactCont span{
+    color: white;
   }
   

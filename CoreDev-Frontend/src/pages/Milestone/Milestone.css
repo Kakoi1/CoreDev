@@ -1,5 +1,5 @@
 .milestone{
-  background: #f9f9f9;
+  /* background: #f9f9f9; */
   background-size: cover;
   margin: 0;
   padding: 0;
@@ -382,4 +382,21 @@
     -o-transform: translateX(0);
     transform: translateX(0);
   }
+}
+.dark-mode .milestone{
+  background-color: var(--black);
+}
+.dark-mode #timeline .timeline-item .timeline-content{
+  background-color: var(--black);
+
+}
+.dark-mode #timeline .timeline-item .timeline-content span,
+.dark-mode #timeline .timeline-item .timeline-content li{
+  color: var(--gray);
+}
+.dark-mode #timeline .timeline-item .timeline-icon{
+  background-color: var(--orange);
+}
+.dark-mode #timeline .timeline-item .timeline-icon svg{
+  color: var(--black);
 }

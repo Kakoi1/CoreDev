@@ -161,10 +161,10 @@ const Contact = () => {
 
   return (
       <div className='contactCont'>
-        <h2>You can reach us through</h2>
+        <h2><span>You can</span> reach us through</h2>
       <ContactInfo/>
 
-        <h2>Where To Find Us.</h2>
+        <h2><span>Where</span> To Find Us.</h2>
         <div className='mapCont'>
 
         <div className="tab-container" style={{ marginBottom: '-15px', float: 'right' }}>

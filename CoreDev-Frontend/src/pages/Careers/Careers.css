@@ -85,6 +85,7 @@ p {
     padding: 0.5rem;
     border-radius: 100%;
     background-color: var(--orange);
+    color: white;
     margin-top: 1rem;
 }
 
@@ -165,6 +166,7 @@ p strong{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 40px;
 }
 
 
@@ -283,4 +285,18 @@ p strong{
         width: 100%;
         margin-top: 1rem;
     } 
+}
+.dark-mode .inner h2{
+    color: white;
+}
+.dark-mode .job-wrapper {
+    background-color: var(--black);
+    border: solid 1px;
+}
+.dark-mode .job-type{
+    color: var(--gray);
+}
+.dark-mode .textcont > a > .icon{
+    background-color: white;
+    color: var(--orange);
 }

@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   min-height: 50vh;
-  background-color: #f4f4f9;
+  /* background-color: #f4f4f9; */
   padding: 20px;
 }
 
@@ -63,4 +63,12 @@
   color: #777777;
   margin: 0;
   font-family: 'Open Sans', sans-serif;
+}
+.dark-mode .Regwrapper{
+  background-color: var(--black);
+  box-shadow: none;
+  border: solid 1px;
+}
+.dark-mode .Regwrapper h3{
+  color: var(--gray);
 }

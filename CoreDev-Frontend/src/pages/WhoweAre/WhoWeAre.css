@@ -88,6 +88,7 @@ body {
     max-width: 1300px;
     margin-left: 85px;
     margin: 0 auto;
+    margin-bottom: 40px;
     /* padding-top: 7.5rem; */
 }
 .credoCont svg {
@@ -147,7 +148,7 @@ body {
     box-shadow: 2px 2px 2px 2px rgba(255, 132, 9, 0.402);
     padding: 10px;
     width: 70%;
-    /* max-width: 1000px; */
+    max-width: 1300px;
     margin: 0 auto;
     border-radius: 8px;
 }
@@ -195,4 +196,23 @@ body {
     .storyContent {
         width: 100%;
     }
+}
+.dark-mode .story-content p{
+    color: var(--gray);
+}
+.dark-mode .storyContent{
+    border: solid 1px;
+    background-color: var(--black);
+    box-shadow: none;
+}
+.dark-mode .values,
+.dark-mode .credo-top div{
+    background-color: var(--black);
+    border:  solid 1px;
+    box-shadow: none;
+ 
+}
+.dark-mode .values p,
+.dark-mode .credo-top p{
+    color: var(--gray);
 }

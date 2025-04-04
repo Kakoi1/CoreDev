@@ -395,3 +395,25 @@ p {
         margin: .5rem;
     }
 }
+.dark-mode .inner h2{
+    color: white;
+}
+.dark-mode .inner .team{
+    background-color: var(--black);
+    color: var(--gray);
+    box-shadow: none;
+    border: solid 1px;
+}
+.dark-mode .inner .team p{
+    color: var(--orange);
+}
+.dark-mode .organizational-chart-container{
+    background-color: var(--black);
+    border: solid 1px;
+}
+.dark-mode .organizational-chart-container h1{
+    color: white;
+}
+.dark-mode .organizational-chart{
+    border: solid 1px;
+}

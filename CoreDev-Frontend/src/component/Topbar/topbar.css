@@ -48,7 +48,7 @@
     color: #ff6c00; /* Highlight color on hover */
 }
 
-.icon {
+.top-bar .icon {
     margin-right: 7px;
     margin-top: 2px;
     color: var(--black);
