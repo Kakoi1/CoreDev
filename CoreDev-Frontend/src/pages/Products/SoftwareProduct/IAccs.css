@@ -63,14 +63,13 @@
   letter-spacing: 2px;
   text-decoration: underline var(--orange);
   text-underline-offset: .3rem;
-
+  margin: 4rem 0 2rem 0;
 }
 
 .divWrap {
   display: flex;
   justify-content: center;
   gap: 2rem;
-  margin: 2rem 5rem;
 }
 
 .head {
@@ -130,7 +129,7 @@
 
   .divWrap {
     display: block;
-    /* margin: 2rem; */
+    margin: 2rem;
   }
 
   .Soft-item {
@@ -145,7 +144,6 @@
   .divWrap {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin: 2rem;
   }
 }
 
@@ -153,7 +151,6 @@
   .divWrap {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    margin: 2rem 5rem;
   }
 }
 
