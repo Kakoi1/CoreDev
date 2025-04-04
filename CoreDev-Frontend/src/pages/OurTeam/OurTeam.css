@@ -268,7 +268,8 @@ p {
     border-radius: 0.5rem;
     display: inline-block;
     margin: 0 1rem;
-    background-color: #fbbb80;
+    background-color: var(--gray);
+    border: solid 2px var(--orange);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-transform: uppercase;
     color: var(--black);
