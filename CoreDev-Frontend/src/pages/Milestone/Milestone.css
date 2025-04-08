@@ -383,6 +383,12 @@
     transform: translateX(0);
   }
 }
+
+.timeline-content ul,
+.timeline-content li {
+  font-family: 'Ubuntu', sans-serif;
+}
+
 .dark-mode .milestone{
   background-color: var(--black);
 }

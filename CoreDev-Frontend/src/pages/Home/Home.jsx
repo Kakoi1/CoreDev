@@ -14,10 +14,27 @@ import { FiTool } from "react-icons/fi";
 import { TfiEmail } from "react-icons/tfi";
 import { FaFacebook } from "react-icons/fa";
 
+import globeLogo from '../../assets/globe.png';
+import smartLogo from '../../assets/smart.png';
+import dragonLogo from '../../assets/dragon.png';
+import pesoLogo from '../../assets/peso.png';
+import ubLogo from '../../assets/ub.png';
+
+
 const MAX_RETRIES = 3; // Maximum retry attempts
 const RETRY_DELAY = 3000;
 
 const Home = () => {
+
+
+    const partners = [
+        { logo: globeLogo, link: "https://www.globe.com.ph" },
+        { logo: smartLogo, link: "https://smart.com.ph" },
+        { logo: dragonLogo, link: "https://www.dragonpay.ph" },
+        { logo: pesoLogo, link: "https://www.pesopay.com" },
+        { logo: ubLogo, link: "https://www.unionbankph.com" },
+    ];
+    
 
 
       const navigate = useNavigate();
@@ -186,6 +203,26 @@ const Home = () => {
                     <Carousel images={logo} />
             )}
             </div>
+            <div className="partners-container">
+    <h2 className="partners-header">Development <span>Partners</span></h2>
+    <div className="partners-grid">
+        {partners.map((partner, index) => (
+            <motion.div 
+                key={index} 
+                className="partner-card"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.2 }}
+            >
+                <a href={partner.link} target="_blank" rel="noopener noreferrer">
+                    <img src={partner.logo} alt={partner.name} className="partner-logo" />
+                </a>
+                <p className="partner-name">{partner.name}</p>
+            </motion.div>
+        ))}
+    </div>
+</div>
+
             <div className="motoCont">
                 <div className='Textcontent'>
                 <h1>INNOVATING YOUR FUTURE</h1>
