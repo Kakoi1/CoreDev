@@ -24,7 +24,7 @@ const ContactInfo = () => {
 
   return (
     <div className="contactWrap">
-      <div className="contact-container">
+      {/* <div className="contact-container">
         {details.map((item, index) => (
           <div className="contact-card" key={index}>
             <div className="icon1"><BiLocationPlus /></div>
@@ -35,7 +35,7 @@ const ContactInfo = () => {
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
 
       <div className="extra-contact">
         <div className="contact-item">
@@ -67,13 +67,19 @@ const ContactInfo = () => {
 const Contact = () => {
   const [selectedMarker, setSelectedMarker] = useState(null);
   const [address, setAddress] = useState('');
+  const [showDetails, setShowDetails] = useState(true);
   const [map, setMap] = useState(null);
 
   const locations = [
-    { id: 1,  cid: '9153839079113836537', otherNmae: 'Main Branch',name: 'CoreDev Solutions Inc.', position: { lat: 10.298937561572044, lng: 123.8892060572453 } },
-    { id: 2,  cid: '17502278350547099942', otherNmae: 'Mindanao Branch',name: 'coreDev Solutions Inc - Davao', position: { lat: 7.108080517350672, lng: 125.61502033701797} },
-    { id: 3, cid: '18355226061558763366', otherNmae: 'Luzon Branch',name: 'coreDev Solutions Inc - Cavite', position: { lat: 14.385910117402625, lng: 120.94084551047905 } },
+    { id: 3, cid: '18355226061558763366',  address: "4th Floor DACCO MPC Building #40 Anabu Road Anabu II-B City of Imus, Cavite",otherNmae: 'Luzon Branch',name: 'coreDev Solutions Inc. - Cavite',tel: "(032) - 328-2694 GLOBE | (032) - 234-5954 PLDT" ,position: { lat: 14.385910117402625, lng: 120.94084551047905 } },
+    { id: 1,  cid: '9153839079113836537',  address: "96 J. Alcantara Street, Brgy. Sambag 1, Cebu City",otherNmae: 'Visayas Branch',name: 'CoreDev Solutions Inc. - Main',  tel: "(082) - 233 9306",position: { lat: 10.298937561572044, lng: 123.8892060572453 } },
+    { id: 2,  cid: '17502278350547099942', address: "11B, Cherry Tree Street, Palm Drive, Buhangin Davao City, Davao Del Sur", otherNmae: 'Mindanao Branch',name: 'coreDev Solutions Inc. - Davao',  tel: "(046) - 501 6596", position: { lat: 7.108080517350672, lng: 125.61502033701797} },
+
   ];
+
+  const handleCloseDetails = () => {
+    setShowDetails(false); // Just hide details, don't change selection
+  };
 
   const getAddressFromCoordinates = async (lat, lng) => {
     try {
@@ -94,9 +100,18 @@ const Contact = () => {
 
 
   const handleButtonClick = (location) => {
-    setSelectedMarker(location);
-    map.setCenter(location.position); 
-    getAddressFromCoordinates(location.position.lat, location.position.lng);
+    if (selectedMarker?.id === location.id) {
+      // Toggle details panel if clicking the same tab
+      setShowDetails(true);
+    } else {
+      // Select new tab and show details
+      setSelectedMarker(location);
+      setShowDetails(true);
+      if (map) {
+        map.setCenter(location.position);
+      }
+      getAddressFromCoordinates(location.position.lat, location.position.lng);
+    }
   };
 
   useEffect(() => {
@@ -107,7 +122,7 @@ const Contact = () => {
 
     script.onload = () => {
       const mapInstance = new window.google.maps.Map(document.getElementById('map'), {
-        center: locations[0].position,
+        center: locations[1].position,
         zoom: 15,
       });
       const minZoom = 15; 
@@ -149,8 +164,8 @@ const Contact = () => {
       });
 
       // Set the first location as selected by default
-      setSelectedMarker(locations[0]);
-      getAddressFromCoordinates(locations[0].position.lat, locations[0].position.lng);
+      setSelectedMarker(locations[1]);
+      getAddressFromCoordinates(locations[1].position.lat, locations[1].position.lng);
     };
 
 
@@ -159,15 +174,15 @@ const Contact = () => {
     };
   }, []);
 
+
   return (
-      <div className='contactCont'>
-        <h2><span>You can</span> reach us through</h2>
-      <ContactInfo/>
+    <div className='contactCont'>
+    <h2><span>You can</span> reach us through</h2>
+    <ContactInfo/>
 
-        <h2><span>Where</span> To Find Us.</h2>
-        <div className='mapCont'>
-
-        <div className="tab-container" style={{ marginBottom: '-15px', float: 'right' }}>
+    <h2><span>Where</span> To Find Us.</h2>
+    <div className='mapCont'>
+    <div className="tab-container" style={{ marginBottom: '-15px', float: 'right' }}>
           {locations.map((location) => (
             <button
               key={location.id}
@@ -179,48 +194,98 @@ const Contact = () => {
             </button>
           ))}
         </div>
-        <div className='mapBack'>
-            <div id="map" style={{ height: '500px', width: '100%' }}></div>
-        </div>
-        {selectedMarker && (
-          <div className='contDetails' style={{
-            position: 'relative',
-            top: '-490px',
-            left: '20px',
-            padding: '10px',
-            borderRadius: '5px',
-            boxShadow: '0 2px 6px rgba(0, 0, 0, 0.3)',
-            zIndex: 1000,
-            width: '40%'
-          }}>
-            <h3>{selectedMarker.name}</h3>
-            <hr />
-            <p>Address: {address}</p>
-            
-            <a
-              href={`https://www.google.com/maps/dir/?api=1&destination=${selectedMarker.name}&travelmode=driving`}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ display: 'block', margin: '10px 0', color: '#007BFF' }}
-            >
-              Get Directions <BiSolidDirectionRight />
-            </a>
-            <a
-              href={`https://www.google.com/maps?ll=${selectedMarker.position.lat},${selectedMarker.position.lng}&cid=${selectedMarker.cid}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ display: 'block', margin: '10px 0', color: '#007BFF' }}
-            >
-             View Larger Map <BiMapAlt />
-            </a>
-            <button className='close-button' onClick={() => setSelectedMarker(null)} style={{ marginTop: '10px' }}>
-              Close
-            </button>
+      {/* Vertical Tab Navigation */}
+      <div className="popup" style={{ 
+        // float: 'right',
+        marginBottom: '20px',
+        width: '290px',
+        height: '600px',
+        minHeight: 'auto',
+        maxHeight: 'none'
+      }}>
+        <div className="tabs">
+          {locations.map((location, index) => (
+            <React.Fragment key={location.id}>
+              <input 
+                type="radio" 
+                id={`tab${index+1}`} 
+                name="tab" 
+                checked={selectedMarker?.id === location.id}
+                onClick={() => handleButtonClick(location)}
+              />
+              <label 
+                htmlFor={`tab${index+1}`}
+                style={{ textAlign: 'left', paddingLeft: '24px' }}
+              >
+                {location.otherNmae}
+              </label>
+            </React.Fragment>
+          ))}
+          <div className="marker">
+            <div id="top"></div>
+            <div id="bottom"></div>
             
           </div>
-        )}
         </div>
-      </div>
+        </div>
+
+      <div className='mapBack'>
+        <div id="map" style={{ height: '600px', width: '100%' }}></div>
+   
+      
+      {showDetails && selectedMarker && (
+        <div className='contDetails' style={{
+          position: 'relative',
+          top: '-590px',
+          left: '20px',
+          padding: '20px',
+          borderRadius: '12px',
+          // background: 'white',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)',
+          zIndex: 0,
+          width: '40%',
+          maxWidth: '500px'
+        }}>
+          <h3>{selectedMarker.name}</h3>
+          <hr />
+          <p>Address: <strong>{selectedMarker.address}</strong></p>
+          <p >Tel No: <strong>{selectedMarker.tel}</strong></p>
+          <a
+            href={`https://www.google.com/maps/dir/?api=1&destination=${selectedMarker.name}&travelmode=driving`}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ display: 'block', margin: '12px 0', color: '#007BFF' }}
+          >
+            Get Directions <BiSolidDirectionRight />
+          </a>
+          <a
+            href={`https://www.google.com/maps?ll=${selectedMarker.position.lat},${selectedMarker.position.lng}&cid=${selectedMarker.cid}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ display: 'block', margin: '12px 0', color: '#007BFF' }}
+          >
+            View Larger Map <BiMapAlt />
+          </a>
+          <button 
+            className='close-button' 
+            onClick={handleCloseDetails}
+            style={{ 
+              marginTop: '15px',
+              padding: '8px 16px',
+              // background: '#f0f0f0',
+              border: 'none',
+              borderRadius: '4px',
+              cursor: 'pointer'
+            }}
+          >
+            Close
+          </button>
+        </div>
+     
+      )}
+        </div>
+    </div>
+  </div>
     );
 };
 

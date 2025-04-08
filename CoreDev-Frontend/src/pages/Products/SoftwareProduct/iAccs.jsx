@@ -1,78 +1,12 @@
 import "./IAccs.css";
 import { motion } from "framer-motion";
 import { IoCheckmarkDone } from "react-icons/io5";
+import { softwareFeatures } from "../data";
 
 const iAccs = () => {
 
-    const softwareFeatures = [
-        {
-            title: "Core Accounting System",
-            features: [
-                "General Ledger",
-                "Subsidiary Ledger",
-                "Back Office Transaction",
-                "Front Office Transaction",
-                "Financial Statements",
-                "Fixed Asset Management",
-                "Overriding System",
-                "Aging of Receivables",
-                "Regulating agency reports (BIR, BSP, CDA, CISA)",
-            ],
-        },
-        {
-            title: "Deposits System (Linked to Core Accounting)",
-            features: [
-                "Savings, Share Capital, Time Deposit, Special Deposit",
-                "Interest/Witholding Tax on Deposits Processing",
-                "Accrual of Interest on Deposits Processing",
-                "Automatic Rollover of Time Deposits",
-                "Dormancy Management",
-                "Dividend and Patronage Refund Processing",
-            ],
-        },
-        {
-            title: "Loan System (Linked to Core Accounting)",
-            features: [
-                "Analysis of Loans Receivable",
-                "Aging of Loans Receivable",
-                "Collection Efficiency",
-                "Loans Application/Processing Module",
-                "Collector/Account Office Management",
-                "Unearned Interest Amortization Processing",
-                "Holiday Management",
-                "Amortization Schedule Calculator",
-                "Interest Rebates System",
-                "Batch Printing/Email of Reminder/Demand Letters",
-                "Interest and Penalty Worksheet",
-                "Loans History",
-                "Client Credit Rating",
-            ],
-        },
-        {
-            title: "Sales & Inventory with POS (Linked to Core Accounting)",
-            features: [
-                "Item Maintenance",
-                "Receiving/Return",
-                "Point on Sale",
-                "Inventory",
-                "Stocks Warehousing/Transfer",
-                "Purchase Order",
-                "Supplier Maintenance",
-                "Physical Inventory",
-                "Ordering System",
-            ],
-        },
-    ];
-
     return (
         <div className="iAccsCont">
-            <div className="hero-wrapper">
-                <h2>(INTEGRATED ACCOUNTING SYSTEM)</h2>
-                <p>
-                    &quot;An Accounting Software for Cooperatives, Banks,
-                    Lending Institutions, Financial Institutions&quot;
-                </p>
-            </div>
 
             <motion.div
                 layout
@@ -82,8 +16,7 @@ const iAccs = () => {
                 transition={{ duration: 0.3 }}
                 className="feature"
             >
-                <p className="font-raleway m-5">IACCS-IX (Integrated Accounting System)</p>
-                <h2 className="font-raleway m-5 p-1"><span>Our</span> Features</h2>
+                <p className="font-raleway">IACCS-IX (Integrated Accounting System)</p>
                 <div className="divWrap">
                     {softwareFeatures.map((software, index) => (
                         <motion.div
