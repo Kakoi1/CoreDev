@@ -5,10 +5,21 @@ import IAccs from "./SoftwareProduct/iAccs";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { softwareProducts } from "./data";
-
+import { RiCodepenFill } from "react-icons/ri";
+import ProductInquiryForm from '../email/ProductInquiryForm';
 const Software = () => {
     const navigate = useNavigate();
     const [showFeature, setShowFeature] = useState(false);
+    const [ProductFeature, setProductFeature] = useState({});
+
+    const toggleDetails = (id) => {
+        setProductFeature(prev => ({
+          ...prev,
+          [id]: !prev[id]
+        }));
+      };
+      console.log(ProductFeature);
+      
 
     return (
         <div className="SoftwareContainer">
@@ -52,7 +63,7 @@ const Software = () => {
                         >
                             {showFeature ? (
                                 <>
-                                    Explore Less
+                                    Collapse
                                     <IoIosArrowUp className="icon " />
                                 </>
                             ) : (
@@ -70,7 +81,7 @@ const Software = () => {
             </motion.div>
 
             <h1 className="product-title">
-                <span>Our</span> Products
+                <span>Software</span> Products
             </h1>
             <div className="pastProj">
                 {softwareProducts.map((secondItem, index) => (
@@ -106,26 +117,63 @@ const Software = () => {
                                 <div>
                                     <button
                                         className="IacWrap-btn"
-                                        onClick={() =>
-                                            navigate(
-                                                `/products/software/${encodeURIComponent(
-                                                    secondItem.title
-                                                )}`,
-                                                {
-                                                    state: {
-                                                        pic: secondItem.picUrl,
-                                                        title: secondItem.title,
-                                                        description:
-                                                            secondItem.description,
-                                                        feature:
-                                                            secondItem.feature,
-                                                    },
-                                                }
-                                            )
-                                        }
+                                        onClick={() => toggleDetails(index)} 
+                                        // onClick={() =>
+                                        //     navigate(
+                                        //         `/products/software/${encodeURIComponent(
+                                        //             secondItem.title
+                                        //         )}`,
+                                        //         {
+                                        //             state: {
+                                        //                 pic: secondItem.picUrl,
+                                        //                 title: secondItem.title,
+                                        //                 description:
+                                        //                     secondItem.description,
+                                        //                 feature:
+                                        //                     secondItem.feature,
+                                        //             },
+                                        //         }
+                                        //     )
+                                        // }
                                     >
-                                        Learn more
+                                    {ProductFeature[index] ? (
+                                <>
+                                    Collapse
+                                    <IoIosArrowUp className="icon " />
+                                        </>
+                                    ) : (
+                                        <>
+                                          Learn more  
+                                            <IoIosArrowDown className="icon " />
+                                        </>
+                                    )}
                                     </button>
+                                    <br />
+                                    <AnimatePresence>
+                                        {ProductFeature[index] &&
+                                                           <div className="Iac-wrap">
+                                                                <motion.div
+                                                                    layout
+                                                                    className="feature-wrap"
+                                                                    initial={{ opacity: 0 }}
+                                                                    animate={{ opacity: 1 }}
+                                                                    exit={{ opacity: 0 }}
+                                                                    transition={{ duration: 0.3 }}
+                                                                >
+                                                                    <RiCodepenFill className="icon" />
+                                                                    <h4>General Features</h4>
+                                                                    <ul>
+                                                                        {secondItem.feature.map(
+                                                                            (itemFeature, index) => (
+                                                                                <li key={index}>{itemFeature}</li>
+                                                                            )
+                                                                        )}
+                                                                    </ul>
+                                                                    <ProductInquiryForm productName={secondItem.title} picUrl={secondItem.picUrl} type={'Software'} />
+                                                                </motion.div>
+                                                            </div>
+                                                            }
+                                    </AnimatePresence>
                                 </div>
                             </div>
                         </div>

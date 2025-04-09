@@ -1,6 +1,6 @@
 import { color } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
-import { BiLocationPlus, BiMailSend, BiLogoFacebook, BiMapAlt, BiSolidDirectionRight   } from "react-icons/bi";
+import { BiLocationPlus, BiMailSend, BiLogoFacebook, BiMapAlt, BiSolidDirectionRight, BiSolidRightArrow   } from "react-icons/bi";
 import "./Contact-us.css";
 
 const ContactInfo = () => {
@@ -72,7 +72,7 @@ const Contact = () => {
 
   const locations = [
     { id: 3, cid: '18355226061558763366',  address: "4th Floor DACCO MPC Building #40 Anabu Road Anabu II-B City of Imus, Cavite",otherNmae: 'Luzon Branch',name: 'coreDev Solutions Inc. - Cavite',tel: "(032) - 328-2694 GLOBE | (032) - 234-5954 PLDT" ,position: { lat: 14.385910117402625, lng: 120.94084551047905 } },
-    { id: 1,  cid: '9153839079113836537',  address: "96 J. Alcantara Street, Brgy. Sambag 1, Cebu City",otherNmae: 'Visayas Branch',name: 'CoreDev Solutions Inc. - Main',  tel: "(082) - 233 9306",position: { lat: 10.298937561572044, lng: 123.8892060572453 } },
+    { id: 1,  cid: '9153839079113836537',  address: "96 J. Alcantara Street, Brgy. Sambag 1, Cebu City",otherNmae: 'Visayas Branch - Main',name: 'CoreDev Solutions Inc. - Main',  tel: "(082) - 233 9306",position: { lat: 10.298937561572044, lng: 123.8892060572453 } },
     { id: 2,  cid: '17502278350547099942', address: "11B, Cherry Tree Street, Palm Drive, Buhangin Davao City, Davao Del Sur", otherNmae: 'Mindanao Branch',name: 'coreDev Solutions Inc. - Davao',  tel: "(046) - 501 6596", position: { lat: 7.108080517350672, lng: 125.61502033701797} },
 
   ];
@@ -182,7 +182,7 @@ const Contact = () => {
 
     <h2><span>Where</span> To Find Us.</h2>
     <div className='mapCont'>
-    <div className="tab-container" style={{ marginBottom: '-15px', float: 'right' }}>
+    <div className="tab-container" style={{ marginBottom: '-15px'}}>
           {locations.map((location) => (
             <button
               key={location.id}
@@ -195,39 +195,22 @@ const Contact = () => {
           ))}
         </div>
       {/* Vertical Tab Navigation */}
-      <div className="popup" style={{ 
-        // float: 'right',
-        marginBottom: '20px',
-        width: '290px',
-        height: '600px',
-        minHeight: 'auto',
-        maxHeight: 'none'
-      }}>
-        <div className="tabs">
+        <div className="side-tab">
           {locations.map((location, index) => (
-            <React.Fragment key={location.id}>
-              <input 
-                type="radio" 
+            <div className='arrowIcon'>  
+               {(selectedMarker?.id === location.id ? <BiSolidRightArrow/>:'')}
+              <button
                 id={`tab${index+1}`} 
                 name="tab" 
-                checked={selectedMarker?.id === location.id}
+                className={'side-button' + (selectedMarker?.id === location.id ? ' active' : '')}
                 onClick={() => handleButtonClick(location)}
-              />
-              <label 
-                htmlFor={`tab${index+1}`}
-                style={{ textAlign: 'left', paddingLeft: '24px' }}
-              >
-                {location.otherNmae}
-              </label>
-            </React.Fragment>
-          ))}
-          <div className="marker">
-            <div id="top"></div>
-            <div id="bottom"></div>
-            
-          </div>
+              >    
+            {location.otherNmae}
+              </button>
+              </div>
+          ))} 
         </div>
-        </div>
+  
 
       <div className='mapBack'>
         <div id="map" style={{ height: '600px', width: '100%' }}></div>

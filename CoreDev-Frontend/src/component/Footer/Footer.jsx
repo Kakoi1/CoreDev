@@ -13,7 +13,7 @@ const Footer = () => {
             label: "USEFUL LINKS",
             links: [
                 { label: 'Home', redirect: '/' },
-                { label: 'Products', redirect: '/Products/Software' },
+                { label: 'Products', redirect: '/Products' },
                 { label: 'Clients', redirect: '/Clients' },
                 { label: 'Careers', redirect: '/careers' },
                 { label: 'Contact', redirect: '/Contact-us' },

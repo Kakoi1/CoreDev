@@ -13,6 +13,7 @@ import pcIcon from '../../assets/pc-icon.png';
 import { FiTool } from "react-icons/fi";
 import { TfiEmail } from "react-icons/tfi";
 import { FaFacebook } from "react-icons/fa";
+import Partners from '../Partners/Partners'
 
 const MAX_RETRIES = 3; // Maximum retry attempts
 const RETRY_DELAY = 3000;
@@ -186,6 +187,7 @@ const Home = () => {
                     <Carousel images={logo} />
             )}
             </div>
+            <Partners/>
             <div className="motoCont">
                 <div className='Textcontent'>
                 <h1>INNOVATING YOUR FUTURE</h1>

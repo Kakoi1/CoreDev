@@ -12,9 +12,10 @@ import Net from "../../assets/net-v2.png";
 import Bio from "../../assets/biometrics-v2.png";
 import Cloud from "../../assets/cloud-v2.png";
 import { easeInOut, motion } from 'framer-motion';
-
+import { useLocation } from "react-router-dom";
 const Hardware = () => {
-    
+    const location = useLocation();
+
     const hardComp = [
         { pictures: PC, name: "Desktop Computers", url:'computer' },
         { pictures: Laptop, name: "Laptop Computers", url:'laptop' },
@@ -30,7 +31,7 @@ const Hardware = () => {
 
     return (
         <div className="HardwareContainer" >
-            <h2 style={{ textAlign: "center" }}>Hardware Products</h2>
+            <h2 style={{ textAlign: "center" }}><span className="hardSpan"> Hardware</span> Products</h2>
 
             <div className="HardWrapper">
                 {hardComp.map((item, index) => (
@@ -50,7 +51,7 @@ const Hardware = () => {
                         }}
                         className="hardware"
                     >
-                        <NavLink to={item.url} style={{ textDecoration: 'none'}}>
+                        <NavLink to={ location.pathname === "/Products/Hardware" ? item.url : 'Hardware/'+item.url } style={{ textDecoration: 'none'}}>
                         <h4 style={{ textAlign: 'center' }}>{item.name}</h4>
                         <img src={item.pictures} alt={item.name} loading="lazy" />
                         </NavLink>

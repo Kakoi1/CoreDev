@@ -140,11 +140,11 @@ body{
     border-radius: 10px;
     /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); */
 }
-
+.side-button,
 .tab-button {
     flex: 1;
-    margin: 5px;
-    padding: 10px;
+    /* margin: 5px; */
+    /* padding: 10px; */
     font-size: 16px;
     font-weight: bold;
     border: none;
@@ -162,7 +162,10 @@ body{
 .tab-button:hover {
     background-size: 0 100%, 100% 100%;
 }
-
+.side-button:hover {
+  background-size: 0 100%, 100% 100%;
+}
+.side-button.active,
 .tab-button.active {
     /* background: #ff6a0000; */
     color: #ff6a00;
@@ -369,84 +372,45 @@ body{
     color: white;
   }
   /* Tab Navigation Styles */
-  label{
-    font-size: 24px;
-    font-weight: 700; 
-    cursor: pointer; 
-    color: var(--black); 
-    opacity: .4; 
-    transition: opacity .4s ease-in-out;
-    display: block; 
-    width: calc(100% - 48px) ;
-    text-align: right; 
-    z-index: 100; 
-    user-select: none;
-  }
-  input[type="radio"]{
-    display: none;
-    width: 0;
-  }
-  label:hover, input[type="radio"]:checked+label {
-    opacity: 1; 
-  }
-  .popup{
-    width: 80%;
-    height: 80%;
-    min-height: 480px; 
-    max-height: 600px !important; 
-    border-radius: 8px 0px 0px 8px  ;
-    box-sizing: border-box; 
-    /* border: 16px solid #ebf0f4;   */
-    background-color: var(--orange);
-    overflow: hidden;
-    box-shadow: 16px 16px 48px #2e364330; 
-  }
-  .tabs{
-    width: 100%;
-    max-width: 240px;
-    height: 100%;
+
+  .side-tab{
     display: flex;
-    flex-direction: column; 
-    justify-content: space-around; 
-    position: relative;
-  }
-  .marker{
-    position: absolute; 
-    width: 100%;
-    height: 200%;
-    display: flex; 
     flex-direction: column;
-    top: calc(-100% );
-    left: 0;
-    transition: transform .2s ease-in-out; 
+    gap: 10px;
+    height: 300px;
+    padding: 0;
+    position: relative;
+    /* left: 10px; */
   }
-  .marker #bottom, .marker #top{
-    background-color: var(--gray);
-    box-shadow: 32px 32px 48px #2e364315; 
+  .side-tab button{
+    width: 200px;
+    height: 80px !important;
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    border: solid 1px var(--orange);
+    border-radius: 8px 0px 0px 8px;
+    cursor: pointer;
+
   }
-  .marker #top{
-    height: calc(50%);
-    margin-bottom: auto; 
-    border-radius: 0 0 32px 0; 
+  .side-tab .side-button.active{
+    /* background-color: var(--orange); */
+    color: var(--orange);
   }
-  .marker #bottom{
-    height: calc(50% - 202px);
-    border-radius: 0 32px 0 0; 
+  .arrowIcon{
+    display: flex;
+    transition: all 1s ease;
+    align-items: center;
   }
-  #tab1:checked ~ .marker{transform: translateY(calc(calc(50% / 3) * 0));}
-  #tab2:checked ~ .marker{transform: translateY(calc(calc(50% / 3) * 1));}
-  #tab3:checked ~ .marker{transform: translateY(calc(calc(50% / 3) * 2));}
-  
+  .arrowIcon svg{
+    font-size: 20px;
+    color: var(--orange);
+    top: 0 !important;
+  }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-  .popup {
-    width: 100%;
-    height: auto;
-    min-height: auto;
-    max-height: none;
-    border-radius: 24px;
-    border: 8px solid #ebf0f4;
+  .side-tab{
     display: none;
   }
   .mapCont{
@@ -454,6 +418,8 @@ body{
   }
   .tab-container{
     display: flex;
+        width: 100%;
+        height: 60px;
   }
   label {
     font-size: 18px;

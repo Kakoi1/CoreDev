@@ -11,7 +11,7 @@
     --gray: #d3d3d3; /* New gray color for hover */
   }
   .HardwareContainer h2 {
-    font-size: 2rem;
+    font-size: 1.75rem !important;
     color: #ff6c00;
     text-shadow: -1px 1px #080707;
     margin-bottom: 4rem;
@@ -80,4 +80,8 @@
     }
     .dark-mode .hardware h4{
       color: var(--orange);
+    }
+    .hardSpan{
+      color: var(--black);
+      text-shadow: none;
     }

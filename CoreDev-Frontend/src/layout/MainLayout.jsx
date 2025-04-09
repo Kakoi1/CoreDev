@@ -15,22 +15,22 @@ const MainLayout = () => {
   const location = useLocation(); // Detect page change
 
   
-
   useEffect(() => {
-    // Reset loader and animation on each route change
+    // Trigger loader on route change
     setIsLoading(true);
     setIsSplit(false);
-
     const timer = setTimeout(() => {
-      setIsLoading(false); 
+      setIsLoading(false);
       backToTop()// Hide loader
       setTimeout(() => {
         setIsSplit(true); // Start split animation
       }, 500);
-    }, 1500); // Loader stays for 3 seconds
+    }, 500); // loader duration
 
     return () => clearTimeout(timer);
-  }, [location.pathname]); // Run effect on every page visit
+  }, [location.pathname]);
+
+
 
   useEffect(() => {
     const handleScroll = () => {

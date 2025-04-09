@@ -36,7 +36,7 @@ const Navigation = () => {
         <div className='navCont'>        
             <nav className="navigation-container">
                 <div className='brand'>
-                    <img src={coreDevIcon} alt="CoreDev Logo" />
+                    <div><img src={coreDevIcon} alt="CoreDev Logo" /></div>
                     <span>CoreDev <br /> Solutions Inc.</span>
                 </div>
                 {!isMobile ? <Links /> : (
@@ -91,18 +91,14 @@ const Links = ({ closeMenu }) => {
                 <NavLink to="/">Home</NavLink>
             </li>
             <li className='navigation-link sub' onMouseEnter={() => toggleDropdown('product')}>
-            <a> Product <RxCaretDown className={`caret ${openDropdown === 'product' ? 'rotate' : ''}`} /></a>
-                <div className={`dropdown ${openDropdown === 'product' ? 'open' : ''}`}>
-                    <NavLink to="/Products/Software" onClick={closeMenu}>Software Products</NavLink>
-                    <NavLink to="/Products/Hardware" onClick={closeMenu}>Hardware Products</NavLink>
-                </div>
+            <NavLink to="/Products" onClick={closeMenu}>Products</NavLink>
             </li>
             <li className='navigation-link' onClick={closeMenu}>
                 <NavLink to="/Clients">Clients</NavLink>
             </li>
-            <li className='navigation-link' onClick={closeMenu}>
+            {/* <li className='navigation-link' onClick={closeMenu}>
                 <NavLink to="/Partners">Partners</NavLink>
-            </li>
+            </li> */}
             <li className='navigation-link' onClick={closeMenu}>
                 <NavLink to="/careers">Careers</NavLink>
             </li>
