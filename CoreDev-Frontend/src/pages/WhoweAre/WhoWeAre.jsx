@@ -27,7 +27,7 @@ function WhoWeAre() {
                 <div className="textcont1">
                     <h2>WHO WE ARE</h2>
                     <div>
-                        <p>
+                        <p >
                             <strong>coreDev Solutions Inc.</strong>has evolved
                             from a pioneering software provider into a{" "}
                             <strong>full-service technology partner</strong> for
@@ -65,6 +65,72 @@ function WhoWeAre() {
                 </div>
             </motion.div>
 
+            
+            <motion.div
+                className="credoCont"
+                id="credoCont"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.5 }}
+                variants={fadeInUpVariants}
+            >
+                <div className="credo-top">
+                    <motion.div
+                        whileHover={{ scale: 1, y: -5 }} // Move 5px up on hover
+                        whileTap={{ scale: 0.9 }}
+                        transition={{ duration: 0.4 }}
+                        className="vission"
+                    >
+                        <BsBinocularsFill />
+                        <h4>Our Vision</h4>
+                        <p className="ubuntu-text">
+                            To be the leading and most trusted{" "}
+                            <strong>
+                                service-oriented provider of innovative software
+                                and hardware solutions
+                            </strong>{" "}
+                            globally.
+                        </p>
+                    </motion.div>
+                    <motion.div
+                        whileHover={{ scale: 1, y: -5 }} // Move 5px up on hover
+                        whileTap={{ scale: 0.9 }}
+                        transition={{ duration: 0.4 }}
+                        className="mission"
+                    >
+                        <TbTargetArrow />
+                        <h4>Our Mission</h4>
+                        <p className="ubuntu-text">
+                            To provide excellent service and quality products to
+                            our clients, thus helping them to be more efficient
+                            and competitive.
+                        </p>
+                    </motion.div>
+                </div>
+                <motion.div
+                    whileHover={{ scale: 1, y: -5 }} // Move 5px up on hover
+                    whileTap={{ scale: 0.9 }}
+                    transition={{ duration: 0.4 }}
+                    className="values"
+                >
+                    <IoDiamondOutline />
+                    <h4>Our Credo</h4>
+                    <p className="ubuntu-text">
+                        We are a versatile team of future-forward thinkers,
+                        committed to <strong>innovating the future</strong> of
+                        our clients.
+                        <br />
+                        We strive to provide{" "}
+                        <strong>advanced, game-changing solutions</strong> that
+                        optimize operations and drive growth.
+                        <br /> We are more than a software provider—we deliver{" "}
+                        <strong>end-to-end technology solutions</strong>,
+                        transforming the way our clients operate in an
+                        ever-evolving world.
+                    </p>
+                </motion.div>
+            </motion.div>
+
             <motion.div
                 className="storyCont"
                 id="StoryCont"
@@ -82,7 +148,7 @@ function WhoWeAre() {
                         <img src={coreLogo} alt="logo" />
                     </div>
                     <div className="story-content">
-                        <p>
+                        <p className="ubuntu-text">
                             In the 1980s, we introduced our initial accounting
                             software called iAccs (Integrated Accounting
                             System). It started as a DOS-based application and
@@ -132,70 +198,6 @@ function WhoWeAre() {
                         </p>
                     </div>
                 </div>
-            </motion.div>
-            <motion.div
-                className="credoCont"
-                id="credoCont"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.5 }}
-                variants={fadeInUpVariants}
-            >
-                <div className="credo-top">
-                    <motion.div
-                        whileHover={{ scale: 1, y: -5 }} // Move 5px up on hover
-                        whileTap={{ scale: 0.9 }}
-                        transition={{ duration: 0.4 }}
-                        className="vission"
-                    >
-                        <BsBinocularsFill />
-                        <h4>Our Vision</h4>
-                        <p>
-                            To be the leading and most trusted{" "}
-                            <strong>
-                                service-oriented provider of innovative software
-                                and hardware solutions
-                            </strong>{" "}
-                            globally.
-                        </p>
-                    </motion.div>
-                    <motion.div
-                        whileHover={{ scale: 1, y: -5 }} // Move 5px up on hover
-                        whileTap={{ scale: 0.9 }}
-                        transition={{ duration: 0.4 }}
-                        className="mission"
-                    >
-                        <TbTargetArrow />
-                        <h4>Our Mission</h4>
-                        <p>
-                            To provide excellent service and quality products to
-                            our clients, thus helping them to be more efficient
-                            and competitive.
-                        </p>
-                    </motion.div>
-                </div>
-                <motion.div
-                    whileHover={{ scale: 1, y: -5 }} // Move 5px up on hover
-                    whileTap={{ scale: 0.9 }}
-                    transition={{ duration: 0.4 }}
-                    className="values"
-                >
-                    <IoDiamondOutline />
-                    <h4>Our Credo</h4>
-                    <p>
-                        We are a versatile team of future-forward thinkers,
-                        committed to <strong>innovating the future</strong> of
-                        our clients.
-                        <br />
-                        We strive to provide{" "}
-                        <strong>advanced, game-changing solutions</strong> that
-                        optimize operations and drive growth.
-                        <br /> We are more than a software provider—we deliver{" "}
-                        <strong>end-to-end technology solutions</strong>,
-                        transforming the way our clients operate in an
-                        ever-evolving world.
-                    </p>
-                </motion.div>
             </motion.div>
 
             

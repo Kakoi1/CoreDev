@@ -3,11 +3,13 @@ import { BiLocationPlus } from 'react-icons/bi';
 import "./Milestone.css";
 import { motion, useInView } from 'framer-motion';
 
+
+
 function MileStone() {
   const timeline = [
     {
       name: 'iAccs 2013',
-      year: 'August 2013',
+      year: '(August 2013)',
       right: 'timeline-content',
       description: [
         'Coredev started with 11 employees and 36 clients with only 6 products – iAccs 2013, Priority Queuing System, Members Online Inquiry System, Online Loan Facility, Electronic Filing, and Computerized Election System.',
@@ -16,7 +18,7 @@ function MileStone() {
     },
     {
       name: 'COMPUTER HARDWARE & SERVER',
-      year: 'January 2014',
+      year: '(January 2014)',
       right: 'timeline-content right',
       description: [
         'Start selling computer hardware and servers.',
@@ -25,7 +27,7 @@ function MileStone() {
     },
     {
       name: 'Launching of the CIC Utility',
-      year: '2015',
+      year: '(2015)',
       right: 'timeline-content',
       description: [
         'From 11 employees to 30 employees since our clients also increased to 90.',
@@ -35,13 +37,13 @@ function MileStone() {
     },
     {
       name: '13th Cooperative Summit Trade Fair',
-      year: '2016',
+      year: '(2016)',
       right: 'timeline-content right',
       description: ['We joined the 13th Cooperative Summit Trade Fair.'],
     },
     {
       name: '100 clients nationwide.',
-      year: '2017',
+      year: '(2017)',
       right: 'timeline-content',
       description: [
         'More than 100 clients nationwide.',
@@ -51,7 +53,7 @@ function MileStone() {
     },
     {
       name: 'Manila and Davao City.',
-      year: 'March 2018',
+      year: '(March 2018)',
       right: 'timeline-content right',
       description: [
         'Opening of the new satellite offices in Manila and Davao City.',
@@ -61,7 +63,7 @@ function MileStone() {
     },
     {
       name: 'Events and Sponsoring Seminars Nationwide',
-      year: 'March 2019',
+      year: '(March 2019)',
       right: 'timeline-content',
       description: [
         'Still participating in so many events and sponsoring seminars nationwide such as: Caraga Cooperative Congress, CACODEC, CDA DAGUPAN EVENT, CDA CALAMBA EVENT, Parañaque Federation Event.',
@@ -69,11 +71,20 @@ function MileStone() {
     },
     {
       name: 'Amidst the COVID-19 Pandemic',
-      year: '2020',
+      year: '(2020)',
       right: 'timeline-content right',
       description: [
         'coreDev Solutions Inc was able to develop new innovations that are essential in the new normal. We were able to launch the E-Services Portal, Online Payment Gateway, Coop Wallet System, Work Flow System, SMS Plus Gateway, Online Helpdesk System, Online Voting System, Online Queuing System, and Online Membership System.',
         'These new innovations were used by Cebu CFI Community Coop; we are really grateful for their continuous trust.',
+      ],
+    },
+    {
+      name: 'Establishment of Hardware Sales Department ',
+      year: '(2024)',
+      right: 'timeline-content',
+      description: [
+        'Offering wide variety of hardware technologies including but not limited to servers, computers, POS machines, Network Devices and Solar Pannels etc.',
+      
       ],
     },
   ];
@@ -144,13 +155,13 @@ function MileStone() {
                 <BiLocationPlus />
               </div>
               <div className={item.right}>
-                <h2>{item.name}</h2>
+                <h2>{item.name}<br/><small>{item.year}</small></h2>
                 <ul>
                   {item.description.map((desc, index) => (
                     <li key={index}>{desc}</li>
                   ))}
                 </ul>
-                <span className="time-stamp"><strong>{item.year}</strong></span>
+                {/* <span className="time-stamp"><strong>{item.year}</strong></span> */}
               </div>
             </motion.div>
           ))}

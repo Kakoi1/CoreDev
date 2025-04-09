@@ -475,7 +475,7 @@ color: #353635;
     }
 }   
 .motoCont{
-    margin-top: 40px;
+   
     background: linear-gradient(rgb(68 70 72 / 0%), rgb(0, 0, 0)), url(../../assets/teamImg.png) fixed center center;
     background-attachment: fixed;
     background-size: cover;
@@ -649,3 +649,54 @@ color: #353635;
   .dark-mode .service-item{
     border: solid 1px white !important;
   }
+
+
+  .partners-container {
+ 
+    text-align: center;
+    background-color: #f1f8ff;
+}
+.partners-container h2{
+    padding-top: 50px;
+}
+
+.partners-container h2 span {
+    color:#dd5e04;
+}
+
+.partners-header {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.partners-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.partner-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    transition: transform 0.3s ease;
+}
+
+.partner-card:hover {
+    transform: scale(1.05);
+}
+
+.partner-logo {
+    width: 200px;
+    height: 350;
+    object-fit: contain;
+}
+
+.partner-name {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
