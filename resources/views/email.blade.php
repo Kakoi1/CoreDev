@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link
@@ -224,20 +224,20 @@
                     <h3><span class="devCore">CoreDev</span> <br> Solutions <span class="inc">Inc.</span></h3>
                 </div>
                 <div class="info">
-                    <strong class="first-name">Name: {{ $data->name }}</strong>
+                    <strong class="first-name">Name: {{ $data['name'] }}</strong>
                     <br>
                     <span class="title">Title</span>
                     <br>
                     <p>
-                        <strong>Phone no.:</strong> {{ $data->phone }} |
-                        <strong>email:</strong> <a href="mailto:email@example.com">{{ $data->email }}</a> <br>
-                        {{ $data->address }}
+                        <strong>Phone no.:</strong> {{ $data['phone'] }} |
+                        <strong>email:</strong> <a href="mailto:email@example.com">{{ $data['email']}}</a> <br>
+                        {{  $data['address'] }}
                     </p>
                     <div class="inquired">
                         <h4>Product Inquiry:</h4>
-                        <p><strong>Product:</strong>{{ $data->product }}</p>
-                        <p><strong>Type:</strong>{{ $data->type }}</p>
-                        <p><strong>Message:</strong>{{ $data->message }}
+                        <p><strong>Product:</strong>{{ $data['product'] }}</p>
+                        <p><strong>Type:</strong>{{ $data['type'] }}</p>
+                        <p><strong>Message:</strong>{{ $data['message'] }}
                         </p>
                     </div>
                 </div>
@@ -280,7 +280,6 @@
             </div>
         </div>
     </div>
-    <h2>{{ $verificationCode }}</h2>
 </body>
 
 

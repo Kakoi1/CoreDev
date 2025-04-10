@@ -24,7 +24,10 @@
     position: relative;
     animation: slideUp 0.3s ease-in-out;
   }
-  
+  .modal-close-btn:disabled{
+    cursor: not-allowed !important;
+    color: #7f8c8d;
+  }
   .modal-close-btn {
     position: absolute;
     top: 15px;
@@ -33,7 +36,8 @@
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
-    color: #7f8c8d;
+    color: var(--orange);
+    font-weight: bold;
     transition: color 0.2s;
   }
   

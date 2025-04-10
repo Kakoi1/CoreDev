@@ -5,7 +5,7 @@ import './ProductInquiryForm.css';
 import axios from 'axios';
 const APP_URL = import.meta.env.VITE_APP_URL+"api/send-email";
 
-const ProductInquiryForm = ({ productName, picUrl, type, }) => {
+const ProductInquiryForm = ({ productName, picUrl, type }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -64,6 +64,12 @@ const ProductInquiryForm = ({ productName, picUrl, type, }) => {
         }
       );
       console.log(response);
+
+      if (response.status == 200) {
+        setSubmitStatus('success');
+      }else{
+        setSubmitStatus('error');
+      }
       // Handle success...
     }
      catch (error) {
@@ -86,14 +92,14 @@ const ProductInquiryForm = ({ productName, picUrl, type, }) => {
         className="inquiry-btn"
         onClick={() => setIsModalOpen(true)}
       >
-        Inquire About This Product
+        Inquire This Product
       </button>
       
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} isdisable ={isSubmitting}>
         <div className="inquiry-form-container">
           <h2 className="inquiry-form-title">Inquire About :</h2>
         <div className='productData'>
-          <img className='Prod-pic' src={picUrl} alt="" />
+          <img className={type == 'Hardware'?'Prod-pic hardware':'Prod-pic'} src={picUrl} alt="" />
           <div>
           <h3> Product: <span> {productName || 'Our Product'}</span></h3>
           <h4>Type: <span>{type}</span></h4>
@@ -130,7 +136,7 @@ const ProductInquiryForm = ({ productName, picUrl, type, }) => {
             </div>
             
             <div className="form-group">
-              <label htmlFor="email">Email Address*</label>
+              <label htmlFor="email">Email Address</label>
               <input
                 type="email"
                 id="email"
@@ -138,6 +144,7 @@ const ProductInquiryForm = ({ productName, picUrl, type, }) => {
                 value={formData.email}
                 onChange={handleChange}
                 required
+                pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
                 autoComplete="email"
                 placeholder="your@email.com"
               />
@@ -149,9 +156,11 @@ const ProductInquiryForm = ({ productName, picUrl, type, }) => {
                 type="tel"
                 id="phone"
                 name="phone"
+                pattern="^(09\d{9}|\+639\d{9})$"
+                required
                 value={formData.phone}
                 onChange={handleChange}
-                placeholder="(123) 456-7890"
+                placeholder="09XXXXXXXXX or +639XXXXXXXXX" 
               />
             </div>
 
@@ -162,6 +171,7 @@ const ProductInquiryForm = ({ productName, picUrl, type, }) => {
                 id="address"
                 name="address"
                 value={formData.address}
+                required
                 onChange={handleChange}
                 placeholder="96 J. Alcantara Street, Brgy. Sambag 1"
               />
@@ -197,11 +207,25 @@ const ProductInquiryForm = ({ productName, picUrl, type, }) => {
             
             <button 
               type="submit" 
-              className="submit-btn"
+              className="submit-btn" 
               disabled={isSubmitting}
             >
-              {isSubmitting ? 'Sending...' : 'Submit Inquiry'}
+              {isSubmitting ? (
+               <div class="box">
+                Sending
+               <div class="container">
+                 <span class="circle"></span>
+                 <span class="circle"></span>
+                 <span class="circle"></span>
+                 <span class="circle"></span>
+               </div>
+             </div>
+
+              ) : (
+                'Submit Inquiry'
+              )}
             </button>
+
             {submitStatus === 'success' && <p style={{ color: 'green' }}>Message sent successfully!</p>}
             {submitStatus === 'error' && <p style={{ color: 'red' }}>There was an error sending your message.</p>}
           </form>

@@ -8,7 +8,7 @@
       position: relative;
       bottom: -30px;
       /* left: 90px; */
-      justify-content: flex-end;
+      justify-content: flex-start;
   }
   
   .tab-buttons button {
@@ -25,8 +25,26 @@
   }
   
   .tab-buttons button.active {
-    background: linear-gradient(to bottom, #ff9c50, #ff6c00);
+    background: linear-gradient(to left, #ff9c50, #ff6c00);
     color: white;
+  }
+  .inquiry-btn {
+    padding: 10px 20px;
+    background: linear-gradient(to left, #ff9c50, #ff6c00);
+    color: white;
+    border: 2px solid #dd5e04;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-size: 200% auto; 
+    background-position: left center;
+  }
+  
+  .inquiry-btn:hover {
+    background-position: right center;
+    transition: all 0.4s ease-in;
   }
   
   .tab-content {

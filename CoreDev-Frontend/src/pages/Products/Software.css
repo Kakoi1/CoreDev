@@ -105,7 +105,7 @@ body {
     display: flex;
     align-items: center;
     gap: 1rem;
-    background: linear-gradient(to bottom, #ff9c50, #ff6c00); /* Orange gradient */
+    background: linear-gradient(to left, #ff9c50, #ff6c00); /* Orange gradient */
     color: white;
     border: 2px solid #dd5e04;
     padding: 10px 20px;
@@ -114,7 +114,15 @@ body {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 1rem;
-}
+    transition: all 0.3s ease;
+    background-size: 200% auto; 
+    background-position: left center;
+  }
+  
+  .IacWrap-btn:hover {
+    background-position: right center;
+    transition: all 0.4s ease-in;
+  }
 
 .IacWrap-btn:hover > .icon {
     transform: scale(1.2);

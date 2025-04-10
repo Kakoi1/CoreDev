@@ -16,6 +16,9 @@
     margin-bottom: 20px !important;
     text-shadow: none !important;
   }
+  .productData span{
+    color: var(--black);
+  }
   
   .inquiry-form-subtitle {
     color: #7f8c8d;
@@ -40,6 +43,7 @@
     color: #34495e;
     font-weight: 600;
     font-size: 0.9rem;
+    text-align: left !important;
   }
   
   .form-group input,
@@ -64,28 +68,31 @@
   }
   
   .submit-btn {
-    background-color: var(--orange);
+    padding: 10px 20px;
+    background: linear-gradient(to left, #ff9c50, #ff6c00);
     color: white;
-    border: none;
-    padding: 1rem 1.5rem;
-    border-radius: 6px;
-    font-size: 1rem;
-    font-weight: 600;
+    border: 2px solid #dd5e04;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    background-size: 200% auto; 
+    background-position: left center;
   }
   
   .submit-btn:hover {
-    background-color: #2980b9;
+    background-position: right center;
+    transition: all 0.4s ease-in;
   }
   
   .submit-btn:disabled {
-    background-color: #bdc3c7;
+    background: #bdc3c7;
     cursor: not-allowed;
+    color: var(--orange);
   }
-  
+
+ 
   .inquiry-alert {
     padding: 1rem;
     border-radius: 6px;
@@ -118,6 +125,12 @@
   .Prod-pic{
     width: 100px;
     height: 100px;
+    border-radius: 8px;
+  }
+  .Prod-pic.hardware{
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
   }
   .productData{
     display: flex;
@@ -138,3 +151,65 @@
     /* display: flex; */
     width: 100%;
   }
+  .box {
+    width: 124px;
+    height: 24px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    box-shadow: none;
+    margin: 0 auto;
+    justify-content: space-evenly;
+  }
+  
+  .container {
+    height: 6px;
+    width: 24px;
+    display: flex;
+    position: relative;
+  }
+  
+  .circle {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--orange);
+    animation: move 500ms linear infinite;
+    margin-right: 6px;
+  }
+  
+  .circle:first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: grow 500ms linear infinite;
+  }
+  
+  .circle:last-child {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 0;
+    animation: grow 500ms linear infinite reverse;
+  }
+  
+  @keyframes grow {
+    from {
+      transform: scale(0);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes move {
+    from {
+      transform: translateX(0px);
+    }
+    to {
+      transform: translateX(10px);
+    }
+  }
+  

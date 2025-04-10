@@ -23,7 +23,7 @@ function ProductDetails() {
       </button>
       <h2>{selectedItem.name}</h2>
       <img
-        src={`http://localhost:5173/src/assets/hardwareImage/${selectedItem.image}`}
+        src={`assets/hardwareImage/${selectedItem.image}`}
         alt={selectedItem.name}
         className="product-details-image"
       />

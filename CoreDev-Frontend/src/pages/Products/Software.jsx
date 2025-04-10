@@ -19,7 +19,10 @@ const Software = () => {
         }));
       };
       console.log(ProductFeature);
-      
+      const fadeInUpVariants = {
+        hidden: { opacity: 0, y: 50 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+    };
 
     return (
         <div className="SoftwareContainer">
@@ -88,8 +91,10 @@ const Software = () => {
                     <motion.div
                         layout
                         whileTap={{ scale: 0.9 }}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.5 }}
+                        variants={fadeInUpVariants}
                         transition={{
                             layout: { duration: 0.3 },
                             type: "",

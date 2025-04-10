@@ -20,17 +20,6 @@ const RETRY_DELAY = 3000;
 
 const Home = () => {
 
-
-    const partners = [
-        { logo: globeLogo, link: "https://www.globe.com.ph" },
-        { logo: smartLogo, link: "https://smart.com.ph" },
-        { logo: dragonLogo, link: "https://www.dragonpay.ph" },
-        { logo: pesoLogo, link: "https://www.pesopay.com" },
-        { logo: ubLogo, link: "https://www.unionbankph.com" },
-    ];
-    
-
-
       const navigate = useNavigate();
       const [logo, setLogo] = useState([]);
       const [loading, setLoading] = useState(true);
