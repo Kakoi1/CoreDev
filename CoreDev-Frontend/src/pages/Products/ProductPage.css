@@ -49,11 +49,11 @@
   
   .tab-content {
     padding: 20px;
-    border: 1px solid #eee;
+    border: 1px solid #dd5e04;
     border-radius: 5px;
     background: #f1f8ff;
     position: relative;
-    z-index: 1;
+    /* z-index: 1; */
   }
   .product-page h2{
     font-size: 2rem;
