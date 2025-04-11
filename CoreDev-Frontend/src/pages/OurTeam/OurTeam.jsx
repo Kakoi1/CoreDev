@@ -1,8 +1,6 @@
 /* eslint-disable react/prop-types */
 import "./OurTeam.css";
 import { motion } from "framer-motion";
-import { FaArrowDown } from "react-icons/fa";
-
 
 import OrganizationalChart from "./OrganizationalChart";
 
@@ -33,15 +31,22 @@ function OurTeam() {
 
     return (
         <div className="careerCont">
-            <div className="imageWrap">
-                <div className="textcont">
-                    <h2>OUR TEAM</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quas laborum sed. Animi esse officia impedit similique nam voluptatum unde obcaecati corporis? Voluptatum corporis eligendi commodi natus cumque, deleniti exercitationem.</p>
-                    <a href="#inner">
-                        <FaArrowDown className="icon" />
-                    </a>
+            <section className="team-section">
+                <div className="team-container">
+                    <div className="section-header">
+                        <div className="badge">Our Team</div>
+                        <h2 className="team-section-title">
+                            Meet the Talented People Behind Our
+                            <span className="orange-text">Success</span>
+                        </h2>
+                        <p className="team-section-description">
+                            Our diverse team brings together expertise from
+                            various fields to create innovative solutions that
+                            address complex challenges.
+                        </p>
+                    </div>
                 </div>
-            </div>
+            </section>
             <motion.div className="inner" id="inner">
                 <h2 style={{ textAlign: "center" }}>
                     Pillars of <span>CORE DEV SOLUTIONS INC.</span>
@@ -96,7 +101,6 @@ const TeamCard = ({ name, position, image }) => {
                 <div className="team-position info">
                     <p>{position}</p>
                 </div>
-            
             </div>
         </div>
     );

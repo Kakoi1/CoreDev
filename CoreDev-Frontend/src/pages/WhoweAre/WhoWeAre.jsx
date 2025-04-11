@@ -1,6 +1,5 @@
 import "./WhoWeAre.css";
 import { BsBinocularsFill } from "react-icons/bs";
-import { FaArrowDown } from "react-icons/fa";
 import { TbTargetArrow } from "react-icons/tb";
 import { IoDiamondOutline } from "react-icons/io5";
 import coreLogo from "../../assets/logoCore.png";
@@ -15,57 +14,127 @@ function WhoWeAre() {
 
     return (
         <div className="About-Cont">
-
-            
-            <motion.div
-                className="imageWrap1"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.5 }}
-                variants={fadeInUpVariants}
-            >
-                <div className="textcont1">
-                    <h2>WHO WE ARE</h2>
-                    <div>
-                        <p >
-                            <strong>coreDev Solutions Inc.</strong>has evolved
-                            from a pioneering software provider into a{" "}
-                            <strong>full-service technology partner</strong> for
-                            businesses across the Philippines. Trusted by{" "}
-                            <strong>12 billionaire organizations</strong> and
-                            over{" "}
-                            <strong>
-                                100 SMEs, rural banks, and financial
-                                institutions,
-                            </strong>{" "}
-                            we deliver{" "}
-                            <strong>secure, scalable, and seamless</strong>{" "}
-                            solutions tailored to the ever-changing digital
-                            landscape. <br /> <br />
-                            From <strong>
-                                software and cloud services
-                            </strong>{" "}
-                            that optimize operations to{" "}
-                            <strong>
-                                network infrastructure and hardware solutions
-                            </strong>
-                            —including servers, peripherals, and mobile
-                            devices—we provide end-to-end technology support to
-                            keep your business ahead. <br />
-                            <br />
-                            Partner with <strong>coreDev Solutions</strong> to
-                            drive{" "}
-                            <strong>innovation, efficiency, and success</strong>{" "}
-                            like never before.
-                        </p>
+            <section className="who-we-are-section">
+                <div className="who-we-container">
+                    <div className="two-column-grid">
+                        <div className="image-container">
+                            <div className="image-wrapper">
+                                <img
+                                    src="/coreDevlogo.png?height=100&width=100"
+                                    alt="Our workspace"
+                                    width={800}
+                                    height={600}
+                                    className="feature-image"
+                                />
+                                <div className="image-overlay"></div>
+                            </div>
+                        </div>
+                        <div className="content-container">
+                            <div className="badge">Who We Are</div>
+                            <h2 className="section-title">
+                                Your <span>trusted</span> technology partner
+                                for <span>growth</span>
+                            </h2>
+                            <p className="section-description">
+                                We&apos;re a team of passionate individuals
+                                dedicated to creating solutions that make a
+                                difference. Our diverse backgrounds and
+                                perspectives fuel our innovation and drive our
+                                success.
+                            </p>
+                            <div className="stats-grid">
+                                <div className="stat-item">
+                                    <div className="stat-icon">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            strokeWidth="2"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                        >
+                                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                            <circle
+                                                cx="9"
+                                                cy="7"
+                                                r="4"
+                                            ></circle>
+                                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 className="stat-title">Enterprise trust</h3>
+                                    <p className="stat-value">
+                                        Trusted by 12 billion-peso companies
+                                    </p>
+                                </div>
+                                <div className="stat-item">
+                                    <div className="stat-icon">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            strokeWidth="2"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                        >
+                                            <rect
+                                                x="2"
+                                                y="7"
+                                                width="20"
+                                                height="14"
+                                                rx="2"
+                                                ry="2"
+                                            ></rect>
+                                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 className="stat-title">SME Support</h3>
+                                    <p className="stat-value">
+                                        Supporting 100+ SMEs, rural banks &
+                                        institutions
+                                    </p>
+                                </div>
+                                <div className="stat-item">
+                                    <div className="stat-icon">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            strokeWidth="2"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                        >
+                                            <circle
+                                                cx="12"
+                                                cy="12"
+                                                r="10"
+                                            ></circle>
+                                            <line
+                                                x1="2"
+                                                y1="12"
+                                                x2="22"
+                                                y2="12"
+                                            ></line>
+                                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 className="stat-title">Full-Service IT </h3>
+                                        <p className="stat-value">
+                                            Full-service IT from software to
+                                            infrastructure
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <a href="#StoryCont">
-                        <FaArrowDown className="icon" />
-                    </a>
                 </div>
-            </motion.div>
-
-            
+            </section>
             <motion.div
                 className="credoCont"
                 id="credoCont"
@@ -156,10 +225,10 @@ function WhoWeAre() {
                             Rural Banks, helping them automate their credit and
                             savings operations and integrate them into their
                             accounting systems. <br /> <br />
-                            As technology evolved and our clients&apos; needs grew,
-                            we continued to develop our software. In 2013, we
-                            launched iAccs 2013, marking a turning point in our
-                            journey. We transformed from a software provider
+                            As technology evolved and our clients&apos; needs
+                            grew, we continued to develop our software. In 2013,
+                            we launched iAccs 2013, marking a turning point in
+                            our journey. We transformed from a software provider
                             into a service-oriented solutions provider and
                             established <strong>coreDev Solutions Inc.</strong>,
                             which operates around the clock to serve our
@@ -191,16 +260,15 @@ function WhoWeAre() {
                             thrive in a fast-paced digital world. <br></br>
                             <br></br>
                             Our mission is to shape a future where technology
-                            seamlessly aligns with our clients&apos; diverse needs.
-                            At <strong>coreDev Solutions Incorporated</strong>,
+                            seamlessly aligns with our clients&apos; diverse
+                            needs. At{" "}
+                            <strong>coreDev Solutions Incorporated</strong>,
                             we&apos;re dedicated to exceeding expectations and
                             pushing the boundaries of innovation.
                         </p>
                     </div>
                 </div>
             </motion.div>
-
-            
         </div>
     );
 }
