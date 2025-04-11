@@ -90,7 +90,7 @@ function Careers() {
                 <div className="carreer-container">
                     <div className="hero-content">
                         <h1 className="hero-title">
-                            Carreers {" "}
+                            Career {" "}
                             <span className="orange-text">Opportunities</span>
                         </h1>
                         <p className="hero-description">
