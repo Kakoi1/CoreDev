@@ -34,7 +34,6 @@ function OurTeam() {
             <section className="team-section">
                 <div className="team-container">
                     <div className="section-header">
-                        <div className="badge">Our Team</div>
                         <h2 className="team-section-title">
                             Meet the Talented People Behind Our
                             <span className="orange-text">Success</span>

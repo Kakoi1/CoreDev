@@ -30,7 +30,6 @@ function WhoWeAre() {
                             </div>
                         </div>
                         <div className="content-container">
-                            <div className="badge">Who We Are</div>
                             <h2 className="section-title">
                                 Your <span>trusted</span> technology partner
                                 for <span>growth</span>
