@@ -3,7 +3,7 @@ import "./Careers.css";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { RiCheckLine } from "react-icons/ri";
-import { FaMapMarkerAlt, FaArrowDown } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import { MdWorkHistory } from "react-icons/md";
 
 function Careers() {
@@ -85,18 +85,40 @@ function Careers() {
     ];
     return (
         <div className="careerCont">
-            <div className="imageWrap">
-                <div className="textcont">
-                    <h2>Career Opportunities</h2>
-                    <p>
-                        Stable yourself with your abilities. Be a part of our <strong> amazing team!</strong>
-                        
-                    </p>
-                    <a href="#job">
-                        <FaArrowDown className="icon" />
-                    </a>
+            <section className="hero-section">
+                <div className="hero-radial"></div>
+                <div className="carreer-container">
+                    <div className="hero-content">
+                        <h1 className="hero-title">
+                            Carreers {" "}
+                            <span className="orange-text">Opportunities</span>
+                        </h1>
+                        <p className="hero-description">
+                            Discover exciting career opportunities and be part
+                            of a team that&apos;s making a difference.
+                        </p>
+                        <div className="button-group">
+                            <a href="#job" className="button primary-button">
+                                View Open Positions
+                                <svg
+                                    className="icon"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                >
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            </div>
+                <div className="hero-fade"></div>
+            </section>
+
             <motion.div className="inner" id="job">
                 <h2 style={{ textAlign: "center" }}>
                     Are You Ready <span>To Become One Of Us?</span>
