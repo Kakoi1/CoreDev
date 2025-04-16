@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Modal from './Modal';
 import './ProductInquiryForm.css';
 import axios from 'axios';
-const APP_URL = import.meta.env.VITE_APP_URL+"api/send-email";
+const APP_URL = import.meta.env.VITE_APP_URL + "api/send-email";
 
 const ProductInquiryForm = ({ productName, picUrl, type }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -19,7 +19,61 @@ const ProductInquiryForm = ({ productName, picUrl, type }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
   const [csrfToken, setCsrfToken] = useState('');
+  const [count, setCount] = useState(5);
 
+  // State for error messages
+  const [errors, setErrors] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    address: '',
+    product: '',
+    message: '',
+  });
+
+  useEffect(() => {
+    if (submitStatus === 'success' && count > 0) {
+      const timer = setInterval(() => {
+        setCount(prevCount => prevCount - 1);
+      }, 1000);
+      console.log(count);
+
+      return () => clearInterval(timer); 
+    } else if (submitStatus === 'success' && count === 0) {
+      location.reload();
+    }
+  }, [submitStatus, count]);
+
+  const validateField = (name, value) => {
+    let error = '';
+    switch (name) {
+      case 'name':
+        if (!value.trim()) error = 'Name is required';
+        break;
+      case 'email':
+        if (!value.trim()) error = 'Email is required';
+        else if (!/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i.test(value))
+          error = 'Invalid email format';
+        break;
+      case 'phone':
+        if (!value.trim()) error = 'Phone number is required';
+        else if (!/^(09\d{9}|\+639\d{9})$/.test(value))
+          error = 'Phone must be 09XXXXXXXXX or +639XXXXXXXXX';
+        break;
+      case 'address':
+        if (!value.trim()) error = 'Address is required';
+        break;
+      case 'product':
+        if (!productName && !value.trim()) error = 'Product name is required';
+        break;
+      case 'message':
+        if (!value.trim()) error = 'Message is required';
+        break;
+      default:
+        break;
+    }
+    return error; 
+  };
 
 
   const handleChange = (e) => {
@@ -28,29 +82,53 @@ const ProductInquiryForm = ({ productName, picUrl, type }) => {
       ...prev,
       [name]: value
     }));
+
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      [name]: validateField(name, value)
+    }));
   };
 
 
+  const validateForm = () => {
+    const newErrors = {};
+    let isValid = true;
+
+
+    Object.keys(formData).forEach((key) => {
+      if (key === 'type') return; 
+      const error = validateField(key, formData[key]);
+      newErrors[key] = error;
+      if (error) isValid = false;
+    });
+
+
+    setErrors(newErrors);
+    return isValid;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const isValid = validateForm();
+    if (!isValid) {
+      return; 
+    }
+
     setIsSubmitting(true);
-  
+
     try {
-      // 1. Get CSRF cookie (as you're already doing successfully)
       await axios.get('http://localhost:8000/sanctum/csrf-cookie', {
         withCredentials: true
       });
-  
-      // 2. Verify the token exists (from your console output)
+
       const xsrfToken = document.cookie
         .split('; ')
         .find(row => row.startsWith('XSRF-TOKEN='))
         ?.split('=')[1];
-      
+
       if (!xsrfToken) throw new Error('CSRF token not found in cookies');
-  console.log(xsrfToken);
-  
-      // 3. Make authenticated request
+      console.log(xsrfToken);
+
       const response = await axios.post(
         'http://localhost:8000/api/send-email',
         formData,
@@ -59,7 +137,7 @@ const ProductInquiryForm = ({ productName, picUrl, type }) => {
           headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
-            'X-XSRF-TOKEN': decodeURIComponent(xsrfToken) // Explicitly send token
+            'X-XSRF-TOKEN': decodeURIComponent(xsrfToken) 
           }
         }
       );
@@ -67,24 +145,20 @@ const ProductInquiryForm = ({ productName, picUrl, type }) => {
 
       if (response.status == 200) {
         setSubmitStatus('success');
-      }else{
+      } else {
         setSubmitStatus('error');
       }
-      // Handle success...
-    }
-     catch (error) {
+    } catch (error) {
       console.error('Request failed:', {
         error: error.message,
         response: error.response?.data,
         cookies: document.cookie
       });
+      setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
     }
-   
-    
   };
-
 
   return (
     <>
@@ -95,22 +169,22 @@ const ProductInquiryForm = ({ productName, picUrl, type }) => {
         Inquire This Product
       </button>
       
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} isdisable ={isSubmitting}>
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} isdisable={isSubmitting}>
         <div className="inquiry-form-container">
           <h2 className="inquiry-form-title">Inquire About :</h2>
-        <div className='productData'>
-          <img className={type == 'Hardware'?'Prod-pic hardware':'Prod-pic'} src={picUrl} alt="" />
-          <div>
-          <h3> Product: <span> {productName || 'Our Product'}</span></h3>
-          <h4>Type: <span>{type}</span></h4>
-          </div>
+          <div className='productData'>
+            <img className={type == 'Hardware' ? 'Prod-pic hardware' : 'Prod-pic'} src={picUrl} alt="" />
+            <div>
+              <h3> Product: <span> {productName || 'Our Product'}</span></h3>
+              <h4>Type: <span>{type}</span></h4>
+            </div>
           </div>
           <hr />
-          {/* <p className="inquiry-form-subtitle">Fill out the form below and we'll get back to you shortly</p> */}
           
           {submitStatus === 'success' && (
             <div className="inquiry-alert success">
-              Thank you for your inquiry! We've received your message and will contact you soon.
+              Thank you for your inquiry! We've received your message and will contact you soon. <br />
+              You Browser will reload in {count} ...
             </div>
           )}
           
@@ -120,8 +194,7 @@ const ProductInquiryForm = ({ productName, picUrl, type }) => {
             </div>
           )}
           
-          <form onSubmit={handleSubmit} className="inquiry-form">
-            {/* Form fields remain the same as before */}
+          <form onSubmit={handleSubmit} className="inquiry-form" noValidate>
             <div className="form-group">
               <label htmlFor="name">Your Name*</label>
               <input
@@ -132,7 +205,11 @@ const ProductInquiryForm = ({ productName, picUrl, type }) => {
                 onChange={handleChange}
                 required
                 placeholder="John Doe"
+                className={errors.name ? 'input-error' : ''}
+                aria-invalid={errors.name ? 'true' : 'false'}
+                aria-describedby={errors.name ? 'name-error' : undefined}
               />
+              {errors.name && <span className="error-message" id="name-error">{errors.name}</span>}
             </div>
             
             <div className="form-group">
@@ -147,7 +224,11 @@ const ProductInquiryForm = ({ productName, picUrl, type }) => {
                 pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
                 autoComplete="email"
                 placeholder="your@email.com"
+                className={errors.email ? 'input-error' : ''}
+                aria-invalid={errors.email ? 'true' : 'false'}
+                aria-describedby={errors.email ? 'email-error' : undefined}
               />
+              {errors.email && <span className="error-message" id="email-error">{errors.email}</span>}
             </div>
             
             <div className="form-group">
@@ -161,11 +242,15 @@ const ProductInquiryForm = ({ productName, picUrl, type }) => {
                 value={formData.phone}
                 onChange={handleChange}
                 placeholder="09XXXXXXXXX or +639XXXXXXXXX" 
+                className={errors.phone ? 'input-error' : ''}
+                aria-invalid={errors.phone ? 'true' : 'false'}
+                aria-describedby={errors.phone ? 'phone-error' : undefined}
               />
+              {errors.phone && <span className="error-message" id="phone-error">{errors.phone}</span>}
             </div>
 
             <div className="form-group">
-              <label htmlFor="phone">Address</label>
+              <label htmlFor="address">Address</label>
               <input
                 type="address"
                 id="address"
@@ -174,7 +259,11 @@ const ProductInquiryForm = ({ productName, picUrl, type }) => {
                 required
                 onChange={handleChange}
                 placeholder="96 J. Alcantara Street, Brgy. Sambag 1"
+                className={errors.address ? 'input-error' : ''}
+                aria-invalid={errors.address ? 'true' : 'false'}
+                aria-describedby={errors.address ? 'address-error' : undefined}
               />
+              {errors.address && <span className="error-message" id="address-error">{errors.address}</span>}
             </div>
 
             {!productName && (
@@ -188,7 +277,11 @@ const ProductInquiryForm = ({ productName, picUrl, type }) => {
                   onChange={handleChange}
                   required
                   placeholder="Product you're interested in"
+                  className={errors.product ? 'input-error' : ''}
+                  aria-invalid={errors.product ? 'true' : 'false'}
+                  aria-describedby={errors.product ? 'product-error' : undefined}
                 />
+                {errors.product && <span className="error-message" id="product-error">{errors.product}</span>}
               </div>
             )}
             
@@ -202,7 +295,11 @@ const ProductInquiryForm = ({ productName, picUrl, type }) => {
                 required
                 rows="5"
                 placeholder="Please include any specific questions or details about the product..."
+                className={errors.message ? 'input-error' : ''}
+                aria-invalid={errors.message ? 'true' : 'false'}
+                aria-describedby={errors.message ? 'message-error' : undefined}
               />
+              {errors.message && <span className="error-message" id="message-error">{errors.message}</span>}
             </div>
             
             <button 
@@ -211,23 +308,19 @@ const ProductInquiryForm = ({ productName, picUrl, type }) => {
               disabled={isSubmitting}
             >
               {isSubmitting ? (
-               <div class="box">
-                Sending
-               <div class="container">
-                 <span class="circle"></span>
-                 <span class="circle"></span>
-                 <span class="circle"></span>
-                 <span class="circle"></span>
-               </div>
-             </div>
-
+                <div className="box">
+                  Sending
+                  <div className="container">
+                    <span className="circle"></span>
+                    <span className="circle"></span>
+                    <span className="circle"></span>
+                    <span className="circle"></span>
+                  </div>
+                </div>
               ) : (
                 'Submit Inquiry'
               )}
             </button>
-
-            {submitStatus === 'success' && <p style={{ color: 'green' }}>Message sent successfully!</p>}
-            {submitStatus === 'error' && <p style={{ color: 'red' }}>There was an error sending your message.</p>}
           </form>
         </div>
       </Modal>

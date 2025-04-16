@@ -23,6 +23,10 @@
     height: 90px;
     width: 20%;
   }
+  .dark-mode .tab-buttons button{
+    background-color: var(--black);
+    color: white;
+  }
   
   .tab-buttons button.active {
     background: linear-gradient(to left, #ff9c50, #ff6c00);
@@ -54,6 +58,10 @@
     background: #f1f8ff;
     position: relative;
     /* z-index: 1; */
+    margin-bottom: 40px;
+  }
+  .dark-mode .tab-content{
+    background-color: var(--black);
   }
   .product-page h2{
     font-size: 2rem;

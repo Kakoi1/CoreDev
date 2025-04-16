@@ -408,6 +408,9 @@ body{
     top: 0 !important;
   
   }
+  .dark-mode .side-tab button{
+    color: white;
+  }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {

@@ -49,12 +49,6 @@
         height: 180px;
     }
 
-    .left {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        /* gap: 30px; */
-    }
 
     .info {
         position: relative;
@@ -91,7 +85,6 @@
         margin-top: 12px;
         color: white;
         text-align: left;
-        position: relative;
         width: auto;
         height: 250px;
     }
@@ -100,6 +93,7 @@
         width: 100% !important;
         object-fit: cover;
         height: 240px;
+
     }
 
     .banner .learn {
@@ -128,10 +122,10 @@
         margin-top: 15px;
     }
 
-    .links {
-        display: flex;
-        justify-content: space-between;
-        padding: 0px 10px 0px 10px;
+    .links div {
+        display: inline-block;
+        width: 19%;
+        text-align: center;
     }
 
     .footer a {
@@ -187,11 +181,10 @@
     }
 
     @media (max-width: 800px) {
-        .footer .links {
-            display: flex;
-            flex-direction: column;
-            padding: 0px 10px 0px 10px;
+        .footer .links div {
+            width: 100%;
             line-height: 2;
+            text-align: start;
         }
 
         .footer .links div {
@@ -219,9 +212,9 @@
         <div class="header">
             <div class="left">
                 <div>
-                    <img src="{{ $message->embed(public_path('images\coreDevlogo.png')) }}" alt="Company Logo"
-                        class="logo">
-                    <h3><span class="devCore">CoreDev</span> <br> Solutions <span class="inc">Inc.</span></h3>
+                    <img src="{{ $message->embed(public_path('images\coredev.png')) }}" alt="Company Logo"
+                        class="logo"><br>
+
                 </div>
                 <div class="info">
                     <strong class="first-name">Name: {{ $data['name'] }}</strong>
@@ -242,26 +235,16 @@
                     </div>
                 </div>
             </div>
-            <div class="photo">
-                <img src="{{ $message->embed(public_path('images\coredev.png')) }}" alt="Client Photo" class="photo">
-            </div>
         </div>
 
         <div class="social-icons">
             <img src="{{ $message->embed(public_path('images\linkedin.png')) }}" alt="LinkedIn">
             <img src="{{ $message->embed(public_path('images\facebook.png')) }}" alt="Facebook">
-            <img src="{{ $message->embed(public_path('images\twitter.png')) }}" alt="Twitter">
-            <img src="{{ $message->embed(public_path('images\youtube.png')) }}" alt="Youtube">
         </div>
 
         <div class="banner">
             <img src="{{ $message->embed(public_path('images\banner.png')) }}" alt="banner" class="bannerImg">
-            <div class="learn">
-                <strong><span class="devCore">CoreDev</span> <br> <span class="sol">Solutions</span> <span
-                        class="inc">Inc.</span></strong>
-                <p><small>Inovating your Future</small></p>
-                <a href="#" class="learn-more-btn">LEARN MORE</a>
-            </div>
+
         </div>
 
         <div class="footer">

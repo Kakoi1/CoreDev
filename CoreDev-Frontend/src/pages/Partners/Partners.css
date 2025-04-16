@@ -19,7 +19,7 @@
     transition: transform 0.3s ease-in-out;
     text-align: center;
     width: 200px;
-    height: 20px;
+    /* height: 20px; */
     margin-bottom: 100px;
     /* border: 2px solid #dd5e04; */
   }
@@ -60,10 +60,13 @@
     margin-top: 4rem;
     font-family: "Raleway", sans-serif;
   }
-  .dark-mode .partner-card{
-    background-color: var(--gray);
+  .dark-mode .partners-container{
+    background-color: var(--black);
     border: solid 1px var(--black);
 
+  }
+  .dark-mode .partner-card{
+    background-color: var(--gray);
   }
 
 

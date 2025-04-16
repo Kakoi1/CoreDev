@@ -7,6 +7,19 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
+
+  .dark-mode .inquiry-form-container{
+    background-color: var(--black);
+  }
+  .dark-mode .form-group input,
+  .dark-mode .form-group textarea{
+    background-color: var(--black);
+    border: solid 1px var(--orange);
+    color: white;
+  }
+  .dark-mode .product-page span{
+    color: white;
+  }
   
   .inquiry-form-title {
     color: #2c3e50;
@@ -45,7 +58,9 @@
     font-size: 0.9rem;
     text-align: left !important;
   }
-  
+  .dark-mode  .form-group label{
+    color: var(--orange);
+  }
   .form-group input,
   .form-group textarea {
     padding: 0.8rem 1rem;
@@ -192,7 +207,24 @@
     margin-right: 0;
     animation: grow 500ms linear infinite reverse;
   }
-  
+  .input-error {
+    border-color: #e74c3c !important;
+    background-color: #fff5f5;
+  }
+  .dark-mode .input-error{
+    border-color: #fd1900 !important;
+    background-color: var(--black);
+  }
+  .dark-mode .error-message{
+    color: #ff1900 !important;
+  }
+  .error-message {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 5px;
+    display: block;
+    text-align: start;
+  }
   @keyframes grow {
     from {
       transform: scale(0);
