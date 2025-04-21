@@ -85,13 +85,13 @@ body {
 }
 
 .credoCont {
-    padding: 20px;
-    gap: 20px;
-    align-content: normal;
-    max-width: 1300px;
-    margin-left: 85px;
-    margin: 0 auto;
-    margin-bottom: 40px;
+       padding: 20px;
+       gap: 20px;
+       align-content: normal;
+       max-width: 1300px;
+       margin-left: 85px;
+       margin: 0 auto;
+       margin-bottom: 40px;
 }
 .credoCont svg {
     width: 54px;
@@ -116,10 +116,11 @@ body {
 }
 .credo-top {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     gap: 50px;
     text-align: center;
 }
+
 .values p {
     width: 100%;
     margin: 0 auto;
@@ -129,17 +130,16 @@ body {
 .values {
     text-align: center;
     display: flex;
-    width: 100%;
-    max-width: 1190px;
+    /* width: 100%; */
+    /* max-width: 1190px; */
     border-radius: 8px;
     box-shadow: 1px 1px 1px 1px rgba(255, 132, 9, 0.402);
-    margin-bottom: 20px;
     padding: 10px;
     margin: 0 auto;
     flex-direction: column;
     justify-content: center;
     margin-top: 30px;
-    margin-bottom: -50px;
+    margin-bottom: -30px;
     border: 1px solid rgba(255, 132, 9, 0.402);
 }
 .storyCont {
@@ -152,12 +152,15 @@ body {
 }
 .storyContent {
     box-shadow: 2px 2px 2px 2px rgba(255, 132, 9, 0.402);
-    padding: 10px;
-    width: 72%;
+    /* padding: 10px;
+    width: 72%; */
     max-width: 1300px;
     margin: 0 auto;
     border-radius: 8px;
     border: 1px solid rgba(255, 132, 9, 0.402);
+}
+.storyContent p{
+    padding: 10px;
 }
 .storyContent .story-content {
     color: #777777;
