@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MainLayout from "./layout/MainLayout";
 import { lazy } from "react";
 import { useEffect } from 'react';
+import CookieConsent from "./component/Footer/CookieConsent";
 const HomePage = lazy(() => import('./pages/Home/Home'));
 const CareerPage = lazy(() => import('./pages/Careers/Careers'));
 const ProductPage = lazy(() => import('./pages/Products/ProductPage'));
@@ -39,6 +40,7 @@ function App() {
     <> 
     
       <BrowserRouter>
+      <CookieConsent/>
        <Routes>
         <Route element={<MainLayout/>}>
           <Route path="/" element={<HomePage/>}></Route>
