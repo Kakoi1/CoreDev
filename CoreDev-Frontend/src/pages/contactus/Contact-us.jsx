@@ -1,6 +1,7 @@
 import { color } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
 import { BiLocationPlus, BiMailSend, BiLogoFacebook, BiMapAlt, BiSolidDirectionRight, BiSolidRightArrow   } from "react-icons/bi";
+import { AnimatePresence, motion } from "framer-motion";
 import "./Contact-us.css";
 
 const ContactInfo = () => {
@@ -184,14 +185,17 @@ const Contact = () => {
     <div className='mapCont'>
     <div className="tab-container" style={{ marginBottom: '-15px'}}>
           {locations.map((location) => (
-            <button
+            <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ duration: 0.3 }}
               key={location.id}
               className={`tab-button ${selectedMarker?.id === location.id ? "active" : ""}`}
               onClick={() => handleButtonClick(location)}
               style={{ margin: '5px', padding: '10px', fontSize: '16px' }}
             >
               {location.otherNmae}
-            </button>
+            </motion.button>
           ))}
         </div>
       {/* Vertical Tab Navigation */}
@@ -199,14 +203,17 @@ const Contact = () => {
           {locations.map((location, index) => (
             <div className='arrowIcon'>  
                {(selectedMarker?.id === location.id ? <BiSolidRightArrow/>:'')}
-              <button
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.9 }}
+                transition={{ duration: 0.3 }}
                 id={`tab${index+1}`} 
                 name="tab" 
                 className={'side-button' + (selectedMarker?.id === location.id ? ' active' : '')}
                 onClick={() => handleButtonClick(location)}
               >    
             {location.otherNmae}
-              </button>
+              </motion.button>
               </div>
           ))} 
         </div>

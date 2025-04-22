@@ -65,7 +65,7 @@ function WhoWeAre() {
                                     </div>
                                     <h3 className="stat-title">Enterprise trust</h3>
                                     <p className="stat-value">
-                                        Trusted by 12 billion organization
+                                        Trusted by 12 billionaire organization
                                     </p>
                                 </div>
                                 <div className="stat-item">

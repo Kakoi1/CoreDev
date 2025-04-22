@@ -13,7 +13,7 @@ const partners = [
 function Partners() {
     return (
         <div className="partners-container">
-            <h2>Development Partners</h2>
+            <h2><span>Development</span> Partners</h2>
             <div className="partners-grid">
                 {partners.map((partner, index) => (
                     <motion.div key={index} className="partner-card">
