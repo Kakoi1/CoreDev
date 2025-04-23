@@ -46,13 +46,7 @@
     line-height: 0;
     flex-shrink: 0;
     top: 10px;
-    left: 85%;
-
-    /* margin-left: 1100px;
-    margin-top: -25px;
-     */
-    
-   
+    left: 85%;    
   }
   
   .close-btn:hover {

@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import './cookieconsent.css';
+import './NoticeBanner.css';
 
-const CookieConsent = () => {
+const NoticeBanner = () => {
   const [show, setShow] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
   const location = useLocation();
@@ -40,4 +40,4 @@ const CookieConsent = () => {
   );
 };
 
-export default CookieConsent;
+export default NoticeBanner;
