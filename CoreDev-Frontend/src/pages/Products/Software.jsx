@@ -90,7 +90,7 @@ const Software = () => {
                 {softwareProducts.map((secondItem, index) => (
                     <motion.div
                         layout
-                        whileTap={{ scale: 0.9 }}
+                        // whileTap={{ scale: 0.9 }}
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.5 }}

@@ -60,6 +60,12 @@
     margin-top: 4rem;
     font-family: "Raleway", sans-serif;
   }
+  .partners-container span{
+    color: var(--black) !important;
+  }
+  .dark-mode .partners-container span{
+    color: white !important;
+  }
   .dark-mode .partners-container{
     background-color: var(--black);
     border: solid 1px var(--black);

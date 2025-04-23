@@ -30,6 +30,7 @@
   }
   
   .close-btn {
+    position:absolute;
     background: white;
     color: #ff6600;
     font-size: 1.2rem;
@@ -44,9 +45,12 @@
     justify-content: center;
     line-height: 0;
     flex-shrink: 0;
-    margin-left: 1100px;/* <--- Add this line */
+    top: 10px;
+    left: 85%;
+
+    /* margin-left: 1100px;
     margin-top: -25px;
-    
+     */
     
    
   }

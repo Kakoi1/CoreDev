@@ -32,10 +32,11 @@ function OurTeam() {
     return (
         <div className="careerCont">
             <section className="team-section">
+                <div className="imageWrap">
                 <div className="team-container">
                     <div className="section-header">
                         <h2 className="team-section-title">
-                            Meet the Talented People Behind Our
+                            Meet the Talented People Behind Our{" "}    
                             <span className="orange-text">Success</span>
                         </h2>
                         <p className="team-section-description">
@@ -43,6 +44,7 @@ function OurTeam() {
                             various fields to create innovative solutions that
                             address complex challenges.
                         </p>
+                    </div>
                     </div>
                 </div>
             </section>

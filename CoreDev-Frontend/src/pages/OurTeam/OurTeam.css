@@ -12,6 +12,7 @@ body {
     background: url(../../assets/teamImg.png) center no-repeat;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 70px;
 }
 
 .imageWrap:before {
@@ -23,9 +24,10 @@ body {
     height: 100%;
     width: 100%;
     background: linear-gradient(
-        0deg,
-        rgb(13 6 1 / 82%),
-        rgb(49, 46, 46, 0.041)
+        180deg,
+        rgba(180, 77, 4, 0.82) 35%,
+        rgba(13, 6, 1, 0.1) 50%,
+        rgba(13, 6, 1, 0.82) 100%
     );
 }
 
@@ -33,7 +35,8 @@ body {
     font-size: 2rem;
     color: #353635;
     font-family: "Raleway", sans-serif !important;
-    margin-bottom: 1.5rem;
+    
+    /* margin-bottom: 1.5rem; */
 }
 
 .inner span {
@@ -548,7 +551,7 @@ p {
 /* Team Section */
 .team-section {
     position: relative;
-    padding: 5rem 0;
+    /* padding: 5rem 0; */
     overflow: hidden;
 }
 
@@ -593,10 +596,26 @@ p {
 }
 
 .section-header {
+    position: absolute;
     text-align: center;
     max-width: 48rem;
     margin: 0 auto 4rem;
+    top: 120px;
+    left: 50%;
+    translate: -50% -50%;
+
 }
+.section-header h2 {
+    text-shadow: 1px 1px 1px rgb(253, 254, 254);
+}
+.section-header p {
+    font-size: 18px;
+    font-weight: 600 ;
+   margin-top: -30px;
+   color: var(--gray-100);
+   text-shadow: 4px 4px 4px black;
+}
+
 
 .team-grid {
     display: grid;

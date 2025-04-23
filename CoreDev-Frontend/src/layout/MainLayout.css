@@ -62,7 +62,7 @@ body{
 
 .progress-bar{
     transform-origin: left;
-    background-color: var(--black);
+    background-color: var(--orange);
     z-index: 10000;
     position: fixed;
     top: 0;
@@ -194,6 +194,6 @@ body{
   background: var(--black);
 }
 .dark-mode .progress-bar{
-  background-color: var(--orange);
+  background-color: var(--white);
 }
   
