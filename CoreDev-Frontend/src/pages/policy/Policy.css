@@ -19,7 +19,7 @@
   color: var(--orange);
 }
 .dark-mode .policyCont p, .policyCont li{
-  color: var(--gray);
+  color: var(--gray-600);
 }
 .dark-mode .policyCont a{
   color: var(--orange);
