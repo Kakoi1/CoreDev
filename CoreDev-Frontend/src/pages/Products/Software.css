@@ -1,60 +1,92 @@
 /* Global Styles */
+:root {
+    --black: #000;
+    --orange: #ff6c00;
+    --gray: #777777;
+    --white: #fff;
+    --shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 body {
     background-color: #f1f8ff;
 }
+
 .SoftwareContainer li,
 .SoftwareContainer p {
     font-family: "Open-Sans", sans-serif;
     font-size: 15px;
     line-height: 21px;
     margin-bottom: 0;
-    color: #777777;
-    /* font-weight:600; */
+    color: var(--gray-500);
 }
+
 .SoftwareContainer h4,
 .SoftwareContainer h2 {
     font-family: "Raleway", sans-serif;
     font-weight: bolder !important;
 }
+
 /* Headings */
 .SoftwareContainer h2 {
     font-size: 2rem;
-    color: #ff6c00;
+    color: var(--orange);
     text-shadow: -1px 1px #080707;
     margin-bottom: 1.5rem;
 }
 
-.Iac-wrap ul {
-    list-style-type: none;
-}
+
 
 .Iac-wrap ul .icon {
     font-size: 1.5rem;
-} 
+}
 
 /* Project Section */
 .pastProj {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: auto;
+    display: flex;
     gap: 2rem;
     padding: 2rem 0;
 }
 
+.column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
 .pastProj h4 {
     font-size: 1.25rem;
-    color: #ff6c00;
+    color: var(--orange);
     font-family: "Raleway", sans-serif;
 }
 
 /* Project Details */
 .projectDetail {
-    background-color: white;
+    background-color: var(--white);
     padding: 1.5rem;
     border-radius: 12px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    align-self:start;
+    box-shadow: var(--shadow);
+    overflow: visible;
+}
+
+/* Ensure consistent layout for content */
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Button Wrapper */
+.button-wrapper {
+    position: relative;
+}
+
+/* Expanded Content */
+.Iac-wrap {
+    width: 100%;
+    
+    border-radius: 0 0 12px 12px;
+  
 }
 
 /* Software Container */
@@ -71,8 +103,8 @@ body {
     gap: 2rem;
     border-radius: 10px;
     padding: 1rem;
-    background-color: white;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--white);
+    box-shadow: var(--shadow);
 }
 
 /* Iac Section */
@@ -89,21 +121,22 @@ body {
     font-family: "Raleway", sans-serif;
     margin: 1rem 0;
     padding: 0;
+    color: var(--gray-500);
 }
 
-.IacWrap div > .iaccs-title {
+.iaccs-title {
     font-family: "Raleway", sans-serif;
     font-size: 2rem;
     color: var(--black);
     text-transform: uppercase;
-    margin-top: 0;
-    margin-bottom: 1rem;
+    margin: 0 0 1rem;
     cursor: pointer;
 }
 
-.IacWrap div > .iaccs-title:hover {
-    color: #ff6c00;
+.iaccs-title:hover {
+    color: var(--orange);
 }
+
 .IacWrap div > h4 {
     font-family: "Raleway", sans-serif;
     color: var(--black);
@@ -115,8 +148,8 @@ body {
     display: flex;
     align-items: center;
     gap: 1rem;
-    background: linear-gradient(to left, #ff9c50, #ff6c00); /* Orange gradient */
-    color: white;
+    background: linear-gradient(to left, #ff9c50, #ff6c00);
+    color: var(--white);
     border: 2px solid #dd5e04;
     padding: 10px 20px;
     font-size: 16px;
@@ -125,14 +158,14 @@ body {
     cursor: pointer;
     margin-top: 1rem;
     transition: all 0.3s ease;
-    background-size: 200% auto; 
+    background-size: 200% auto;
     background-position: left center;
-  }
-  
-  .IacWrap-btn:hover {
+}
+
+.IacWrap-btn:hover {
     background-position: right center;
     transition: all 0.4s ease-in;
-  }
+}
 
 .IacWrap-btn:hover > .icon {
     transform: scale(1.2);
@@ -148,30 +181,35 @@ body {
 .featureWrap {
     padding: 0.5rem;
     border-radius: 10px;
-    width: 90%;
+    width: 100%;
 }
 
 /* Soft Items */
-
 .iacc {
     height: 100px;
     width: 100px;
 }
+
 .projectDetail::-webkit-scrollbar {
-    width: 8px; /* Width of the scrollbar */
+    width: 8px;
 }
 
 .projectDetail::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Track color */
+    background: #f1f1f1;
 }
 
 .projectDetail::-webkit-scrollbar-thumb {
-    background: #888; /* Thumb color */
-    border-radius: 4px; /* Rounded corners */
+    background: #888;
+    border-radius: 4px;
 }
 
 .projectDetail::-webkit-scrollbar-thumb:hover {
-    background: #555; /* Thumb color on hover */
+    background: #555;
+}
+
+.projectDetail {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
 }
 
 .product-title {
@@ -182,13 +220,14 @@ body {
     margin-top: 4rem;
     margin-bottom: 0;
 }
-.product-title span{
+
+.product-title span {
     color: var(--black);
 }
 
 .SoftwareContainer svg {
-  color: #ff6c00;
-  font-size: 30px;
+    color: var(--orange);
+    font-size: 30px;
 }
 
 /* Media Queries */
@@ -207,45 +246,90 @@ body {
     .IacWrap {
         justify-content: center;
     }
+
     .iacc {
         height: 130px !important;
         width: 130px !important;
         margin: 0 auto;
     }
-    .projectDetail{
-      margin: 2rem 0;
-    }
 
     .pastProj {
-      display: block;
+        flex-direction: column;
+    }
+
+    .column {
+        flex: 1 1 100%;
+    }
+
+    .projectDetail {
+        margin: 0;
     }
 }
 
 @media only screen and (max-width: 600px) {
-  .SoftWrap img {
-    display: none;
-  }
+    .SoftWrap img {
+        display: none;
+    }
 }
-.dark-mode .SoftWrap{
+
+/* Dark Mode */
+.dark-mode .SoftWrap {
     background-color: var(--black);
     border: solid 1px;
 }
-.dark-mode .iaccs-title{
+
+.dark-mode .iaccs-title {
     color: var(--orange) !important;
 }
-.dark-mode .iaccs-title:hover{
+
+.dark-mode .iaccs-title:hover {
     color: var(--gray) !important;
 }
-.dark-mode .SoftWrap p{
-    color: white;
+
+.dark-mode .SoftWrap p {
+    color: var(--white);
 }
-.dark-mode .product-title span{
+
+.dark-mode .product-title span {
     color: var(--gray);
 }
-.dark-mode .projectDetail{
+
+.dark-mode .projectDetail {
     background-color: var(--black);
     border: solid 1px;
 }
-.dark-mode .projectDetail p{
-    color: white;
+
+.dark-mode .projectDetail p {
+    color: var(--white);
+}
+
+.dark-mode .Iac-wrap {
+    background-color: var(--black);
+}
+
+.SoftwareContainer, .SoftWrap, .projectDetail, .iaccs-title, .product-title span, p, .Iac-wrap {
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+
+/* Feature Header */
+.feature-header {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    gap: 0.5rem; 
+}
+
+/* Ensure the icon size matches the heading */
+.feature-header .icon {
+    font-size: 1.5rem;
+    color: var(--orange);
+}
+
+/* Adjust the heading margin to align with the icon */
+.feature-header h4 {
+    margin: 0;
+    font-family: "Raleway", sans-serif;
+    color: var(--orange);
+    
 }
