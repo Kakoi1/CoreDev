@@ -2,6 +2,7 @@ import "./HeroComponent.css";
 import { FaCode, FaHeadset, FaServer } from "react-icons/fa6";
 import { MdArrowForward } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const leftFeature = {
     name: "Service Provider",
@@ -31,6 +32,11 @@ const rightFeature = {
 };
 
 const HeroComponent = () => {
+    const [activeFeature, setActiveFeature] = useState(null);
+
+    const handleFeatureClick = (feature) => {
+        setActiveFeature(activeFeature === feature ? null : feature);
+    };
 
     return (
         <section className="home-hero-container">
@@ -52,37 +58,55 @@ const HeroComponent = () => {
             </div>
             <div className="features">
                 <div className="left-feature">
-                    <div className="feature-container">
+                    <div 
+                        className="feature-container" 
+                        onClick={() => handleFeatureClick('left')}
+                    >
                         <div className="feature-icon">{leftFeature.icon}</div>
                         <div className="feature-name">{leftFeature.name}</div>
-                        <div className="feature-description">
+                        <div className={`feature-description ${activeFeature === 'left' ? 'active' : ''}`}>
                             {leftFeature.description}
                         </div>
-                        <Link to={leftFeature.link} className="cta">
+                        <Link 
+                            to={leftFeature.link} 
+                            className={`cta ${activeFeature === 'left' ? 'active' : ''}`}
+                        >
                             {leftFeature.label} <MdArrowForward />
                         </Link>
                     </div>
                 </div>
                 <div className="center-feature">
-                    <div className="feature-container">
+                    <div 
+                        className="feature-container" 
+                        onClick={() => handleFeatureClick('center')}
+                    >
                         <div className="feature-icon">{centerFeature.icon}</div>
                         <div className="feature-name">{centerFeature.name}</div>
-                        <div className="feature-description">
+                        <div className={`feature-description ${activeFeature === 'center' ? 'active' : ''}`}>
                             {centerFeature.description}
                         </div>
-                        <Link to={centerFeature.link} className="cta">
+                        <Link 
+                            to={centerFeature.link} 
+                            className={`cta ${activeFeature === 'center' ? 'active' : ''}`}
+                        >
                             {centerFeature.label} <MdArrowForward />
                         </Link>
                     </div>
                 </div>
                 <div className="right-feature">
-                    <div className="feature-container">
+                    <div 
+                        className="feature-container" 
+                        onClick={() => handleFeatureClick('right')}
+                    >
                         <div className="feature-icon">{rightFeature.icon}</div>
                         <div className="feature-name">{rightFeature.name}</div>
-                        <div className="feature-description">
+                        <div className={`feature-description ${activeFeature === 'right' ? 'active' : ''}`}>
                             {rightFeature.description}
                         </div>
-                        <Link to={rightFeature.link} className="cta">
+                        <Link 
+                            to={rightFeature.link} 
+                            className={`cta ${activeFeature === 'right' ? 'active' : ''}`}
+                        >
                             {rightFeature.label} <MdArrowForward />
                         </Link>
                     </div>

@@ -39,28 +39,7 @@ export default function App({ images }) {
         modules={[Autoplay, Pagination]} // Exclude Navigation module
         className="mySwiper"
         speed={800}
-        breakpoints={{
-          400: {
-            slidesPerView: 2,
-            spaceBetween: 10,
-          },
-          640: {
-            slidesPerView: 2,
-            spaceBetween: 30,
-          },
-          768: {
-            slidesPerView: 3,
-            spaceBetween: 45,
-          },
-          1024: {
-            slidesPerView: 4,
-            spaceBetween: 55,
-          },
-          1224: {
-            slidesPerView: 5,
-            spaceBetween: 70,
-          },
-        }}
+
       >
         {images.map((image, index) => (
           <SwiperSlide key={index}>
