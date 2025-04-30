@@ -1,11 +1,6 @@
-body{
-    background-color: #f1f8ff;
-}
 .contactWrap {
   font-family: 'Arial', sans-serif;
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 0px 20px 20px 20px
+
 }
 
 .contact-container {
@@ -111,6 +106,7 @@ body{
     color:#ff6c00;
     font-family: "Raleway", sans-serif;
     text-wrap: balance;
+    font-size: 2rem;
     text-align: center;
     padding: 20px;
   }

@@ -1,74 +1,63 @@
-/* Main container */
-.regucont {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 50vh;
-  /* background-color: #f4f4f9; */
-  padding: 20px;
+.regucont{
+  width: 100%;
 }
-
 /* Wrapper for the content */
 .Regwrapper {
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  max-width: 1200px;
-  height: 100%;
-  width: 100%;
-  padding: 55px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
 }
 
 /* Title styling */
 .titleName h2 {
-  font-size: 28px;
-  font-weight: 600;
-  font-size: 2rem;
-  color: #ff6c00;
-  font-family: "Raleway", sans-serif;
-  margin-bottom: 30px;
-  text-align: start;
-
+    font-size: 28px;
+    font-weight: 600;
+    font-size: 2rem;
+    color: #ff6c00;
+    font-family: "Raleway", sans-serif;
+    margin-bottom: 30px;
+    text-align: start;
 }
 
 /* Content wrapper */
 .contentWrap {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 50px;
 }
 
 /* Individual content box */
 .content {
-  display: flex;
-  align-items: center;
-  /* background-color: #f9f9f9; */
-  border-radius: 8px;
-  padding: 20px;
-  border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    /* background-color: #f9f9f9; */
+    border-radius: 8px;
+    padding: 20px;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 /* Icon styling */
 .content h3 svg {
-  color: #ff6c00;
-  margin-right: 15px;
-  font-size: 24px;
+    color: #ff6c00;
+    margin-right: 15px;
+    font-size: 24px;
 }
 
 /* Text styling */
 .content h3 {
-  font-size: 18px;
-  font-weight: 500;
-  color: #777777;
-  margin: 0;
-  font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #777777;
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
 }
-.dark-mode .Regwrapper{
-  background-color: var(--black);
-  box-shadow: none;
-  border: solid 1px;
+.dark-mode .Regwrapper {
+    background-color: var(--black);
+    box-shadow: none;
+    border: solid 1px;
 }
-.dark-mode .Regwrapper h3{
-  color: var(--gray);
+.dark-mode .Regwrapper h3 {
+    color: var(--gray);
 }

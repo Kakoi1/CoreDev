@@ -1,157 +1,71 @@
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-        Helvetica, Arial, sans-serif;
-    color: var(--gray-800);
-    line-height: 1.5;
-    background-color: var(--white);
+.team-section{
+    position: relative;
+    /* background-color: red; */
+    height: 100vh;
+    width: 100%;
 }
 
-.imageWrap {
-    position: relative;
-    padding: 303px 0;
+.section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 4rem;
+}
+
+.section-header > h2{
+    margin: 0;
+    color: white;
+    text-align: center;
+}
+
+.section-header > h2 > span{
+    color: var(--orange-500)
+}
+
+.section-header > p{
+    font-size: 1.25rem;
+    color: white;
+    text-align: center;
+    max-width: 60rem;
+}
+
+.section-header > a{
+    margin-top: 5rem;
+}
+
+.team-section-background {
+    position: absolute;
+    inset: 0;
     background: url(../../assets/teamImg.png) center no-repeat;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 70px;
+    width: 100vw;
+    margin-left: var(--fit-screen);
 }
 
-.imageWrap:before {
+.team-section-gradient {
     position: absolute;
-    content: " ";
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 100%;
-    width: 100%;
+    inset: 0;
     background: linear-gradient(
         180deg,
-        rgba(180, 77, 4, 0.82) 35%,
-        rgba(13, 6, 1, 0.1) 50%,
-        rgba(13, 6, 1, 0.82) 100%
+        rgba(0, 0, 0, 0.85) 0%,
+        rgba(0, 0, 0, 0.6) 20%,
+        rgba(13, 6, 1, .5) 50%,
+        rgba(13, 6, 1, .2) 100%
     );
+    width: 100vw;
+    margin-left: var(--fit-screen);
 }
 
-.inner h2 {
-    font-size: 2rem;
-    color: #353635;
-    font-family: "Raleway", sans-serif !important;
-    
-    /* margin-bottom: 1.5rem; */
+
+.team-container {
+    position: relative;
 }
 
-.inner span {
-    color: #ff6c00;
-}
-.textcont h2 {
+.team-section-title {
     font-size: 4rem;
-    font-family: "Raleway", sans-serif !important;
     margin-bottom: 1.5rem;
-    text-shadow: 1px 1px 3px black;
-}
-
-p {
-    font-family: "Open Sans", sans-serif;
-}
-
-.textcont {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    padding: 20px;
-    letter-spacing: 3px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.textcont > a {
-    text-decoration: none;
-    color: white;
-}
-
-.textcont > a > .icon {
-    font-size: 3rem;
-    padding: 0.5rem;
-    border-radius: 100%;
-    background-color: var(--orange);
-    margin-top: 1rem;
-}
-
-.courseCont img {
-    height: 250px;
-    width: 250px;
-}
-.courses {
-    background-color: white;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    height: 350px;
-    display: flex;
-    width: 250px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.courses h4 {
-    font-size: 1.25rem;
-    color: #ff6c00;
-    font-family: "Raleway", sans-serif;
-}
-.courseCont {
-    display: flex;
-    flex-wrap: wrap; /* Allows items to wrap to the next line if needed */
-    justify-content: center; /* Centers items horizontally */
-    align-items: center; /* Centers items vertically */
-    gap: 2rem; /* Adds spacing between items */
-    width: 80%;
-    max-width: 1300px;
-    margin: 30px auto;
-    padding: 15px;
-}
-@media screen and (max-width: 768px) {
-    .courses {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-    }
-    .courses img {
-        height: 200px;
-        width: 200px;
-    }
-}
-.applyBut {
-    width: 80%;
-    margin: 0 auto;
-    height: 40px;
-    font-size: 1.3rem;
-    color: #fdfcfb;
-    letter-spacing: 3px;
-    text-shadow: -1px 1px #080707;
-    margin-bottom: 1.5rem;
-    font-weight: bold;
-    background-color: #ff6c00;
-    border: none;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: "Raleway", sans-serif;
-    display: flex; /* CSS3 */
-    align-items: center; /* Vertical align */
-    justify-content: center;
-}
-.applyBut:hover {
-    background-color: #ff6a003c;
-    border: solid 1px;
-    color: #ff6c00;
-    transition: 0.1s ease-in;
-    cursor: pointer;
-}
-.butCont {
-    width: 100%;
-    padding: 20px;
-    display: flex;
 }
 
 .inner {
@@ -161,25 +75,32 @@ p {
     padding-top: 5rem;
 }
 
+.inner h2{
+    font-size: 2rem;
+}
+
+.inner span {
+    color: var(--orange-500)
+}
+
 .team-wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
     gap: 2rem;
     font-family: "Raleway", sans-serif !important;
-    padding: 1rem;
-    margin: 1rem;
     border-radius: 0.5rem;
-    width: 69%;
+    width: 100%;
 }
 .team-wrapper .team {
     display: flex;
     align-items: center;
     justify-content: start;
     background-color: white;
+    padding: 2rem;
     color: var(--black);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 0.5rem;
-    padding: 2rem;
     gap: 1rem;
 }
 
@@ -219,7 +140,7 @@ p {
 }
 
 .team-name > h3 {
-    font-size: 2rem;
+    font-size: 1.75rem;
     margin: 0;
     padding: 0;
 }
@@ -257,8 +178,8 @@ p {
 
 .organizational-chart-container {
     background-color: white;
-    margin: 2rem 18.5rem;
     overflow: hidden;
+    margin: 2rem 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 1rem;
     font-family: "Inter", sans-serif;
@@ -404,6 +325,19 @@ p {
         margin: 0.5rem;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .courses {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+    .courses img {
+        height: 200px;
+        width: 200px;
+    }
+}
+
 .dark-mode .inner h2 {
     color: white;
 }
@@ -427,36 +361,7 @@ p {
     border: solid 1px;
 }
 
-.page-container {
-    min-height: 100vh;
-}
-
-.team-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-.hero-title {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.team-section-title {
-    font-size: 4rem;
-    margin-bottom: 1.5rem;
-}
-
-.orange-text {
-    color: var(--orange);
-}
-
-.section-title > span {
-    color: var(--orange);
-}
-
-.gradient-text {
+/* .gradient-text {
     background: linear-gradient(
         to right,
         var(--violet-600),
@@ -465,97 +370,15 @@ p {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-}
-
-/* Buttons */
-.button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5rem 1rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: all 0.2s ease;
-    border: none;
-}
-
-.button .icon {
-    width: 1rem;
-    height: 1rem;
-    margin-left: 0.5rem;
-}
-
-.primary-button {
-    background-color: var(--orange-600);
-    color: var(--white);
-    box-shadow: var(--shadow);
-}
-
-.primary-button:hover {
-    background-color: var(--orange-700);
-}
-
-.outline-button {
-    background-color: transparent;
-    color: var(--gray-800);
-    border: 1px solid var(--gray-300);
-    box-shadow: var(--shadow-sm);
-}
-
-.outline-button:hover {
-    background-color: var(--gray-100);
-}
-
-.outline-button.accent {
-    border-color: var(--violet-500);
-    color: var(--violet-700);
-}
-
-.outline-button.accent:hover {
-    background-color: var(--violet-50);
-}
-
-.primary-button.gradient {
-    background: linear-gradient(to right, var(--violet-600), var(--purple-600));
-}
-
-.primary-button.gradient:hover {
-    background: linear-gradient(to right, var(--violet-700), var(--purple-700));
-}
-
-.button-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-/* Badges */
-.badge {
-    display: inline-block;
-    padding: 0.25rem 1rem;
-    border-radius: var(--border-radius-full);
-    font-size: 0.875rem;
-    font-weight: 500;
-    background-color: var(--orange-100);
-    color: var(--black);
-    margin-bottom: 1.5rem;
-}
-
-.badge.purple {
-    background-color: var(--orange-100);
-    color: var(--black);
-}
+} */
 
 /* Team Section */
-.team-section {
+/* .team-section {
     position: relative;
-    /* padding: 5rem 0; */
     overflow: hidden;
-}
+} */
 
-.section-gradient {
+/* .section-gradient {
     position: absolute;
     inset: 0;
     background: linear-gradient(
@@ -565,9 +388,9 @@ p {
         rgba(236, 72, 153, 0.1)
     );
     z-index: -1;
-}
+} */
 
-.radial-top-right {
+/* .radial-top-right {
     position: absolute;
     top: 0;
     right: 0;
@@ -579,9 +402,9 @@ p {
         rgba(255, 255, 255, 0) 70%
     );
     z-index: -1;
-}
+} */
 
-.radial-bottom-left {
+/* .radial-bottom-left {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -593,30 +416,9 @@ p {
         rgba(255, 255, 255, 0) 70%
     );
     z-index: -1;
-}
+} */
 
-.section-header {
-    position: relative;
-    text-align: center;
-    max-width: 48rem;
-    margin: 0 auto 4rem;
-    bottom: 340px;
-    
-   
-
-}
-.section-header h2 {
-    text-shadow: 1px 1px 1px rgb(253, 254, 254);
-}
-.section-header p {
-    font-size: 18px;
-    font-weight: 600 ;
-   margin-top: -30px;
-   color: var(--gray-100);
-   text-shadow: 4px 4px 4px black;
-}
-
-
+/* 
 .team-grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -641,8 +443,8 @@ p {
     position: relative;
     height: 16rem;
     overflow: hidden;
-}
-
+} */
+/* 
 .team-image {
     width: 100%;
     height: 100%;
@@ -662,9 +464,9 @@ p {
     transition: opacity 0.3s ease;
     display: flex;
     align-items: flex-end;
-}
+} */
 
-.team-card:hover .team-overlay {
+/* .team-card:hover .team-overlay {
     opacity: 1;
 }
 
@@ -674,8 +476,8 @@ p {
     justify-content: center;
     width: 100%;
     padding: 1rem;
-}
-
+} */
+/* 
 .social-link {
     background-color: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(4px);
@@ -685,17 +487,17 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} */
 
-.social-link:hover {
+/* .social-link:hover {
     background-color: rgba(255, 255, 255, 0.4);
-}
+} */
 
-.social-link svg {
+/* .social-link svg {
     width: 1rem;
     height: 1rem;
     color: var(--white);
-}
+} */
 
 .team-info {
     padding: 1.25rem;

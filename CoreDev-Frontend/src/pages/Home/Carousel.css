@@ -23,7 +23,6 @@
   background: transparent;
   box-sizing: border-box;
   position: relative;
-  overflow: hidden;
   transition: transform 0.3s ease;
   box-shadow: none;
   cursor: pointer;
@@ -36,46 +35,24 @@
   align-items: center;
   justify-content: center;
   border-radius: 120px;
-  overflow: hidden;
   background: transparent;
   padding: 20px;
-  width: 180px !important;
-  height: 180px;
 }
 
 /* Image styling */
 .slide-content img {
   border-radius: 120px;
-  width: 180px;
-  height: 180px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
-  transition: opacity 0.3s ease;
+  transition: 0.3s ease-in-out;
+  opacity: .4;
 }
 
-/* Overlay styling */
-.slide-content .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(255, 255, 255, 0.482);
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100%;
-  padding: 0;
-  border-radius: 120px;
+.slide-content img:hover{
+  opacity: 1;
 }
 
-/* On hover, hide the overlay */
-.swiper-slide:hover .slide-content .overlay {
-  display: none;
-  transition: 500ms ease-out;
-  font-family: "Raleway", sans-serif;
-}
 
 .swiper-slide:hover {
   border-radius: 120px;

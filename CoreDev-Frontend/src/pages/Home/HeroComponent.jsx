@@ -34,15 +34,19 @@ const HeroComponent = () => {
     return (
         <section className="home-hero-container">
             <div className="home-hero-radial"></div>
+            <div className="home-hero-image"></div>
             <div className="home-hero">
-                <div className="image-wrapper">
-                    <img src="/software-background.jpg" alt="" />
+                <div className="text-content">
+                    <h1 >
+                        coreDev <span className="home-gradient-text">Solutions</span>{" "}
+                        Inc.
+                    </h1>
+                    <p>The Premier Software solutions in the Philippines</p>
+                    <Link to={"/about/who-we-are"} className="button">
+                        Learn more
+                    </Link>
                 </div>
-                <h1 className="">coreDev <span className="home-gradient-text">Solutions</span> Inc.</h1>
-                <p>The Premier Software solutions in the Philippines</p>
-                <Link to={"/about/who-we-are"} className="button">
-                    Learn more
-                </Link>
+
                 <div className="features">
                     {featureServices.map((service, index) => (
                         <div key={index} className="feature-container">

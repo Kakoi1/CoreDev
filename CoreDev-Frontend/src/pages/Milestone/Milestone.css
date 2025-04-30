@@ -1,5 +1,4 @@
 .milestone{
-  /* background: #f9f9f9; */
   background-size: cover;
   margin: 0;
   padding: 0;
@@ -26,10 +25,6 @@
   background: #78AD42 !important;
 }
 
-.timeline-container {
-  max-width: 1000px;
-  margin: 0 auto;
-}
 
 #timeline .timeline-item:after, #timeline .timeline-item:before {
   content: '';
@@ -39,10 +34,7 @@
 }
 
 #timeline {
-  width: 100%;
-  margin: 30px auto;
   position: relative;
-  padding: 0 20px;
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
   -ms-transition: all 0.4s ease;
