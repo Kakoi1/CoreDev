@@ -19,7 +19,7 @@ const featureServices = [
         description:
             "We offer more than just accounting and banking software solutions – our diverse software products are tailored to meet your needs.",
         label: "Explore",
-        link: "/Products",
+        link: "/Products/Software",
     },
     {
         name: "Hardware Distributor",
