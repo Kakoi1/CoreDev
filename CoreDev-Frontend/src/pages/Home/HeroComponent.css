@@ -38,10 +38,10 @@
 }
 
 .home-gradient-text {
-    background: linear-gradient(to left, var(--orange-600), var(--orange-400));
+    color:#ff6c00;
     -webkit-background-clip: text;
     background-clip: text;
-    color: transparent;
+    text-shadow: 1px 3px 3px black;
     z-index: 1;
 }
 
@@ -55,10 +55,11 @@
 
 .home-hero-container .home-hero h1 {
     font-family: Ubuntu;
-    font-size: 4rem;
+    font-size: 90px;
     font-weight: 700;
     margin-bottom: 0;
     color: white;
+    text-shadow: 1px 3px 3px black;
 }
 
 .home-hero-container .home-hero p {
@@ -67,6 +68,7 @@
     margin-bottom: 2rem;
     opacity: 0.9;
     color: white;
+    text-shadow: 1px 3px 3px black;
 }
 
 .home-hero-container .home-hero .button {
