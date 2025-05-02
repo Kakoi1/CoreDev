@@ -1,5 +1,4 @@
 import "./Hardware.css";
-import React from "react";
 import { NavLink } from 'react-router-dom';
 import FW from "../../assets/fw-v2.png";
 import PC from "../../assets/pc-v2.png";
@@ -11,7 +10,7 @@ import Printer from "../../assets/print-v2.png";
 import Net from "../../assets/net-v2.png";
 import Bio from "../../assets/biometrics-v2.png";
 import Cloud from "../../assets/cloud-v2.png";
-import { easeInOut, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useLocation } from "react-router-dom";
 const Hardware = () => {
     const location = useLocation();
@@ -31,7 +30,7 @@ const Hardware = () => {
 
     return (
         <div className="HardwareContainer" >
-            <h2 style={{ textAlign: "center" }}><span className="hardSpan"> Hardware</span> Products</h2>
+            <h2><span className="hardSpan"> Hardware</span> Products</h2>
 
             <div className="HardWrapper">
                 {hardComp.map((item, index) => (

@@ -5,7 +5,6 @@ import IAccs from "./SoftwareProduct/iAccs";
 import { useState } from "react";
 import { softwareProducts } from "./data";
 import { RiCodepenFill } from "react-icons/ri";
-import { IoCheckmarkDone } from "react-icons/io5";
 import ProductInquiryForm from "../email/ProductInquiryForm";
 
 const Software = () => {
@@ -32,8 +31,7 @@ const Software = () => {
     return (
         <div className="SoftwareContainer">
             <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                
                 viewport={{ once: true }}
                 transition={{
                     type: "spring",
