@@ -32,11 +32,11 @@ const Footer = () => {
                 label: "FOLLOW US",
                 links: [
                     {
-                        icon: <SlSocialFacebook className="icon" />,
+                        icon: <SlSocialFacebook className="footer-icon" />,
                         link: "https://www.facebook.com/coredev/",
                     },
                     {
-                        icon: <SlSocialLinkedin className="icon" />,
+                        icon: <SlSocialLinkedin className="footer-icon" />,
                         link: "https://www.linkedin.com/company/coredev-solutions-inc-",
                     },
                 ],
@@ -80,7 +80,7 @@ const Footer = () => {
                     <h3 style={{ fontWeight: "bold" }}>
                         {footer.contact.follow.label}
                     </h3>
-                    <div className="socials">
+                    <div className="footer-socials">
                         {footer.contact.follow.links.map((item, index) => (
                             <a key={index} target="_blank" href={item.link}>
                                 {item.icon}
