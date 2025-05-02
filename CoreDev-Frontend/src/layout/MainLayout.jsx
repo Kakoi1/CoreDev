@@ -42,14 +42,15 @@ const MainLayout = () => {
     const backToTop = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     };
+    const path =  location.pathname;
 
     return (
         <div>
-            {isLoading && (
-                <Loading isLoading={isLoading} isSplit={isSplit}/>
-            )}
+         {(isLoading && path !== '/Products/Hardware' && path !== '/Products/Software') && (
+    <Loading isLoading={isLoading} isSplit={isSplit}/>
+)}
 
-            {!isLoading && !isSplit && (
+            {!isLoading && !isSplit && path !== '/Products/Hardware' && path !== '/Products/Software'&& (
                 <div className="split-screen">
                     <motion.div
                         initial={{ y: 0 }}

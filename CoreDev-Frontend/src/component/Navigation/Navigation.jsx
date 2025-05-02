@@ -4,7 +4,7 @@ import { RxCaretDown } from "react-icons/rx";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BiChevronLeft } from "react-icons/bi";
 import { useEffect, useState } from "react";
-import coreDevIcon from "../../assets/coredev.png";
+import coreDevIcon from "../../assets/coreDevlogo.png";
 import { motion } from "framer-motion";
 
 const backToTop = () => {
@@ -67,10 +67,11 @@ const Navigation = () => {
                                 >
                                     <div className="navIcon">
                                         <div className="brands">
+                                            <div>
                                             <img
                                                 src={coreDevIcon}
                                                 alt="CoreDev Logo"
-                                            />
+                                            /></div>
                                             <span>
                                                 CoreDev <br /> Solutions Inc.
                                             </span>

@@ -492,6 +492,7 @@ textarea::placeholder {
     align-items: center;
     width: 100vw;
     margin-left: var(--fit-screen);
+    margin-bottom: -39px;
 }
 
 
