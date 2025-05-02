@@ -1,38 +1,66 @@
-/* ProductPage.css */
+.product-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-page .product-page-header {
+    margin-bottom: 2rem;
+}
+
+.product-page .product-page-header h3 {
+    font-size: 3rem;
+    font-family: "Raleway", sans-serif;
+    color: var(--orange);
+    text-transform: capitalize;
+    text-align: center;
+    margin: 3rem 0 1rem 0;
+}
+
+.product-page .product-page-header p {
+    text-align: center;
+    font-size: 1rem;
+    color: var(--gray-500);
+}
+
+.product-page .product-page-header span {
+    color: var(--black);
+}
+
 .tab-buttons {
-  display: flex;
-      /* gap: 100px; */
-      max-width: 1300px;
-      margin-bottom: 20px;
-      flex-direction: row;
-      position: relative;
-      bottom: -30px;
-      /* left: 90px; */
-      justify-content: flex-start;
-  }
-  
-  .tab-buttons button {
-    padding: 10px 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--gray-300);
+    border-radius: .5rem;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.tab-buttons button {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray-700);
+    gap: .5rem;
+    font-size: 1.25rem;
+    padding: 1rem 2rem;
+    margin: .75rem;
     border: none;
-    background: var(--gray);
-    border: solid 1px var(--orange);
+    background-color: var(--gray-300);
     cursor: pointer;
     border-radius: 5px;
     font-weight: bold;
-    font-size: 24px;
-    height: 90px;
-    width: 20%;
-  }
-  .dark-mode .tab-buttons button{
-    background-color: var(--black);
-    color: white;
-  }
-  
-  .tab-buttons button.active {
-    background: linear-gradient(to left, #ff9c50, #ff6c00);
-    color: white;
-  }
-  .inquiry-btn {
+}
+
+
+.tab-buttons button.active {
+    color: var(--orange-500);
+    background-color: white;
+}
+.inquiry-btn {
     padding: 10px 20px;
     background: linear-gradient(to left, #ff9c50, #ff6c00);
     color: white;
@@ -42,52 +70,37 @@
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
-    background-size: 200% auto; 
+    background-size: 200% auto;
     background-position: left center;
-  }
-  
-  .inquiry-btn:hover {
+}
+
+.inquiry-btn:hover {
     background-position: right center;
     transition: all 0.4s ease-in;
-  }
-  
-  .tab-content {
-    padding: 20px;
-    border: 1px solid #dd5e04;
-    border-radius: 5px;
-    background: #f1f8ff;
-    position: relative;
-    /* z-index: 1; */
+}
+
+.tab-content {
+    width: 100%;
     margin-bottom: 40px;
-  }
-  .dark-mode .tab-content{
-    background-color: var(--black);
-  }
-  .product-page h2{
-    font-size: 2rem;
-    font-family: "Raleway", sans-serif;
-    color: var(--orange);
-    text-transform: uppercase;
-    margin: 40px;
-    text-align: center;
-    /* margin-bottom: 0; */
-  }
-  .product-page span{
-    color: var(--black);
-  }
-  .product-page{
-    
-    margin: 0 auto;
-  }
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
     .tab-buttons {
-      flex-direction: column;
-      align-items: center;
+        flex-direction: column;
+        align-items: center;
         padding: 20px;
         gap: 10px;
     }
-    .tab-buttons button{
-      width: 100%;
+    .tab-buttons button {
+        width: 100%;
     }
-  }
-  
+}
+
+.dark-mode .tab-content {
+    background-color: var(--black);
+}
+
+.dark-mode .tab-buttons button {
+  background-color: var(--black);
+  color: white;
+}
