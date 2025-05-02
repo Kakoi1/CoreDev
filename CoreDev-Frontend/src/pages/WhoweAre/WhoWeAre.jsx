@@ -146,16 +146,16 @@ function WhoWeAre() {
                         <IoTelescopeOutline />
                         <h3>Our Vision</h3>
                         <p className="ubuntu-text">
-                            To be the leading and most trusted{" "}
+                            To be the leading and most trusted&nbsp;
                             <span>
                                 service-oriented provider of innovative software
                                 and hardware solutions
-                            </span>{" "}
-                            globally.
+                            </span>
+                            &nbsp; globally.
                         </p>
                     </motion.div>
                     <motion.div
-                        whileHover={{ scale: 1, y: -5 }} // Move 5px up on hover
+                        whileHover={{ scale: 1, y: -5 }}
                         whileTap={{ scale: 0.9 }}
                         transition={{ duration: 0.4 }}
                         className="mission card"
@@ -166,8 +166,8 @@ function WhoWeAre() {
                         <h3>Our Mission</h3>
                         <p className="ubuntu-text">
                             To provide excellent service and quality products to
-                            our clients, thus{" "}
-                            <span>helping them to be more efficient</span>
+                            our clients, thus&nbsp;
+                            <span>helping them to be more efficient</span>&nbsp;
                             and competitive.
                         </p>
                     </motion.div>
@@ -186,20 +186,21 @@ function WhoWeAre() {
                         <div className="credo-card">
                             <p>
                                 We are a versatile team of future-forward
-                                thinkers, committed to
+                                thinkers, committed to&nbsp;
                                 <span>innovating the future</span> of
                             </p>
                         </div>
                         <div className="credo-card">
                             <p>
-                                We strive to provide
+                                We strive to provide&nbsp;
                                 <span>advanced, game-changing solutions</span>
-                                that optimize operations and drive growth.
+                                &nbsp;that optimize operations and drive growth.
                             </p>
                         </div>
                         <div className="credo-card">
                             <p>
-                                We are more than a software provider—we deliver{" "}
+                                We are more than a software provider—we
+                                deliver&nbsp;
                                 <span>end-to-end technology solutions</span>,
                                 transforming the way our clients operate in an
                                 ever-evolving world.
@@ -214,13 +215,12 @@ function WhoWeAre() {
                 id="StoryCont"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.5 }}
-                whileHover={{ scale: 1, y: -5 }} // Move 5px up on hover
+                whileHover={{ scale: 1, y: -5 }}
                 whileTap={{ scale: 0.9 }}
                 transition={{ duration: 0.4 }}
                 variants={fadeInUpVariants}
             >
-                <OurStory/>
-                
+                <OurStory />
             </motion.div>
         </div>
     );
