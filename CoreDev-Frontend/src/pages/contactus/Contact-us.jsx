@@ -1,42 +1,12 @@
-import { color } from 'framer-motion';
-import React, { useEffect, useState } from 'react';
-import { BiLocationPlus, BiMailSend, BiLogoFacebook, BiMapAlt, BiSolidDirectionRight, BiSolidRightArrow   } from "react-icons/bi";
-import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from 'react';
+import { BiMailSend, BiLogoFacebook, BiMapAlt, BiSolidDirectionRight, BiSolidRightArrow   } from "react-icons/bi";
+import { motion } from "framer-motion";
 import "./Contact-us.css";
 
 const ContactInfo = () => {
-  const details = [
-    {
-      island: "Main",
-      address: "96 J. Alcantara Street, Brgy. Sambag 1, Cebu City",
-      tel: "(032) - 328-2694 GLOBE | (032) - 234-5954 PLDT",
-    },
-    {
-      island: "Mindanao",
-      address: "11B, Cherry Tree Street, Palm Drive, Buhangin Davao City, Davao Del Sur",
-      tel: "(082) - 233 9306",
-    },
-    {
-      island: "Luzon",
-      address: "4th Floor DACCO MPC Building #40 Anabu Road Anabu II-B City of Imus, Cavite",
-      tel: "(046) - 501 6596",
-    },
-  ];
 
   return (
     <div className="contactWrap">
-      {/* <div className="contact-container">
-        {details.map((item, index) => (
-          <div className="contact-card" key={index}>
-            <div className="icon1"><BiLocationPlus /></div>
-            <div className="contact-details">
-              <h4>{item.island} Branch:</h4>
-              <p className="address">{item.address}</p>
-              <p className="tel">Tel No: {item.tel}</p>
-            </div>
-          </div>
-        ))}
-      </div> */}
 
       <div className="extra-contact">
         <div className="contact-item">
@@ -201,7 +171,7 @@ const Contact = () => {
       {/* Vertical Tab Navigation */}
         <div className="side-tab">
           {locations.map((location, index) => (
-            <div className='arrowIcon'>  
+            <div key={index} className='arrowIcon'>  
                {(selectedMarker?.id === location.id ? <BiSolidRightArrow/>:'')}
               <motion.button
                 whileHover={{ scale: 1.05 }}

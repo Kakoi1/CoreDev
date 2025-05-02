@@ -76,7 +76,7 @@
     color: var(--black);
   }
   .product-page{
-    max-width: 1300px;
+    
     margin: 0 auto;
   }
   @media (max-width: 768px) {

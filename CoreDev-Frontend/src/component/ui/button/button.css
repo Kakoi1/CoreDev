@@ -1,0 +1,68 @@
+.custom-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+  
+}
+.btn-icon {
+  display: flex;
+}
+
+.btn-icon.left {
+  margin-right: 0.25rem;
+}
+
+.btn-icon.right {
+  margin-left: 0.25rem;
+}
+
+.btn-text {
+  display: inline-block;
+}
+
+.custom-button.sm {
+  padding: 0.3rem 0.8rem;
+  font-size: 0.875rem;
+}
+
+.custom-button.md {
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+}
+
+.custom-button.lg {
+  padding: .75rem 1.25rem;
+  font-size: 1rem;
+}
+
+.custom-button.full {
+  background-color: var(--orange-500);
+  color: white;
+}
+
+.custom-button.full:hover {
+  background-color: var(--orange-700);
+}
+
+.custom-button.outline {
+  background-color: white;
+  color: var(--black);
+  border-color: var(--orange-500);
+}
+
+.custom-button.outline:hover {
+  color: white;
+  background-color: var(--orange-500);
+}
+
+.custom-button:disabled {
+  background-color: #e5e7eb;
+  color: #9ca3af;
+  border-color: #d1d5db;
+  cursor: not-allowed;
+}

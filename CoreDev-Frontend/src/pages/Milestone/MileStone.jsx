@@ -161,7 +161,6 @@ function MileStone() {
                     <li key={index}>{desc}</li>
                   ))}
                 </ul>
-                {/* <span className="time-stamp"><strong>{item.year}</strong></span> */}
               </div>
             </motion.div>
           ))}

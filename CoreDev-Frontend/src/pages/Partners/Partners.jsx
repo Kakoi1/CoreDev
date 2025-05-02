@@ -1,4 +1,3 @@
-import React from "react";
 import "./Partners.css";
 import { motion } from "framer-motion";
 
@@ -20,7 +19,6 @@ function Partners() {
                         <a href={partner.link} target="_blank" rel="noopener noreferrer">
                             <img src={`src/assets/${partner.imgs}`} alt={partner.name} className="partner-logo" />
                         </a>
-                        {/* <p className="partner-name">{partner.name}</p> */}
                     </motion.div>
                 ))}
             </div>

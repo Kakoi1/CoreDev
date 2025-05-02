@@ -4,7 +4,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { RiCheckLine } from "react-icons/ri";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import { MdWorkHistory } from "react-icons/md";
+import { MdWorkHistory, MdOutlineKeyboardArrowRight } from "react-icons/md";
+import { Button } from "../../component/ui";
 
 function Careers() {
     const jobOffers = [
@@ -86,34 +87,20 @@ function Careers() {
     return (
         <div className="careerCont">
             <section className="hero-section">
-                <div className="hero-radial"></div>
+                <div className="hero-image-bg"></div>
                 <div className="carreer-container">
                     <div className="hero-content">
                         <h1 className="hero-title">
-                            Career {" "}
+                            Career{" "}
                             <span className="orange-text">Opportunities</span>
                         </h1>
                         <p className="hero-description">
                             Discover exciting career opportunities and be part
                             of a team that&apos;s making a difference.
                         </p>
-                        <div className="button-group">
-                            <a href="#job" className="button primary-button">
-                                View Open Positions
-                                <svg
-                                    className="icon"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                >
-                                    <polyline points="9 18 15 12 9 6"></polyline>
-                                </svg>
-                            </a>
-                        </div>
+                        <a href="#job">
+                            <Button text="View Open Position" variant="full" icon={<MdOutlineKeyboardArrowRight/>} />
+                        </a>
                     </div>
                 </div>
                 <div className="hero-fade"></div>
@@ -171,9 +158,8 @@ const JobOfferCard = ({ title, type, descriptions, address, link }) => {
                         </div>
                     </div>
                 </div>
-                <button onClick={() => window.open(link, "_blank")}>
-                    Apply Now
-                </button>
+               <Button text="Apply Now" variant="outline" size="md" onClick={() => window.open(link, "_blank")} />
+
             </div>
             <p onClick={() => setShowDetails(!showDetails)}>
                 {showDetails ? "Hide Details" : "Show Details"}

@@ -1,92 +1,95 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./MainLayout.css";
 import { Outlet, useLocation } from "react-router-dom"; // Detect route changes
-import Navigation from "../component/Navigation";
+import Navigation from "../component/Navigation/Navigation";
 import { motion, useScroll } from "framer-motion";
 import Footer from "../component/Footer/Footer";
-import { FaArrowAltCircleUp } from "react-icons/fa";  
+import { FaArrowAltCircleUp } from "react-icons/fa";
 import TopBar from "../component/Topbar/topbar";
+import { Loading } from "../component/ui";
 
 const MainLayout = () => {
-  const { scrollYProgress } = useScroll();
-  const [yAxis, setYAxis] = useState(0);
-  const [isLoading, setIsLoading] = useState(false);
-  const [isSplit, setIsSplit] = useState(false);
-  const location = useLocation(); // Detect page change
+    const { scrollYProgress } = useScroll();
+    const [yAxis, setYAxis] = useState(0);
+    const [isLoading, setIsLoading] = useState(false);
+    const [isSplit, setIsSplit] = useState(false);
+    const location = useLocation(); // Detect page change
 
-  
-  useEffect(() => {
-    // Trigger loader on route change
-    setIsLoading(true);
-    setIsSplit(false);
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-      backToTop()// Hide loader
-      setTimeout(() => {
-        setIsSplit(true); // Start split animation
-      }, 500);
-    }, 500); // loader duration
+    useEffect(() => {
+        // Trigger loader on route change
+        setIsLoading(true);
+        setIsSplit(false);
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+            backToTop(); // Hide loader
+            setTimeout(() => {
+                setIsSplit(true); // Start split animation
+            }, 500);
+        }, 500); // loader duration
 
-    return () => clearTimeout(timer);
-  }, [location.pathname]);
+        return () => clearTimeout(timer);
+    }, [location.pathname]);
 
+    useEffect(() => {
+        const handleScroll = () => {
+            setYAxis(window.scrollY);
+        };
 
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setYAxis(window.scrollY);
+    const backToTop = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    return (
+        <div>
+            {isLoading && (
+                <Loading isLoading={isLoading} isSplit={isSplit}/>
+            )}
 
-  const backToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+            {!isLoading && !isSplit && (
+                <div className="split-screen">
+                    <motion.div
+                        initial={{ y: 0 }}
+                        animate={{ y: "-100%" }}
+                        transition={{ duration: 1, ease: "easeInOut" }}
+                        className="split-section section-left"
+                    ></motion.div>
 
-  return (
-    <div>
-      {isLoading && (
-        <div id="loader-wrapper">
+                    <motion.div
+                        initial={{ y: 0 }}
+                        animate={{ y: "100%" }}
+                        transition={{ duration: 1, ease: "easeInOut" }}
+                        className="split-section section-right"
+                    ></motion.div>
+                </div>
+            )}
 
-        <div className="loadingio-spinner-gear-nq4q5u6dq7r"><div className="ldio-x2uulkbinbj">
-          <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-          </div></div>
-
-      </div>
-      )}
-
-      {!isLoading && !isSplit && (
-        <div className="split-screen">
- 
-          <motion.div
-            initial={{ y: 0 }}
-            animate={{ y: "-100%" }}
-            transition={{ duration: 1, ease: "easeInOut" }}
-            className="split-section section-left"
-          ></motion.div>
-
-          <motion.div
-            initial={{ y: 0 }}
-            animate={{ y: "100%" }}
-            transition={{ duration: 1, ease: "easeInOut" }}
-            className="split-section section-right"
-          ></motion.div>
+            {/* Main Content */}
+            <main className="main-container" >
+                <motion.div
+                    className="progress-bar"
+                    style={{ scaleX: scrollYProgress }}
+                ></motion.div>
+                <TopBar />
+                <Navigation />
+                <section className="main-section">
+                    <div className="main-content">
+                        <Outlet />
+                    </div>
+                </section>
+                <Footer />
+                {yAxis > 150 && (
+                    <FaArrowAltCircleUp
+                        className="backTop"
+                        onClick={backToTop}
+                    />
+                )}
+            </main>
         </div>
-      )}
-
-      {/* Main Content */}
-      <div className="main-container" onLoad={backToTop}>
-        <motion.div className="progress-bar" style={{ scaleX: scrollYProgress }}></motion.div>
-        <TopBar/>
-        <Navigation />
-        <Outlet />
-        <Footer />
-        {yAxis > 150 && <FaArrowAltCircleUp className="backTop" onClick={backToTop} />}
-      </div>
-    </div>
-  );
+    );
 };
 
 export default MainLayout;
