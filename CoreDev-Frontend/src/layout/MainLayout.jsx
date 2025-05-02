@@ -46,7 +46,7 @@ const MainLayout = () => {
     return (
         <div>
             {isLoading && (
-                <Loading/>
+                <Loading isLoading={isLoading} isSplit={isSplit}/>
             )}
 
             {!isLoading && !isSplit && (

@@ -42,6 +42,7 @@ function Clients() {
             const response = await axios.get(API_URL + selectedCategory, {
                 params: {
                     page: currentPage, // Pass currentPage to the API
+                    per_page: 12,
                 },
             });
             setClients(response.data.data); // Use paginated client data

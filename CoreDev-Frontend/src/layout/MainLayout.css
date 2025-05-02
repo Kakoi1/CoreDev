@@ -51,7 +51,7 @@ html {
 }
 
 body {
-    background-color: transparent;
+    background-color:var(--white);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -81,6 +81,7 @@ body {
 }
 
 .main-section {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -90,7 +91,6 @@ body {
 
 .main-content {
     width: 80vw;
-    /* background-color: rgba(0, 0, 0, .6); */
 }
 
 .backTop:hover {

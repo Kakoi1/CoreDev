@@ -1,5 +1,6 @@
 .home-hero-container {
     height: min(90vh);
+    position: relative;
 }
 
 .home-hero-image {
@@ -10,24 +11,9 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
-}
-
-.sample {
-    position: absolute;
-    inset: 0;
-    background-color: red;
     width: 100vw;
-    margin: auto;
-    z-index: -1;
-    height: 100vh;
-}
+    margin-left: var(--fit-screen); 
 
-.home-hero-container .image-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
 }
 
 .home-hero-gradient {
@@ -105,7 +91,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    margin-top: 5rem;
+    margin-top: 10rem;
 }
 
 .features .feature-container {
