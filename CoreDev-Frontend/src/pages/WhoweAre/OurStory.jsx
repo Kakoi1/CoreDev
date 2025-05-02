@@ -11,7 +11,7 @@ export const OurStory = () => {
                 <div className="card-header">
                     <div>
                         <h2>Our Story</h2>
-                        <p><em>Innovating your Future</em></p>  
+                        <p><em> " Innovating your Future "</em></p>  
                     </div>
                     <div className="card-image-wrapper">
                         <img src="/coreDevlogo.png" alt="" />
