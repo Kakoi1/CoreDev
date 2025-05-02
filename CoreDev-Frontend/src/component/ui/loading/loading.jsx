@@ -1,13 +1,14 @@
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
-import { FaGear } from "react-icons/fa6";
+import { ImSpinner2 } from "react-icons/im";
+
 import "./loading.css";
 
 export const Loading = ({ isLoading, isSplit }) => {
     if (isLoading) {
         return (
             <div className="loader-container">
-                <FaGear className="spinner" />
+                <ImSpinner2 className="spinner" />
             </div>
         );
     }
