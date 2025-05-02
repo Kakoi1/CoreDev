@@ -1,6 +1,5 @@
 .contactWrap {
   font-family: 'Arial', sans-serif;
-
 }
 
 .contact-container {
@@ -11,7 +10,7 @@
 }
 
 .contact-card {
-  flex: 1 1 calc(33.333% - 40px); /* Three cards per row with gap */
+  flex: 1 1 calc(33.333% - 40px);
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -65,7 +64,7 @@
 }
 
 .contact-item {
-  flex: 1 1 calc(50% - 20px); /* Two items per row with gap */
+  flex: 1 1 calc(50% - 20px);
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -102,345 +101,248 @@
 .contact-item .contact-details a:hover {
   color: #e65c00;
 }
-  .contactCont h2{
-    color:#ff6c00;
-    font-family: "Raleway", sans-serif;
-    text-wrap: balance;
-    font-size: 2rem;
-    text-align: center;
-    padding: 20px;
-  }
-  .mapCont {
-    padding: 20px;
-    background-color: #f8f9fa;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 1300px;
-    margin: auto;
-    font-family: 'Arial', sans-serif;
-    max-height: 600px;
-    margin-bottom: 40px;
-    display: flex;
-  }
-  .contactCont span{
-    color: var(--black);
-  }
-  
-  /* Tab Navigation */
-  .tab-container {
-    display: none;
-    margin-bottom: 15px;
-    overflow-x: auto;
-    padding: 5px;
-    background-color: transparent;
-    border-radius: 10px;
-    /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); */
-}
-.side-button,
-.tab-button {
-    flex: 1;
-    /* margin: 5px; */
-    /* padding: 10px; */
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px 8px 0px 0px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    background:
-        linear-gradient(to right, rgba(100, 200, 200, 0), rgba(100, 200, 200, 0)),
-        linear-gradient(to right, rgb(255, 128, 0), rgb(240, 108, 0), rgb(255, 115, 0));
-    background-size: 100% 3px, 0 3px;
-    background-position: 0 0, 0 0;
-    background-repeat: no-repeat;
+
+.contactCont h2 {
+  color: #ff6c00;
+  font-family: "Raleway", sans-serif;
+  text-wrap: balance;
+  font-size: 2rem;
+  text-align: center;
+  padding: 20px;
 }
 
-.tab-button:hover {
-    background-size: 0 100%, 100% 100%;
-}
-.side-button:hover {
-  background-size: 0 100%, 100% 100%;
-}
-.side-button.active,
-.tab-button.active {
-    /* background: #ff6a0000; */
-    color: #ff6a00;
-    /* box-shadow: inset 0px -2px 6px rgba(0, 0, 0, 0.3); */
-    background-size: 0 5px, 100% 5px;
-}
-
-.tab-button.active {
-    outline: 2px solid #ff6a00;
-    outline-offset: 2px;
-}
-  
-  /* Map Display */
-  .map-display {
-    height: 500px;
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    background-color: #e3e3e3;
-  }
-  
-  /* Info Card */
-  .info-card {
-    position: absolute;
-    top: 80px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
-    width: 350px;
-    text-align: center;
-  }
-  
-  .info-card h3 {
-    margin-bottom: 10px;
-    color: #333;
-  }
-  
-  .map-link {
-    display: block;
-    margin: 10px 0;
-    color: #007BFF;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .map-link:hover {
-    text-decoration: underline;
-  }
-  .mapBack{
-    /* background-color: #353635; */
-    /* padding: 10px; */
-    width: 100%;
-  }
-  #map{
-    border: solid;
-    color: #ff6a00;
-    border-radius: 0px 8px 8px 0px;
-    height: 600px;
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-    /* left: -20px;
-    top: -11px; */
-  }
-  
-  .close-button {
-    background: #ff4d4d;
-    color: white;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: all 0.3s ease;
-  }
-  
-  .close-button:hover {
-    background: #cc0000;
-  }
-  /* @media screen and (max-width: 768px) {
-    .tab-container{
-        flex-direction: column;
-        width: 90%;
-        padding: 20px;
-        margin: 0 auto;
-    }
-    p{
-        font-size: 12px;
-    }
-    h2{
-        font-size: 18px;
-    }
-    h3{
-        font-size: 17px;
-    }
-    h4{
-        font-size: 15px;
-    }
-    .tab-button{
-        font-size: 15px !important;
-    }
-    .contDetails a {
-        color: #ff6c00 !important;
-        font-size: 11px !important;
-    }
-    .contDetails svg {
-        color: #ff6c00 !important;
-        font-size: 24px !important;
-        top: 8px;
-    }
-  } */
-
-  @media (max-width: 768px) {
-    .contact-card {
-        flex: 1 1 calc(50% - 20px); /* Two cards per row on smaller screens */
-    }
-
-    .contact-item {
-        flex: 1 1 100%; /* One item per row on smaller screens */
-    }
+.mapCont {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 1300px;
+  margin: auto;
+  font-family: 'Arial', sans-serif;
+  max-height: 600px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
 }
 
-@media (max-width: 480px) {
-    .contact-card {
-        flex: 1 1 100%; /* One card per row on mobile */
-    }
+.contactCont span {
+  color: var(--black);
 }
 
-  .contDetails{
-    background-color: #2a2929d1;
-  }
-  .contDetails h3 ,.contDetails p{
-    color: #bfbfbf;
-  }
-  .contDetails a{
-    color: #ff6c00 !important;
-    font-size: 13px;
-  }
-  .contDetails a:hover{
-    text-decoration: underline;
-  }
-  .contDetails p{
-    font-size: 20px;
-  }
-  .contDetails h3{
-    font-size: 25px;
-  }
-  .mapCont svg{
-    font-size: 34px;
-    margin: auto;
-    position: relative;
-    top: 10px;
-  }
-  .custom-label {
-    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  */
-    background: white; /* Optional background */
-    padding: 2px 5px;
-    border-radius: 5px;
-    text-wrap: wrap;
-    width: 50px;
-    position: relative;
-    left: 45px;
-  }
-  .dark-mode .contactCont span{
-    color: white;
-  }
-  .dark-mode .contact-item,
-  .dark-mode .contact-card{
-    background-color: var(--black);
-    border: solid 1px;
-    box-shadow: none;
-  }
-  .dark-mode .contact-item .contact-details h4,
-  .dark-mode .contact-card .contact-details h4{
-    color: var(--orange);
-  }
-  .dark-mode .contact-card .contact-details p{
-    color: var(--gray);
-  }
-  .dark-mode .contact-item .contact-details a{
-    color: var(--gray);
-  }
-  .contact-item .contact-details a:hover{
-    text-decoration: underline;
-  }
-  .dark-mode .mapCont{
-    background-color: var(--black);
-    border: solid 1px;
-  }
-  .dark-mode .tab-button{
-    color: var(--gray);
-  }
-  .dark-mode .tab-button.active{
-    color: var(--orange);
-  }
-  .contactCont span{
-    color: var(--black);
-  }
-  .dark-mode .contactCont span{
-    color: white;
-  }
-  /* Tab Navigation Styles */
+/* Tab Navigation */
+.side-tab {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+  width: 300px;
+  background-color: var(--gray-300);
+  border-radius: 0.5rem;
+  margin-left: 20px;
+}
 
-  .side-tab{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    height: 300px;
-    padding: 0;
-    position: relative;
-    /* left: 10px; */
-  }
-  .side-tab button{
-    width: 200px;
-    height: 80px !important;
-    font-size: 20px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: bold;
-    border: solid 1px var(--orange);
-    border-radius: 8px 0px 0px 8px;
-    cursor: pointer;
+.side-tab button {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  color: var(--gray-700);
+  font-size: 1.25rem;
+  padding: 1rem 1.5rem;
+  margin: 0.75rem;
+  border: none;
+  background-color: var(--gray-300);
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-align: left;
+}
 
-  }
-  .side-tab .side-button.active{
-    /* background-color: var(--orange); */
-    color: var(--orange);
-  }
-  .arrowIcon{
-    display: flex;
-    transition: all 1s ease;
-    align-items: center;
-  }
-  .arrowIcon svg{
-    font-size: 20px;
-    color: var(--orange);
-    top: 0 !important;
-  
-  }
-  .dark-mode .side-tab button{
-    color: white  ;
-  }
+.side-tab button.active {
+  color: var(--orange-500);
+  background-color: white;
+}
+
+.tab-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tab-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.tab-title {
+  color: var(--gray-700); /* Default color */
+}
+
+.side-tab button.active .tab-title {
+  color: #ff6a00; /* Orange color when active */
+}
+
+.tab-address,
+.tab-tel {
+  font-size: 0.9rem;
+  color: var(--gray-700);
+  line-height: 1.4;
+}
+
+.side-tab button.active .tab-address,
+.side-tab button.active .tab-tel {
+  color: var(--gray-500);
+}
+
+.arrowIcon {
+  display: flex;
+  align-items: flex-start;
+}
+
+.arrowIcon svg {
+  font-size: 20px;
+  color: var(--orange);
+  margin-right: 5px;
+  margin-top: 1rem;
+}
+
+/* Map Display */
+.mapBack {
+  width: calc(100% - 320px);
+}
+
+#map {
+  border: solid;
+  color: #ff6a00;
+  border-radius: 0px 8px 8px 0px;
+  height: 600px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Info Card */
+.contDetails {
+  background-color: #2a2929d1;
+}
+
+.contDetails h3,
+.contDetails p {
+  color: #bfbfbf;
+}
+
+.contDetails a {
+  color: #ff6c00 !important;
+  font-size: 13px;
+}
+
+.contDetails a:hover {
+  text-decoration: underline;
+}
+
+.contDetails h3 {
+  font-size: 25px;
+}
+
+.close-button {
+  background: #ff4d4d;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.close-button:hover {
+  background: #cc0000;
+}
+
+/* Dark Mode */
+.dark-mode .contactCont span {
+  color: white;
+}
+
+.dark-mode .contact-item,
+.dark-mode .contact-card {
+  background-color: var(--black);
+  border: solid 1px;
+  box-shadow: none;
+}
+
+.dark-mode .contact-item .contact-details h4,
+.dark-mode .contact-card .contact-details h4 {
+  color: var(--orange);
+}
+
+.dark-mode .contact-card .contact-details p {
+  color: var(--gray);
+}
+
+.dark-mode .contact-item .contact-details a {
+  color: var(--gray);
+}
+
+.dark-mode .mapCont {
+  background-color: var(--black);
+  border: solid 1px;
+}
+
+.dark-mode .side-tab button {
+  color: white;
+  background-color: var(--black);
+}
+
+.dark-mode .side-tab button.active {
+  color: var(--orange);
+}
+
+.dark-mode .tab-title {
+  color: var(--gray);
+}
+
+.dark-mode .side-tab button.active .tab-title {
+  color: #ff6a00; /* Orange color in dark mode */
+}
+
+.dark-mode .tab-address,
+.dark-mode .tab-tel {
+  color: var(--gray);
+}
+
+.dark-mode .side-tab button.active .tab-address,
+.dark-mode .side-tab button.active .tab-tel {
+  color: var(--gray-500);
+}
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-  .side-tab{
-    display: none;
-  }
-  .mapCont{
+  .mapCont {
     display: block;
   }
-  .tab-container{
-    display: flex;
-        width: 100%;
-        height: 60px;
-  }
-  label {
-    font-size: 18px;
-    padding: 12px 0;
-  }
-  .contDetails{
-    overflow: auto;
-    height: 400px;
-  }
-  .contDetails p{
-    font-size: 15px;
-  }
-  .contDetails h3{
-    font-size: 20px;
-  }
-  .contDetails {
 
-    /* left: 10% !important; */
-    top: -480px !important;
+  .side-tab {
+    display: none;
   }
-  #map{
+
+  .mapBack {
+    width: 100%;
+  }
+
+  #map {
     height: 500px !important;
+  }
+
+  .contDetails {
+    top: -480px !important;
+    width: 80%;
+    left: 10%;
+  }
+
+  .contDetails h3 {
+    font-size: 20px;
   }
 }
