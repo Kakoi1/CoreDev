@@ -46,7 +46,7 @@ const MainLayout = () => {
     return (
         <div>
             {isLoading && (
-                <Loading/>
+                <Loading isLoading={isLoading} isSplit={isSplit}/>
             )}
 
             {!isLoading && !isSplit && (
@@ -68,7 +68,7 @@ const MainLayout = () => {
             )}
 
             {/* Main Content */}
-            <main className="main-container" onLoad={backToTop}>
+            <main className="main-container" >
                 <motion.div
                     className="progress-bar"
                     style={{ scaleX: scrollYProgress }}

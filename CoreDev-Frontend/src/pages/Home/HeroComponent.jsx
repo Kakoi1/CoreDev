@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./HeroComponent.css";
 import { FaCode, FaHeadset, FaServer } from "react-icons/fa6";
 import { MdArrowForward } from "react-icons/md";
@@ -18,7 +19,7 @@ const featureServices = [
         description:
             "We offer more than just accounting and banking software solutions – our diverse software products are tailored to meet your needs.",
         label: "Explore",
-        link: "/Products/Software",
+        link: "/Products",
     },
     {
         name: "Hardware Distributor",
@@ -31,13 +32,19 @@ const featureServices = [
 ];
 
 const HeroComponent = () => {
+    const [expandedFeature, setExpandedFeature] = useState(null);
+
+    const toggleFeature = (index) => {
+        setExpandedFeature(expandedFeature === index ? null : index);
+    };
+
     return (
         <section className="home-hero-container">
             <div className="home-hero-radial"></div>
             <div className="home-hero-image"></div>
             <div className="home-hero">
                 <div className="text-content">
-                    <h1 >
+                    <h1>
                         coreDev <span className="home-gradient-text">Solutions</span>{" "}
                         Inc.
                     </h1>
@@ -49,13 +56,27 @@ const HeroComponent = () => {
 
                 <div className="features">
                     {featureServices.map((service, index) => (
-                        <div key={index} className="feature-container">
+                        <div
+                            key={index}
+                            className="feature-container"
+                            onClick={() => toggleFeature(index)} // Toggle on click
+                        >
                             <div className="feature-icon">{service.icon}</div>
                             <div className="feature-name">{service.name}</div>
-                            <div className="feature-description">
+                            <div
+                                className={`feature-description ${
+                                    expandedFeature === index ? "active" : ""
+                                }`}
+                            >
                                 {service.description}
                             </div>
-                            <Link to={service.link} className="cta">
+                            <Link
+                                to={service.link}
+                                className={`cta ${
+                                    expandedFeature === index ? "active" : ""
+                                }`}
+                                onClick={(e) => e.stopPropagation()} // Prevent Link click from toggling the container
+                            >
                                 {service.label} <MdArrowForward />
                             </Link>
                         </div>

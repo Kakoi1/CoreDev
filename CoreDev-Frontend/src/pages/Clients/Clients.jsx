@@ -14,7 +14,7 @@ const RETRY_DELAY = 3000; // 3 seconds delay before retry
 
 function Clients() {
     const [clients, setClients] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [loading, setloading] = useState(true);
     const [error, setError] = useState(null);
     const [retryCount, setRetryCount] = useState(0);
     const [selectedCategory, setSelectedCategory] = useState("All"); // Default: show all categories
@@ -35,7 +35,7 @@ function Clients() {
     ];
 
     const fetchClients = async (attempt = 1) => {
-        setLoading(true);
+        setloading(true);
         setError(null);
 
         try {
@@ -47,7 +47,7 @@ function Clients() {
             });
             setClients(response.data.data); // Use paginated client data
             setTotalPages(response.data.last_page); // Set total pages from the API response
-            setLoading(false);
+            setloading(false);
         } catch (err) {
             console.error(`Error fetching clients (Attempt ${attempt}):`, err);
 
@@ -57,7 +57,7 @@ function Clients() {
                 }, RETRY_DELAY);
             } else {
                 setError("Failed to fetch clients. Please try again later.");
-                setLoading(false);
+                setloading(false);
             }
         }
     };
@@ -74,29 +74,29 @@ function Clients() {
     };
 
     const backToTop = () => {
-        window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to top when a page is clicked
+        window.scrollTo({ top: 0, behavior: "smooth" });
     };
 
     const renderPagination = () => {
         let pages = [];
-        const maxPagesToShow = 1; // Number of pages to show on each side of current page
-        const totalPagesToShow = maxPagesToShow * 2 + 1; // Full range
+        const maxPagesToShow = 1;
+        const totalPagesToShow = maxPagesToShow * 2 + 1;
 
         if (totalPages <= totalPagesToShow) {
             pages = [...Array(totalPages)].map((_, index) => index + 1);
         } else {
-            pages = [1]; // Always include the first page
+            pages = [1];
 
             let start = Math.max(currentPage - maxPagesToShow, 2);
             let end = Math.min(currentPage + maxPagesToShow, totalPages - 1);
 
-            if (start > 2) pages.push("..."); // Add '...' if hidden pages exist before
+            if (start > 2) pages.push("...");
             for (let i = start; i <= end; i++) {
                 pages.push(i);
             }
-            if (end < totalPages - 1) pages.push("..."); // Add '...' if hidden pages exist after
+            if (end < totalPages - 1) pages.push("...");
 
-            pages.push(totalPages); // Always include last page
+            pages.push(totalPages);
         }
 
         return (
@@ -157,26 +157,44 @@ function Clients() {
             </div>
 
             {/* Category Filter Buttons */}
-            <div className="category-buttons">
+              <div className="category-buttons">
+                <div className="buttonCat">
                 {categories.map((category) => (
-                    <motion.button
-                        // transition={{ duration: 0.1 }}
-                        key={category}
-                        onClick={() => {
-                            setSelectedCategory(category);
-                            setCurrentPage(1); // Reset to the first page when category changes
-                        }}
-                        className={
-                            selectedCategory === category ? "active" : ""
-                        }
-                    >
-                        {category}
-                    </motion.button>
+                  <motion.button
+                    key={category}
+                    onClick={() => {
+                      setSelectedCategory(category);
+                      setCurrentPage(1);
+                    }}
+                    className={selectedCategory === category ? 'active' : ''}
+                  >
+                    {category}
+                  </motion.button>
                 ))}
-            </div>
+                </div>
+                <div className="selectCat">
+                <label htmlFor="category-select">Categories:</label>
+                <select
+                  name="category"
+                  id="category-select"
+                  className="category-select"
+                  value={selectedCategory}
+                  onChange={(e) => {
+                    setSelectedCategory(e.target.value);
+                    setCurrentPage(1);
+                  }}
+                >
+                  {categories.map((category) => (
+                    <option key={category} value={category}>
+                      {category}
+                    </option>
+                  ))}
+                </select>
+                </div>
+              </div>
 
             {loading && (
-                <div className="loader-container">
+                <div className="loader-wrapper">
                     <div className="loadingio-spinner-gear-nq4q5u6dq7r">
                         <div className="ldio-x2uulkbinbj">
                             <div>

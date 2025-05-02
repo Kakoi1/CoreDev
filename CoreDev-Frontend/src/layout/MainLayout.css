@@ -51,7 +51,7 @@ html {
 }
 
 body {
-    background-color: ;
+    background-color:var(--white);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -81,15 +81,16 @@ body {
 }
 
 .main-section {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    margin-bottom: 40px;
 }
 
 .main-content {
     width: 80vw;
-    /* background-color: rgba(0, 0, 0, .6); */
 }
 
 .backTop:hover {
