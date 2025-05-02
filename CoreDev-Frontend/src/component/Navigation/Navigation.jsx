@@ -157,8 +157,8 @@ const Links = ({ closeMenu }) => {
                     </NavLink>
                 </div>
             </li>
-            <li className="navigation-link" onClick={closeMenu}>
-                <NavLink to="/Contact-us">Contact</NavLink>
+            <li className="" onClick={closeMenu}>
+                <NavLink className="contact-button" to="/Contact-us">Contact</NavLink>
             </li>
         </ul>
     );
