@@ -431,7 +431,7 @@ body{
   }
   .contDetails{
     overflow: auto;
-    /* height: 500px; */
+    height: 400px;
   }
   .contDetails p{
     font-size: 15px;

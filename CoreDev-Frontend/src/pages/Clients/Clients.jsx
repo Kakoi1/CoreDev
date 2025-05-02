@@ -141,7 +141,9 @@ function Clients() {
       {/* Category Filter Buttons */}
       <div className="category-buttons">
         {categories.map((category) => (
+          
           <motion.button
+        
             whileHover={{ scale: 1.05, y: -5 }} // Move 5px up on hover
             whileTap={{ scale: 0.9 }}
             transition={{ duration: 0.1 }}
@@ -154,7 +156,24 @@ function Clients() {
           >
             {category}
           </motion.button>
+          
+
         ))}
+          <select 
+          name="category" 
+          id="category-select" 
+          value={selectedCategory} 
+          onChange={(e) => {
+            setSelectedCategory(e.target.value);
+            setCurrentPage(1);
+          }}
+        >
+          {categories.map((category) => (
+            <option key={category} value={category}>
+              {category}
+            </option>
+          ))}
+        </select>
       </div>
 
       {loading && (

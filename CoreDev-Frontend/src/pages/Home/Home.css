@@ -8,28 +8,53 @@ body{
     background-color: #f1f8ff;
     
 }
-.home-container .photo-wrapper{
+.home-container .photo-wrapper {
     height: 80vh;
-    background: linear-gradient(0deg, rgb(13 6 1 / 82%), rgb(49 46 46 / 13%)), url(src/assets/coreDev-Team-Edited-2.png) top center no-repeat;
-    background-size: cover;
-    background-position: bottom;
     overflow: hidden;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.home-container .photo-wrapper span{
+
+.home-container .photo-wrapper::before {
+    content: '';
     position: absolute;
-    top: 30%;
-    left: 290px;
-    transform: translateY(-50%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgb(13 6 1 / 82%), rgb(49 46 46 / 13%)), url(src/assets/techBack.webp) top center no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: blur(3px); /* Apply blur only to the background */
+    z-index: 1;
+}
+
+.home-container .photo-wrapper div {
     font-family: "Raleway", sans-serif;
     font-weight: bold;
     color: white;
-    font-size: 50px;
+    display: flex;
+    font-size: 20px;
     text-shadow: 1px 1px 3px black;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin-top: -150px;
+    position: relative;
+    z-index: 2; /* Ensure content stays above the blurred background */
 }
+.home-container .photo-wrapper h2{
+    font-size: 80px;
+    margin-bottom: -10px;
+    text-shadow: 1px 3px 3px black;
+}
+.home-container .photo-wrapper p{
+    font-weight: normal;
+    color: #ffffffec;
+}
+
 .motion-text{
     z-index: 0 !important;
 }
@@ -64,7 +89,9 @@ body{
     max-width: 1300px;
     margin: 0 auto 40px;
     grid-area: 10px;
-    
+    margin-bottom: -100px;
+    border-radius: 0px 20px 0px 20px;
+
 }
 
 .home-container .services-wrapper .service-header{
@@ -72,30 +99,38 @@ body{
     font-family: "Raleway", sans-serif;
     font-weight: bold;
     color: #dd5e04;
+  
 }
 
 .home-container .services-wrapper .service-list{
     display: flex;
     justify-content: center; /* Aligns with the left side */
     align-items: center;
-    gap: 110px;
+    gap: 80px;
     margin-top: 40px;
     font-family: 'Open Sans', 'sans-serif' ;
+    position: relative;
+    top: -160px;
+    z-index: 1;
 }
 .service-item-header{
     font-family: "Raleway", sans-serif !important;
     color: #dd5e04;
     font-weight: bold;      
 }
+.dark-mode .home-container .services-wrapper .service-list .service-item{
+    background-color: var(--black);
+}
 
 .home-container .services-wrapper .service-list .service-item{
     text-align: center;
     border: 1px solid #dd5e04;
+    background-color: white;
     padding: 20px 30px;
     box-shadow: 0px 0px 3px rgba(229, 139, 3, 0.521);
     min-height: 350px;
     max-width: 300px;
-    border-radius: 5px;
+    border-radius: 20px 20px 5px 5px;
     /* position: relative;  */
     display: flex;
     flex-direction: column;
@@ -496,9 +531,9 @@ color: #353635;
  */
 
  #tsparticles {
-    position: fixed;
-    width: 80%;
-    height: 70%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
