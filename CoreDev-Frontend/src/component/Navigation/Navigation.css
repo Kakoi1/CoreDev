@@ -55,6 +55,7 @@
 .navigation-container .brand span {
     color: white;
     font-weight: 700;
+    font-family: Ubuntu;
 }
 
 .navigation-container .brand span::first-line {
