@@ -156,23 +156,41 @@ function Clients() {
             </div>
 
             {/* Category Filter Buttons */}
-            <div className="category-buttons">
+              <div className="category-buttons">
+                <div className="buttonCat">
                 {categories.map((category) => (
-                    <motion.button
-                        // transition={{ duration: 0.1 }}
-                        key={category}
-                        onClick={() => {
-                            setSelectedCategory(category);
-                            setCurrentPage(1); // Reset to the first page when category changes
-                        }}
-                        className={
-                            selectedCategory === category ? "active" : ""
-                        }
-                    >
-                        {category}
-                    </motion.button>
+                  <motion.button
+                    key={category}
+                    onClick={() => {
+                      setSelectedCategory(category);
+                      setCurrentPage(1);
+                    }}
+                    className={selectedCategory === category ? 'active' : ''}
+                  >
+                    {category}
+                  </motion.button>
                 ))}
-            </div>
+                </div>
+                <div className="selectCat">
+                <label htmlFor="category-select">Categories:</label>
+                <select
+                  name="category"
+                  id="category-select"
+                  className="category-select"
+                  value={selectedCategory}
+                  onChange={(e) => {
+                    setSelectedCategory(e.target.value);
+                    setCurrentPage(1);
+                  }}
+                >
+                  {categories.map((category) => (
+                    <option key={category} value={category}>
+                      {category}
+                    </option>
+                  ))}
+                </select>
+                </div>
+              </div>
 
             {loading && (
                 <div className="loader-container">

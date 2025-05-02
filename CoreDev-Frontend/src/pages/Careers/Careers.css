@@ -164,7 +164,8 @@
     }
 
     .job > button {
-        width: 100%;
+        /* width: 100%; */
+        float: right;
         margin-top: 1rem;
     }
 }

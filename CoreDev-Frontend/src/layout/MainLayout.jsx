@@ -68,7 +68,7 @@ const MainLayout = () => {
             )}
 
             {/* Main Content */}
-            <main className="main-container" onLoad={backToTop}>
+            <main className="main-container" >
                 <motion.div
                     className="progress-bar"
                     style={{ scaleX: scrollYProgress }}

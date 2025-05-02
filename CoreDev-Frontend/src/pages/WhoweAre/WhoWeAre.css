@@ -167,7 +167,7 @@
 
 .credoCont .credo-container .credo-container-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(186px, 1fr));
     margin-top: 2rem;
 }
 
@@ -307,12 +307,12 @@
         display: block;
     }
     .credo-top div {
-        width: 100%;
+        width: auto;
         max-width: 1000px;
         margin-bottom: 30px;
     }
     .values {
-        width: 100%;
+        width: auto;
     }
     .textcont p {
         font-size: 15px;
@@ -350,7 +350,7 @@
 }
 
 .who-we-container {
-    width: 100%;
+    /* width: 100%; */
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
