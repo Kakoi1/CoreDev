@@ -187,7 +187,7 @@ function WhoWeAre() {
                             <p>
                                 We are a versatile team of future-forward
                                 thinkers, committed to&nbsp;
-                                <span>innovating the future</span> of
+                                <span>innovating the future</span> of our clients.
                             </p>
                         </div>
                         <div className="credo-card">
