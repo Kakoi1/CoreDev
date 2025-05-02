@@ -20,8 +20,8 @@
     background-color: white;
     padding: 1.5rem;
     border-radius: 12px;
-    border: 2px solid orange;
     display: flex;
+    box-shadow: var(--shadow-md);
     flex-direction: column;
     justify-content: center;
     align-items: center;

@@ -75,12 +75,12 @@
     color: var(--orange)
 }
 
-.contact-wrapper > .socials {
+.contact-wrapper > .footer-socials {
     display: flex;
     gap: 1rem;
 }
 
-.contact-wrapper > .socials > a{
+.contact-wrapper > .footer-socials > a{
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -91,7 +91,7 @@
 }
 
 
-.contact-wrapper > .socials .icon {
+.contact-wrapper > .footer-socials .footer-icon {
     width: 1.5rem;
     height: 1.5rem;
     color: var(--orange) 

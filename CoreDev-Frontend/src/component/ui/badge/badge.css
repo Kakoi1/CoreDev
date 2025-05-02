@@ -12,8 +12,8 @@
 }
 
 .badge-default {
-  background-color: var(--orange-300);
-  color: white;
+  background-color: var(--orange-200);
+  color: var(--orange-600);
 }
 
 .badge-success {

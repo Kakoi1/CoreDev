@@ -1,9 +1,3 @@
-:root {
-    --black: #353635;
-    --orange: #ff6c00;
-    --gray: #d3d3d3;
-}
-
 .navCont {
     width: 100%;
     background-color: var(--black);
@@ -50,7 +44,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.541);
 }
 
 .navigation-container .brand {
@@ -155,6 +148,17 @@
 
 .navigation-container ul .navigation-link:hover::after {
     transform: scaleX(1);
+}
+
+.navigation-container ul .contact-button {
+    background-color: var(--orange-500);
+    padding: .75rem 1.5rem;
+    border-radius: 2rem;
+    transition: .3s ease-in-out;
+}
+
+.navigation-container ul .contact-button:hover{
+    background-color: var(--orange-600);
 }
 
 /* ----- Dropdown Styling (Updated) ----- */

@@ -19,7 +19,7 @@ function Careers() {
                     "Accountancy",
                     "Management Accounting",
                 ],
-                "Graduate of any related Infromation Technology Courses",
+                "Graduate of any related Information Technology Courses",
                 ["Information Technology", "Computer Science"],
             ],
             address: "Cebu",
@@ -35,7 +35,7 @@ function Careers() {
                     "Accountancy",
                     "Management Accounting",
                 ],
-                "Graduate of any related Infromation Technology Courses",
+                "Graduate of any related Information Technology Courses",
                 ["Information Technology", "Computer Science"],
             ],
             address: "Imus, Cavite",
@@ -51,7 +51,7 @@ function Careers() {
                     "Accountancy",
                     "Management Accounting",
                 ],
-                "Graduate of any related Infromation Technology Courses",
+                "Graduate of any related Information Technology Courses",
                 ["Information Technology", "Computer Science"],
             ],
             address: "Davao, City",
@@ -73,7 +73,7 @@ function Careers() {
             descriptions: [
                 "Candidate should have good communication and presentation skills",
                 "Problem solving and analytical thinking",
-                "Abillity to work under pressure",
+                "Ability to work under pressure",
                 "Ambitious and Self motivated",
                 "Monitoring and solving problems related to the system  implementation",
                 "With good and pleasing personality, good communication skills",
@@ -88,10 +88,11 @@ function Careers() {
         <div className="careerCont">
             <section className="hero-section">
                 <div className="hero-image-bg"></div>
+                <div className="gradient-left-center"></div>
                 <div className="carreer-container">
                     <div className="hero-content">
                         <h1 className="hero-title">
-                            Career{" "}
+                            Career&nbsp;
                             <span className="orange-text">Opportunities</span>
                         </h1>
                         <p className="hero-description">
