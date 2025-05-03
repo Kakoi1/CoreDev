@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import "./Clients.css";
 import {
@@ -7,10 +7,24 @@ import {
 } from "react-icons/md";
 import { motion } from "framer-motion";
 import { Badge } from "../../component/ui";
+import { ComponentLoading } from "../../component/ui";
 
 const API_URL = import.meta.env.VITE_APP_URL + "api/clients/"; // Laravel API
 const MAX_RETRIES = 3; // Maximum retry attempts
 const RETRY_DELAY = 3000; // 3 seconds delay before retry
+
+const categories = [
+    "All",
+    "Government and Employee",
+    "Police and Military-Related",
+    "Community and Farmers",
+    "Market Vendors and Small Business",
+    "Corporate and Employee",
+    "Religious and Parish-Based",
+    "University, School-Based",
+    "General Multipurpose",
+    "Corporations and Non-Cooperative",
+];
 
 function Clients() {
     const [clients, setClients] = useState([]);
@@ -21,18 +35,7 @@ function Clients() {
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
 
-    const categories = [
-        "All",
-        "Government and Employee",
-        "Police and Military-Related",
-        "Community and Farmers",
-        "Market Vendors and Small Business",
-        "Corporate and Employee",
-        "Religious and Parish-Based",
-        "University, School-Based",
-        "General Multipurpose",
-        "Corporations and Non-Cooperative",
-    ];
+    const containerRef = useRef(null);
 
     const fetchClients = async (attempt = 1) => {
         setloading(true);
@@ -64,7 +67,8 @@ function Clients() {
     console.log(clients);
 
     useEffect(() => {
-        fetchClients(retryCount + 1);
+        const attempt = retryCount + 1;
+        fetchClients(attempt);
     }, [retryCount, selectedCategory, currentPage]); // Fetch data when retryCount, selectedCategory, or currentPage changes
 
     const handlePageChange = (page) => {
@@ -102,6 +106,7 @@ function Clients() {
         return (
             <div className="pagination" onClick={backToTop}>
                 <button
+                    type="button"
                     className="left-arrow"
                     onClick={() => handlePageChange(currentPage - 1)}
                     disabled={currentPage === 1}
@@ -111,6 +116,7 @@ function Clients() {
 
                 {pages.map((page, index) => (
                     <button
+                        type="button"
                         key={index}
                         onClick={() =>
                             typeof page === "number" && handlePageChange(page)
@@ -123,6 +129,7 @@ function Clients() {
                 ))}
 
                 <button
+                    type="button"
                     className="right-arrow"
                     onClick={() => handlePageChange(currentPage + 1)}
                     disabled={currentPage === totalPages}
@@ -139,11 +146,6 @@ function Clients() {
             ? clients
             : clients.filter((client) => client.category === selectedCategory);
 
-    const fadeInUpVariants = {
-        hidden: { opacity: 0, y: 50 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-    };
-
     return (
         <div className="ClientCont">
             <div className="client-header">
@@ -157,58 +159,44 @@ function Clients() {
             </div>
 
             {/* Category Filter Buttons */}
-              <div className="category-buttons">
+            <div className="category-buttons">
                 <div className="buttonCat">
-                {categories.map((category) => (
-                  <motion.button
-                    key={category}
-                    onClick={() => {
-                      setSelectedCategory(category);
-                      setCurrentPage(1);
-                    }}
-                    className={selectedCategory === category ? 'active' : ''}
-                  >
-                    {category}
-                  </motion.button>
-                ))}
+                    {categories.map((category) => (
+                        <motion.button
+                            type="button"
+                            key={category}
+                            onClick={() => {
+                                setSelectedCategory(category);
+                                setCurrentPage(1);
+                            }}
+                            className={
+                                selectedCategory === category ? "active" : ""
+                            }
+                        >
+                            {category}
+                        </motion.button>
+                    ))}
                 </div>
                 <div className="selectCat">
-                <label htmlFor="category-select">Categories:</label>
-                <select
-                  name="category"
-                  id="category-select"
-                  className="category-select"
-                  value={selectedCategory}
-                  onChange={(e) => {
-                    setSelectedCategory(e.target.value);
-                    setCurrentPage(1);
-                  }}
-                >
-                  {categories.map((category) => (
-                    <option key={category} value={category}>
-                      {category}
-                    </option>
-                  ))}
-                </select>
+                    <label htmlFor="category-select">Categories:</label>
+                    <select
+                        name="category"
+                        id="category-select"
+                        className="category-select"
+                        value={selectedCategory}
+                        onChange={(e) => {
+                            setSelectedCategory(e.target.value);
+                            setCurrentPage(1);
+                        }}
+                    >
+                        {categories.map((category) => (
+                            <option key={category} value={category}>
+                                {category}
+                            </option>
+                        ))}
+                    </select>
                 </div>
-              </div>
-
-            {loading && (
-                <div className="loader-wrapper">
-                    <div className="loadingio-spinner-gear-nq4q5u6dq7r">
-                        <div className="ldio-x2uulkbinbj">
-                            <div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            )}
+            </div>
 
             {error && (
                 <div className="errorCont">
@@ -222,9 +210,17 @@ function Clients() {
                 </div>
             )}
 
-            {!loading && !error && (
+            {!error && (
                 <>
-                    <div className="clientWrapper">
+                    <div ref={containerRef} className="clientWrapper">
+                        {loading && (
+                            <ComponentLoading
+                                isLoading={loading}
+                                message="Loading Clients..."
+                                ref={containerRef}
+                            />
+                        )}
+
                         {filteredClients.map((client, index) => (
                             <motion.div
                                 whileTap={{ scale: 0.9 }}
@@ -241,7 +237,7 @@ function Clients() {
                                 className="clientItem"
                             >
                                 <motion.img
-                                    src={`src/assets/clients/${client.image}`} // Fixed Path: Use Public Folder
+                                    src={`src/assets/clients/${client.image}`}
                                     alt={client.name}
                                 />
                                 <h4>{client.name}</h4>
@@ -256,7 +252,7 @@ function Clients() {
             <br />
             <br />
             <br />
-            {!loading && !error && renderPagination()}
+            {!error && renderPagination()}
             <br />
             <br />
         </div>

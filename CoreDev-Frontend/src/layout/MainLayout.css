@@ -83,10 +83,8 @@ body {
 .main-section {
     position: relative;
     display: flex;
-    align-items: center;
     justify-content: center;
     min-height: 100vh;
-    margin-bottom: 40px;
 }
 
 .main-content {
