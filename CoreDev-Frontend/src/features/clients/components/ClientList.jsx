@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { Badge, ComponentLoading } from "../../../component/ui";
 import { CategoryFilter } from "./CategoryFilter";
 import { categories } from "../data/category";
+import "../styles/Client.css"
 
 const MAX_RETRIES = 3;
 const RETRY_DELAY = 3000;
