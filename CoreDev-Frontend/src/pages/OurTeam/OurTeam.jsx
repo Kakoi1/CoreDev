@@ -1,6 +1,9 @@
 /* eslint-disable react/prop-types */
 import "./OurTeam.css";
 import { motion } from "framer-motion";
+import { Button} from "../../component/ui"
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+
 
 import OrganizationalChart from "./OrganizationalChart";
 
@@ -32,19 +35,22 @@ function OurTeam() {
     return (
         <div className="careerCont">
             <section className="team-section">
-                <div className="imageWrap">
+                <div className="team-section-background"></div>
+                <div className="team-section-gradient"></div>
                 <div className="team-container">
                     <div className="section-header">
                         <h2 className="team-section-title">
-                            Meet the Talented People Behind Our{" "}    
-                            <span className="orange-text">Success</span>
+                            Meet the Talented People Behind Our{" "}
+                            <span>Success</span>
                         </h2>
                         <p className="team-section-description">
                             Our diverse team brings together expertise from
                             various fields to create innovative solutions that
                             address complex challenges.
                         </p>
-                    </div>
+                        <a href="#inner">
+                            <Button text="Meet Our Team" size="lg" variant="full" icon={<MdOutlineKeyboardArrowRight/>}/>
+                        </a>
                     </div>
                 </div>
             </section>
