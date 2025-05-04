@@ -6,12 +6,12 @@ import { Badge } from "../../component/ui";
 
 export const OurStory = () => {
     return (
-        <div className="story-container">
+        <div className="story-container" id="story-container">
             <div className="card">
                 <div className="card-header">
                     <div>
                         <h2>Our Story</h2>
-                        <p><em> " Innovating your Future "</em></p>  
+                        <p><em>&apos;&apos; Innovating your Future &apos;&apos;</em></p>  
                     </div>
                     <div className="card-image-wrapper">
                         <img src="/coreDevlogo.png" alt="" />

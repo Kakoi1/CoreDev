@@ -29,7 +29,6 @@ const Navigation = () => {
     const toggleMenu = () => {
         setShowLinks(!showLinks);
     };
-    // console.log(showLinks);
 
     return (
         <div className="navCont">
@@ -68,10 +67,11 @@ const Navigation = () => {
                                     <div className="navIcon">
                                         <div className="brands">
                                             <div>
-                                            <img
-                                                src={coreDevIcon}
-                                                alt="CoreDev Logo"
-                                            /></div>
+                                                <img
+                                                    src={coreDevIcon}
+                                                    alt="CoreDev Logo"
+                                                />
+                                            </div>
                                             <span>
                                                 CoreDev <br /> Solutions Inc.
                                             </span>
@@ -159,7 +159,9 @@ const Links = ({ closeMenu }) => {
                 </div>
             </li>
             <li className="" onClick={closeMenu}>
-                <NavLink className="contact-button" to="/Contact-us">Contact</NavLink>
+                <NavLink className="contact-button" to="/Contact-us">
+                    Contact
+                </NavLink>
             </li>
         </ul>
     );

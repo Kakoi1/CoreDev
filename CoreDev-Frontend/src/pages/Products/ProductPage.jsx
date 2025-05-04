@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import Software from "./Software";
 import { FiServer, FiPackage } from "react-icons/fi";
-import Hardware from "./Hardware";
+import Software from "../../features/software-products/components/SoftwareList";
+import Hardware from "../../features/hardware-products/components/HardwareList";
 import "./ProductPage.css";
 
 function ProductPage() {

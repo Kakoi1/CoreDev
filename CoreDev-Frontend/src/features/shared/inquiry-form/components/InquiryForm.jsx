@@ -1,7 +1,7 @@
 // ProductInquiryForm.js
 import React, { useState, useEffect } from 'react';
 import Modal from './Modal';
-import './ProductInquiryForm.css';
+import '../styles/ProductInquiryForm.css';
 import axios from 'axios';
 const APP_URL = import.meta.env.VITE_APP_URL + "api/send-email";
 

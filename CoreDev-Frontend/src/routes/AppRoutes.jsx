@@ -6,9 +6,7 @@ import { lazy } from "react";
 const HomePage = lazy(() => import('../pages/Home/Home'));
 const CareerPage = lazy(() => import('../pages/Careers/Careers'));
 const ProductPage = lazy(() => import('../pages/Products/ProductPage'));
-const IAccsPage = lazy(() => import('../pages/Products/SoftwareProduct/iAccs'));
-const HardwareProductPage = lazy(() => import('../pages/Products/HardwareProd/Product'));
-const ProductDetailsPage = lazy(() => import('../pages/Products/HardwareProd/ProductDetails'));
+const ProductDetailsPage = lazy(() => import('../features/hardware-products/components/HardwareProduct'));
 const ClientPage = lazy(() => import('../pages/Clients/Clients'));
 const ContactPage = lazy(() => import('../pages/contactus/Contact-us'));
 const AboutPage = lazy(() => import('../pages/WhoweAre/WhoWeAre'));
@@ -33,10 +31,6 @@ export const AppRoutes = () => {
                     path="/Products/Software"
                     element={<ProductPage />}
                 ></Route>
-                <Route
-                    path="/Products/Software/iAccs"
-                    element={<IAccsPage />}
-                ></Route>
                 <Route path="/Clients" element={<ClientPage />}></Route>
                 <Route path="/careers" element={<CareerPage />}></Route>
                 <Route path="/Contact-us" element={<ContactPage />}></Route>
@@ -53,14 +47,8 @@ export const AppRoutes = () => {
                 <Route path="/about/our-team" element={<OurTeamPage />}></Route>
                 <Route
                     path="/Products/Hardware/:category"
-                    element={<HardwareProductPage />}
-                ></Route>
-                <Route
-                    path="/Products/Hardware/details"
                     element={<ProductDetailsPage />}
-                >
-                    {" "}
-                </Route>
+                ></Route>
             </Route>
         </Routes>
     );
