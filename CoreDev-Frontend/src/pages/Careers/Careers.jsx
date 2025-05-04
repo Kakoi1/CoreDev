@@ -4,7 +4,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { RiCheckLine } from "react-icons/ri";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import { MdWorkHistory } from "react-icons/md";
+import { MdWorkHistory, MdOutlineKeyboardArrowRight } from "react-icons/md";
+import { Button } from "../../component/ui";
 
 function Careers() {
     const jobOffers = [
@@ -18,7 +19,7 @@ function Careers() {
                     "Accountancy",
                     "Management Accounting",
                 ],
-                "Graduate of any related Infromation Technology Courses",
+                "Graduate of any related Information Technology Courses",
                 ["Information Technology", "Computer Science"],
             ],
             address: "Cebu",
@@ -34,7 +35,7 @@ function Careers() {
                     "Accountancy",
                     "Management Accounting",
                 ],
-                "Graduate of any related Infromation Technology Courses",
+                "Graduate of any related Information Technology Courses",
                 ["Information Technology", "Computer Science"],
             ],
             address: "Imus, Cavite",
@@ -50,7 +51,7 @@ function Careers() {
                     "Accountancy",
                     "Management Accounting",
                 ],
-                "Graduate of any related Infromation Technology Courses",
+                "Graduate of any related Information Technology Courses",
                 ["Information Technology", "Computer Science"],
             ],
             address: "Davao, City",
@@ -72,7 +73,7 @@ function Careers() {
             descriptions: [
                 "Candidate should have good communication and presentation skills",
                 "Problem solving and analytical thinking",
-                "Abillity to work under pressure",
+                "Ability to work under pressure",
                 "Ambitious and Self motivated",
                 "Monitoring and solving problems related to the system  implementation",
                 "With good and pleasing personality, good communication skills",
@@ -86,34 +87,21 @@ function Careers() {
     return (
         <div className="careerCont">
             <section className="hero-section">
-                <div className="hero-radial"></div>
+                <div className="hero-image-bg"></div>
+                <div className="gradient-left-center"></div>
                 <div className="carreer-container">
                     <div className="hero-content">
                         <h1 className="hero-title">
-                            Career {" "}
+                            Career&nbsp;
                             <span className="orange-text">Opportunities</span>
                         </h1>
                         <p className="hero-description">
                             Discover exciting career opportunities and be part
                             of a team that&apos;s making a difference.
                         </p>
-                        <div className="button-group">
-                            <a href="#job" className="button primary-button">
-                                View Open Positions
-                                <svg
-                                    className="icon"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                >
-                                    <polyline points="9 18 15 12 9 6"></polyline>
-                                </svg>
-                            </a>
-                        </div>
+                        <a href="#job">
+                            <Button text="View Open Position" variant="full" icon={<MdOutlineKeyboardArrowRight/>} />
+                        </a>
                     </div>
                 </div>
                 <div className="hero-fade"></div>
@@ -171,9 +159,8 @@ const JobOfferCard = ({ title, type, descriptions, address, link }) => {
                         </div>
                     </div>
                 </div>
-                <button onClick={() => window.open(link, "_blank")}>
-                    Apply Now
-                </button>
+               <Button text="Apply Now" variant="outline" size="md" onClick={() => window.open(link, "_blank")} />
+
             </div>
             <p onClick={() => setShowDetails(!showDetails)}>
                 {showDetails ? "Hide Details" : "Show Details"}
