@@ -195,12 +195,12 @@ const Contact = () => {
             <h2>
                 <span>Get in </span> Touch with us
             </h2>
-            <p>
-                We&apos;re here to help and answer any questions you might have. We
+            <p className="quote">
+                We're here to help and answer any questions you might have. We
                 look forward to hearing from you.
             </p>
             <ContactInfo />
-
+    
             <h2>
                 <span>Where</span> To Find Us.
             </h2>
@@ -228,6 +228,8 @@ const Contact = () => {
                             }}
                         >
                             {location.otherNmae}
+                            {/* Address and Tel for tab-container (mobile view, hidden by CSS on larger screens) */}
+                  
                         </motion.button>
                     ))}
                 </div>
@@ -255,17 +257,22 @@ const Contact = () => {
                                 onClick={() => handleButtonClick(location)}
                             >
                                 {location.otherNmae}
+                                {/* Address and Tel for side-tab (desktop view) */}
+                                <div className="side-tab-details">
+                                    <p>{location.address}</p>
+                                    <p>{location.tel}</p>
+                                </div>
                             </motion.button>
                         </div>
                     ))}
                 </div>
-
+    
                 <div className="mapBack">
                     <div
                         id="map"
                         style={{ height: "600px", width: "100%" }}
                     ></div>
-
+    
                     {showDetails && selectedMarker && (
                         <div
                             className="contDetails"
@@ -275,7 +282,6 @@ const Contact = () => {
                                 left: "20px",
                                 padding: "20px",
                                 borderRadius: "12px",
-                                // background: 'white',
                                 boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
                                 zIndex: 0,
                                 width: "40%",
@@ -284,13 +290,16 @@ const Contact = () => {
                         >
                             <h3>{selectedMarker.name}</h3>
                             <hr />
-                            <p>
-                                Address:{" "}
-                                <strong>{selectedMarker.address}</strong>
-                            </p>
-                            <p>
-                                Tel No: <strong>{selectedMarker.tel}</strong>
-                            </p>
+                            {/* Address and Tel for contDetails (mobile view only) */}
+                            <div className="contDetails-info">
+                                <p>
+                                    Address:{" "}
+                                    <strong>{selectedMarker.address}</strong>
+                                </p>
+                                <p>
+                                    Tel No: <strong>{selectedMarker.tel}</strong>
+                                </p>
+                            </div>
                             <a
                                 href={`https://www.google.com/maps/dir/?api=1&destination=${selectedMarker.name}&travelmode=driving`}
                                 target="_blank"
@@ -321,7 +330,6 @@ const Contact = () => {
                                 style={{
                                     marginTop: "15px",
                                     padding: "8px 16px",
-                                    // background: '#f0f0f0',
                                     border: "none",
                                     borderRadius: "4px",
                                     cursor: "pointer",

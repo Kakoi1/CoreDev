@@ -19,7 +19,7 @@ const TopBar = () => {
                    <NavLink to="/Contact-us" className="contact-link">24/7 : Customer Service</NavLink>
                </span>
             </div>
-            <Toggle/>
+            {/* <Toggle/> */}
         </div>
     );
 };
