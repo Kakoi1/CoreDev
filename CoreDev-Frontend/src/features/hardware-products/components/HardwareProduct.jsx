@@ -1,14 +1,15 @@
 import { useParams } from "react-router-dom";
-import axios from "axios";
-import { useState, useEffect } from "react";
-import "./Product.css"; // Import the CSS file
+import { useState, useEffect, useRef } from "react";
+import "../styles/HardwareProduct.css";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 import { AnimatePresence, motion } from "framer-motion";
-import ProductInquiryForm from "../../email/ProductInquiryForm";
+import ProductInquiryForm from "../../shared/inquiry-form/components/InquiryForm";
+import { getHardwareProducts } from "../services/HardwareService";
+import { ComponentLoading } from "../../../component/ui";
 
 function Product() {
     const { category } = useParams();
-    const API_URL = import.meta.env.VITE_APP_URL + `api/hardware/${category}`;
+    const containerRef = useRef(null)
 
     const [hardwares, setHardware] = useState([]);
     const [nameCategory, setCategory] = useState(null);
@@ -24,26 +25,24 @@ function Product() {
         }));
     };
 
-    useEffect(() => {
-        const fetchData = () => {
-            axios
-                .get(API_URL)
-                .then((response) => {
-                    setHardware(response.data);
-                    setLoading(false);
-                    setError(null);
-                })
-                .catch((err) => {
-                    console.error("Error fetching data:", err);
-                    setError("Failed to load data. Retrying...");
-                    setLoading(true);
-                    setTimeout(() => {
-                        setRetry((prev) => prev + 1);
-                    }, 3000);
-                });
-        };
+    const fetchHardwareProduct = async () => {
+        try {
+            const response = await getHardwareProducts(category);
+            setHardware(response.data);
+            setLoading(false);
+            setError(null);
+        } catch (error) {
+            console.error("Error fetching data:", error);
+            setError("Failed to load data. Retrying...");
+            setLoading(true);
+            setTimeout(() => {
+                setRetry((prev) => prev + 1);
+            }, 3000);
+        }
+    };
 
-        fetchData();
+    useEffect(() => {
+        fetchHardwareProduct();
     }, [category, retry]);
 
     // Set name category dynamically
@@ -67,29 +66,14 @@ function Product() {
         visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
     };
 
-    if (loading)
-        return (
-            <div className="loader-wrapper">
-                <div className="loadingio-spinner-gear-nq4q5u6dq7r">
-                    <div className="ldio-x2uulkbinbj">
-                        <div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        );
-    if (error) return <p>{error}</p>;
 
     return (
         <div className="product-container">
             <h2>{nameCategory}</h2>
             <div className="grid-container">
+
+                <ComponentLoading isLoading={loading} message="hardware Products Loading ..." ref={containerRef} />
+
                 {hardwares.length > 0 ? (
                     hardwares.map((item, index) => (
                         <motion.div
@@ -158,7 +142,6 @@ function Product() {
                     <p>No hardware found in this category.</p>
                 )}
             </div>
-
         </div>
     );
 }

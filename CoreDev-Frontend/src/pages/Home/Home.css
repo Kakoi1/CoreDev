@@ -21,13 +21,23 @@ body {
 }
 .home-container .photo-wrapper span {
     position: absolute;
-    top: 30%;
-    left: 290px;
-    transform: translateY(-50%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgb(13 6 1 / 82%), rgb(49 46 46 / 13%)), url(src/assets/techBack.webp) top center no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: blur(3px); /* Apply blur only to the background */
+    z-index: 1;
+}
+
+.home-container .photo-wrapper div {
     font-family: "Raleway", sans-serif;
     font-weight: bold;
     color: white;
-    font-size: 50px;
+    display: flex;
+    font-size: 20px;
     text-shadow: 1px 1px 3px black;
 }
 .motion-text {
@@ -67,13 +77,14 @@ body {
     font-family: "Raleway", sans-serif;
     font-weight: bold;
     color: #dd5e04;
+  
 }
 
 .home-container .services-wrapper .service-list {
     display: flex;
     justify-content: center; /* Aligns with the left side */
     align-items: center;
-    gap: 110px;
+    gap: 80px;
     margin-top: 40px;
     font-family: "Open Sans", "sans-serif";
 }
@@ -82,15 +93,19 @@ body {
     color: #dd5e04;
     font-weight: bold;
 }
+.dark-mode .home-container .services-wrapper .service-list .service-item{
+    background-color: var(--black);
+}
 
 .home-container .services-wrapper .service-list .service-item {
     text-align: center;
     border: 1px solid #dd5e04;
+    background-color: white;
     padding: 20px 30px;
     box-shadow: 0px 0px 3px rgba(229, 139, 3, 0.521);
     min-height: 350px;
     max-width: 300px;
-    border-radius: 5px;
+    border-radius: 20px 20px 5px 5px;
     /* position: relative;  */
     display: flex;
     flex-direction: column;
@@ -477,6 +492,7 @@ textarea::placeholder {
     align-items: center;
     width: 100vw;
     margin-left: var(--fit-screen);
+    margin-bottom: -39px;
 }
 
 

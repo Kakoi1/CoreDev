@@ -1,7 +1,7 @@
-import "./IAccs.css";
+import "../styles/IAccs.css";
 import { motion } from "framer-motion";
 import { IoCheckmarkDone } from "react-icons/io5";
-import { softwareFeatures } from "../data";
+import { softwareFeatures } from "../data/softwareData";
 
 const iAccs = () => {
 

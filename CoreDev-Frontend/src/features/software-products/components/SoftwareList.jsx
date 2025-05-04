@@ -1,11 +1,11 @@
-import "./Software.css";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 import { AnimatePresence, motion } from "framer-motion";
-import IAccs from "./SoftwareProduct/iAccs";
+import IAccs from "./iAccs";
 import { useState } from "react";
-import { softwareProducts } from "./data";
+import "../styles/Software.css"
+import { softwareProducts } from "../data/softwareData";
 import { RiCodepenFill } from "react-icons/ri";
-import ProductInquiryForm from "../email/ProductInquiryForm";
+import ProductInquiryForm from "../../shared/inquiry-form/components/InquiryForm";
 
 const Software = () => {
     const [showFeature, setShowFeature] = useState(false);

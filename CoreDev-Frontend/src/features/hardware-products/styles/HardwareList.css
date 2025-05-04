@@ -1,0 +1,62 @@
+.HardwareContainer h2 {
+  font-size: 2rem;
+  color: var(--orange-500);
+  font-family: "Raleway", sans-serif;
+}
+
+.HardwareContainer .HardWrapper {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 2rem;
+}
+
+.HardwareContainer .HardWrapper .hardware img {
+  height: 200px;
+  width: 200px;
+  margin: 1.5rem;
+  margin-top: -10px;
+}
+.HardwareContainer .HardWrapper .hardware {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  box-shadow: var(--shadow-md);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.hardware h4 {
+  font-size: 1.25rem;
+  color: #080707;
+  font-family: "Raleway", sans-serif;
+  padding-top: 0;
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .hardware {
+      width: 100% !important;
+      gap: 10px;
+      display: flex;
+      flex-direction: row-reverse !important;
+  }
+  .hardware img {
+      width: 180px !important;
+      height: 180px !important;
+  }
+}
+.HardwareContainer .HardWrapper .hardware h4 a {
+  text-decoration: none;
+}
+.dark-mode .hardware {
+  background-color: var(--black) !important;
+  border: solid 1px !important;
+}
+.dark-mode .hardware h4 {
+  color: var(--orange);
+}
+.hardSpan {
+  color: var(--black);
+  text-shadow: none;
+}

@@ -1,5 +1,5 @@
 .home-hero-container {
-    height: min(90vh);
+    /* height: min(90vh); */
     position: relative;
 }
 
@@ -30,7 +30,7 @@
     inset: 0;
     background: radial-gradient(
         circle at 50% 40%,
-        rgba(244, 124, 4, 0.32) 20%,
+        rgba(244, 124, 4, 0.1) 30%,
         rgba(255, 255, 255, 0) 100%
     );
     height: 100vh;
@@ -74,7 +74,7 @@
 .home-hero-container .home-hero .button {
     text-decoration: none;
     border-radius: 2rem;
-    border: none;
+    border: 2px solid #9ca3af;
     background-color: var(--orange);
     color: white;
     font-size: 1.25rem;
@@ -92,7 +92,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    margin-top: 10rem;
+    margin-top: 6rem;
 }
 
 .features .feature-container {

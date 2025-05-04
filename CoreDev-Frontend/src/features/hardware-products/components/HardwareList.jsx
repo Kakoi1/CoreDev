@@ -1,15 +1,15 @@
-import "./Hardware.css";
+import "../styles/HardwareList.css";
 import { NavLink } from "react-router-dom";
-import FW from "../../assets/fw-v2.png";
-import PC from "../../assets/pc-v2.png";
-import Laptop from "../../assets/laptop-v2.png";
-import Server from "../../assets/server-v2.png";
-import Wifi from "../../assets/wifi-v2.png";
-import Cams from "../../assets/cams-v2.png";
-import Printer from "../../assets/print-v2.png";
-import Net from "../../assets/net-v2.png";
-import Bio from "../../assets/biometrics-v2.png";
-import Cloud from "../../assets/cloud-v2.png";
+import FW from "/assets/fw-v2.png";
+import PC from "/assets/pc-v2.png";
+import Laptop from "/assets/laptop-v2.png";
+import Server from "/assets/server-v2.png";
+import Wifi from "/assets/wifi-v2.png";
+import Cams from "/assets/cams-v2.png";
+import Printer from "/assets/print-v2.png";
+import Net from "/assets/net-v2.png";
+import Bio from "/assets/biometrics-v2.png";
+import Cloud from "/assets/cloud-v2.png";
 import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
 const Hardware = () => {
