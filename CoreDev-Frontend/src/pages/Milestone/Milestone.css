@@ -16,9 +16,9 @@
     color: var(--black);
 }
 
-.timeline-container .project-name{
-   font-size: 3rem;
-   margin-bottom: 3rem;
+.timeline-container .project-name {
+    font-size: 3rem;
+    margin-bottom: 3rem;
 }
 
 .timeline-container .project-name > span {
@@ -66,7 +66,7 @@
     position: absolute;
     top: 0;
     left: 50%;
-    overflow: hidden; 
+    overflow: hidden;
     margin-left: -23px;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -109,8 +109,8 @@
     padding: 0;
 }
 
-#timeline .timeline-item .timeline-content ul li{
-  color: var(--orange-500);
+#timeline .timeline-item .timeline-content ul li {
+    color: var(--orange-500);
 }
 
 #timeline .timeline-item .timeline-content ul li > p {
