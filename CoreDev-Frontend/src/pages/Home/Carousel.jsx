@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Tooltip } from "../../component/ui";
+import { Tooltip } from "@components/ui";
 
 import "swiper/css";
 import "swiper/css/pagination";

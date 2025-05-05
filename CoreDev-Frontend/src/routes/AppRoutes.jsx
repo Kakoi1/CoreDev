@@ -3,17 +3,17 @@ import MainLayout  from "../layout/MainLayout"
 import { lazy } from "react";
 
 
-const HomePage = lazy(() => import('../pages/Home/Home'));
-const CareerPage = lazy(() => import('../pages/Careers/Careers'));
-const ProductPage = lazy(() => import('../pages/Products/ProductPage'));
-const ProductDetailsPage = lazy(() => import('../features/hardware-products/components/HardwareProduct'));
-const ClientPage = lazy(() => import('../pages/Clients/Clients'));
-const ContactPage = lazy(() => import('../pages/contactus/Contact-us'));
-const AboutPage = lazy(() => import('../pages/WhoweAre/WhoWeAre'));
-const OurTeamPage = lazy(() => import('../pages/OurTeam/OurTeam'));
-const RegultionPage = lazy(() => import ('../pages/regulation/Regulation'));
-const MilestonePage = lazy(() => import ('../pages/Milestone/MileStone'));
-const PolicyPage = lazy(() => import ('../pages/policy/Policy'));
+const HomePage = lazy(() => import('@pages/Home/Home'));
+const CareerPage = lazy(() => import('@pages/Careers/Careers'));
+const ProductPage = lazy(() => import('@pages/Products/ProductPage'));
+const HardwareProductPage = lazy(() => import('@features/hardware-products/components/HardwareProduct'));
+const ClientPage = lazy(() => import('@pages/Clients/Clients'));
+const ContactPage = lazy(() => import('@pages/contactus/Contact-us'));
+const AboutPage = lazy(() => import('@pages/WhoweAre/WhoWeAre'));
+const OurTeamPage = lazy(() => import('@pages/OurTeam/OurTeam'));
+const RegultionPage = lazy(() => import ('@pages/regulation/Regulation'));
+const MilestonePage = lazy(() => import ('@pages/Milestone/MileStone'));
+const PolicyPage = lazy(() => import ('@pages/policy/Policy'));
 
 
 
@@ -47,7 +47,7 @@ export const AppRoutes = () => {
                 <Route path="/about/our-team" element={<OurTeamPage />}></Route>
                 <Route
                     path="/Products/Hardware/:category"
-                    element={<ProductDetailsPage />}
+                    element={<HardwareProductPage />}
                 ></Route>
             </Route>
         </Routes>

@@ -5,11 +5,10 @@ import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 import { AnimatePresence, motion } from "framer-motion";
 import ProductInquiryForm from "../../shared/inquiry-form/components/InquiryForm";
 import { getHardwareProducts } from "../services/HardwareService";
-import { ComponentLoading } from "../../../component/ui";
-
-function Product() {
+import { ComponentLoading } from "@components/ui";
+export default function HardwareProduct() {
     const { category } = useParams();
-    const containerRef = useRef(null)
+    const containerRef = useRef(null);
 
     const [hardwares, setHardware] = useState([]);
     const [nameCategory, setCategory] = useState(null);
@@ -66,13 +65,15 @@ function Product() {
         visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
     };
 
-
     return (
         <div className="product-container">
             <h2>{nameCategory}</h2>
             <div className="grid-container">
-
-                <ComponentLoading isLoading={loading} message="hardware Products Loading ..." ref={containerRef} />
+                <ComponentLoading
+                    isLoading={loading}
+                    message="hardware Products Loading ..."
+                    ref={containerRef}
+                />
 
                 {hardwares.length > 0 ? (
                     hardwares.map((item, index) => (
@@ -145,5 +146,3 @@ function Product() {
         </div>
     );
 }
-
-export default Product;

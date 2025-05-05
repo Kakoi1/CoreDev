@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { BiLocationPlus } from 'react-icons/bi';
 import "./Milestone.css";
 import { motion } from 'framer-motion';
-import { Badge } from "../../component/ui"
+import { Badge } from "@components/ui"
 
 
 

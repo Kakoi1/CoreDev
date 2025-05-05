@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import "./OurTeam.css";
 import { motion } from "framer-motion";
-import { Button} from "../../component/ui"
+import { Button} from "@components/ui"
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 

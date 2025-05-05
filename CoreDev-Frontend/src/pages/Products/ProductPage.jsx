@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { FiServer, FiPackage } from "react-icons/fi";
-import Software from "../../features/software-products/components/SoftwareList";
-import Hardware from "../../features/hardware-products/components/HardwareList";
+import { SoftwareList} from "@features/software-products"
+import { HardwareList} from "@features/hardware-products"
 import "./ProductPage.css";
 
 function ProductPage() {
@@ -61,14 +61,14 @@ function ProductPage() {
                         activeTab === "software" ? "active" : ""
                     }`}
                 >
-                    {activeTab === "software" && <Software />}
+                    {activeTab === "software" && <SoftwareList />}
                 </div>
                 <div
                     className={`tab-pane ${
                         activeTab === "hardware" ? "active" : ""
                     }`}
                 >
-                    {activeTab === "hardware" && <Hardware />}
+                    {activeTab === "hardware" && <HardwareList />}
                 </div>
             </div>
         </div>

@@ -1,7 +1,6 @@
-import React from "react";
 import { BiCheckDouble } from "react-icons/bi";
 import "./Regulation.css";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 function regulation() {
     const fadeInUpVariants = {
         hidden: { opacity: 0, y: 50 },

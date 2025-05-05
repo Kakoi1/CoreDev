@@ -1,8 +1,7 @@
 import { FaRegClock } from "react-icons/fa";
 import { LuUsers } from "react-icons/lu";
 import { PiMedal } from "react-icons/pi";
-import { Badge } from "../../component/ui";
-
+import { Badge } from "@components/ui";
 
 export const OurStory = () => {
     return (
@@ -11,7 +10,11 @@ export const OurStory = () => {
                 <div className="card-header">
                     <div>
                         <h2>Our Story</h2>
-                        <p><em>&apos;&apos; Innovating your Future &apos;&apos;</em></p>  
+                        <p>
+                            <em>
+                                &apos;&apos; Innovating your Future &apos;&apos;
+                            </em>
+                        </p>
                     </div>
                     <div className="card-image-wrapper">
                         <img src="/coreDevlogo.png" alt="" />

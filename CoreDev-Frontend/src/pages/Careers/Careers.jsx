@@ -5,7 +5,7 @@ import { useState } from "react";
 import { RiCheckLine } from "react-icons/ri";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { MdWorkHistory, MdOutlineKeyboardArrowRight } from "react-icons/md";
-import { Button } from "../../component/ui";
+import { Button } from "@components/ui";
 
 function Careers() {
     const jobOffers = [

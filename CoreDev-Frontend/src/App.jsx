@@ -1,5 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
-import NoticeBanner from "./component/Footer/NoticeBanner";
+import NoticeBanner from "./components/Footer/NoticeBanner";
 import { AppRoutes } from "./routes/AppRoutes";
 
 function App() {

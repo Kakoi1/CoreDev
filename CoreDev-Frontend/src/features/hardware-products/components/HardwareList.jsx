@@ -12,7 +12,9 @@ import Bio from "/assets/biometrics-v2.png";
 import Cloud from "/assets/cloud-v2.png";
 import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
-const Hardware = () => {
+
+
+export const HardwareList = () => {
     const location = useLocation();
 
     const hardComp = [
@@ -73,4 +75,3 @@ const Hardware = () => {
     );
 };
 
-export default Hardware;

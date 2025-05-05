@@ -5,7 +5,7 @@ import {
     MdOutlineKeyboardArrowRight,
 } from "react-icons/md";
 import { motion } from "framer-motion";
-import { Badge, ComponentLoading } from "../../../component/ui";
+import { Badge, ComponentLoading } from "@components/ui";
 import { CategoryFilter } from "./CategoryFilter";
 import { categories } from "../data/category";
 import "../styles/Client.css"
@@ -13,7 +13,7 @@ import "../styles/Client.css"
 const MAX_RETRIES = 3;
 const RETRY_DELAY = 3000;
 
-export default function ClientsList() {
+export const ClientsList = () => {
     const [clients, setClients] = useState([]);
     const [loading, setloading] = useState(true);
     const [error, setError] = useState(null);

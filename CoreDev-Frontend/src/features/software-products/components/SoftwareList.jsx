@@ -7,7 +7,7 @@ import { softwareProducts } from "../data/softwareData";
 import { RiCodepenFill } from "react-icons/ri";
 import ProductInquiryForm from "../../shared/inquiry-form/components/InquiryForm";
 
-const Software = () => {
+export const SoftwareList = () => {
     const [showFeature, setShowFeature] = useState(false);
     const [expandedProduct, setExpandedProduct] = useState(null);
 
@@ -350,4 +350,3 @@ const Software = () => {
     );
 };
 
-export default Software;

@@ -6,8 +6,8 @@ import Carousel from "./Carousel";
 import { useState, useEffect } from "react";
 import { easeInOut, motion } from "framer-motion";
 import Partners from "../Partners/Partners";
-import { Button } from "../../component/ui";
-import { Loading } from "../../component/ui";
+import { Button } from "@components/ui";
+import { Loading } from "@components/ui";
 
 const MAX_RETRIES = 3;
 const RETRY_DELAY = 3000;
