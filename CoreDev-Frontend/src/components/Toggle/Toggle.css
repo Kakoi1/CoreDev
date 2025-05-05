@@ -1,21 +1,10 @@
-body {
-    margin: 0;
-    padding: 0;
-    transition: background-color 0.3s, color 0.3s;
-    font-family: Arial, sans-serif;
-    background-color: white;
-    color: black;
-  }
-  
-  .dark-mode {
+
+.dark-mode {
     background-color: #222;
     color: white;
-  }
-  
-  span {
-    color: inherit; /* Make span color inherit from body */
-  }
-  
-  /* h1, p {
-    margin: 20px 0;
-  } */
+}
+
+span {
+    color: inherit;
+}
+

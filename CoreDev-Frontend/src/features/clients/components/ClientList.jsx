@@ -72,7 +72,7 @@ export const ClientsList = () => {
                 <h2>
                     Our <span>Clients</span>
                 </h2>
-                <p>We partner with a diverse range of organizations...</p>
+                <p>We partner with a diverse range of organizations</p>
             </div>
 
             <CategoryFilter

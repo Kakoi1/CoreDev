@@ -11,7 +11,6 @@
 
 .product-page .product-page-header h3 {
     font-size: 3rem;
-    font-family: "Raleway", sans-serif;
     color: var(--orange);
     text-transform: capitalize;
     text-align: center;
@@ -20,8 +19,9 @@
 
 .product-page .product-page-header p {
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.25rem;
     color: var(--gray-500);
+    font-weight: 300;
 }
 
 .product-page .product-page-header span {
@@ -45,14 +45,15 @@
     justify-content: center;
     color: var(--gray-700);
     gap: .5rem;
-    font-size: 1.25rem;
+    font-family: Inter;
+    font-size: 1rem;
+    font-weight: 500;
     padding: 1rem 2rem;
     margin: .75rem;
     border: none;
     background-color: var(--gray-300);
     cursor: pointer;
     border-radius: 5px;
-    font-weight: bold;
 }
 
 

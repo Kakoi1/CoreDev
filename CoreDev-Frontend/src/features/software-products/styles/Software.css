@@ -1,16 +1,9 @@
 .SoftwareContainer li,
 .SoftwareContainer p {
-    font-family: "Open-Sans", sans-serif;
-    font-size: 15px;
-    line-height: 21px;
+    font-size: 1rem;
+    font-weight: 300;
     margin-bottom: 0;
     color: var(--gray-500);
-}
-
-.SoftwareContainer h4,
-.SoftwareContainer h2 {
-    font-family: "Raleway", sans-serif;
-    font-weight: bolder !important;
 }
 
 /* Headings */
@@ -41,8 +34,8 @@
 
 .pastProj h4 {
     font-size: 1.25rem;
+    font-weight: 600;
     color: var(--orange);
-    font-family: "Raleway", sans-serif;
 }
 
 /* Project Details */
@@ -100,16 +93,16 @@
 }
 
 .IacWrap p {
-    font-size: 1rem;
-    font-family: "Raleway", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 300;
     margin: 1rem 0;
     padding: 0;
     color: var(--gray-500);
 }
 
 .iaccs-title {
-    font-family: "Raleway", sans-serif;
     font-size: 2rem;
+    font-weight: 300;
     color: var(--black);
     text-transform: uppercase;
     margin: 0 0 1rem;
@@ -121,8 +114,8 @@
 }
 
 .IacWrap div > h4 {
-    font-family: "Raleway", sans-serif;
     color: var(--black);
+    font-weight: 500;
     text-transform: uppercase;
     margin-top: 0;
 }
@@ -135,8 +128,8 @@
     color: var(--white);
     border: 2px solid #dd5e04;
     padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 1rem;
+    font-weight: 400;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 1rem;

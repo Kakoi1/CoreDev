@@ -2,7 +2,6 @@
     background-size: cover;
     margin: 0;
     padding: 0;
-    font-family: helvetica, arial, tahoma, verdana;
     line-height: 20px;
     font-size: 14px;
 }
@@ -10,7 +9,6 @@
 .project-name {
     text-align: center;
     padding: 10px 0;
-    font-family: "Raleway", sans-serif;
     font-size: 2rem;
     margin-bottom: 1.5rem;
     color: var(--black);
@@ -105,6 +103,7 @@
     -ms-border-radius: 3px 3px 0 0;
     border-radius: 3px 3px 0 0;
     font-size: 1.5rem;
+    font-weight: 500;
     color: var(--black);
     padding: 0;
 }
@@ -116,6 +115,8 @@
 #timeline .timeline-item .timeline-content ul li > p {
     color: var(--gray-600);
     font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.75;
 }
 
 #timeline .timeline-item .timeline-content:before {
@@ -379,10 +380,6 @@
     }
 }
 
-.timeline-content ul,
-.timeline-content li {
-    font-family: "Ubuntu", sans-serif;
-}
 
 .dark-mode .milestone {
     background-color: var(--black);

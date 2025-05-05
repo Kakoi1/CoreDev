@@ -15,7 +15,6 @@
     font-weight: 600;
     font-size: 2rem;
     color: #ff6c00;
-    font-family: "Raleway", sans-serif;
     margin-bottom: 30px;
     text-align: start;
 }
@@ -32,7 +31,6 @@
 .content {
     display: flex;
     align-items: center;
-    /* background-color: #f9f9f9; */
     border-radius: 8px;
     padding: 20px;
     border-bottom: 1px solid #e0e0e0;
@@ -48,10 +46,9 @@
 /* Text styling */
 .content h3 {
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 400;
     color: #777777;
     margin: 0;
-    font-family: "Open Sans", sans-serif;
 }
 .dark-mode .Regwrapper {
     background-color: var(--black);

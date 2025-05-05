@@ -54,7 +54,6 @@
 }
 
 .home-hero-container .home-hero h1 {
-    font-family: Ubuntu;
     font-size: 90px;
     font-weight: 700;
     margin-bottom: 0;
@@ -66,6 +65,7 @@
     font-size: 1.5rem;
     line-height: 0.5rem;
     margin-bottom: 2rem;
+    font-weight: 400;
     opacity: 0.9;
     color: white;
     text-shadow: 1px 3px 3px black;
@@ -121,7 +121,7 @@
 
 .features .feature-container .feature-name {
     font-size: 1.25rem;
-    font-weight: 700;
+    font-weight: 600;
     margin: 1rem 0;
     color: var(--black);
     text-align: center;
@@ -130,7 +130,9 @@
 .features .feature-container .feature-description {
     opacity: 0.7;
     text-align: left;
-    max-height: 100px;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 300;
     overflow-y: auto;
     transition: all 0.3s ease-in-out;
     scrollbar-width: thin;

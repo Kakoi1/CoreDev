@@ -57,13 +57,16 @@
 }
 
 .feature > p {
-  color: var(--black);
+  color: red;
+  font-size: 2rem;
   opacity: .5;
+  font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 2px;
   text-decoration: underline var(--orange);
   text-underline-offset: .3rem;
   margin: 4rem 0 2rem 0;
+  background-color: red;
 }
 
 .divWrap {
