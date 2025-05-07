@@ -107,30 +107,48 @@ const Links = ({ closeMenu }) => {
         setOpenDropdown(openDropdown === menu ? null : menu);
     };
 
+    const handleNavClick = (to) => {
+        if (!to.startsWith("/About_us")) {
+            backToTop();
+        }
+        if (closeMenu) {
+            closeMenu();
+        }
+    };
+
     return (
-        <ul onClick={backToTop}>
-            <li className="navigation-link" onClick={closeMenu}>
+        <ul>
+            <li className="navigation-link" onClick={() => handleNavClick("/")}>
                 <NavLink to="/">Home</NavLink>
             </li>
             <li
                 className="navigation-link sub"
                 onMouseEnter={() => toggleDropdown("product")}
             >
-                <NavLink to="/Products" onClick={closeMenu}>
+                <NavLink
+                    to="/Products"
+                    onClick={() => handleNavClick("/Products")}
+                >
                     Products
                 </NavLink>
             </li>
-            <li className="navigation-link" onClick={closeMenu}>
+            <li
+                className="navigation-link"
+                onClick={() => handleNavClick("/Clients")}
+            >
                 <NavLink to="/Clients">Clients</NavLink>
             </li>
-            <li className="navigation-link" onClick={closeMenu}>
+            <li
+                className="navigation-link"
+                onClick={() => handleNavClick("/careers")}
+            >
                 <NavLink to="/careers">Careers</NavLink>
             </li>
             <li
                 className="navigation-link sub"
                 onMouseEnter={() => toggleDropdown("about")}
             >
-                <a> About</a>{" "}
+                <a>About</a>{" "}
                 <RxCaretDown
                     className={`caret ${
                         openDropdown === "about" ? "rotate" : ""
@@ -141,24 +159,33 @@ const Links = ({ closeMenu }) => {
                         openDropdown === "about" ? "open" : ""
                     }`}
                 >
-                    <NavLink to="/about/who-we-are" onClick={closeMenu}>
+                    <NavLink
+                        to="/About_us#Who-We-are"
+                        onClick={() => handleNavClick("/About_us#Who-We-are")}
+                    >
                         Who we are
                     </NavLink>
-                    <NavLink to="/about/our-team" onClick={closeMenu}>
+                    <NavLink
+                        to="/About_us#Our-Teams"
+                        onClick={() => handleNavClick("/About_us#Our-Teams")}
+                    >
                         Our Team
                     </NavLink>
                     <NavLink
-                        to="/about/government-regulation"
-                        onClick={closeMenu}
+                        to="/About_us#Government-Regulation"
+                        onClick={() => handleNavClick("/About_us#Government-Regulation")}
                     >
                         Government Regulation
                     </NavLink>
-                    <NavLink to="/about/milestone" onClick={closeMenu}>
+                    <NavLink
+                        to="/About_us#Milestone"
+                        onClick={() => handleNavClick("/About_us#Milestone")}
+                    >
                         Milestone
                     </NavLink>
                 </div>
             </li>
-            <li className="" onClick={closeMenu}>
+            <li className="" onClick={() => handleNavClick("/Contact-us")}>
                 <NavLink className="contact-button" to="/Contact-us">
                     Contact
                 </NavLink>
