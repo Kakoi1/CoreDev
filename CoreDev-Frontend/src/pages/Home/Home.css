@@ -1,12 +1,4 @@
-:root {
-    --black: #353635;
-    --orange: #ff6c00;
-    --gray: #d3d3d3; /* New gray color for hover */
-}
 
-body {
-    background-color: #f1f8ff;
-}
 .home-container .photo-wrapper {
     height: 80vh;
     background: linear-gradient(0deg, rgb(13 6 1 / 82%), rgb(49 46 46 / 13%)),
@@ -33,7 +25,6 @@ body {
 }
 
 .home-container .photo-wrapper div {
-    font-family: "Raleway", sans-serif;
     font-weight: bold;
     color: white;
     display: flex;
@@ -44,7 +35,6 @@ body {
     z-index: 0 !important;
 }
 .leanBut {
-    font-family: "Open Sans", sans-serif !important;
     font-weight: 500;
     font-size: 14px;
     letter-spacing: 1px;
@@ -65,7 +55,6 @@ body {
 }
 
 .home-container .services-wrapper {
-    font-family: "Open-Sans", sans-serif;
     padding: 20px;
     max-width: 1300px;
     margin: 0 auto 40px;
@@ -74,7 +63,6 @@ body {
 
 .home-container .services-wrapper .service-header {
     text-align: center;
-    font-family: "Raleway", sans-serif;
     font-weight: bold;
     color: #dd5e04;
   
@@ -86,10 +74,8 @@ body {
     align-items: center;
     gap: 80px;
     margin-top: 40px;
-    font-family: "Open Sans", "sans-serif";
 }
 .service-item-header {
-    font-family: "Raleway", sans-serif !important;
     color: #dd5e04;
     font-weight: bold;
 }
@@ -106,7 +92,6 @@ body {
     min-height: 350px;
     max-width: 300px;
     border-radius: 20px 20px 5px 5px;
-    /* position: relative;  */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -127,7 +112,6 @@ body {
 }
 
 .home-container .services-wrapper .service-list .service-item .description {
-    font-family: "Open-Sans", sans-serif;
     font-size: 15px;
     padding: 10px;
     font-size: 15px;
@@ -202,7 +186,6 @@ body {
 
 .home-container .join-us-wrapper .left {
     flex: 1;
-    font-family: "Open-Sans", sans-serif;
     color: white;
     letter-spacing: 1px;
     line-height: 30px;
@@ -210,11 +193,11 @@ body {
 }
 
 .home-container .join-us-wrapper .left p{
-    color: var(--gray-300)
+    color: var(--gray-300);
+    font-weight: 400;
 }
 
 .home-container .join-us-wrapper .left .header {
-    font-family: "Raleway", sans-serif !important;
     font-weight: bolder;
     font-size: 2.2rem;
     font-weight: bold;
@@ -234,8 +217,6 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 30px;
-    /* height: 80vh; */
-    font-family: "Open-Sans", sans-serif;
     gap: 40px;
 }
 
@@ -248,12 +229,10 @@ body {
 }
 
 .home-container .reach-us-wrapper .left .header {
-    font-family: "Raleway", sans-serif !important;
     color: var(--orange);
     font-size: 4.1rem;
     font-weight: bold;
     letter-spacing: 2px;
-    font-family: "Open-Sans", sans-serif;
 }
 
 .home-container .reach-us-wrapper .left .description {
@@ -271,7 +250,6 @@ body {
     color: blue;
     text-decoration: underline;
     font-weight: 200;
-    font-family: "Open-Sans", sans-serif;
 }
 .home-container .reach-us-wrapper .left .contact .icon {
     margin-right: 5px;
@@ -287,7 +265,6 @@ body {
     display: flex;
     gap: 4px;
     flex-direction: column;
-    font-family: "Open-Sans", sans-serif;
     width: 80%;
 }
 .home-container .reach-us-wrapper .right form input,
@@ -295,7 +272,6 @@ textarea {
     padding: 15px 10px;
     border-radius: 5px;
     border: 2px solid rgb(162, 161, 161);
-    font-family: "Open-Sans", sans-serif;
 }
 .home-container .reach-us-wrapper .right form textarea {
     resize: vertical;
@@ -437,7 +413,6 @@ textarea::placeholder {
 .ClientLogo {
     text-align: center;
     font-size: 3rem;
-    font-family: "Raleway", sans-serif;
     font-weight: bold;
     color: var(--orange);
     margin-top: 40px;
@@ -449,7 +424,6 @@ textarea::placeholder {
 .Textcontent {
     text-align: center;
     color: #ffffff;
-    font-family: "Raleway", sans-serif;
     letter-spacing: 15px;
     /* padding-top:200px; */
 }
@@ -457,7 +431,6 @@ textarea::placeholder {
     color: hsl(0, 0%, 28%);
     font-size: 50px;
     font-weight: bold !important;
-    font-family: monospace;
     letter-spacing: 7px !important;
     cursor: pointer;
     text-transform: uppercase;
@@ -521,12 +494,11 @@ textarea::placeholder {
     top: 50%;
     left: 200px;
     transform: translateY(-50%);
-    font-family: "Raleway", sans-serif;
     font-weight: bold;
     color: white;
     position: absolute;
-    left: 50%; /* Adjust based on logo placement */
-    top: 35%; /* Adjust vertical positioning */
+    left: 50%; 
+    top: 35%;
     z-index: 10;
     text-align: left;
 }
@@ -570,7 +542,6 @@ textarea::placeholder {
 .retryBut {
     cursor: pointer;
     padding: 10px 20px;
-    /* width: 10%; */
     background-color: var(--orange);
     font-weight: bold;
     letter-spacing: 1px;

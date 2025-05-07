@@ -2,12 +2,11 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-weight: 600;
+  font-weight: 400;
   border-radius: 2rem;
   cursor: pointer;
   transition: all 0.2s ease;
   border: 2px solid transparent;
-  
 }
 .btn-icon {
   display: flex;

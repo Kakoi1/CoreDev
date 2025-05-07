@@ -1,6 +1,5 @@
 
 .contactWrap {
-    font-family: 'Arial', sans-serif;
     max-width: 1300px;
     margin: 0 auto;
     padding: 0px 20px 20px 20px;
@@ -100,10 +99,16 @@
         padding: 15px;
 }
 
+.contact-item .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+}
 .contact-item .contact-details h4 {
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--black);
+    margin:0;
 }
 
 .contact-item .contact-details a {
@@ -127,7 +132,8 @@
 }
 .quote {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
+    font-weight: 400;
     margin-bottom: 4rem;
     color: var(--gray-500);
 }

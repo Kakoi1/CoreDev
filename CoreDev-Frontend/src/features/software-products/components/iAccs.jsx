@@ -37,7 +37,6 @@ const iAccs = () => {
                             className="Soft-item"
                         >
                             <div className="head">
-                                {/* <RiCodepenFill className="icon-head" /> */}
                                 <h4>{software.title}</h4>
                             </div>
                             <ul>
