@@ -2,9 +2,10 @@ import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 import { AnimatePresence, motion } from "framer-motion";
 import IAccs from "./iAccs";
 import { useState } from "react";
-import "../styles/Software.css"
+import "../styles/Software.css";
 import { softwareProducts } from "../data/softwareData";
 import { RiCodepenFill } from "react-icons/ri";
+import { Button } from "@components/ui";
 import ProductInquiryForm from "../../shared/inquiry-form/components/InquiryForm";
 
 export const SoftwareList = () => {
@@ -31,7 +32,6 @@ export const SoftwareList = () => {
     return (
         <div className="SoftwareContainer">
             <motion.div
-                
                 viewport={{ once: true }}
                 transition={{
                     type: "spring",
@@ -63,24 +63,19 @@ export const SoftwareList = () => {
                             and banking system designed for bank and cooperative
                             needs for more than 3 decades!
                         </p>
-                        <button
-                            className="IacWrap-btn"
+                        <Button
+                            text={showFeature ? "Collapse" : "Explore More"}
+                            variant="full"
+                            size="md"
+                            icon={
+                                showFeature ? (
+                                    <IoIosArrowUp />
+                                ) : (
+                                    <IoIosArrowDown />
+                                )
+                            }
                             onClick={() => setShowFeature(!showFeature)}
-                            aria-expanded={showFeature}
-                            aria-controls="iaccs-features"
-                        >
-                            {showFeature ? (
-                                <>
-                                    Collapse
-                                    <IoIosArrowUp className="icon" />
-                                </>
-                            ) : (
-                                <>
-                                    Explore More
-                                    <IoIosArrowDown className="icon" />
-                                </>
-                            )}
-                        </button>
+                        />
                         <AnimatePresence>
                             {showFeature && <IAccs />}
                         </AnimatePresence>
@@ -125,92 +120,83 @@ export const SoftwareList = () => {
                                             <h4>{secondItem.title}</h4>
                                             <p>{secondItem.description}</p>
                                         </div>
+                                        <AnimatePresence>
+                                            {expandedProduct ===
+                                                globalIndex && (
+                                                <div
+                                                    className="Iac-wrap"
+                                                    id={`feature-${globalIndex}`}
+                                                >
+                                                    <motion.div
+                                                        layout
+                                                        className="feature-wrap"
+                                                        initial={{
+                                                            opacity: 0,
+                                                        }}
+                                                        animate={{
+                                                            opacity: 1,
+                                                        }}
+                                                        exit={{
+                                                            opacity: 0,
+                                                        }}
+                                                        transition={{
+                                                            duration: 0.3,
+                                                        }}
+                                                    >
+                                                        <div className="feature-header">
+                                                            <RiCodepenFill className="icon" />
+                                                            <h4>
+                                                                General Features
+                                                            </h4>
+                                                        </div>
+                                                        <ul>
+                                                            {secondItem.feature.map(
+                                                                (
+                                                                    itemFeature,
+                                                                    idx
+                                                                ) => (
+                                                                    <li
+                                                                        key={
+                                                                            idx
+                                                                        }
+                                                                    >
+                                                                        {
+                                                                            itemFeature
+                                                                        }
+                                                                    </li>
+                                                                )
+                                                            )}
+                                                        </ul>
+                                                    </motion.div>
+                                                </div>
+                                            )}
+                                        </AnimatePresence>
                                         <div className="button-wrapper">
-                                            <button
-                                                className="IacWrap-btn"
+                                            <Button
+                                                text={
+                                                    showFeature
+                                                        ? "Collapse"
+                                                        : "Explore More"
+                                                }
+                                                variant="full"
+                                                size="sm"
+                                                icon={
+                                                    expandedProduct ===
+                                                    globalIndex ? (
+                                                        <IoIosArrowUp />
+                                                    ) : (
+                                                        <IoIosArrowDown />
+                                                    )
+                                                }
                                                 onClick={() =>
                                                     toggleDetails(globalIndex)
                                                 }
-                                                aria-expanded={
-                                                    expandedProduct ===
-                                                    globalIndex
-                                                }
-                                                aria-controls={`feature-${globalIndex}`}
-                                            >
-                                                {expandedProduct ===
-                                                globalIndex ? (
-                                                    <>
-                                                        Collapse
-                                                        <IoIosArrowUp className="icon" />
-                                                    </>
-                                                ) : (
-                                                    <>
-                                                        Learn more
-                                                        <IoIosArrowDown className="icon" />
-                                                    </>
-                                                )}
-                                            </button>
-                                            <AnimatePresence>
-                                                {expandedProduct ===
-                                                    globalIndex && (
-                                                    <div
-                                                        className="Iac-wrap"
-                                                        id={`feature-${globalIndex}`}
-                                                    >
-                                                        <motion.div
-                                                            layout
-                                                            className="feature-wrap"
-                                                            initial={{
-                                                                opacity: 0,
-                                                            }}
-                                                            animate={{
-                                                                opacity: 1,
-                                                            }}
-                                                            exit={{
-                                                                opacity: 0,
-                                                            }}
-                                                            transition={{
-                                                                duration: 0.3,
-                                                            }}
-                                                        >
-                                                            <div className="feature-header">
-                                                                <RiCodepenFill className="icon" />
-                                                                <h4>
-                                                                    General
-                                                                    Features
-                                                                </h4>
-                                                            </div>
-                                                            <ul>
-                                                                {secondItem.feature.map(
-                                                                    (
-                                                                        itemFeature,
-                                                                        idx
-                                                                    ) => (
-                                                                        <li
-                                                                            key={
-                                                                                idx
-                                                                            }
-                                                                        >
-                                                                            {
-                                                                                itemFeature
-                                                                            }
-                                                                        </li>
-                                                                    )
-                                                                )}
-                                                            </ul>
-                                                            <ProductInquiryForm
-                                                                productName={
-                                                                    secondItem.title
-                                                                }
-                                                                picUrl={
-                                                                    secondItem.picUrl
-                                                                }
-                                                                type="Software"
-                                                            />
-                                                        </motion.div>
-                                                    </div>
-                                                )}
-                                            </AnimatePresence>
+                                            />
+                                            <ProductInquiryForm
+                                                productName={secondItem.title}
+                                                picUrl={secondItem.picUrl}
+                                                type="Software"
+                                            />
                                         </div>
                                     </div>
                                 </div>
@@ -252,92 +238,83 @@ export const SoftwareList = () => {
                                             <h4>{secondItem.title}</h4>
                                             <p>{secondItem.description}</p>
                                         </div>
+                                        <AnimatePresence>
+                                            {expandedProduct ===
+                                                globalIndex && (
+                                                <div
+                                                    className="Iac-wrap"
+                                                    id={`feature-${globalIndex}`}
+                                                >
+                                                    <motion.div
+                                                        layout
+                                                        className="feature-wrap"
+                                                        initial={{
+                                                            opacity: 0,
+                                                        }}
+                                                        animate={{
+                                                            opacity: 1,
+                                                        }}
+                                                        exit={{
+                                                            opacity: 0,
+                                                        }}
+                                                        transition={{
+                                                            duration: 0.3,
+                                                        }}
+                                                    >
+                                                        <div className="feature-header">
+                                                            <RiCodepenFill className="icon" />
+                                                            <h4>
+                                                                General Features
+                                                            </h4>
+                                                        </div>
+                                                        <ul>
+                                                            {secondItem.feature.map(
+                                                                (
+                                                                    itemFeature,
+                                                                    idx
+                                                                ) => (
+                                                                    <li
+                                                                        key={
+                                                                            idx
+                                                                        }
+                                                                    >
+                                                                        {
+                                                                            itemFeature
+                                                                        }
+                                                                    </li>
+                                                                )
+                                                            )}
+                                                        </ul>
+                                                    </motion.div>
+                                                </div>
+                                            )}
+                                        </AnimatePresence>
                                         <div className="button-wrapper">
-                                            <button
-                                                className="IacWrap-btn"
+                                            <Button
+                                                text={
+                                                    showFeature
+                                                        ? "Collapse"
+                                                        : "Explore More"
+                                                }
+                                                variant="full"
+                                                size="sm"
+                                                icon={
+                                                    expandedProduct ===
+                                                    globalIndex ? (
+                                                        <IoIosArrowUp />
+                                                    ) : (
+                                                        <IoIosArrowDown />
+                                                    )
+                                                }
                                                 onClick={() =>
                                                     toggleDetails(globalIndex)
                                                 }
-                                                aria-expanded={
-                                                    expandedProduct ===
-                                                    globalIndex
-                                                }
-                                                aria-controls={`feature-${globalIndex}`}
-                                            >
-                                                {expandedProduct ===
-                                                globalIndex ? (
-                                                    <>
-                                                        Collapse
-                                                        <IoIosArrowUp className="icon" />
-                                                    </>
-                                                ) : (
-                                                    <>
-                                                        Learn more
-                                                        <IoIosArrowDown className="icon" />
-                                                    </>
-                                                )}
-                                            </button>
-                                            <AnimatePresence>
-                                                {expandedProduct ===
-                                                    globalIndex && (
-                                                    <div
-                                                        className="Iac-wrap"
-                                                        id={`feature-${globalIndex}`}
-                                                    >
-                                                        <motion.div
-                                                            layout
-                                                            className="feature-wrap"
-                                                            initial={{
-                                                                opacity: 0,
-                                                            }}
-                                                            animate={{
-                                                                opacity: 1,
-                                                            }}
-                                                            exit={{
-                                                                opacity: 0,
-                                                            }}
-                                                            transition={{
-                                                                duration: 0.3,
-                                                            }}
-                                                        >
-                                                            <div className="feature-header">
-                                                                <RiCodepenFill className="icon" />
-                                                                <h4>
-                                                                    General
-                                                                    Features
-                                                                </h4>
-                                                            </div>
-                                                            <ul>
-                                                                {secondItem.feature.map(
-                                                                    (
-                                                                        itemFeature,
-                                                                        idx
-                                                                    ) => (
-                                                                        <li
-                                                                            key={
-                                                                                idx
-                                                                            }
-                                                                        >
-                                                                            {
-                                                                                itemFeature
-                                                                            }
-                                                                        </li>
-                                                                    )
-                                                                )}
-                                                            </ul>
-                                                            <ProductInquiryForm
-                                                                productName={
-                                                                    secondItem.title
-                                                                }
-                                                                picUrl={
-                                                                    secondItem.picUrl
-                                                                }
-                                                                type="Software"
-                                                            />
-                                                        </motion.div>
-                                                    </div>
-                                                )}
-                                            </AnimatePresence>
+                                            />
+                                            <ProductInquiryForm
+                                                productName={secondItem.title}
+                                                picUrl={secondItem.picUrl}
+                                                type="Software"
+                                            />
                                         </div>
                                     </div>
                                 </div>
@@ -349,4 +326,3 @@ export const SoftwareList = () => {
         </div>
     );
 };
-

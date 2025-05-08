@@ -5,7 +5,8 @@ import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 import { AnimatePresence, motion } from "framer-motion";
 import ProductInquiryForm from "../../shared/inquiry-form/components/InquiryForm";
 import { getHardwareProducts } from "../services/HardwareService";
-import { ComponentLoading } from "@components/ui";
+import { ComponentLoading, Button } from "@components/ui";
+
 export default function HardwareProduct() {
     const { category } = useParams();
     const containerRef = useRef(null);
@@ -101,27 +102,10 @@ export default function HardwareProduct() {
                             />
                             <h3 className="product-name">{item.name}</h3>
 
-                            <button
-                                className="see-details-btn"
-                                onClick={() => toggleDetails(index)}
-                            >
-                                {ShowFeature[index] ? (
-                                    <>
-                                        Hide Details
-                                        <IoIosArrowUp className="icon " />
-                                    </>
-                                ) : (
-                                    <>
-                                        Show Details
-                                        <IoIosArrowDown className="icon " />
-                                    </>
-                                )}
-                            </button>
                             {ShowFeature[index] && (
                                 <AnimatePresence>
                                     <motion.div
                                         layout
-                                        //  className="feature-wrap"
                                         initial={{ opacity: 0 }}
                                         animate={{ opacity: 1 }}
                                         exit={{ opacity: 0 }}
@@ -129,14 +113,34 @@ export default function HardwareProduct() {
                                     >
                                         <p>{item.description}</p>
                                         <br />
-                                        <ProductInquiryForm
-                                            productName={item.name}
-                                            picUrl={`../../src/assets/hardwareImage/${item.image}`}
-                                            type={"Hardware"}
-                                        />
                                     </motion.div>
                                 </AnimatePresence>
                             )}
+                            <div className="card-footer">
+                                <Button
+                                    text={
+                                        ShowFeature[index]
+                                            ? "Hide Details"
+                                            : "Show Details"
+                                    }
+                                    icon={
+                                        ShowFeature[index] ? (
+                                            <IoIosArrowUp className="icon " />
+                                        ) : (
+                                            <IoIosArrowDown className="icon " />
+                                        )
+                                    }
+                                    onClick={() => toggleDetails(index)}
+                                    variant="full"
+                                    size="sm"
+                                />
+
+                                <ProductInquiryForm
+                                    productName={item.name}
+                                    picUrl={`../../src/assets/hardwareImage/${item.image}`}
+                                    type={"Hardware"}
+                                />
+                            </div>
                         </motion.div>
                     ))
                 ) : (

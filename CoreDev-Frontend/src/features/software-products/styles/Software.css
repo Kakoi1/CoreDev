@@ -57,6 +57,8 @@
 /* Button Wrapper */
 .button-wrapper {
     position: relative;
+    display: flex;
+    gap: 1rem;
 }
 
 /* Expanded Content */
@@ -202,7 +204,6 @@
 }
 
 .SoftwareContainer svg {
-    color: var(--orange);
     font-size: 30px;
 }
 

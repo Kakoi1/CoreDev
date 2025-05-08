@@ -12,6 +12,11 @@
   display: flex;
 }
 
+.btn-icon > svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
 .btn-icon.left {
   margin-right: 0.25rem;
 }
