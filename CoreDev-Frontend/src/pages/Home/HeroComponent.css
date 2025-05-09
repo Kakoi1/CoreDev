@@ -7,7 +7,7 @@
     position: absolute;
     inset: 0;
     z-index: -2;
-    background-image: url("../../../public/software-background.jpg");
+    background-image: url("../../../public/software-background.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -30,10 +30,12 @@
     inset: 0;
     background: radial-gradient(
         circle at 50% 40%,
-        rgba(244, 124, 4, 0.1) 30%,
-        rgba(255, 255, 255, 0) 100%
+        rgba(244, 124, 4, 0.1) 1%,
+        rgba(255, 255, 255, 0) 30%
     );
     height: 100vh;
+    width: 100vw;
+    margin-left: var(--fit-screen);
     z-index: -1;
 }
 
