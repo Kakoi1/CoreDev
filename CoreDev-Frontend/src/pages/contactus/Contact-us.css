@@ -1,8 +1,7 @@
-
 .contactWrap {
     max-width: 1300px;
     margin: 0 auto;
-    padding: 0px 20px 20px 20px;
+    padding: 0 20px 20px 20px;
 }
 
 .contact-container {
@@ -29,42 +28,13 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.icon1 svg {
-    font-size: 24px;
-    color: #ff6a00;
-    /* margin-bottom: -15px; */
-}
-
-.contact-details h4 {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.contact-details p {
-    font-size: 14px;
-    color: #ff6a00;
-    line-height: 1.6;
-    margin: 5px 0;
-}
-
-.contact-details a {
-    color: #ff6a00;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.contact-details a:hover {
-    color: #e65c00;
-}
-
 .extra-contact {
     display: flex;
-
     gap: 20px;
     margin-top: 20px;
 }
-.extra-contact .contact-item{
+
+.extra-contact .contact-item {
     width: 50%;
 }
 
@@ -81,10 +51,6 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
-/* Apply animation to the SVG inside arrowIcon when active */
-
-
 .contact-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
@@ -92,35 +58,49 @@
 
 .contact-item .icon1 {
     display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: var(--orange-100);
-        border-radius: 100%;
-        padding: 15px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--orange-100);
+    border-radius: 100%;
+    padding: 15px;
+}
+
+.icon1 svg {
+    font-size: 24px;
+    color: #ff6a00;
 }
 
 .contact-item .contact-details {
     display: flex;
     flex-direction: column;
-    gap: .75rem;
+    gap: 0.75rem;
 }
-.contact-item .contact-details h4 {
+
+.contact-details h4 {
     font-size: 1rem;
     font-weight: 600;
     color: var(--black);
-    margin:0;
+    margin: 0;
 }
 
-.contact-item .contact-details a {
+.contact-details a {
     font-size: 14px;
     color: #ff6a00;
     text-decoration: none;
     transition: color 0.3s ease;
+    word-break: break-all; /* Ensures long URLs/emails wrap */
 }
 
-.contact-item .contact-details a:hover {
+.contact-details a:hover {
     color: #e65c00;
     text-decoration: underline;
+}
+
+.contact-details p {
+    font-size: 14px;
+    color: #ff6a00;
+    line-height: 1.6;
+    margin: 5px 0;
 }
 
 .contactCont h2 {
@@ -130,6 +110,7 @@
     margin-top: 6rem;
     text-align: center;
 }
+
 .quote {
     text-align: center;
     font-size: 1.25rem;
@@ -146,7 +127,7 @@
     padding: 20px;
     background-color: #f8f9fa;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     max-width: 1300px;
     margin: auto;
     font-family: 'Arial', sans-serif;
@@ -170,12 +151,11 @@
     font-size: 16px;
     font-weight: bold;
     border: none;
-    border-radius: 8px 8px 0px 0px;
+    border-radius: 8px 8px 0 0;
     cursor: pointer;
     transition: all 0.3s ease;
-    background:
-        linear-gradient(to right, rgba(100, 200, 200, 0), rgba(100, 200, 200, 0)),
-        linear-gradient(to right, rgb(255, 128, 0), rgb(240, 108, 0), rgb(255, 115, 0));
+    background: linear-gradient(to right, rgba(100, 200, 200, 0), rgba(100, 200, 200, 0)),
+                linear-gradient(to right, rgb(255, 128, 0), rgb(240, 108, 0), rgb(255, 115, 0));
     background-size: 100% 3px, 0 3px;
     background-position: 0 0, 0 0;
     background-repeat: no-repeat;
@@ -204,7 +184,7 @@
 #map {
     border: solid;
     color: #ff6a00;
-    border-radius: 0px 8px 8px 0px;
+    border-radius: 0 8px 8px 0;
     height: 600px;
     width: 100%;
     position: relative;
@@ -285,7 +265,7 @@
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     border: solid 1px var(--orange);
-    border-radius: 8px 0px 0px 8px;
+    border-radius: 8px 0 0 8px;
     cursor: pointer;
     text-align: left;
 }
@@ -306,6 +286,7 @@
     top: 0 !important;
     animation: growShrink 1s ease-in-out infinite;
 }
+
 @keyframes growShrink {
     0% {
         transform: scale(1);
@@ -317,6 +298,7 @@
         transform: scale(0.8);
     }
 }
+
 .side-tab-details,
 .tab-details {
     font-size: 12px;
@@ -387,6 +369,10 @@
         flex: 1 1 100%;
     }
 
+    .extra-contact {
+        flex-wrap: wrap;
+    }
+
     .side-tab {
         display: none;
     }
@@ -406,11 +392,8 @@
         top: -480px !important;
         width: 80%;
         max-width: none;
-   
     }
-    .extra-contact{
-        flex-wrap: wrap; 
-    }
+
     .contDetails p {
         font-size: 15px;
     }

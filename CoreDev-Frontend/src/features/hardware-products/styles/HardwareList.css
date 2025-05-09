@@ -5,9 +5,11 @@
 }
 
 .HardwareContainer .HardWrapper {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 2rem;
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
 }
 
 .HardwareContainer .HardWrapper .hardware img {
@@ -36,10 +38,13 @@ gap: 2rem;
 
 @media screen and (max-width: 768px) {
   .hardware {
-      width: 100% !important;
+      width: auto !important;
       gap: 10px;
       display: flex;
       flex-direction: row-reverse !important;
+  }
+  .HardWrapper{
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
   }
   .hardware img {
       width: 180px !important;

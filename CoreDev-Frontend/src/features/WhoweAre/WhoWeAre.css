@@ -449,6 +449,17 @@
     gap: 1rem;
 }
 
+@media (max-width: 768px) {
+    .image-wrapper > img{
+        width: 100%;
+        height: auto !important;
+        max-width: 300px;
+    }
+    .stats-grid {
+        grid-template-columns: none;
+    }
+}
+
 /* Responsive Styles */
 @media (min-width: 640px) {
     .team-grid {
@@ -490,6 +501,7 @@
     .team-grid {
         grid-template-columns: repeat(3, 1fr);
     }
+
 }
 
 @media (min-width: 1280px) {

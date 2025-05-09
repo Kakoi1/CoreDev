@@ -21,7 +21,7 @@ const MainLayout = () => {
         setIsSplit(false);
         const timer = setTimeout(() => {
             setIsLoading(false);
-            backToTop(); // Hide loader
+            // backToTop();
             setTimeout(() => {
                 setIsSplit(true); // Start split animation
             }, 500);

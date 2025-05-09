@@ -15,7 +15,7 @@ class ClientController extends Controller
     public function index($type)
     {
         if ($type == 'All') {
-            $clients = Imaged::paginate(12);
+            $clients = Imaged::paginate(120);
             $allClient = Imaged::all();
         } else {
             $clients = Imaged::where('category', $type)->paginate(12);
@@ -60,7 +60,7 @@ class ClientController extends Controller
             'address' => $validated['address']
         ];
 
-        Mail::to(env('MAIL_FROM_ADDRESS'))->send(new CoreDevEmail($data));
+        Mail::to(env( $validated['type'] === 'Software' ? 'MAIL_SOFTWARE_ADDRESS':'MAIL_HARDWARE_ADDRESS'))->send(new CoreDevEmail($data));
 
 
         // You can return a success response or something else here

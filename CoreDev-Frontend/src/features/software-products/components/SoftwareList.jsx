@@ -63,6 +63,11 @@ export const SoftwareList = () => {
                             and banking system designed for bank and cooperative
                             needs for more than 3 decades!
                         </p>
+                      
+                        <AnimatePresence>
+                            {showFeature && <IAccs />}
+                        </AnimatePresence>
+                        <br />
                         <Button
                             text={showFeature ? "Collapse" : "Explore More"}
                             variant="full"
@@ -76,9 +81,6 @@ export const SoftwareList = () => {
                             }
                             onClick={() => setShowFeature(!showFeature)}
                         />
-                        <AnimatePresence>
-                            {showFeature && <IAccs />}
-                        </AnimatePresence>
                     </div>
                 </div>
             </motion.div>

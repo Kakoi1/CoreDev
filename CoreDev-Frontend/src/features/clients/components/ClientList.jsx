@@ -126,7 +126,7 @@ export const ClientsList = () => {
                         ))}
                     </div>
 
-                    <div className="pagination" onClick={backToTop}>
+                    {/* <div className="pagination" onClick={backToTop}>
                         <button
                             type="button"
                             onClick={() => handlePageChange(currentPage - 1)}
@@ -141,7 +141,7 @@ export const ClientsList = () => {
                         >
                             <MdOutlineKeyboardArrowRight className="arrow-icon" />
                         </button>
-                    </div>
+                    </div> */}
                 </>
             )}
         </div>

@@ -22,19 +22,27 @@ function About_us() {
     <div className="about-us-container">
       <section id="Who-We-are" className="about-section">
         <WhoWeAre />
+        <br />
         <hr />
+        <br />
       </section>
       <section id="Our-Teams" className="about-section">
         <OurTeam />
+        <br />
         <hr />
+        <br />
       </section>
       <section id="Government-Regulation" className="about-section">
         <Regulation />
+        <br />
         <hr />
+        <br />
       </section>
       <section id="Milestone" className="about-section">
         <Milestone />
+        <br />
         <hr />
+        <br />
       </section>
     </div>
   );

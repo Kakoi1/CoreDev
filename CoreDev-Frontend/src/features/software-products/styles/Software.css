@@ -211,11 +211,11 @@
 @media screen and (max-width: 768px) {
     .divWrap {
         display: block;
-        width: 100%;
+        /* width: 100%; */
     }
 
     .Soft-item {
-        width: 80%;
+        /* width: 80%; */
         margin: 0 auto;
         margin-bottom: 20px;
     }

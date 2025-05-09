@@ -118,11 +118,11 @@
 
   .divWrap {
     display: block;
-    margin: 2rem;
+    margin-bottom: 1rem;
   }
 
   .Soft-item {
-    width: 100%;
+    /* width: 100%; */
     margin: 2rem 0;
   }
 
@@ -132,21 +132,21 @@
 @media only screen and (min-width: 768px){
   .divWrap {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    /* grid-template-columns: repeat(2, 1fr); */
   }
 }
 
 @media only screen and (min-width: 992px) {
   .divWrap {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
 
 @media only screen and (max-width: 600px) {
   .wrapper > .list-1{
     display: grid;
-    grid-template-columns: repeat(1fr, 2);
+    /* grid-template-columns: repeat(1fr, 2); */
   }
   .feature {
     display:block;
@@ -154,6 +154,9 @@
 
   .Soft-item {
     margin: 2rem 0;
+  }
+  .IacWrap{
+    padding: 0;
   }
   
 }

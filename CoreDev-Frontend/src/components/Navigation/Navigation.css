@@ -18,7 +18,10 @@
     border-radius: 8px;
     padding: 10px;
 }
-
+.brands span{
+    color: white;
+    font-weight: 500;
+}
 .navIcon {
     display: flex;
     padding: 5px 10px 10px 0px;
