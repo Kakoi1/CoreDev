@@ -9,7 +9,7 @@ export const OurStory = () => {
             <div className="card">
                 <div className="card-header">
                     <div>
-                        <h2>Our Story</h2>
+                        <h3>Our Story</h3>
                         <p>
                             <em>
                                 &apos;&apos; Innovating your Future &apos;&apos;

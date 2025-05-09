@@ -4,7 +4,7 @@ import WhoWeAre from '@features/WhoweAre/WhoWeAre';
 import OurTeam from '@features/OurTeam/OurTeam';
 import Regulation from '@features/regulation/Regulation';
 import Milestone from '@features/Milestone/MileStone';
-// import './About-us.css';
+import './About-us.css';
 
 function About_us() {
   const { hash } = useLocation();

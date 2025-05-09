@@ -14,14 +14,19 @@ const MainLayout = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [isSplit, setIsSplit] = useState(false);
     const location = useLocation(); // Detect page change
-
     useEffect(() => {
         // Trigger loader on route change
         setIsLoading(true);
         setIsSplit(false);
+
         const timer = setTimeout(() => {
             setIsLoading(false);
-            // backToTop();
+
+            // Only call backToTop if the current route is NOT /About_us
+            if (location.pathname !== '/About_us') {
+                backToTop();
+            }
+
             setTimeout(() => {
                 setIsSplit(true); // Start split animation
             }, 500);

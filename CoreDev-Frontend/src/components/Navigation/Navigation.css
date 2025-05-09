@@ -264,7 +264,7 @@
 @media (max-width: 639px) {
 
     .navigation-container{
-        width: 100vw;
+        /* width: 100vw; */
     }
 }
 

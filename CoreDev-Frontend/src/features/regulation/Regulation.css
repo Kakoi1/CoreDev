@@ -49,6 +49,7 @@
     font-weight: 400;
     color: #777777;
     margin: 0;
+    word-break: break-word;
 }
 .dark-mode .Regwrapper {
     background-color: var(--black);
@@ -57,4 +58,13 @@
 }
 .dark-mode .Regwrapper h3 {
     color: var(--gray);
+}
+@media (max-width: 768px) {
+    .content h3 {
+        font-size: 15px;
+    }
+    .content h3 svg {
+        font-size: 18px;
+        margin-right: 5px;
+    }
 }
