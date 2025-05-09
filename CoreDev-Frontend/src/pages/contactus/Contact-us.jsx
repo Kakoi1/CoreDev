@@ -1,10 +1,17 @@
 import { useEffect, useState } from "react";
 import {
-    BiMapAlt,
-    BiSolidDirectionRight,
-    BiSolidRightArrow,
-} from "react-icons/bi";
-import { LuMail, LuFacebook } from "react-icons/lu";
+    MdKeyboardArrowRight,
+    MdKeyboardArrowDown,
+    MdClose,
+} from "react-icons/md";
+import { IoIosSend } from "react-icons/io";
+import {
+    LuMail,
+    LuFacebook,
+    LuSquareArrowOutUpRight,
+    LuPhone,
+    LuMapPin,
+} from "react-icons/lu";
 import { motion } from "framer-motion";
 import "./Contact-us.css";
 
@@ -42,43 +49,46 @@ const ContactInfo = () => {
     );
 };
 
+const locations = [
+    {
+        id: 3,
+        cid: "18355226061558763366",
+        shortAddress: "Manila",
+        address:
+            "4th Floor DACCO MPC Building #40 Anabu Road Anabu II-B City of Imus, Cavite",
+        branch: "Luzon Branch",
+        name: "coreDev Solutions Inc. - Cavite",
+        tel: "(032) - 328-2694 GLOBE | (032) - 234-5954 PLDT",
+        position: { lat: 14.385910117402625, lng: 120.94084551047905 },
+    },
+    {
+        id: 1,
+        cid: "9153839079113836537",
+        shortAddress: "Cebu City",
+        address: "96 J. Alcantara Street, Brgy. Sambag 1, Cebu City",
+        branch: "Visayas Branch - Main",
+        name: "CoreDev Solutions Inc. - Main",
+        tel: "(082) - 233 9306",
+        position: { lat: 10.298937561572044, lng: 123.8892060572453 },
+    },
+    {
+        id: 2,
+        cid: "17502278350547099942",
+        shortAddress: "Davao City",
+        address:
+            "11B, Cherry Tree Street, Palm Drive, Buhangin Davao City, Davao Del Sur",
+        branch: "Mindanao Branch",
+        name: "coreDev Solutions Inc. - Davao",
+        tel: "(046) - 501 6596",
+        position: { lat: 7.108080517350672, lng: 125.61502033701797 },
+    },
+];
+
 const Contact = () => {
     const [selectedMarker, setSelectedMarker] = useState(null);
     const [address, setAddress] = useState("");
     const [showDetails, setShowDetails] = useState(true);
     const [map, setMap] = useState(null);
-
-    const locations = [
-        {
-            id: 3,
-            cid: "18355226061558763366",
-            address:
-                "4th Floor DACCO MPC Building #40 Anabu Road Anabu II-B City of Imus, Cavite",
-            otherNmae: "Luzon Branch",
-            name: "coreDev Solutions Inc. - Cavite",
-            tel: "(032) - 328-2694 GLOBE | (032) - 234-5954 PLDT",
-            position: { lat: 14.385910117402625, lng: 120.94084551047905 },
-        },
-        {
-            id: 1,
-            cid: "9153839079113836537",
-            address: "96 J. Alcantara Street, Brgy. Sambag 1, Cebu City",
-            otherNmae: "Visayas Branch - Main",
-            name: "CoreDev Solutions Inc. - Main",
-            tel: "(082) - 233 9306",
-            position: { lat: 10.298937561572044, lng: 123.8892060572453 },
-        },
-        {
-            id: 2,
-            cid: "17502278350547099942",
-            address:
-                "11B, Cherry Tree Street, Palm Drive, Buhangin Davao City, Davao Del Sur",
-            otherNmae: "Mindanao Branch",
-            name: "coreDev Solutions Inc. - Davao",
-            tel: "(046) - 501 6596",
-            position: { lat: 7.108080517350672, lng: 125.61502033701797 },
-        },
-    ];
 
     const handleCloseDetails = () => {
         setShowDetails(false); // Just hide details, don't change selection
@@ -162,8 +172,8 @@ const Contact = () => {
                         text: location.name,
                         color: "black",
                         fontWeight: "bold",
-                        fontSize: "12px", // Adjust size
-                        className: "custom-label", // Add CSS class
+                        fontSize: "12px", 
+                        className: "custom-label",
                     },
                     title: location.name,
                 });
@@ -196,14 +206,17 @@ const Contact = () => {
                 <span>Get in </span> Touch with us
             </h2>
             <p className="quote">
-                We're here to help and answer any questions you might have. We
-                look forward to hearing from you.
+                We&apos;re here to help and answer any questions you might have.
+                We look forward to hearing from you.
             </p>
             <ContactInfo />
-    
+
             <h2>
                 <span>Where</span> To Find Us.
             </h2>
+            <p className="location-description">
+                Find the coreDev Solutions Branch nearest to you
+            </p>
             <div className="mapCont">
                 <div
                     className="tab-container"
@@ -229,114 +242,92 @@ const Contact = () => {
                         >
                             {location.otherNmae}
                             {/* Address and Tel for tab-container (mobile view, hidden by CSS on larger screens) */}
-                  
                         </motion.button>
                     ))}
                 </div>
                 {/* Vertical Tab Navigation */}
                 <div className="side-tab">
-                    {locations.map((location, index) => (
-                        <div key={index} className="arrowIcon">
-                            {selectedMarker?.id === location.id ? (
-                                <BiSolidRightArrow />
-                            ) : (
-                                ""
-                            )}
-                            <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.9 }}
-                                transition={{ duration: 0.3 }}
-                                id={`tab${index + 1}`}
-                                name="tab"
-                                className={
-                                    "side-button" +
-                                    (selectedMarker?.id === location.id
+                    <div className="side-tab-head">
+                        <h2>Our Locations</h2>
+                        <p>Select a branch to view details</p>
+                    </div>
+                    <div className="tabs">
+                        {locations.map((location, index) => (
+                            <div
+                                key={index}
+                                className={`tab ${
+                                    selectedMarker?.id === location.id
                                         ? " active"
-                                        : "")
-                                }
+                                        : ""
+                                }`}
                                 onClick={() => handleButtonClick(location)}
                             >
-                                {location.otherNmae}
-                                {/* Address and Tel for side-tab (desktop view) */}
-                                <div className="side-tab-details">
-                                    <p>{location.address}</p>
-                                    <p>{location.tel}</p>
+                                <div className="icon-location">
+                                    <LuMapPin />
                                 </div>
-                            </motion.button>
-                        </div>
-                    ))}
-                </div>
-    
-                <div className="mapBack">
-                    <div
-                        id="map"
-                        style={{ height: "600px", width: "100%" }}
-                    ></div>
-    
-                    {showDetails && selectedMarker && (
-                        <div
-                            className="contDetails"
-                            style={{
-                                position: "relative",
-                                top: "-590px",
-                                left: "20px",
-                                padding: "20px",
-                                borderRadius: "12px",
-                                boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
-                                zIndex: 0,
-                                width: "40%",
-                                maxWidth: "500px",
-                            }}
-                        >
-                            <h3>{selectedMarker.name}</h3>
-                            <hr />
-                            {/* Address and Tel for contDetails (mobile view only) */}
-                            <div className="contDetails-info">
-                                <p>
-                                    Address:{" "}
-                                    <strong>{selectedMarker.address}</strong>
-                                </p>
-                                <p>
-                                    Tel No: <strong>{selectedMarker.tel}</strong>
-                                </p>
+                                <div className="tab-text">
+                                    <h4>{location.branch}</h4>
+                                    <p>{location.shortAddress}</p>
+                                </div>
+                                <div className="icon-arrow">
+                                    {selectedMarker?.id === location.id ? (
+                                        <MdKeyboardArrowRight />
+                                    ) : (
+                                        <MdKeyboardArrowDown />
+                                    )}
+                                </div>
                             </div>
-                            <a
-                                href={`https://www.google.com/maps/dir/?api=1&destination=${selectedMarker.name}&travelmode=driving`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={{
-                                    display: "block",
-                                    margin: "12px 0",
-                                    color: "#007BFF",
-                                }}
-                            >
-                                Get Directions <BiSolidDirectionRight />
-                            </a>
-                            <a
-                                href={`https://www.google.com/maps?ll=${selectedMarker.position.lat},${selectedMarker.position.lng}&cid=${selectedMarker.cid}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={{
-                                    display: "block",
-                                    margin: "12px 0",
-                                    color: "#007BFF",
-                                }}
-                            >
-                                View Larger Map <BiMapAlt />
-                            </a>
-                            <button
-                                className="close-button"
-                                onClick={handleCloseDetails}
-                                style={{
-                                    marginTop: "15px",
-                                    padding: "8px 16px",
-                                    border: "none",
-                                    borderRadius: "4px",
-                                    cursor: "pointer",
-                                }}
-                            >
-                                Close
-                            </button>
+                        ))}
+                    </div>
+                </div>
+
+                <div className="mapBack">
+                    <div id="map"></div>
+
+                    {showDetails && selectedMarker && (
+                        <div className="contDetails">
+                            <div className="header">
+                                <h3>{selectedMarker.name}</h3>
+                                <MdClose onClick={handleCloseDetails} />
+                            </div>
+                            <div className="description">
+                                <div className="contDetails-info">
+                                    <div className="row">
+                                        <LuMapPin />
+                                        <p>
+                                            Address:
+                                            <br />
+                                            <span>
+                                                {selectedMarker.address}
+                                            </span>
+                                        </p>
+                                    </div>
+                                    <div className="row">
+                                        <LuPhone />
+                                        <p>
+                                            Tel No: <br />
+                                            <span>{selectedMarker.tel}</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="map-button-wrapper">
+                                <a
+                                    href={`https://www.google.com/maps/dir/?api=1&destination=${selectedMarker.name}&travelmode=driving`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <IoIosSend /> Get Directions
+                                </a>
+                                <a
+                                    href={`https://www.google.com/maps?ll=${selectedMarker.position.lat},${selectedMarker.position.lng}&cid=${selectedMarker.cid}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <LuSquareArrowOutUpRight /> View Larger Map
+                                </a>
+                            </div>
+                            {/* Address and Tel for contDetails (mobile view only) */}
                         </div>
                     )}
                 </div>
