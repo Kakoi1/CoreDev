@@ -7,6 +7,59 @@ import ProductInquiryForm from "../../shared/inquiry-form/components/InquiryForm
 import { getHardwareProducts } from "../services/HardwareService";
 import { ComponentLoading, Button } from "@components/ui";
 
+const categoryNames = {
+    desktop: {
+        name: "Computer Desktop",
+        description:
+            "Discover our premium selection of desktop computers for work, gaming, and creative projects.",
+    },
+    laptop: {
+        name: "Laptop Computer",
+        description:
+            "Explore our premium collection of laptop computers designed for productivity, gaming, and on-the-go creativity",
+    },
+    server: {
+        name: "Physical Server",
+        description:
+            "Discover our high-performance physical servers built for reliability, scalability, and enterprise-grade workloads.",
+    },
+    router: {
+        name: "Network Devices",
+        description:
+            "Explore our reliable range of network devices designed to deliver fast, secure, and seamless connectivity for homes and businesses.",
+    },
+    firewall: {
+        name: "Firewall Devices",
+        description:
+            "Protect your network with our advanced firewall devices, engineered for robust security, threat prevention, and reliable performance.",
+    },
+    cloud: {
+        name: "Cloud Services",
+        description:
+            "Unlock the power of the cloud with our scalable, secure, and flexible cloud services tailored for businesses of all sizes.",
+    },
+    printer: {
+        name: "Printers & Scanners",
+        description:
+            "Discover our efficient range of printers and scanners designed for high-quality output, fast performance, and seamless document management.",
+    },
+    cctv: {
+        name: "CCTV Cameras",
+        description:
+            "Secure your property with our reliable CCTV cameras, offering crystal-clear surveillance, remote monitoring, and 24/7 protection.",
+    },
+    wifi: {
+        name: "Wireless Internet",
+        description:
+            "Stay connected with our fast and reliable wireless internet solutions, designed for seamless streaming, browsing, and remote work anywhere.",
+    },
+    TAB: {
+        name: "Time and Attendance & Biometrics",
+        description:
+            "Streamline your workforce management with our advanced time attendance and biometric systems, ensuring accurate tracking, security, and efficiency.",
+    },
+};
+
 export default function HardwareProduct() {
     const { category } = useParams();
     const containerRef = useRef(null);
@@ -47,20 +100,9 @@ export default function HardwareProduct() {
 
     // Set name category dynamically
     useEffect(() => {
-        const categoryNames = {
-            computer: "Computer Desktop",
-            laptop: "Laptop Computer",
-            server: "Physical Server",
-            router: "Network Devices",
-            firewall: "Firewall Devices",
-            cloud: "Cloud Services",
-            printer: "Printers & Scanners",
-            cctv: "CCTV Cameras",
-            wifi: "Wireless Internet",
-            TAB: "Time and Attendance & Biometrics",
-        };
         setCategory(categoryNames[category] || "Unknown Category");
     }, [category]);
+    
     const fadeInUpVariants = {
         hidden: { opacity: 0, y: 50 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -68,7 +110,8 @@ export default function HardwareProduct() {
 
     return (
         <div className="product-container">
-            <h2>{nameCategory}</h2>
+            <h2>{nameCategory && nameCategory.name}</h2>
+            <p>{nameCategory && nameCategory.description}</p>
             <div className="grid-container">
                 <ComponentLoading
                     isLoading={loading}
@@ -105,6 +148,7 @@ export default function HardwareProduct() {
                             {ShowFeature[index] && (
                                 <AnimatePresence>
                                     <motion.div
+                                        className="product-description"
                                         layout
                                         initial={{ opacity: 0 }}
                                         animate={{ opacity: 1 }}
@@ -112,7 +156,6 @@ export default function HardwareProduct() {
                                         transition={{ duration: 0.3 }}
                                     >
                                         <p>{item.description}</p>
-                                        <br />
                                     </motion.div>
                                 </AnimatePresence>
                             )}
