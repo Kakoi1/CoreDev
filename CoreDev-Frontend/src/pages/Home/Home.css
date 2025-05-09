@@ -455,8 +455,8 @@ textarea::placeholder {
     }
 }
 .motoCont {
-    background: linear-gradient(rgb(68 70 72 / 0%), rgb(0, 0, 0)),
-        url(../../assets/teamImg.png) fixed center center;
+    background:
+        url(../../../public/software-background.png) fixed right center;
     background-attachment: fixed;
     background-size: cover;
     padding: 50px 0;

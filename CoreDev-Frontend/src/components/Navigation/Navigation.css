@@ -261,6 +261,26 @@
 }
 
 /* Responsive adjustments */
+@media (max-width: 639px) {
+
+    .navigation-container{
+        width: 100vw;
+    }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+
+    .navigation-container {
+        width: 90vw;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+
+    .navigation-container {
+        width: 80vw;
+    }
+}
 @media (max-width: 800px) {
     .navigation-container .brand img {
         width: 40px;
