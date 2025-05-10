@@ -154,15 +154,33 @@
     font-size: 18px;
 }
 
-.home-container .join-us-wrapper {
+.home-container .client-wrapper {
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 7rem 0;
     margin-top: -4.5rem;
 }
 
+.home-container .client-wrapper > h1{
+    font-size: 3rem;
+    color: white;
+    margin: 0;
+}
+
+.home-container .client-wrapper > h1 > span{
+    color: var(--orange);
+
+}
+
+.home-container .client-wrapper > p{
+    color: var(--gray-300);
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-bottom: 3rem;
+}
 .wrapper-bg {
     position: absolute;
     inset: 0;
@@ -201,11 +219,6 @@
     font-weight: bolder;
     font-size: 2.2rem;
     font-weight: bold;
-}
-
-.home-container .join-us-wrapper .right img {
-    height: 330px;
-    width: 330px;
 }
 
 .home-container .reach-us-wrapper {
@@ -419,7 +432,7 @@ textarea::placeholder {
 }
 .ClientLogo span,
 .services-wrapper span {
-    color: #353635;
+    color: white    ;
 }
 .Textcontent {
     text-align: center;
