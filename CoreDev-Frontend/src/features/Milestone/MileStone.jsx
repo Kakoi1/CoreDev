@@ -9,15 +9,15 @@ import { Badge } from "@components/ui"
 function MileStone() {
     const timeline = [
         {
-            name: "Establishment of Hardware Sales Department ",
+            name: "CoreDev as a Technology Solutions Provider",
             year: "2024",
             right: "timeline-content",
             description: [
-                "Offering wide variety of hardware technologies including but not limited to servers, computers, POS machines, Network Devices and Solar Pannels etc.",
+                "coreDev transitions from a software provider to a full-fledged technology solutions provider offering wide variety of technology solutions ranging from accounting software to servers, network infrastructure, POS devices, etc.",
             ],
         },
         {
-            name: "Amidst the COVID-19 Pandemic",
+            name: "Innovation Amidst the COVID-19 Pandemic",
             year: "2020",
             right: "timeline-content right",
             description: [
@@ -25,61 +25,29 @@ function MileStone() {
                 "These new innovations were used by Cebu CFI Community Coop; we are really grateful for their continuous trust.",
             ],
         },
+        
         {
-            name: "Events and Sponsoring Seminars Nationwide",
-            year: "March 2019",
-            right: "timeline-content",
-            description: [
-                "Still participating in so many events and sponsoring seminars nationwide such as: Caraga Cooperative Congress, CACODEC, CDA DAGUPAN EVENT, CDA CALAMBA EVENT, Parañaque Federation Event.",
-            ],
-        },
-        {
-            name: "Manila and Davao City.",
+            name: "Nationwide Expansion",
             year: "March 2018",
-            right: "timeline-content right",
-            description: [
-                "Opening of the new satellite offices in Manila and Davao City.",
-                "Enhancement of the Members Online Inquiry System into iWeb Portal.",
-                "Attending so many events and sponsoring seminars such as: FOCONO, FOCCUS, National Cooperative Summit, and CDO – ICT.",
-            ],
-        },
-        {
-            name: "100 clients nationwide.",
-            year: "2017",
             right: "timeline-content",
             description: [
-                "More than 100 clients nationwide.",
-                "First time that we joined the 8th National Tripartite Conference in Iloilo City, where GLEDCO signed the contract.",
-                "We also joined the PAKISAMA event in Bohol.",
+                "Establishment of branches in Luzon and Mindanao in order the boost coreDev's presence in those areas and provide a better support to our clients.",
+                
             ],
         },
-        {
-            name: "13th Cooperative Summit Trade Fair",
-            year: "2016",
-            right: "timeline-content right",
-            description: ["We joined the 13th Cooperative Summit Trade Fair."],
-        },
+        
         {
             name: "Launching of the CIC Utility",
             year: "2015",
-            right: "timeline-content",
-            description: [
-                "From 11 employees to 30 employees since our clients also increased to 90.",
-                "We joined the PICPA 69th Annual Convention.",
-                "Launching of the CIC Utility since it is a mandatory government requirement.",
-            ],
-        },
-        {
-            name: "COMPUTER HARDWARE & SERVER",
-            year: "January 2014",
             right: "timeline-content right",
             description: [
-                "Start selling computer hardware and servers.",
-                "Attending many events such as National Cooperative Summit and RBAP events.",
+                "With the passing of RA 9510 or so called Credit Information System Act, coreDev launched the CIC utility in order to aid the clients' compliance with the said law.",
+                
             ],
         },
+        
         {
-            name: "iAccs 2013",
+            name: "Founding of CoreDev",
             year: "August 2013",
             right: "timeline-content",
             description: [

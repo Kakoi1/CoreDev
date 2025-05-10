@@ -15,10 +15,10 @@ class ClientController extends Controller
     public function index($type)
     {
         if ($type == 'All') {
-            $clients = Imaged::paginate(120);
+            $clients = Imaged::paginate(200);
             $allClient = Imaged::all();
         } else {
-            $clients = Imaged::where('category', $type)->paginate(12);
+            $clients = Imaged::where('category', $type)->paginate(200);
             $allClient = Imaged::all();
         }
 
