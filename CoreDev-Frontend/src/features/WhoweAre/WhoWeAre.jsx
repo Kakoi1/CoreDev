@@ -145,7 +145,7 @@ function WhoWeAre() {
                         <div className="credo-radial-background"></div>
                         <IoTelescopeOutline />
                         <h3>Our Vision</h3>
-                        <p className="ubuntu-text">
+                        <p>
                             To be the leading and most trusted&nbsp;
                             <span>
                                 service-oriented provider of innovative software
