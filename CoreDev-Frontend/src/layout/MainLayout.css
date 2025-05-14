@@ -104,7 +104,7 @@ body {
 @media (max-width: 639px) {
 
     .main-content {
-        width: 100vw;
+        /* width: 100vw; */
     }
 
 }
@@ -112,7 +112,7 @@ body {
 @media (min-width: 640px) and (max-width: 1023px) {
 
     .main-content {
-        width: 90vw;
+        /* width: 90vw; */
     }
 }
 

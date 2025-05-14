@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import HeroComponent from "./HeroComponent";
 import Carousel from "./Carousel";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { easeInOut, motion } from "framer-motion";
 import Partners from "../Partners/Partners";
 import { Button } from "@components/ui";
@@ -18,6 +18,8 @@ const Home = () => {
     const [loading, setLoading] = useState(true);
     const [retryCount, setRetryCount] = useState(0);
     const [error, setError] = useState(null);
+    const [isWrapperCentered, setIsWrapperCentered] = useState(false); // New state for centered status
+    const wrapperRef = useRef(null); // Reference to wrapper-bg div
 
     const fetchLogo = async (attempt = 1) => {
         setLoading(true);
@@ -34,7 +36,7 @@ const Home = () => {
 
             if (attempt < MAX_RETRIES) {
                 setTimeout(() => {
-                    setRetryCount(attempt); // Trigger re-fetch with increased attempt count
+                    setRetryCount(attempt);
                 }, RETRY_DELAY);
             } else {
                 setError("Failed to fetch clients. Please try again later.");
@@ -43,85 +45,81 @@ const Home = () => {
         }
     };
 
+    // Scroll handler to detect if wrapper-bg is centered
+    const handleScroll = () => {
+        if (wrapperRef.current) {
+            const rect = wrapperRef.current.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+            const wrapperCenter = rect.top + rect.height / 1;
+            const viewportCenter = viewportHeight / 1;
+
+            // Check if wrapper-bg is within 20% of viewport center
+            const isCentered =
+                Math.abs(wrapperCenter - viewportCenter) < viewportHeight * 0.2;
+
+            setIsWrapperCentered(isCentered);
+        }
+    };
+
     useEffect(() => {
         fetchLogo(retryCount + 1);
     }, [retryCount]);
+
+    // Add scroll and resize event listeners
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+        window.addEventListener("resize", handleScroll);
+        handleScroll(); // Run on mount to set initial state
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+            window.removeEventListener("resize", handleScroll);
+        };
+    }, []);
 
     return (
         <div className="home-container">
             <HeroComponent />
 
             <div className="sido">
-                <div className="join-us-wrapper">
-                    <div className="wrapper-bg"></div>
-                    <div className="left">
-                        <motion.h2
-                            className="header"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{
-                                duration: 0.6,
-                                ease: easeInOut,
-                                delay: 0.2,
-                            }}
-                        >
-                            Be Part of Our Growing Team
-                        </motion.h2>
-                        <motion.p
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{
-                                duration: 0.6,
-                                ease: easeInOut,
-                                delay: 0.4,
-                            }}
-                        >
-                            We believe that our people are our greatest asset.
-                            At coreDev, we foster a culture of collaboration,
-                            innovation, and mutual respect. We&apos;re always
-                            looking for talented individuals who share our
-                            values and are excited to contribute to our mission.
-                        </motion.p>
-                    </div>
-                    <div className="right">
-                        <Button
-                            text="Join Now"
-                            onClick={() => navigate("/careers")}
-                            variant="full"
-                            size="md"
-                        />
+                <div className="join-us">
+                    <motion.div
+                        className={`wrapper-bg ${
+                            isWrapperCentered ? "centered" : ""
+                        }`}
+                        ref={wrapperRef}
+                        animate={{
+                            backgroundColor: isWrapperCentered ? "#ffffff" : "var(--black)",
+                        }}
+                        transition={{duration: 0.5, ease: "easeInOut"}}
+                    ></motion.div>
+                    <h1 className="ClientLogo" style={{ textAlign: "center" }}>
+                        <span className={`spaner ${
+                            isWrapperCentered ? "centered" : ""
+                        }`}>Our</span> Clients
+                    </h1>
+                    <div className="logo-wrapper">
+                        {loading && <Loading />}
 
-                        <Button
-                            text="Learn More"
-                            onClick={() => navigate("/about/who-we-are")}
-                            variant="outline"
-                            size="md"
-                        />
+                        {error && (
+                            <div className="errorCont">
+                                <p style={{ color: "red", textAlign: "center" }}>
+                                    {error}
+                                </p>
+                                <button
+                                    className="retryBut"
+                                    onClick={() => setRetryCount(0)}
+                                >
+                                    Retry
+                                </button>
+                            </div>
+                        )}
+                        {!loading && !error && <Carousel images={logo} />}
                     </div>
                 </div>
             </div>
-            <h1 className="ClientLogo" style={{ textAlign: "center" }}>
-                <span>Our</span> Clients
-            </h1>
-            <div className="logo-wrapper">
-                {loading && <Loading />}
 
-                {error && (
-                    <div className="errorCont">
-                        <p style={{ color: "red", textAlign: "center" }}>
-                            {error}
-                        </p>
-                        <button
-                            className="retryBut"
-                            onClick={() => setRetryCount(0)}
-                        >
-                            Retry
-                        </button>
-                    </div>
-                )}
-                {!loading && !error && <Carousel images={logo} />}
-            </div>
-            <Partners />
+            <Partners classer = { isWrapperCentered ? "centered" : "not"}/>
             <div className="motoCont">
                 <div className="Textcontent">
                     <h1>INNOVATING YOUR FUTURE</h1>

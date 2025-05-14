@@ -1,18 +1,31 @@
 .partners-container {
     text-align: center;
+    margin-top: -4.5rem;
+    position: relative;
 }
 
 .partners-container .partners-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(220px, 1fr));
-    gap: 2rem;
+    gap: 3rem;
     margin-top: 20px;
+}
+.wrappers-bg{
+    position: absolute;
+    inset: 0;
+    background-color: var(--black);
+    z-index: -1;
+    width: 100vw;
+    margin-left: var(--fit-screen);
 }
 
 .partners-container .partner-card {
     width: 100%;
     transition: transform 0.3s ease-in-out;
     margin-bottom: 100px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
 }
 
 .partners-container .partner-card a {
@@ -23,7 +36,12 @@
 .partner-card:hover {
     transform: scale(1.05);
 }
-
+.wrappers-bg.not {
+    background-color: white; /* White when centered */
+  }
+  .spaners.not{
+    color: var(--black) !important;
+  }
 .partner-name {
     font-size: 1.5rem;
     color: #ff6c00;
@@ -50,7 +68,8 @@
     font-family: "Raleway", sans-serif;
 }
 .partners-container span {
-    color: var(--black) !important;
+    color: white!important;
+    /* color: white !important; */
 }
 .dark-mode .partners-container span {
     color: white !important;

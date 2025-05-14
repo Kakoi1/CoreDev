@@ -19,8 +19,8 @@ export default function App({ images }) {
     return (
         <>
             <Swiper
-                spaceBetween={70} // Space between slides
-                slidesPerView={5}
+                spaceBetween={60} // Space between slides
+                slidesPerView={6}
                 loop={true}
                 autoplay={{
                     delay: 5000, // Time between slides in milliseconds

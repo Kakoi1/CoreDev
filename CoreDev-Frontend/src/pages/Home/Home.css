@@ -154,15 +154,17 @@
     font-size: 18px;
 }
 
-.home-container .join-us-wrapper {
+.home-container .join-us {
     position: relative;
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
     padding: 7rem 0;
     margin-top: -4.5rem;
 }
-
+.join-us span{
+     color: white !important;
+}
 .wrapper-bg {
     position: absolute;
     inset: 0;
@@ -417,7 +419,6 @@ textarea::placeholder {
     color: var(--orange);
     margin-top: 40px;
 }
-.ClientLogo span,
 .services-wrapper span {
     color: #353635;
 }
@@ -567,10 +568,15 @@ textarea::placeholder {
 .dark-mode .service-item {
     border: solid 1px white !important;
 }
-
+.wrapper-bg.centered {
+    background-color: white; /* White when centered */
+  }
+  .spaner.centered{
+    color: var(--black) !important;
+  }
 .partners-container {
     text-align: center;
-    background-color: #f1f8ff;
+    background-color: #f1f8ff00;
 }
 .partners-container h2 {
     padding-top: 50px;

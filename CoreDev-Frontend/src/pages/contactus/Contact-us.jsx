@@ -216,9 +216,9 @@ const Contact = () => {
         {/* Vertical Accordion Tabs on the Right */}
         <div className="side-tab">
           {locations.map((location) => (
-            <div key={location.id} className="tab-item">
+            <div key={location.id} className={`tab-item ${selectedMarker?.id === location.id ? 'active' : ''}`}>
               <button
-                className={`tab-button ${selectedMarker?.id === location.id ? 'active' : ''}`}
+                className={`tab-button ${selectedMarker?.id === location.id ? 'asd' : ''}`}
                 onClick={() => handleButtonClick(location)}
               >
                 <BiMap className="tab-icon" />

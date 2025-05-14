@@ -9,11 +9,19 @@ const partners = [
     { name: "UnionBank", imgs: "ub.png", link: "https://www.unionbankph.com" },
 ];
 
-function Partners() {
+function Partners({classer}) {
+    const name = classer[0];
+    
     return (
         <div className="partners-container">
-            <h2><span>Development</span> Partners</h2>
-            <div className="partners-grid">
+            <motion.div className={`wrappers-bg ${classer}`}
+                animate={{
+                    backgroundColor: classer === 'not' ? "#ffffff" : "var(--black)",
+                }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+                ></motion.div>
+            <h2><span className={`spaners ${classer}`}>Development</span> Partners</h2>
+            <div className="partners-grid">     
                 {partners.map((partner, index) => (
                     <motion.div key={index} className="partner-card">
                         <a href={partner.link} target="_blank" rel="noopener noreferrer">
