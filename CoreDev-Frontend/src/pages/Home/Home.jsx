@@ -6,7 +6,6 @@ import Carousel from "./Carousel";
 import { useState, useEffect, useRef } from "react";
 import { easeInOut, motion } from "framer-motion";
 import Partners from "../Partners/Partners";
-import { Button } from "@components/ui";
 import { Loading } from "@components/ui";
 
 const MAX_RETRIES = 3;
@@ -98,28 +97,28 @@ const Home = () => {
                             isWrapperCentered ? "centered" : ""
                         }`}>Our</span> Clients
                     </h1>
+                      <p>We&apos;re proud to work with these amazing organizations who trust us with their business needs.</p>
                     <div className="logo-wrapper">
                         {loading && <Loading />}
 
-                        {error && (
-                            <div className="errorCont">
-                                <p style={{ color: "red", textAlign: "center" }}>
-                                    {error}
-                                </p>
-                                <button
-                                    className="retryBut"
-                                    onClick={() => setRetryCount(0)}
-                                >
-                                    Retry
-                                </button>
-                            </div>
-                        )}
-                        {!loading && !error && <Carousel images={logo} />}
+                {error && (
+                    <div className="errorCont">
+                        <p style={{ color: "red", textAlign: "center" }}>
+                            {error}
+                        </p>
+                        <button
+                            className="retryBut"
+                            onClick={() => setRetryCount(0)}
+                        >
+                            Retry
+                        </button>
                     </div>
-                </div>
+                )}
+                {!loading && !error && <Carousel images={logo} />}
             </div>
-
-            <Partners classer = { isWrapperCentered ? "centered" : "not"}/>
+                 </div>
+            </div>
+            <Partners />
             <div className="motoCont">
                 <div className="Textcontent">
                     <h1>INNOVATING YOUR FUTURE</h1>

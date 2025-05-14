@@ -1,5 +1,18 @@
-import { useEffect, useState } from 'react';
-import { BiMailSend, BiLogoFacebook, BiMap, BiSolidDirectionRight, BiMapAlt, BiPhone } from "react-icons/bi"; // Removed unused BiSolidRightArrow
+import { useEffect, useState } from "react";
+import {
+    MdKeyboardArrowRight,
+    MdKeyboardArrowDown,
+    MdClose,
+} from "react-icons/md";
+import { IoIosSend } from "react-icons/io";
+import {
+    LuMail,
+    LuFacebook,
+    LuSquareArrowOutUpRight,
+    LuPhone,
+    LuMapPin,
+} from "react-icons/lu";
+import { motion } from "framer-motion";
 import "./Contact-us.css";
 
 const ContactInfo = () => {
@@ -8,7 +21,7 @@ const ContactInfo = () => {
       <div className="extra-contact">
         <div className="contact-item">
           <div className="icon1">
-            <BiMailSend className="icon" />
+            <LuMail className="icon" />
           </div>
           <div className="contact-details">
             <h4>Email: </h4>
@@ -18,7 +31,7 @@ const ContactInfo = () => {
 
         <div className="contact-item">
           <div className="icon1">
-            <BiLogoFacebook className="icon" />
+            <LuFacebook className="icon" />
           </div>
           <div className="contact-details">
             <h4>Facebook: </h4>
@@ -32,19 +45,46 @@ const ContactInfo = () => {
   );
 };
 
-const Contact = () => {
-  const [selectedMarker, setSelectedMarker] = useState(null);
-  const [expandedTab, setExpandedTab] = useState(null);
-  const [address, setAddress] = useState('');
-  const [showDetails, setShowDetails] = useState(true);
-  const [map, setMap] = useState(null);
-  const [mapError, setMapError] = useState(null);
+const locations = [
+    {
+        id: 3,
+        cid: "18355226061558763366",
+        shortAddress: "Manila",
+        address:
+            "4th Floor DACCO MPC Building #40 Anabu Road Anabu II-B City of Imus, Cavite",
+        branch: "Luzon Branch",
+        name: "coreDev Solutions Inc. - Cavite",
+        tel: "(032) - 328-2694 GLOBE | (032) - 234-5954 PLDT",
+        position: { lat: 14.385910117402625, lng: 120.94084551047905 },
+    },
+    {
+        id: 1,
+        cid: "9153839079113836537",
+        shortAddress: "Cebu City",
+        address: "96 J. Alcantara Street, Brgy. Sambag 1, Cebu City",
+        branch: "Visayas Branch - Main",
+        name: "CoreDev Solutions Inc. - Main",
+        tel: "(082) - 233 9306",
+        position: { lat: 10.298937561572044, lng: 123.8892060572453 },
+    },
+    {
+        id: 2,
+        cid: "17502278350547099942",
+        shortAddress: "Davao City",
+        address:
+            "11B, Cherry Tree Street, Palm Drive, Buhangin Davao City, Davao Del Sur",
+        branch: "Mindanao Branch",
+        name: "coreDev Solutions Inc. - Davao",
+        tel: "(046) - 501 6596",
+        position: { lat: 7.108080517350672, lng: 125.61502033701797 },
+    },
+];
 
-  const locations = [
-    { id: 3, cid: '18355226061558763366', address: "4th Floor DACCO MPC Building #40 Anabu Road Anabu II-B City of Imus, Cavite", otherName: 'Luzon Branch', name: 'coreDev Solutions Inc. - Cavite', tel: "(032) - 328-2694 GLOBE | (032) - 234-5954 PLDT", position: { lat: 14.385910117402625, lng: 120.94084551047905 } },
-    { id: 1, cid: '9153839079113836537', address: "96 J. Alcantara Street, Brgy. Sambag 1, Cebu City", otherName: 'Visayas Branch - Main', name: 'CoreDev Solutions Inc. - Main', tel: "(082) - 233 9306", position: { lat: 10.298937561572044, lng: 123.8892060572453 } },
-    { id: 2, cid: '17502278350547099942', address: "11B, Cherry Tree Street, Palm Drive, Buhangin Davao City, Davao Del Sur", otherName: 'Mindanao Branch', name: 'coreDev Solutions Inc. - Davao', tel: "(046) - 501 6596", position: { lat: 7.108080517350672, lng: 125.61502033701797 } },
-  ];
+const Contact = () => {
+    const [selectedMarker, setSelectedMarker] = useState(null);
+    const [address, setAddress] = useState("");
+    const [showDetails, setShowDetails] = useState(true);
+    const [map, setMap] = useState(null);
 
   const handleCloseDetails = () => {
     setShowDetails(false);
@@ -70,11 +110,9 @@ const Contact = () => {
   const handleButtonClick = (location) => {
     if (selectedMarker?.id === location.id) {
       setShowDetails(!showDetails);
-      setExpandedTab(showDetails ? null : location.id); // Sync expandedTab with showDetails
     } else {
       setSelectedMarker(location);
       setShowDetails(true);
-      setExpandedTab(location.id); // Expand the clicked tab
       if (map) {
         map.setCenter(location.position);
       }
@@ -87,13 +125,11 @@ const Contact = () => {
     script.src = `https://maps.googleapis.com/maps/api/js?key=${import.meta.env.VITE_API_KEY}&callback=initMap`;
     script.async = true;
     script.defer = true;
-    script.onerror = () => setMapError('Failed to load Google Maps script. Please check your API key or network connection.');
 
     window.initMap = () => {
       try {
         const mapElement = document.getElementById('map');
         if (!mapElement) {
-          setMapError('Map container not found in the DOM.');
           return;
         }
 
@@ -111,33 +147,30 @@ const Contact = () => {
         });
         setMap(mapInstance);
 
-        locations.forEach((location) => {
-          const marker = new window.google.maps.Marker({
-            position: location.position,
-            map: mapInstance,
-            label: {
-              text: location.name,
-              color: "black",
-              fontWeight: "bold",
-              fontSize: "12px",
-              className: "custom-label",
-            },
-            title: location.name,
-          });
+            locations.forEach((location) => {
+                const marker = new window.google.maps.Marker({
+                    position: location.position,
+                    map: mapInstance,
+                    label: {
+                        text: location.name,
+                        color: "black",
+                        fontWeight: "bold",
+                        fontSize: "12px", 
+                        className: "custom-label",
+                    },
+                    title: location.name,
+                });
 
           marker.addListener("click", () => {
             setSelectedMarker(location);
-            setExpandedTab(location.id);
             getAddressFromCoordinates(location.position.lat, location.position.lng);
           });
         });
 
         setSelectedMarker(locations[1]);
-        setExpandedTab(locations[1].id);
         getAddressFromCoordinates(locations[1].position.lat, locations[1].position.lng);
       } catch (error) {
         console.error('Error initializing map:', error);
-        setMapError('Failed to initialize Google Maps. Please try again later.');
       }
     };
 
@@ -149,102 +182,139 @@ const Contact = () => {
     };
   }, []);
 
-  return (
-    <div className='contactCont'>
-      <h2><span>You can</span> reach us through</h2>
-      <ContactInfo />
+    return (
+        <div className="contactCont">
+            <h2>
+                <span>Get in </span> Touch with us
+            </h2>
+            <p className="quote">
+                We&apos;re here to help and answer any questions you might have.
+                We look forward to hearing from you.
+            </p>
+            <ContactInfo />
 
-      <h2><span>Where</span> To Find Us.</h2>
-      <div className='mapCont'>
-        <div className='mapBack'>
-          {mapError ? (
-            <div className="map-error" style={{ height: '600px', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f0f0f0', borderRadius: '8px' }}>
-              <p style={{ color: 'red', fontSize: '16px', textAlign: 'center' }}>{mapError}</p>
-            </div>
-          ) : (
-            <div id="map" style={{ height: '600px', width: '100%' }}></div>
-          )}
-          {showDetails && selectedMarker && (
-            <div className='contDetails' style={{
-              position: 'relative',
-              top: '-590px',
-              left: '20px',
-              padding: '20px',
-              borderRadius: '12px',
-              background: '#2a2929d1',
-              boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)',
-              zIndex: 0,
-              width: '40%',
-              maxWidth: '500px'
-            }}>
-              <h3>{selectedMarker.name}</h3>
-              <hr />
-              <a
-                href={`https://www.google.com/maps/dir/?api=1&destination=${selectedMarker.name}&travelmode=driving`}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ display: 'block', margin: '12px 0', color: '#ff6c00' }}
-              >
-                Get Directions <BiSolidDirectionRight />
-              </a>
-              <a
-                href={`https://www.google.com/maps?ll=${selectedMarker.position.lat},${selectedMarker.position.lng}&cid=${selectedMarker.cid}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ display: 'block', margin: '12px 0', color: '#ff6c00' }}
-              >
-                View Larger Map <BiMapAlt />
-              </a>
-              <button
-                className='close-button'
-                onClick={handleCloseDetails}
-                style={{
-                  marginTop: '15px',
-                  padding: '8px 16px',
-                  background: '#ff4d4d',
-                  border: 'none',
-                  borderRadius: '4px',
-                  cursor: 'pointer'
-                }}
-              >
-                Close
-              </button>
-            </div>
-          )}
-        </div>
-
-        {/* Vertical Accordion Tabs on the Right */}
-        <div className="side-tab">
-          {locations.map((location) => (
-            <div key={location.id} className={`tab-item ${selectedMarker?.id === location.id ? 'active' : ''}`}>
-              <button
-                className={`tab-button ${selectedMarker?.id === location.id ? 'asd' : ''}`}
-                onClick={() => handleButtonClick(location)}
-              >
-                <BiMap className="tab-icon" />
-                <span className="tab-title">{location.otherName}</span>
-                <span className="tab-arrow">{expandedTab === location.id ? '▼' : '▶'}</span>
-              </button>
-              {expandedTab === location.id && (
-                <div className="tab-content">
-                  <div className="tab-section">
-                    <span className="tab-label">Address</span>
-                    <p>{location.address}</p>
-                  </div>
-                  <div className="tab-section">
-                    <span className="tab-label">Contact</span>
-                    {location.tel.split(' | ').map((tel, index) => (
-                      <p key={index}><BiPhone className="contact-icon" /> {tel}</p>
+            <h2>
+                <span>Where</span> To Find Us.
+            </h2>
+            <p className="location-description">
+                Find the coreDev Solutions Branch nearest to you
+            </p>
+            <div className="mapCont">
+                <div
+                    className="tab-container"
+                    style={{ marginBottom: "-15px" }}
+                >
+                    {locations.map((location) => (
+                        <motion.button
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.9 }}
+                            transition={{ duration: 0.3 }}
+                            key={location.id}
+                            className={`tab-button ${
+                                selectedMarker?.id === location.id
+                                    ? "active"
+                                    : ""
+                            }`}
+                            onClick={() => handleButtonClick(location)}
+                            style={{
+                                margin: "5px",
+                                padding: "10px",
+                                fontSize: "16px",
+                            }}
+                        >
+                            {location.otherNmae}
+                        </motion.button>
                     ))}
-                  </div>
                 </div>
-              )}
+                {/* Vertical Tab Navigation */}
+                <div className="side-tab">
+                    <div className="side-tab-head">
+                        <h2>Our Locations</h2>
+                        <p>Select a branch to view details</p>
+                    </div>
+                    <div className="tabs">
+                        {locations.map((location, index) => (
+                            <div
+                                key={index}
+                                className={`tab ${
+                                    selectedMarker?.id === location.id
+                                        ? " active"
+                                        : ""
+                                }`}
+                                onClick={() => handleButtonClick(location)}
+                            >
+                                <div className="icon-location">
+                                    <LuMapPin />
+                                </div>
+                                <div className="tab-text">
+                                    <h4>{location.branch}</h4>
+                                    <p>{location.shortAddress}</p>
+                                </div>
+                                <div className="icon-arrow">
+                                    {selectedMarker?.id === location.id ? (
+                                        <MdKeyboardArrowRight />
+                                    ) : (
+                                        <MdKeyboardArrowDown />
+                                    )}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <div className="mapBack">
+                    <div id="map"></div>
+
+                    {showDetails && selectedMarker && (
+                        <div className="contDetails">
+                            <div className="header">
+                                <h3>{selectedMarker.name}</h3>
+                                <MdClose onClick={handleCloseDetails} />
+                            </div>
+                            <div className="description">
+                                <div className="contDetails-info">
+                                    <div className="row">
+                                        <LuMapPin />
+                                        <p>
+                                            Address:
+                                            <br />
+                                            <span>
+                                                {selectedMarker.address}
+                                            </span>
+                                        </p>
+                                    </div>
+                                    <div className="row">
+                                        <LuPhone />
+                                        <p>
+                                            Tel No: <br />
+                                            <span>{selectedMarker.tel}</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="map-button-wrapper">
+                                <a
+                                    href={`https://www.google.com/maps/dir/?api=1&destination=${selectedMarker.name}&travelmode=driving`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <IoIosSend /> Get Directions
+                                </a>
+                                <a
+                                    href={`https://www.google.com/maps?ll=${selectedMarker.position.lat},${selectedMarker.position.lng}&cid=${selectedMarker.cid}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <LuSquareArrowOutUpRight /> View Larger Map
+                                </a>
+                            </div>
+                            {/* Address and Tel for contDetails (mobile view only) */}
+                        </div>
+                    )}
+                </div>
             </div>
-          ))}
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default Contact;
