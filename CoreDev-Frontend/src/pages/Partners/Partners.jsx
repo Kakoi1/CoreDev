@@ -10,7 +10,6 @@ const partners = [
 ];
 
 function Partners({classer}) {
-    const name = classer[0];
     
     return (
         <div className="partners-container">

@@ -154,34 +154,20 @@
     font-size: 18px;
 }
 
-.home-container .client {
+.home-container .join-us {
     position: relative;
     /* display: flex; */
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 7rem 0;
     margin-top: -4.5rem;
 }
+.clientDesc{
+    text-align: center;
+    font-size: 1.25rem;
+}
 .join-us span{
      color: white !important;
-}
-.home-container .client-wrapper > h1{
-    font-size: 3rem;
-    color: white;
-    margin: 0;
-}
-
-.home-container .client-wrapper > h1 > span{
-    color: var(--orange);
-
-}
-
-.home-container .client-wrapper > p{
-    color: var(--gray-300);
-    font-size: 1.25rem;
-    font-weight: 400;
-    margin-bottom: 3rem;
 }
 .wrapper-bg {
     position: absolute;

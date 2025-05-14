@@ -97,28 +97,36 @@ const Home = () => {
                             isWrapperCentered ? "centered" : ""
                         }`}>Our</span> Clients
                     </h1>
-                      <p>We&apos;re proud to work with these amazing organizations who trust us with their business needs.</p>
+                     <motion.p
+                     className="clientDesc"
+                           animate={{
+                            color: isWrapperCentered ? "var(--black)" : "#ffffff",
+                            fontWeight: isWrapperCentered ? 'bold' : ''
+                        }}
+                        transition={{duration: 0.5, ease: "easeInOut"}}
+                     >We&apos;re proud to work with these amazing organizations who trust us with their business needs.</motion.p>
                     <div className="logo-wrapper">
                         {loading && <Loading />}
 
-                {error && (
-                    <div className="errorCont">
-                        <p style={{ color: "red", textAlign: "center" }}>
-                            {error}
-                        </p>
-                        <button
-                            className="retryBut"
-                            onClick={() => setRetryCount(0)}
-                        >
-                            Retry
-                        </button>
+                        {error && (
+                            <div className="errorCont">
+                                <p style={{ color: "red", textAlign: "center" }}>
+                                    {error}
+                                </p>
+                                <button
+                                    className="retryBut"
+                                    onClick={() => setRetryCount(0)}
+                                >
+                                    Retry
+                                </button>
+                            </div>
+                        )}
+                        {!loading && !error && <Carousel images={logo} />}
                     </div>
-                )}
-                {!loading && !error && <Carousel images={logo} />}
+                </div>
             </div>
-                 </div>
-            </div>
-            <Partners />
+
+            <Partners classer = { isWrapperCentered ? "centered" : "not"}/>
             <div className="motoCont">
                 <div className="Textcontent">
                     <h1>INNOVATING YOUR FUTURE</h1>
