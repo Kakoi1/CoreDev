@@ -199,3 +199,7 @@ background-color: transparent;
     align-items: flex-start;
     gap: 5px;
   }
+  .chat-link{
+    color: white;
+    text-decoration: none;
+  }

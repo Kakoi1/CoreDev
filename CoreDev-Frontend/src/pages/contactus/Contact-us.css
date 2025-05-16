@@ -304,7 +304,7 @@
   text-decoration: underline;
 }
 
-.close-button {
+/* .close-button {
   background: #ff4d4d;
   color: white;
   padding: 8px 16px;
@@ -313,7 +313,7 @@
   cursor: pointer;
   margin-top: 10px;
   transition: all 0.3s ease;
-}
+} */
 .custom-label{
   background-color: white;
   width: 130px;
@@ -325,9 +325,9 @@
   border: 1px solid var(--orange);
 }
 
-.close-button:hover {
+/* .close-button:hover {
   background: #cc0000;
-}
+} */
 
 /* Dark Mode Styles */
 .dark-mode .contactCont span {
