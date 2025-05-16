@@ -7,6 +7,7 @@ import Footer from "../components/Footer/Footer";
 import { FaArrowAltCircleUp } from "react-icons/fa";
 import TopBar from "../components/Topbar/topbar";
 import { Loading } from "../components/ui";
+import ChatBot from "@components/ui/chatbot/ChatBot";
 
 const MainLayout = () => {
     const { scrollYProgress } = useScroll();
@@ -90,6 +91,7 @@ const MainLayout = () => {
                     <div className="main-content">
                         <Outlet />
                     </div>
+                    <ChatBot/>
                 </section>
                 <Footer />
                 {yAxis > 150 && (

@@ -319,6 +319,16 @@
   margin-top: 10px;
   transition: all 0.3s ease;
 }
+.custom-label{
+  background-color: white;
+  width: 130px;
+  text-wrap: wrap;
+  border-radius: 4px;
+  position: relative;
+  top: -30px;
+  padding: 2px 8px;
+  border: 1px solid var(--orange);
+}
 
 .close-button:hover {
   background: #cc0000;
