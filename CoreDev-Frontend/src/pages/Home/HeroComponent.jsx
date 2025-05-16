@@ -49,7 +49,7 @@ const HeroComponent = () => {
                         Inc.
                     </h1>
                     <p>The Premier Software solutions in the Philippines</p>
-                    <Link to={"/about/who-we-are"} className="button">
+                    <Link to="/About_us#Who-We-are" className="button">
                         Learn more
                     </Link>
                 </div>

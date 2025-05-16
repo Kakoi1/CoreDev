@@ -223,7 +223,7 @@
 }
 
 /* Tab Content Area */
-.tab-content {
+.contact-tab-content {
   padding: 16px;
   background: white;
   display: none;
@@ -231,7 +231,7 @@
   overflow-y: auto;
 }
 
-.tab-item.active .tab-content {
+.tab-item.active .contact-tab-content {
   display: block;
 }
 
@@ -299,11 +299,6 @@
   margin: 0 0 8px 0;
 }
 
-/* .contDetails a {
-  color: #dad7d7 !important;
-  font-size: 13px;
-  text-decoration: none;
-} */
 
 .contDetails a:hover {
   text-decoration: underline;
@@ -485,6 +480,7 @@
 }
 .side-tab > .side-tab-head{
     margin-bottom: -9px;
+    padding-top: 2rem;
 }
 
 .side-tab > .side-tab-head > h2{
