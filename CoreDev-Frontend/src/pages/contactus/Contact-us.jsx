@@ -234,7 +234,7 @@ const Contact = () => {
                 <span className="tab-arrow">{expandedTab === location.id ? '▼' : '▶'}</span>
               </button>
               {expandedTab === location.id && (
-                <div className="tab-content">
+                <div className="contact-tab-content">
                   <div className="tab-section">
                     <span className="tab-label">Address</span>
                     <p>{location.address}</p>
