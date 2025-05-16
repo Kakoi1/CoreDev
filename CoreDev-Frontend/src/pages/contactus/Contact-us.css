@@ -231,7 +231,7 @@
   overflow-y: auto;
 }
 
-.tab-item.active .tab-content {
+.tab-item.active .contact-tab-content {
   display: block;
 }
 
