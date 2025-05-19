@@ -11,7 +11,7 @@ const ChatBot = () => {
   const [isChatOpen, setIsChatOpen] = useState(false)
   const actionProviderRef = useRef(null)
   const navigate = useNavigate()
-
+  const [isLabelVisible, setIsLabelVisible] = useState(true);
   const rules = [
     {
       pattern: /^(hello|hi|hey|greetings|good\s(morning|afternoon|evening))\b/i,
@@ -27,7 +27,7 @@ const ChatBot = () => {
       pattern: /^(about|about\scoredev|coredev\s?info)\b/i,
       response: () => (
         <span>
-          CoreDev is a leading technology company specializing in innovative solutions.
+         We're a team of passionate individuals dedicated to creating solutions that make a difference. Our diverse backgrounds and perspectives fuel our innovation and drive our success.
           <br />
           <br />
           <a onClick={() => navigate("/About_us")} className="chat-link" style={{ cursor: "pointer" }}>
@@ -40,29 +40,29 @@ const ChatBot = () => {
     {
       pattern: /^(products?|services?|offerings?|solutions?)\b/i,
       response: () => (
-        <span>
-          We offer cutting-edge hardware and software products:
-          <ul className="product-list">
-            <li>
-              <div className="chat-div">
-                CoreDevice - Hardware
-                <br />
-                <a onClick={() => navigate("/Products/Hardware")} className="chat-link" style={{ cursor: "pointer" }}>
-                  Learn more →
-                </a>
-              </div>
-            </li>
-            <li>
-              <div className="chat-div">
-                CoreSoft - Software
-                <br />
-                <a onClick={() => navigate("/Products/Software")} className="chat-link" style={{ cursor: "pointer" }}>
-                  Learn more →
-                </a>
-              </div>
-            </li>
-          </ul>
-        </span>
+<span>
+      Overview of CoreDev's products:
+      <ul className="product-list">
+        <li>
+          <div className="chat-div">
+            CoreDevice - High-performance hardware for easy integration.
+            <br />
+            <a onClick={() => navigate("/Products/Hardware")} className="chat-link" style={{ cursor: "pointer" }}>
+              Learn more →
+            </a>
+          </div>
+        </li>
+        <li>
+          <div className="chat-div">
+            CoreApp - User-friendly software with strong features.
+            <br />
+            <a onClick={() => navigate("/Products/Software")} className="chat-link" style={{ cursor: "pointer" }}>
+              Learn more →
+            </a>
+          </div>
+        </li>
+      </ul>
+    </span>
       ),
       buttonLabel: "Our Products",
     },
@@ -99,7 +99,7 @@ const ChatBot = () => {
           <br />
           <br />
           <a onClick={() => navigate("/Contact-us")} className="chat-link" style={{ cursor: "pointer" }}>
-            Contact Us →
+            Click here →
           </a>
           <br />
         </span>
@@ -316,7 +316,6 @@ const ChatBot = () => {
       </div>
     )
   }
-
   // Set initial message when chat opens
   useEffect(() => {
     if (isChatOpen && actionProviderRef.current?.setInitialMessage) {
@@ -324,30 +323,75 @@ const ChatBot = () => {
     }
   }, [isChatOpen])
 
-  const toggleChat = () => {
-    setIsChatOpen(!isChatOpen)
-  }
+const toggleChat = () => {
+    setIsChatOpen(!isChatOpen);
+    if (!isChatOpen) {
+      setIsLabelVisible(false);
+    }
+  };
 
-  return (
-    <div className="chatbot-wrapper">
-      {!isChatOpen ? (
-        <button onClick={toggleChat} className="chat-icon" aria-label="Open chat">
-          <svg
-            className="icon-svg"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
-            />
-          </svg>
-        </button>
+  const closeLabel = () => {
+    setIsLabelVisible(false);
+  };
+
+ return (
+  <div className="chatbot-wrapper">
+      {!isChatOpen && isLabelVisible ? (
+        <div className="chat-icon-container">
+          <button onClick={toggleChat} className="chat-icon" aria-label="Open chat">
+            <svg
+              className="icon-svg"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
+              />
+            </svg>
+          </button>
+          <span className="chat-label" >
+            Click here to chat with our Chatbot 
+            <button onClick={closeLabel} className="chat-label-close" aria-label="Close label">
+              <svg
+                className="chat-label-close-svg"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </span>
+        </div>
       ) : (
+        !isChatOpen && (
+          <div className="chat-icon-container">
+            <button onClick={toggleChat} className="chat-icon" aria-label="Open chat">
+              <svg
+                className="icon-svg"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
+                />
+              </svg>
+            </button>
+          </div>
+        )
+      )}
+      {isChatOpen && (
         <div className="chat-container animate-slide-in">
           <div className="chat-header">
             <img
@@ -374,7 +418,7 @@ const ChatBot = () => {
         </div>
       )}
     </div>
-  )
+)
 }
 
 export default ChatBot

@@ -1,9 +1,10 @@
-/* Wrapper for positioning the chatbot */
 .chatbot-wrapper {
   position: fixed;
-  bottom: 56px;
+  top: 176px;
   right: 10px;
   z-index: 1000;
+  display: flex;
+  align-items: center;
 }
 
 /* Chat icon button */
@@ -151,10 +152,9 @@
 
 /* Suggestion button */
 .suggestion-button {
-background-color: transparent;
+  background-color: transparent;
   border: 1px solid var(--orange);
   color: gray;
-  /* border: none; */
   border-radius: 4px;
   padding: 8px 12px;
   cursor: pointer;
@@ -162,44 +162,121 @@ background-color: transparent;
   text-align: left;
   transition: background-color 0.2s, transform 0.1s;
 }
+
 .suggestion-buttons-container {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 8px;
   margin: 8px 0;
   padding: 0 16px;
 }
+
 .suggestion-button:hover {
   background-color: var(--orange-300);
   transform: scale(1.02);
   color: black;
 }
-.react-chatbot-kit-chat-input-container{
+
+.react-chatbot-kit-chat-input-container {
   position: unset;
 }
-.react-chatbot-kit-chat-inner-container{
+
+.react-chatbot-kit-chat-inner-container {
   overflow-y: unset;
 }
-.react-chatbot-kit-chat-btn-send{
+
+.react-chatbot-kit-chat-btn-send {
   background-color: var(--orange) !important;
 }
-.chat-link{
+
+.chat-link {
   border: 1px solid var(--gray-500);
   padding: 2px 5px;
   border-radius: 7px;
   background-color: var(--orange-300);
 }
- .chat-link:hover{
+
+.chat-link:hover {
   background-color: var(--orange-50);
   color: var(--gray-500);
- }
- .chat-div{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-  }
-  .chat-link{
-    color: white;
-    text-decoration: none;
-  }
+}
+
+.chat-div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.chat-link {
+  color: white;
+  text-decoration: none;
+}
+
+/* Chat icon container */
+.chat-icon-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-direction: row-reverse;
+}
+
+/* Chat label */
+.chat-label {
+color: white;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: #9ca3afa3;
+    padding: 6px 12px;
+    border-radius: 4px;
+    /* border: 1px solid #ddd; */
+    position: relative;
+    display: flex
+;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-wrap: wrap;
+    width: 150px;
+}
+
+/* Arrow for the chat-label */
+.chat-label::after {
+  content: "";
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid #9ca3afa3;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+/* Hover effect */
+.chat-label:hover {
+  background-color: #828181;
+}
+
+/* Close button inside chat-label */
+.chat-label-close {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-label-close:hover {
+  color: #e0e0e0;
+}
+
+.chat-label-close-svg {
+  width: 14px;
+  height: 14px;
+}
