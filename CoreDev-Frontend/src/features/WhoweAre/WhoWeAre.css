@@ -23,7 +23,7 @@
     justify-content: center;
     border-radius: var(--border-radius-xl);
     overflow: hidden;
-    box-shadow: var(--shadow-xl);
+    
     padding: 2rem;
 }
 

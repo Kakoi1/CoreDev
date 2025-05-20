@@ -18,7 +18,7 @@ function WhoWeAre() {
                     <div className="image-container">
                         <div className="image-wrapper">
                             <img
-                                src="/coreDevlogo.png?height=100&width=100"
+                                src="/3d-background.png?height=100&width=100"
                                 alt="Our workspace"
                                 width={800}
                                 height={600}

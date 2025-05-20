@@ -456,7 +456,7 @@ textarea::placeholder {
 }
 .motoCont {
     background:
-        url(../../../public/software-background.png) fixed right center;
+        url(../../../public/software-background-v2.png) fixed right center;
     background-attachment: fixed;
     background-size: cover;
     padding: 50px 0;

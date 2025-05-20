@@ -2,6 +2,7 @@
   font-size: 2rem;
   color: var(--orange-500);
   font-family: "Raleway", sans-serif;
+  text-align: center;
 }
 
 .HardwareContainer .HardWrapper {
