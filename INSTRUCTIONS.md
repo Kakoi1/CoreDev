@@ -14,7 +14,7 @@ Setup the  Project
 Incase of MYSQL error encounter 
 1. Add  ".env" file inside the CoreDev-Frontend folder 
 2. copy and paste this code inside the file 
-   VITE_API_KEY=AIzaSyDwMD7pLmbCZGdErDcuGCjf4wcvgUr1BpY
+   VITE_API_KEY="google map Api here"
    VITE_APP_URL=http://localhost:8000/
 3. and type 'npm run dev'again
 
