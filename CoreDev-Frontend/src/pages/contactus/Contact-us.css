@@ -1,4 +1,3 @@
-/* Contact Container Styles */
 .contactWrap {
   max-width: 1300px;
   margin: 0 auto;
@@ -246,7 +245,7 @@
   margin-bottom: 4px;
 }
 
-.tab-content p {
+.tab-content > p {
   font-size: 13px;
   color: #3c4043;
   margin: 0 0 8px 0;

@@ -101,7 +101,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     background-color: white;
     box-shadow: var(--shadow);
     padding: 2rem;
@@ -163,7 +162,7 @@
     padding: 0.5rem 1.25rem;
     border: 2px solid var(--orange);
     text-decoration: none;
-    margin-top: 1rem;
+    margin-top: auto;
     transition: 0.2s ease-in-out;
     z-index: 1;
 }
