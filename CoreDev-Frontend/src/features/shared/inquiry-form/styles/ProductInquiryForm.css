@@ -244,3 +244,26 @@
     transform: translateX(10px);
   }
 }
+@media (max-width: 768px) {
+  .SoftwareContainer h2{
+    font-size: 1.55rem !important;
+  }
+  .productData h3 {
+    font-size: 1rem;
+  }
+  .productData h4{
+    font-size: .90rem;
+  } 
+  .form-group label{
+    font-size: 0.75rem !important;
+  }
+  .form-group input, .form-group textarea {
+  font-size: 0.60rem;
+  }
+  .submit-btn{
+    font-size: .75rem;
+  }
+  .error-message{
+    font-size: 12px;
+  }
+}

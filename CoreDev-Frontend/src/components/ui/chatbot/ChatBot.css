@@ -1,7 +1,7 @@
 .chatbot-wrapper {
   position: fixed;
-  top: 176px;
-  right: 10px;
+  top: 146px;
+  right: 5px;
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -279,4 +279,17 @@ color: white;
 .chat-label-close-svg {
   width: 14px;
   height: 14px;
+}
+@media (max-width: 768px) {
+  .react-chatbot-kit-chat-message-container{
+    height: 200px;
+    overflow: scroll;
+  }
+  .react-chatbot-kit-chat-container {
+    width: 275px !important;
+  
+}
+  .chatbot-wrapper{
+
+    }
 }

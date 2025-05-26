@@ -113,6 +113,10 @@
     position: relative;
 }
 
+.navigation-container ul .navigation-link .active {
+    color: var(--orange);
+}
+
 .navigation-container ul .navigation-link .caret {
     transition: transform 0.3s ease;
 }

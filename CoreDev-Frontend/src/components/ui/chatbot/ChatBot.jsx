@@ -27,7 +27,7 @@ const ChatBot = () => {
       pattern: /^(about|about\scoredev|coredev\s?info)\b/i,
       response: () => (
         <span>
-         We're a team of passionate individuals dedicated to creating solutions that make a difference. Our diverse backgrounds and perspectives fuel our innovation and drive our success.
+         We&apos;re a team of passionate individuals dedicated to creating solutions that make a difference. Our diverse backgrounds and perspectives fuel our innovation and drive our success.
           <br />
           <br />
           <a onClick={() => navigate("/About_us")} className="chat-link" style={{ cursor: "pointer" }}>
@@ -41,7 +41,7 @@ const ChatBot = () => {
       pattern: /^(products?|services?|offerings?|solutions?)\b/i,
       response: () => (
 <span>
-      Overview of CoreDev's products:
+      Overview of CoreDev&apos;s products:
       <ul className="product-list">
         <li>
           <div className="chat-div">
@@ -70,7 +70,7 @@ const ChatBot = () => {
       pattern: /^(careers?|jobs?|opportunities|hiring|employment)\b/i,
       response: () => (
         <span>
-          We're always looking for talented individuals to join our team!
+          We&apos;re always looking for talented individuals to join our team!
           <br />
           <br />
           Current openings:
@@ -115,7 +115,7 @@ const ChatBot = () => {
       pattern: /.*/i,
       response: () => (
         <span>
-          I'm not sure I understand. Please choose an option below or contact us for further assistance:
+          I&apos;m not sure I understand. Please choose an option below or contact us for further assistance:
           <br />
           <br />
           <a href="mailto:info@coredev.ph" className="chat-link" style={{ cursor: "pointer" }}>
