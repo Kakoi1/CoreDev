@@ -1,5 +1,4 @@
-// ProductInquiryForm.js
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Modal from "./Modal";
 import "../styles/ProductInquiryForm.css";
 import axios from "axios";
@@ -19,7 +18,6 @@ const ProductInquiryForm = ({ productName, picUrl, type }) => {
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState(null);
-    const [csrfToken, setCsrfToken] = useState("");
     const [count, setCount] = useState(5);
 
     // State for error messages

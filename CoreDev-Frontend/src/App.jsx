@@ -4,12 +4,10 @@ import { AppRoutes } from "./routes/AppRoutes";
 
 function App() {
     return (
-        <>
-            <BrowserRouter>
-                <NoticeBanner />
-                <AppRoutes />
-            </BrowserRouter>
-        </>
+        <BrowserRouter>
+            <NoticeBanner />
+            <AppRoutes />
+        </BrowserRouter>
     );
 }
 
