@@ -106,11 +106,11 @@ const ChatBot = () => {
       ),
       buttonLabel: "Location",
     },
-    {
-      pattern: /^(bye|goodbye|exit|quit|see\syou)\b/i,
-      response: "Goodbye! Feel free to come back if you have more questions.",
-      buttonLabel: "Bye",
-    },
+    // {
+    //   pattern: /^(bye|goodbye|exit|quit|see\syou)\b/i,
+    //   response: "Goodbye! Feel free to come back if you have more questions.",
+    //   buttonLabel: "Bye",
+    // },
     {
       pattern: /.*/i,
       response: () => (
