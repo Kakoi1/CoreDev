@@ -48,9 +48,9 @@ const Contact = () => {
   const [mapError, setMapError] = useState(null);
 
   const locations = [
-    { id: 3, cid: '18355226061558763366', address: "4th Floor DACCO MPC Building #40 Anabu Road Anabu II-B City of Imus, Cavite", otherName: 'Luzon Branch', name: 'coreDev Solutions Inc. - Cavite', tel: "(032) - 328-2694 GLOBE | (032) - 234-5954 PLDT", position: { lat: 14.385910117402625, lng: 120.94084551047905 } },
-    { id: 1, cid: '9153839079113836537', address: "96 J. Alcantara Street, Brgy. Sambag 1, Cebu City", otherName: 'Visayas Branch - Main', name: 'CoreDev Solutions Inc. - Main', tel: "(082) - 233 9306", position: { lat: 10.298937561572044, lng: 123.8892060572453 } },
-    { id: 2, cid: '17502278350547099942', address: "11B, Cherry Tree Street, Palm Drive, Buhangin Davao City, Davao Del Sur", otherName: 'Mindanao Branch', name: 'coreDev Solutions Inc. - Davao', tel: "(046) - 501 6596", position: { lat: 7.108080517350672, lng: 125.61502033701797 } },
+    { id: 3, cid: '18355226061558763366', address: "4th Floor DACCO MPC Building #40 Anabu Road Anabu II-B City of Imus, Cavite", otherName: 'Luzon Branch', name: 'coreDev Solutions Inc. - Cavite', tel: "( 046 ) - 501 6596", position: { lat: 14.385910117402625, lng: 120.94084551047905 } },
+    { id: 1, cid: '9153839079113836537', address: "96 J. Alcantara Street, Brgy. Sambag 1, Cebu City", otherName: 'Visayas Branch - Main', name: 'CoreDev Solutions Inc. - Main', tel: " ( 032 ) - 328-2694 GLOBE | ( 032 ) - 234-5954 PLDT ", position: { lat: 10.298937561572044, lng: 123.8892060572453 } },
+    { id: 2, cid: '17502278350547099942', address: "11B, Cherry Tree Street, Palm Drive, Buhangin Davao City, Davao Del Sur", otherName: 'Mindanao Branch', name: 'coreDev Solutions Inc. - Davao', tel: " ( 082 ) - 233 9306", position: { lat: 7.108080517350672, lng: 125.61502033701797 } },
   ];
 
   const handleCloseDetails = () => {
