@@ -63,7 +63,7 @@ export const SoftwareList = () => {
                             and banking system designed for bank and cooperative
                             needs for more than 3 decades!
                         </p>
-                      
+
                         <AnimatePresence>
                             {showFeature && <IAccs />}
                         </AnimatePresence>
@@ -80,6 +80,13 @@ export const SoftwareList = () => {
                                 )
                             }
                             onClick={() => setShowFeature(!showFeature)}
+                        />
+                        &nbsp;
+                        <ProductInquiryForm
+                            productName="iAccs 2013"
+                            picUrl="/assets/iacss-logo.png"
+                            type="Software"
+                            buttonSize="md"
                         />
                     </div>
                 </div>

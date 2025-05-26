@@ -5,7 +5,7 @@ import axios from "axios";
 import { Button } from "@components/ui";
 import { LuMessageCircle } from "react-icons/lu";
 
-const ProductInquiryForm = ({ productName, picUrl, type }) => {
+const ProductInquiryForm = ({ productName, picUrl, type, buttonSize = "sm" }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [formData, setFormData] = useState({
         name: "",
@@ -163,7 +163,7 @@ const ProductInquiryForm = ({ productName, picUrl, type }) => {
             <Button
                 text="Inquire"
                 variant="outline"
-                size="sm"
+                size={buttonSize}
                 icon={<LuMessageCircle/>}
                 onClick={() => setIsModalOpen(true)}
             />
@@ -190,9 +190,9 @@ const ProductInquiryForm = ({ productName, picUrl, type }) => {
                                 Product:{" "}
                                 <span> {productName || "Our Product"}</span>
                             </h3>
-                            <h4>
+                            <h3>
                                 Type: <span>{type}</span>
-                            </h4>
+                            </h3>
                         </div>
                     </div>
                     <hr />
