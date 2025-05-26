@@ -16,6 +16,11 @@ const OrganizationalChart = () => {
   const assistantTeamLeadsRef = useRef(null);
   const implementersRef = useRef(null);
   const wrapperRef = useRef(null);
+  const SCORef = useRef(null);
+  const DevOpsRef = useRef(null);
+  const RADheadRef = useRef(null);
+  const PCO = useRef(null);
+  const ImpHead = useRef(null);
 
   // State for L-shaped line coordinates
   const [lines, setLines] = useState([]);
@@ -62,37 +67,108 @@ const OrganizationalChart = () => {
       !teamLeadsRef.current ||
       !assistantTeamLeadsRef.current ||
       !implementersRef.current ||
-      !wrapperRef.current
+      !wrapperRef.current ||
+      !SCORef.current ||
+      !DevOpsRef.current ||
+      !RADheadRef.current ||
+      !PCO.current ||
+      !ImpHead.current
     )
       return;
 
     const wrapperRect = wrapperRef.current.getBoundingClientRect();
 
     // Get node positions relative to TransformComponent
-    const getNodePosition = (ref, isSource = false) => {
+    const getNodePosition = (ref, options = {}) => {
+      const { isSource = false, isMiddle = false, isRight = false } = options;
       const rect = ref.getBoundingClientRect();
+      
       return {
-        // For source (AOM), get bottom center
-        // For targets, get right center
-        x: isSource 
+        x: isMiddle 
+          ? rect.left - wrapperRect.left + (isRight ? rect.width : 0)
+          : isSource
           ? rect.left - wrapperRect.left + rect.width / 2
-          : rect.left - wrapperRect.left + rect.width,
-        y: isSource
-          ? rect.top - wrapperRect.top + rect.height
-          : rect.top - wrapperRect.top + rect.height / 2
+          : isRight
+          ? rect.left - wrapperRect.left + rect.width
+          : rect.left - wrapperRect.left,
+        y: rect.top - wrapperRect.top + (isSource ? rect.height : rect.height / 2)
       };
     };
 
-    const areaOpPos = getNodePosition(areaOpManagerRef.current, true);
-    const teamLeadsPos = getNodePosition(teamLeadsRef.current);
-    const assistantTeamLeadsPos = getNodePosition(assistantTeamLeadsRef.current);
-    const implementersPos = getNodePosition(implementersRef.current);
+    const areaOpPos = getNodePosition(areaOpManagerRef.current, { isSource: true });
+    const teamLeadsPos = getNodePosition(teamLeadsRef.current, { isRight: true });
+    const assistantTeamLeadsPos = getNodePosition(assistantTeamLeadsRef.current, { isRight: true });
+    const implementersPos = getNodePosition(implementersRef.current, { isRight: true });
+    // SCO connection points
+    const SCOLeftPos = getNodePosition(SCORef.current, { isMiddle: true });
+    const SCORightPos = getNodePosition(SCORef.current, { isMiddle: true, isRight: true });
+    // R&D Head connection point (right side)
+    const RADheadRightPos = getNodePosition(RADheadRef.current, { isRight: true });
+    // DevOps connection point (left side)
+    const DevOpsLeftPos = getNodePosition(DevOpsRef.current);
+    // PCO connection point (right side)
+    const PCOPos = getNodePosition(PCO.current, { isRight: true });
+    // Implementation Head connection point (left side)
+    const ImpHeadPos = getNodePosition(ImpHead.current, { isRight: false });
 
-    // Define three distinct L-shaped lines
+    // Define all lines
     setLines([
-      { from: areaOpPos, to: teamLeadsPos },
-      { from: areaOpPos, to: assistantTeamLeadsPos },
-      { from: areaOpPos, to: implementersPos },
+      // AOM to Team Leads (ends on right side)
+      { 
+        from: areaOpPos, 
+        to: {
+          x: areaOpPos.x,
+          y: teamLeadsPos.y
+        },
+        toFinal: teamLeadsPos,
+        isBroken: true
+      },
+      // AOM to Assistant Team Leads (ends on right side)
+      { 
+        from: areaOpPos, 
+        to: {
+          x: areaOpPos.x,
+          y: assistantTeamLeadsPos.y
+        },
+        toFinal: assistantTeamLeadsPos,
+        isBroken: true
+      },
+      // AOM to Implementers (ends on right side)
+      { 
+        from: areaOpPos, 
+        to: {
+          x: areaOpPos.x,
+          y: implementersPos.y
+        },
+        toFinal: implementersPos,
+        isBroken: true
+      },
+      // SCO to DevOps (right side connection)
+      { 
+        from: SCORightPos, 
+        to: DevOpsLeftPos,
+        isDirect: true
+      },
+      // SCO to R&D Head (left side connection)
+      { 
+        from: SCOLeftPos, 
+        to: {
+          x: RADheadRightPos.x,
+          y: SCOLeftPos.y
+        },
+        toFinal: RADheadRightPos,
+        isBroken: true
+      },
+      // PCO to Implementation Head (ends on left side)
+      { 
+        from: PCOPos, 
+        to: {
+          x: PCOPos.x,
+          y: ImpHeadPos.y
+        },
+        toFinal: ImpHeadPos,
+        isBroken: true
+      }
     ]);
   };
 
@@ -126,16 +202,14 @@ const OrganizationalChart = () => {
                   lineColor={"#ff6a003c"}
                   lineBorderRadius={"10px"}
                   scale={"50%"}
-                  label={
-                    <OrganizationalNode title="Chief Executive Officer" />
-                  }
+                  label={<OrganizationalNode title="Chief Executive Officer" />}
                 >
                   <TreeNode
-                    label={
-                      <OrganizationalNode title="Chief Operation Officer" />
-                    }
+                    label={<OrganizationalNode title="Chief Operation Officer" />}
                   >
-                    <TreeNode label={<OrganizationalNode title="R & D Head" />}>
+                    <TreeNode
+                      label={<OrganizationalNode title="R & D Head" nodeRef={RADheadRef} />}
+                    >
                       <TreeNode
                         label={<OrganizationalNode title="Project Lead" />}
                       >
@@ -149,20 +223,19 @@ const OrganizationalChart = () => {
                       </TreeNode>
                     </TreeNode>
                     <TreeNode
-                      label={<OrganizationalNode title="DevsOps Head" />}
+                      label={<OrganizationalNode title="Security Compliance Officer" nodeRef={SCORef} />}
+                    />
+                    <TreeNode
+                      label={<OrganizationalNode title="DevOps Head" nodeRef={DevOpsRef} />}
                     >
                       <TreeNode
                         label={<OrganizationalNode title="Sec Ops Lead" />}
                       >
                         <TreeNode
-                          label={
-                            <OrganizationalNode title="Senior Security Engineer" />
-                          }
+                          label={<OrganizationalNode title="Senior Security Engineer" />}
                         >
                           <TreeNode
-                            label={
-                              <OrganizationalNode title="Junior Security Engineer" />
-                            }
+                            label={<OrganizationalNode title="Junior Security Engineer" />}
                           />
                         </TreeNode>
                         <TreeNode
@@ -173,14 +246,10 @@ const OrganizationalChart = () => {
                           />
                         </TreeNode>
                         <TreeNode
-                          label={
-                            <OrganizationalNode title="Sr. DevOps Engineer" />
-                          }
+                          label={<OrganizationalNode title="Sr. DevOps Engineer" />}
                         >
                           <TreeNode
-                            label={
-                              <OrganizationalNode title="Jr. DevOps Engineer" />
-                            }
+                            label={<OrganizationalNode title="Jr. DevOps Engineer" />}
                           />
                         </TreeNode>
                       </TreeNode>
@@ -188,14 +257,10 @@ const OrganizationalChart = () => {
                         label={<OrganizationalNode title="Dev Lead" />}
                       >
                         <TreeNode
-                          label={
-                            <OrganizationalNode title="Sr. Software Engineer" />
-                          }
+                          label={<OrganizationalNode title="Sr. Software Engineer" />}
                         >
                           <TreeNode
-                            label={
-                              <OrganizationalNode title="Jr. Software Engineer" />
-                            }
+                            label={<OrganizationalNode title="Jr. Software Engineer" />}
                           />
                         </TreeNode>
                         <TreeNode
@@ -211,9 +276,7 @@ const OrganizationalChart = () => {
                       />
                     </TreeNode>
                     <TreeNode
-                      label={
-                        <OrganizationalNode title="Hardware Department Head" />
-                      }
+                      label={<OrganizationalNode title="Hardware Department Head" />}
                     >
                       <TreeNode
                         label={<OrganizationalNode title="Hardware Sales" />}
@@ -226,50 +289,35 @@ const OrganizationalChart = () => {
                       label={<OrganizationalNode title="Marketing Head" />}
                     />
                     <TreeNode
-                      label={<OrganizationalNode title="Implementation Head" />}
+                      label={<OrganizationalNode title="Project Compliance Officer" nodeRef={PCO} />}
+                    />
+                    <TreeNode
+                      label={<OrganizationalNode title="Implementation Head" nodeRef={ImpHead} />}
                     >
                       <TreeNode
-                        label={
-                          <OrganizationalNode
-                            title="Team Leads"
-                            nodeRef={teamLeadsRef}
-                          />
-                        }
+                        label={<OrganizationalNode title="Team Leads" nodeRef={teamLeadsRef} />}
                       >
                         <TreeNode
-                          label={
-                            <OrganizationalNode
-                              title="Assistant Team Leads"
-                              nodeRef={assistantTeamLeadsRef}
-                            />
-                          }
+                          label={<OrganizationalNode title="Assistant Team Leads" nodeRef={assistantTeamLeadsRef} />}
                         >
                           <TreeNode
-                            label={
-                              <OrganizationalNode
-                                title="Implementers"
-                                nodeRef={implementersRef}
-                              />
-                            }
+                            label={<OrganizationalNode title="Implementers" nodeRef={implementersRef} />}
                           />
                         </TreeNode>
                       </TreeNode>
                     </TreeNode>
                     <TreeNode
-                      label={
-                        <OrganizationalNode
-                          title="Area Operation Manager"
-                          nodeRef={areaOpManagerRef}
-                        />
-                      }
+                      label={<OrganizationalNode title="Area Operation Manager" nodeRef={areaOpManagerRef} />}
                     />
                   </TreeNode>
                   <TreeNode
                     label={<OrganizationalNode title="Chief Finance Officer" />}
                   >
-                    <TreeNode label={<OrganizationalNode title="Finance Head" />}>
+                    <TreeNode
+                      label={<OrganizationalNode title="Finance Head" />}
+                    >
                       <TreeNode
-                        label={<OrganizationalNode title="Bookeeper" />}
+                        label={<OrganizationalNode title="Bookkeeper" />}
                       >
                         <TreeNode
                           label={<OrganizationalNode title="Accounting Clerk" />}
@@ -283,12 +331,16 @@ const OrganizationalChart = () => {
                         />
                       </TreeNode>
                     </TreeNode>
-                    <TreeNode label={<OrganizationalNode title="HR Manager" />}>
+                    <TreeNode
+                      label={<OrganizationalNode title="HR Manager" />}
+                    >
                       <TreeNode
                         label={<OrganizationalNode title="HR Assistant" />}
                       />
                     </TreeNode>
-                    <TreeNode label={<OrganizationalNode title="Admin Head" />}>
+                    <TreeNode
+                      label={<OrganizationalNode title="Admin Head" />}
+                    >
                       <TreeNode
                         label={<OrganizationalNode title="Liason Officer" />}
                       />
@@ -299,7 +351,6 @@ const OrganizationalChart = () => {
                   </TreeNode>
                 </Tree>
               </TransformComponent>
-              {/* SVG Overlay for L-Shaped Cross-Connections */}
               <svg
                 style={{
                   position: "absolute",
@@ -311,24 +362,56 @@ const OrganizationalChart = () => {
                   zIndex: 10,
                 }}
               >
+                <defs>
+                  <marker
+                    id="arrowhead"
+                    markerWidth="9"
+                    markerHeight="5"
+                    refX="8"
+                    refY="2.5"
+                    orient="auto"
+                  >
+                    <polygon points="0 0, 9 3, 0 5" fill="#ff6a00" />
+                  </marker>
+                </defs>
                 {lines.map((line, index) => {
-                  // L-shaped path: vertical then horizontal
-                  const midY = line.to.y;
-                  const pathData = `
-                    M ${line.from.x},${line.from.y}
-                    V ${midY}
-                    H ${line.to.x}
-                  `;
-                  return (
-                    <path
-                      key={index}
-                      d={pathData}
-                      stroke="#ff6a00"
-                      strokeWidth="2"
-                      strokeDasharray="5,5"
-                      fill="none"
-                    />
-                  );
+                  // For broken connections (vertical then horizontal)
+                  if (line.isBroken) {
+                    const pathData = `
+                      M ${line.from.x},${line.from.y}
+                      V ${line.to.y}
+                      H ${line.toFinal.x}
+                    `;
+                    return (
+                      <path
+                        key={index}
+                        d={pathData}
+                        stroke="#ff6a00"
+                        strokeWidth="2"
+                        strokeDasharray="5,5"
+                        fill="none"
+                        markerEnd="url(#arrowhead)"
+                      />
+                    );
+                  }
+                  // For direct horizontal connections
+                  if (line.isDirect) {
+                    const pathData = `
+                      M ${line.from.x},${line.from.y}
+                      H ${line.to.x}
+                    `;
+                    return (
+                      <path
+                        key={index}
+                        d={pathData}
+                        stroke="#ff6a00"
+                        strokeWidth="2"
+                        strokeDasharray="5,5"
+                        fill="none"
+                         markerEnd="url(#arrowhead)"
+                      />
+                    );
+                  }
                 })}
               </svg>
             </div>
