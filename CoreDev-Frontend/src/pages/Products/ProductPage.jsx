@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { FiServer, FiPackage } from "react-icons/fi";
+import { FiServer, FiPackage ,FiCloud } from "react-icons/fi";
 import { SoftwareList} from "@features/software-products"
 import { HardwareList} from "@features/hardware-products"
 import "./ProductPage.css";
@@ -52,6 +52,12 @@ function ProductPage() {
                     onClick={() => handleTabChange("hardware")}
                 >
                     <FiServer /> Hardware
+                </button>
+                  <button
+                    className={activeTab === "cloud" ? "active" : ""}
+                    onClick={() => handleTabChange("cloud")}
+                >
+                   <FiCloud /> Cloud Solutions
                 </button>
             </div>
 

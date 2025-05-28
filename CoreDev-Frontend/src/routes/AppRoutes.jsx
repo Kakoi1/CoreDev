@@ -25,6 +25,7 @@ export const AppRoutes = () => {
         <Route path="/About_us" element={<AboutPage />} />
         <Route path="/Privacy-policy" element={<PolicyPage />} />
         <Route path="/Products/Hardware/:category" element={<HardwareProductPage />} />
+         <Route path="/Products/:category" element={<HardwareProductPage />} />
       </Route>
     </Routes>
   );

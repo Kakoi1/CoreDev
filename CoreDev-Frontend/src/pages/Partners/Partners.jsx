@@ -13,13 +13,9 @@ function Partners({classer}) {
     
     return (
         <div className="partners-container">
-            <motion.div className={`wrappers-bg ${classer}`}
-                animate={{
-                    backgroundColor: classer === 'not' ? "#ffffff" : "var(--black)",
-                }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-                ></motion.div>
-            <h2><span className={`spaners ${classer}`}>Development</span> Partners</h2>
+            <div className={`wrappers-bg`}
+                ></div>
+            <h2><span className={`spaners`}>Development</span> Partners</h2>
             <div className="partners-grid">     
                 {partners.map((partner, index) => (
                     <motion.div key={index} className="partner-card">
@@ -28,7 +24,9 @@ function Partners({classer}) {
                         </a>
                     </motion.div>
                 ))}
+              
             </div>
+              <br /><br />
         </div>
     );
 }

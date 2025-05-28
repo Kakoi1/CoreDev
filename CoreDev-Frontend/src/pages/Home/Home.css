@@ -172,7 +172,7 @@
 .wrapper-bg {
     position: absolute;
     inset: 0;
-    background-color: var(--black);
+    background-color: white;
     z-index: -1;
     width: 100vw;
     margin-left: var(--fit-screen);
@@ -435,25 +435,10 @@ textarea::placeholder {
     cursor: pointer;
     text-transform: uppercase;
     padding: 64px;
-    background: linear-gradient(
-        to right,
-        hsl(24, 100%, 50%) 0,
-        hsl(0, 0%, 100%) 10%,
-        hsl(24, 100%, 50%) 20%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shine 3s infinite linear;
+    color: var(--orange);
 }
 
-@keyframes shine {
-    0% {
-        background-position: 0;
-    }
-    100% {
-        background-position: 795px;
-    }
-}
+
 .motoCont {
     background:
         url(../../../public/software-background-v2.png) fixed right center;

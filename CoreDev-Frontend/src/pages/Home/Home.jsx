@@ -43,6 +43,7 @@ const Home = () => {
             }
         }
     };
+    
 
     // Scroll handler to detect if wrapper-bg is centered
     const handleScroll = () => {
@@ -82,28 +83,14 @@ const Home = () => {
 
             <div className="sido">
                 <div className="join-us">
-                    <motion.div
-                        className={`wrapper-bg ${
-                            isWrapperCentered ? "centered" : ""
-                        }`}
-                        ref={wrapperRef}
-                        animate={{
-                            backgroundColor: isWrapperCentered ? "#ffffff" : "var(--black)",
-                        }}
-                        transition={{duration: 0.5, ease: "easeInOut"}}
-                    ></motion.div>
+                    <div
+                        className={`wrapper-bg`}
+                    ></div>
                     <h1 className="ClientLogo" style={{ textAlign: "center" }}>
-                        <span className={`spaner ${
-                            isWrapperCentered ? "centered" : ""
-                        }`}>Our</span> Clients
+                        <span className={`spaner`}>Our</span> Clients
                     </h1>
                      <motion.p
                      className="clientDesc"
-                           animate={{
-                            color: isWrapperCentered ? "var(--black)" : "#ffffff",
-                            fontWeight: isWrapperCentered ? 'bold' : ''
-                        }}
-                        transition={{duration: 0.5, ease: "easeInOut"}}
                      >We&apos;re proud to work with these amazing organizations who trust us with their business needs.</motion.p>
                     <div className="logo-wrapper">
                         {loading && <Loading />}
@@ -126,7 +113,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <Partners classer = { isWrapperCentered ? "centered" : "not"}/>
+            <Partners classer = { isWrapperCentered ? "" : "not"}/>
             <div className="motoCont">
                 <div className="Textcontent">
                     <h1>INNOVATING YOUR FUTURE</h1>

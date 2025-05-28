@@ -229,7 +229,11 @@
         width: 130px !important;
         margin: 0 auto;
     }
-
+    .iAccsButtonWrap{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
     .pastProj {
         flex-direction: column;
     }

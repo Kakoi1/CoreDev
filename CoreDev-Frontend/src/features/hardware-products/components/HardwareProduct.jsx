@@ -33,9 +33,9 @@ const categoryNames = {
         description:
             "Protect your network with our advanced firewall devices, engineered for robust security, threat prevention, and reliable performance.",
     },
-    cloud: {
+    Cloud: {
         name: "Cloud Services",
-        description:
+       description:
             "Unlock the power of the cloud with our scalable, secure, and flexible cloud services tailored for businesses of all sizes.",
     },
     printer: {
@@ -139,7 +139,7 @@ export default function HardwareProduct() {
                             className="product-card"
                         >
                             <img
-                                src={`http://localhost:5173/src/assets/hardwareImage/${item.image}`}
+                                src={`/src/assets/hardwareImage/${item.image}`}
                                 alt={item.name}
                                 className="product-image"
                             />

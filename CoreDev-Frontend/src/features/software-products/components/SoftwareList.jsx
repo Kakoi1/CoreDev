@@ -68,6 +68,7 @@ export const SoftwareList = () => {
                             {showFeature && <IAccs />}
                         </AnimatePresence>
                         <br />
+                        <div className="iAccsButtonWrap">
                         <Button
                             text={showFeature ? "Collapse" : "Explore More"}
                             variant="full"
@@ -88,6 +89,7 @@ export const SoftwareList = () => {
                             type="Software"
                             buttonSize="md"
                         />
+                        </div>
                     </div>
                 </div>
             </motion.div>

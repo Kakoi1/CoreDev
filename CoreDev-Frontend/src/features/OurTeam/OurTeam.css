@@ -296,6 +296,10 @@
 
 /* Responsive for smaller screens */
 @media (max-width: 768px) {
+     .team-section-gradient,
+    .team-section-background{
+        margin-left: calc(-52vw + 40vw);
+    }
     .tools {
         bottom: 10px;
         right: 10px;
@@ -311,10 +315,7 @@
         margin: 0 -0.5rem;
     }
 
-    .team-wrapper {
-        display: block;
-        margin: 10px 0.5rem;
-    }
+ 
 
     .team {
         margin: 0.5rem 0;
@@ -611,3 +612,18 @@
         grid-template-columns: repeat(4, 1fr);
     }
 }
+@media (max-width: 468px) {
+   .team-section-gradient,
+    .team-section-background{
+        margin-left: var(--fit-screen-small);
+    }
+}
+@media (max-width: 864px) {
+    .team-wrapper {
+        display: block;
+        margin: 10px 0.5rem;
+    }
+
+}
+
+ 

@@ -44,6 +44,9 @@ const Footer = () => {
         }
     });
 
+    const currentYear = new Date().getFullYear();
+
+
     return (
         <div className="footerCont">
             <footer className="footer-wrapper">
@@ -95,7 +98,7 @@ const Footer = () => {
                 </div>
             </footer>
             <footer className="CopyRight">
-                © Copyright coreDev Solutions, Inc.. All Rights Reserved 2025
+                © Copyright coreDev Solutions, Inc.. All Rights Reserved {currentYear}
             </footer>
         </div>
     );

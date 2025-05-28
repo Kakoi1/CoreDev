@@ -44,6 +44,7 @@
     --border-radius-full: 9999px;
 
     --fit-screen: calc(-50vw + 40vw);
+     --fit-screen-small: calc(-55vw + 40vw);
 }
 
 html {

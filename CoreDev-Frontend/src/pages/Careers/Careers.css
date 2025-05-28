@@ -195,10 +195,10 @@
     color: var(--orange);
 }
 
-.job-wrapper > p:hover {
+/* .job-wrapper > p:hover {
     display: inline-block;
     text-decoration: underline;
-}
+} */
 
 .job-info {
     display: flex;
