@@ -5,7 +5,7 @@ import { lazy } from "react";
 const HomePage = lazy(() => import('@pages/Home/Home'));
 const CareerPage = lazy(() => import('@pages/Careers/Careers'));
 const ProductPage = lazy(() => import('@pages/Products/ProductPage'));
-const HardwareProductPage = lazy(() => import('@features/hardware-products/components/HardwareProduct'));
+const HardwareProductPage = lazy(() => import('@features/hardwareProducts/components/HardwareProduct'));
 const ClientPage = lazy(() => import('@pages/Clients/Clients'));
 const ContactPage = lazy(() => import('@pages/contactus/Contact-us'));
 const AboutPage = lazy(() => import('@pages/About-us/About_us'));

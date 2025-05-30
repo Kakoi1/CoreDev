@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import PropTypes from "prop-types"
 
 
-export const CategoryFilter = ({ categories, selectedCategory, onSelect, onPageReset }) => {
+export const CategoryFilter = ({ categories, selectedCategory, onSelect }) => {
   return (
     <div className="category-buttons">
       <div className="buttonCat">
@@ -11,7 +11,6 @@ export const CategoryFilter = ({ categories, selectedCategory, onSelect, onPageR
             key={category}
             onClick={() => {
               onSelect(category);
-              onPageReset();
             }}
             className={selectedCategory === category ? "active" : ""}
           >
@@ -27,7 +26,6 @@ export const CategoryFilter = ({ categories, selectedCategory, onSelect, onPageR
           value={selectedCategory}
           onChange={(e) => {
             onSelect(e.target.value);
-            onPageReset();
           }}
         >
           {categories.map((cat) => (
@@ -43,5 +41,4 @@ CategoryFilter.propTypes = {
   categories: PropTypes.arrayOf(PropTypes.string).isRequired, 
   selectedCategory: PropTypes.string.isRequired,
   onSelect: PropTypes.func.isRequired,
-  onPageReset: PropTypes.func.isRequired,
 };

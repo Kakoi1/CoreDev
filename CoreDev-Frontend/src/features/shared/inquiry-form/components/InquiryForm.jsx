@@ -186,8 +186,7 @@ const ProductInquiryForm = ({ productName, picUrl, type, buttonSize = "sm" }) =>
                         />
                         <div>
                             <h3>
-                                {" "}
-                                Product:{" "}
+                                Product:&nbsp;
                                 <span> {productName || "Our Product"}</span>
                             </h3>
                             <h3>
@@ -199,7 +198,7 @@ const ProductInquiryForm = ({ productName, picUrl, type, buttonSize = "sm" }) =>
 
                     {submitStatus === "success" && (
                         <div className="inquiry-alert success">
-                            Thank you for your inquiry! We've received your
+                            Thank you for your inquiry! We&apos;ve received your
                             message and will contact you soon. <br />
                             You Browser will reload in {count} ...
                         </div>

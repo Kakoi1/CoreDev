@@ -1,70 +1,39 @@
-import { useEffect, useState, useRef } from "react";
-import { getClientsByCategory } from "../services/clientService";
-import {
-    MdOutlineKeyboardArrowLeft,
-    MdOutlineKeyboardArrowRight,
-} from "react-icons/md";
+import { useState, useRef } from "react";
+import { getClientsByCategory } from "../services/fetchClient.service";
 import { motion } from "framer-motion";
 import { Badge, ComponentLoading } from "@components/ui";
 import { CategoryFilter } from "./CategoryFilter";
 import { categories } from "../data/category";
-import "../styles/Client.css"
-
-const MAX_RETRIES = 3;
-const RETRY_DELAY = 3000;
+import "../styles/Client.css";
+import { useQuery } from "@tanstack/react-query";
 
 export const ClientsList = () => {
-    const [clients, setClients] = useState([]);
-    const [loading, setloading] = useState(true);
-    const [error, setError] = useState(null);
-    const [retryCount, setRetryCount] = useState(0);
     const [selectedCategory, setSelectedCategory] = useState("All");
-    const [currentPage, setCurrentPage] = useState(1);
-    const [totalPages, setTotalPages] = useState(1);
 
     const containerRef = useRef(null);
 
-    const fetchClients = async (attempt = 1) => {
-        setloading(true);
-        setError(null);
-        try {
-            const response = await getClientsByCategory(
-                selectedCategory,
-                currentPage
-            );
-            setClients(response.data);
-            setTotalPages(response.last_page);
-            setloading(false);
-        } catch (err) {
-            console.error(`Error fetching clients (Attempt ${attempt})`, err);
-            if (attempt < MAX_RETRIES) {
-                setTimeout(() => setRetryCount(attempt), RETRY_DELAY);
-            } else {
-                setError("Failed to fetch clients. Please try again later.");
-                setloading(false);
-            }
-        }
-    };
+    const CLIENTS_KEY = "clients";
 
-    useEffect(() => {
-        const attempt = retryCount + 1;
-        fetchClients(attempt);
-    }, [retryCount, selectedCategory, currentPage]);
+    const {
+        data,
+        isLoading,
+        isError,
+    } = useQuery({
+        queryKey: [CLIENTS_KEY],
+        queryFn: () => getClientsByCategory(selectedCategory),
+    });
+    
+    isLoading && console.log("loading...");
 
-    const handlePageChange = (page) => {
-        if (page >= 1 && page <= totalPages) {
-            setCurrentPage(page);
-        }
-    };
-
+    const clientsData = Array.isArray(data?.data) ? data.data : []
+    
+    
     const filteredClients =
-        selectedCategory === "All"
-            ? clients
-            : clients.filter((client) => client.category === selectedCategory);
-
-    const backToTop = () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    };
+    selectedCategory === "All"
+    ? clientsData
+    : clientsData.filter(
+        (client) => client.category === selectedCategory
+    );
 
     return (
         <div className="ClientCont">
@@ -79,51 +48,48 @@ export const ClientsList = () => {
                 categories={categories}
                 selectedCategory={selectedCategory}
                 onSelect={setSelectedCategory}
-                onPageReset={() => setCurrentPage(1)}
             />
 
-            {error ? (
+            {isError ? (
                 <div className="errorCont">
-                    <p style={{ color: "red", textAlign: "center" }}>{error}</p>
-                    <button
-                        className="retryBut"
-                        onClick={() => setRetryCount(0)}
-                    >
-                        Retry
-                    </button>
+                    <p style={{ color: "red", textAlign: "center" }}>
+                        {isError}
+                    </p>
+                    <button className="retryBut">Retry</button>
                 </div>
             ) : (
                 <>
                     <div ref={containerRef} className="clientWrapper">
-                        {loading && (
+                        {isLoading && (
                             <ComponentLoading
-                                isLoading={loading}
+                                isLoading={isLoading}
                                 message="Loading Clients..."
                                 ref={containerRef}
                             />
                         )}
-                        {filteredClients.map((client, index) => (
-                            <motion.div
-                                key={client.id}
-                                className="clientItem"
-                                whileTap={{ scale: 0.9 }}
-                                transition={{
-                                    type: "spring",
-                                    stiffness: 200,
-                                    damping: 10,
-                                    delay: index * 0.07,
-                                }}
-                            >
-                                <motion.img
-                                    src={`/src/assets/clients/${client.image}`}
-                                    alt={client.name}
-                                />
-                                <h4>{client.name}</h4>
-                                <Badge color={"default"}>
-                                    {client.category}
-                                </Badge>
-                            </motion.div>
-                        ))}
+                        {filteredClients &&
+                            filteredClients.map((client, index) => (
+                                <motion.div
+                                    key={client.id}
+                                    className="clientItem"
+                                    whileTap={{ scale: 0.9 }}
+                                    transition={{
+                                        type: "spring",
+                                        stiffness: 200,
+                                        damping: 10,
+                                        delay: index * 0.07,
+                                    }}
+                                >
+                                    <motion.img
+                                        src={`/src/assets/clients/${client.image}`}
+                                        alt={client.name}
+                                    />
+                                    <h4>{client.name}</h4>
+                                    <Badge color={"default"}>
+                                        {client.category}
+                                    </Badge>
+                                </motion.div>
+                            ))}
                     </div>
 
                     {/* <div className="pagination" onClick={backToTop}>
@@ -146,4 +112,4 @@ export const ClientsList = () => {
             )}
         </div>
     );
-}
+};
