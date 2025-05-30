@@ -1,17 +1,24 @@
-import { useParams } from "react-router-dom";
-import { useState, useEffect, useRef } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { useState } from "react";
 import "../styles/HardwareProduct.css";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
+import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 import { AnimatePresence, motion } from "framer-motion";
 import ProductInquiryForm from "../../shared/inquiry-form/components/InquiryForm";
-import { getHardwareProducts } from "../services/HardwareService";
-import { ComponentLoading, Button } from "@components/ui";
+import { getHardwareProducts } from "../services/fetchHardware.service";
+import { Button } from "@components/ui";
+import { useQuery } from "@tanstack/react-query";
 
 const categoryNames = {
     desktop: {
         name: "Computer Desktop",
         description:
             "Discover our premium selection of desktop computers for work, gaming, and creative projects.",
+    },
+    computer: {
+        name: "Desktop Computer",
+        description:
+            "Explore our premium collection of desktop computers designed for productivity, gaming, and on-the-go creativity",
     },
     laptop: {
         name: "Laptop Computer",
@@ -35,7 +42,7 @@ const categoryNames = {
     },
     Cloud: {
         name: "Cloud Services",
-       description:
+        description:
             "Unlock the power of the cloud with our scalable, secure, and flexible cloud services tailored for businesses of all sizes.",
     },
     printer: {
@@ -62,14 +69,17 @@ const categoryNames = {
 
 export default function HardwareProduct() {
     const { category } = useParams();
-    const containerRef = useRef(null);
+    const navigate = useNavigate();
+    const HARDWARE_PRODUCT_KEYS = "hardware";
 
-    const [hardwares, setHardware] = useState([]);
-    const [nameCategory, setCategory] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-    const [retry, setRetry] = useState(0); // Retry counter
-    const [ShowFeature, setShowFeature] = useState({});
+    const [ShowFeature, setShowFeature] = useState(false);
+
+    const { data: hardwareProducts } = useQuery({
+        queryKey: HARDWARE_PRODUCT_KEYS,
+        queryFn: () => getHardwareProducts(category),
+    });
+
+    const categoryName = categoryNames[category];
 
     const toggleDetails = (id) => {
         setShowFeature((prev) => ({
@@ -78,31 +88,8 @@ export default function HardwareProduct() {
         }));
     };
 
-    const fetchHardwareProduct = async () => {
-        try {
-            const response = await getHardwareProducts(category);
-            setHardware(response.data);
-            setLoading(false);
-            setError(null);
-        } catch (error) {
-            console.error("Error fetching data:", error);
-            setError("Failed to load data. Retrying...");
-            setLoading(true);
-            setTimeout(() => {
-                setRetry((prev) => prev + 1);
-            }, 3000);
-        }
-    };
+    const handleBackClick = () => navigate(-1);
 
-    useEffect(() => {
-        fetchHardwareProduct();
-    }, [category, retry]);
-
-    // Set name category dynamically
-    useEffect(() => {
-        setCategory(categoryNames[category] || "Unknown Category");
-    }, [category]);
-    
     const fadeInUpVariants = {
         hidden: { opacity: 0, y: 50 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -110,17 +97,14 @@ export default function HardwareProduct() {
 
     return (
         <div className="product-container">
-            <h2>{nameCategory && nameCategory.name}</h2>
-            <p>{nameCategory && nameCategory.description}</p>
+            <p className="back-button" onClick={handleBackClick}>
+                <MdOutlineKeyboardArrowLeft /> Back
+            </p>
+            <h2>{categoryName.name}</h2>
+            <p>{categoryName.description}</p>
             <div className="grid-container">
-                <ComponentLoading
-                    isLoading={loading}
-                    message="hardware Products Loading ..."
-                    ref={containerRef}
-                />
-
-                {hardwares.length > 0 ? (
-                    hardwares.map((item, index) => (
+                {hardwareProducts && hardwareProducts.data.length > 0 ? (
+                    hardwareProducts.data.map((item, index) => (
                         <motion.div
                             layout
                             initial="hidden"

@@ -2,6 +2,17 @@
     text-align: center;
 }
 
+.product-container .back-button{
+    text-align: start;
+    display: flex;
+    align-items: center;
+}
+
+.product-container .back-button > svg {
+    color: var(--orange);
+    font-size: 1.75rem;
+}
+
 .product-container h3 {
     color: #ff6c00;
     font-weight: 300;
