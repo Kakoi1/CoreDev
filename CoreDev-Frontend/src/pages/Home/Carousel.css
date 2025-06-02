@@ -47,6 +47,7 @@
   object-fit: cover;
   transition: 0.3s ease-in-out;
   opacity: .8;
+  border: 2px solid black;
 }
 
 .slide-content img:hover{

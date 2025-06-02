@@ -23,7 +23,7 @@ export const HardwareList = () => {
         { pictures: Server, name: "Physical Servers", url: "server" },
         { pictures: Net, name: "Network Devices", url: "router" },
         { pictures: FW, name: "Firewall Devices", url: "firewall" },
-        { pictures: Cloud, name: "Cloud Services", url: "cloud" },
+        // { pictures: Cloud, name: "Cloud Services", url: "cloud" },
         { pictures: Printer, name: "Printers & Scanners", url: "printer" },
         { pictures: Cams, name: "CCTV Cameras", url: "cctv" },
         { pictures: Wifi, name: "Wireless Internet", url: "wifi" },
