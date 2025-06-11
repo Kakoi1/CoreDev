@@ -204,6 +204,7 @@ export const SoftwareList = () => {
                                                 }
                                             />
                                             <ProductInquiryForm
+                                                buttonSize="md"
                                                 productName={secondItem.title}
                                                 picUrl={secondItem.picUrl}
                                                 type="Software"
@@ -325,6 +326,7 @@ export const SoftwareList = () => {
                                                 productName={secondItem.title}
                                                 picUrl={secondItem.picUrl}
                                                 type="Software"
+                                                buttonSize="md"
                                             />
                                         </div>
                                     </div>

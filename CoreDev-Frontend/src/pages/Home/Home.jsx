@@ -89,6 +89,7 @@ const Home = () => {
                     <h1 className="ClientLogo" style={{ textAlign: "center" }}>
                         <span className={`spaner`}>Our</span> Clients
                     </h1>
+                    
                      <motion.p
                      className="clientDesc"
                      >We&apos;re proud to work with these amazing organizations who trust us with their business needs.</motion.p>
