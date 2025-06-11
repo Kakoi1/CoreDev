@@ -249,7 +249,7 @@
 
         <div class="footer">
             <div class="links">
-                <div><strong> <a href="">example.com</a></strong></div>
+                <div><strong> <a href="">coredev.com</a></strong></div>
                 <div><strong> <a href="">software solutions</a></strong></div>
                 <div><strong> <a href="">hardware products</a></strong></div>
                 <div><strong> <a href="">about us</a></strong></div>
