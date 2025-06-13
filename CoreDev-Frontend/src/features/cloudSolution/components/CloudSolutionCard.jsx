@@ -66,7 +66,7 @@ export const CloudSolutionCard = ({ cloud_product }) => {
                 <ProductInquiryForm
                     productName={cloud_product.name}
                     picUrl={`../../src/assets/hardwareImage/${cloud_product.image}`}
-                    type={"Hardware"}
+                    type={cloud_product.category}
                 />
             </div>
         </motion.div>
@@ -77,5 +77,6 @@ CloudSolutionCard.propTypes = {
         image: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
+        category: PropTypes.string.isRequired,
     }).isRequired,
 };
