@@ -5,6 +5,7 @@ namespace App\Http\Controllers\api;
 use App\Http\Controllers\Controller;
 use App\Mail\CoreDevEmail;
 use App\Models\Hardware;
+use App\Models\Cloud;
 use App\Models\Imaged;
 use DB;
 use Illuminate\Http\Request;
@@ -29,6 +30,12 @@ class ClientController extends Controller
     {
         $hardware = Hardware::where('category', $category)->get();
         return response()->json($hardware);
+    }
+
+    public function cloud($category)
+    {
+        $cloud = Cloud::where('category', $category)->get();
+        return response()->json($cloud);
     }
 
     public function homeLogo()
