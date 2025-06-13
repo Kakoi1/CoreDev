@@ -186,7 +186,6 @@
 
 .job-wrapper .job-type {
   font-size: 1rem;
-  color: var(--orange);
   opacity: 0.5;
 }
 
@@ -200,7 +199,7 @@
   align-items: center;
 }
 
-.job-info > .job-type > .icon {
+.job-info > .job-type > .career-icon {
   margin-right: .5rem;
 }
 

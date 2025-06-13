@@ -12,7 +12,7 @@ export default defineConfig(({mode}) => {
                 "/orangepay-api": {
                     target: env.VITE_ORANGE_PAYPLUS_URL,
                     changeOrigin: true,
-                    rewrite: (path) => path.replace(/^\/orangepay-api/, "/"),
+                    rewrite: (path) => path.replace(/^\/orangepay-api/, ""),
                 },
             },
         },

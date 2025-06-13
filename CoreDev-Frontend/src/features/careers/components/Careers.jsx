@@ -9,6 +9,7 @@ import { getJobLists } from "../services/fetchJob.service";
 import { useQuery } from "@tanstack/react-query";
 import { getToken } from "../services/fetchToken.service";
 import { useState } from "react";
+import { Badge } from "@components/ui";
 
 export const Careers = () => {
     const jobOffers = [
@@ -146,6 +147,8 @@ export const Careers = () => {
                     Are You Ready <span>To Become One Of Us?</span>
                 </h2>
 
+                <p>Click &apos;Apply Now&apos; for more details about each position</p>
+
                 {jobLists &&
                     jobLists.map((job, index) => (
                         <JobOfferCard
@@ -178,10 +181,10 @@ const JobOfferCard = ({ title, address, link }) => {
         >
             <div className="job">
                 <div>
-                    <div className="title">{title}</div>
+                    <div className="title">{title} <Badge color="success">Hiring</Badge></div>
                     <div className="job-info">
                         <div className="job-type">
-                            <FaMapMarkerAlt className="icon" />
+                            <FaMapMarkerAlt className="career-icon" />
                             {address}
                         </div>
                     </div>
