@@ -1,5 +1,4 @@
-import api from "lib/axios";
-
+import api from "@lib/axios";
 export const getCsrfToken = async () => {
   await api.get("http://localhost:8000/sanctum/csrf-cookie");
 

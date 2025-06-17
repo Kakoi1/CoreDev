@@ -1,9 +1,9 @@
-import api from "../../../lib/axios";
-import { handleApiError } from "../../../lib/errorHandler";
+import api from "@lib/axios";
+import { handleApiError } from "@lib/errorHandler";
 
-export const getHardwareProducts = async (category) => {
+export const getHardwareProducts = async () => {
     try {
-        const response = await api.get(`api/hardware/${category}`, {
+        const response = await api.get(`api/hardware`, {
         });
         return response;
         
