@@ -12,7 +12,7 @@ export const CloudSolutionList = () => {
     const fetchCloudProduct = async () => {
         try {
             setIsLoading(true)
-            const response = await getCloudProducts("cloud");
+            const response = await getCloudProducts();
             console.log(response.data);
             setClouds(response.data);
         } catch (error) {

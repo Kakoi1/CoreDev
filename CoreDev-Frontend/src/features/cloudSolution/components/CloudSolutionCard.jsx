@@ -28,11 +28,11 @@ export const CloudSolutionCard = ({ cloud_product }) => {
             className="product-card"
         >
             <img
-                src={`/src/assets/hardwareImage/${cloud_product.image}`}
+                src={`/assets/${cloud_product.image}`}
                 alt={cloud_product.name}
                 className="product-image"
             />
-            <h3 className="product-name">{cloud_product.name}</h3>
+            <h3 className="product-name">{cloud_product.name} {cloud_product.image}</h3>
 
             {showFeature && (
                 <AnimatePresence>
@@ -65,8 +65,9 @@ export const CloudSolutionCard = ({ cloud_product }) => {
 
                 <ProductInquiryForm
                     productName={cloud_product.name}
-                    picUrl={`../../src/assets/hardwareImage/${cloud_product.image}`}
+                    picUrl={`/assets/${cloud_product.image}`}
                     type={cloud_product.category}
+                    buttonSize="md"
                 />
             </div>
         </motion.div>

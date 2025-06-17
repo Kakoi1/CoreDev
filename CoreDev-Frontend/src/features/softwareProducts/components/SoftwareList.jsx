@@ -3,14 +3,25 @@ import { AnimatePresence, motion } from "framer-motion";
 import IAccs from "./iAccs";
 import { useState } from "react";
 import "../styles/Software.css";
-import { softwareProducts } from "../data/softwareData";
 import { RiCodepenFill } from "react-icons/ri";
 import { Button } from "@components/ui";
 import ProductInquiryForm from "../../shared/inquiry-form/components/InquiryForm";
+import { getSoftwareProducts } from "../services/fetchSoftware.service";
+import { useQuery } from "@tanstack/react-query";
 
 export const SoftwareList = () => {
+    const SOFTWAREKEY = "software"
     const [showFeature, setShowFeature] = useState(false);
     const [expandedProduct, setExpandedProduct] = useState(null);
+
+    const { data } = useQuery({
+        queryKey: [SOFTWAREKEY],
+        queryFn: getSoftwareProducts
+
+    })
+
+    const softwareProducts = Array.isArray(data?.data) ? data?.data : []
+
 
     const toggleDetails = (id) => {
         setExpandedProduct(expandedProduct === id ? null : id);
@@ -22,10 +33,10 @@ export const SoftwareList = () => {
     };
 
     // Split softwareProducts into two arrays for left and right columns
-    const leftColumnProducts = softwareProducts.filter(
+    const leftColumnProducts = softwareProducts && softwareProducts.filter(
         (_, index) => index % 2 === 0
     );
-    const rightColumnProducts = softwareProducts.filter(
+    const rightColumnProducts = softwareProducts && softwareProducts.filter(
         (_, index) => index % 2 !== 0
     );
 
@@ -69,26 +80,26 @@ export const SoftwareList = () => {
                         </AnimatePresence>
                         <br />
                         <div className="iAccsButtonWrap">
-                        <Button
-                            text={showFeature ? "Collapse" : "Explore More"}
-                            variant="full"
-                            size="md"
-                            icon={
-                                showFeature ? (
-                                    <IoIosArrowUp />
-                                ) : (
-                                    <IoIosArrowDown />
-                                )
-                            }
-                            onClick={() => setShowFeature(!showFeature)}
-                        />
-                        &nbsp;
-                        <ProductInquiryForm
-                            productName="iAccs 2013"
-                            picUrl="/assets/iacss-logo.png"
-                            type="Software"
-                            buttonSize="md"
-                        />
+                            <Button
+                                text={showFeature ? "Collapse" : "Explore More"}
+                                variant="full"
+                                size="md"
+                                icon={
+                                    showFeature ? (
+                                        <IoIosArrowUp />
+                                    ) : (
+                                        <IoIosArrowDown />
+                                    )
+                                }
+                                onClick={() => setShowFeature(!showFeature)}
+                            />
+                            &nbsp;
+                            <ProductInquiryForm
+                                productName="iAccs 2013"
+                                picUrl="/assets/iacss-logo.png"
+                                type="Software"
+                                buttonSize="md"
+                            />
                         </div>
                     </div>
                 </div>
@@ -100,7 +111,7 @@ export const SoftwareList = () => {
             <div className="pastProj">
                 {/* Left Column */}
                 <div className="column left-column">
-                    {leftColumnProducts.map((secondItem, index) => {
+                    {leftColumnProducts && leftColumnProducts.map((secondItem, index) => {
                         const globalIndex = index * 2; // Map to original index
                         return (
                             <motion.div
@@ -123,12 +134,12 @@ export const SoftwareList = () => {
                                             whileHover={{ scale: 1.2 }}
                                             transition={{ duration: 0.3 }}
                                             className="iacc"
-                                            src={secondItem.picUrl}
-                                            alt={`${secondItem.title} Logo`}
+                                            src={`/assets/${secondItem.image}`}
+                                            alt={`${secondItem.name} Logo`}
                                             loading="lazy"
                                         />
                                         <div>
-                                            <h4>{secondItem.title}</h4>
+                                            <h4>{secondItem.name}</h4>
                                             <p>{secondItem.description}</p>
                                         </div>
                                         <AnimatePresence>
@@ -206,7 +217,7 @@ export const SoftwareList = () => {
                                             <ProductInquiryForm
                                                 buttonSize="md"
                                                 productName={secondItem.title}
-                                                picUrl={secondItem.picUrl}
+                                                picUrl={`/assets/${secondItem.image}`}
                                                 type="Software"
                                             />
                                         </div>
@@ -219,7 +230,7 @@ export const SoftwareList = () => {
 
                 {/* Right Column */}
                 <div className="column right-column">
-                    {rightColumnProducts.map((secondItem, index) => {
+                    {rightColumnProducts && rightColumnProducts.map((secondItem, index) => {
                         const globalIndex = index * 2 + 1; // Map to original index
                         return (
                             <motion.div
@@ -242,12 +253,12 @@ export const SoftwareList = () => {
                                             whileHover={{ scale: 1.2 }}
                                             transition={{ duration: 0.3 }}
                                             className="iacc"
-                                            src={secondItem.picUrl}
-                                            alt={`${secondItem.title} Logo`}
+                                            src={`/assets/${secondItem.image}`}
+                                            alt={`${secondItem.name} Logo`}
                                             loading="lazy"
                                         />
                                         <div>
-                                            <h4>{secondItem.title}</h4>
+                                            <h4>{secondItem.name}</h4>
                                             <p>{secondItem.description}</p>
                                         </div>
                                         <AnimatePresence>
@@ -324,7 +335,7 @@ export const SoftwareList = () => {
                                             />
                                             <ProductInquiryForm
                                                 productName={secondItem.title}
-                                                picUrl={secondItem.picUrl}
+                                                picUrl={`/assets/${secondItem.image}`}
                                                 type="Software"
                                                 buttonSize="md"
                                             />
