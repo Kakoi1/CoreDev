@@ -5,6 +5,7 @@ namespace App\Http\Controllers\api;
 use App\Http\Controllers\Controller;
 use App\Mail\CoreDevEmail;
 use App\Models\Hardware;
+use App\Models\Software;
 use App\Models\Cloud;
 use App\Models\Imaged;
 use DB;
@@ -26,15 +27,21 @@ class ClientController extends Controller
         // Change '5' to the number of items per page
         return response()->json($clients);
     }
-    public function hardware($category)
+    public function hardware()
     {
-        $hardware = Hardware::where('category', $category)->get();
+        $hardware = Hardware::all();
         return response()->json($hardware);
     }
-
-    public function cloud($category)
+    
+    public function software()
     {
-        $cloud = Cloud::where('category', $category)->get();
+        $software = Software::all();
+        return response()->json($software);
+    }
+
+    public function cloud()
+    {
+        $cloud = Cloud::all();
         return response()->json($cloud);
     }
 
