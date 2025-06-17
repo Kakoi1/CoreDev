@@ -7,6 +7,7 @@
       "@components/*": ["components/*"],
       "@components/ui/*": ["components/ui/*"],
       "@shared/*": ["shared/*"],
+      "@lib/*": ["lib/*"]
     }
   }
 }
