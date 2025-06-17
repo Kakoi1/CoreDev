@@ -11,6 +11,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             HardwareTableSeeder::class,
             ImagedsTableSeeder::class,
+            CloudTableSeeder::class,
+            SoftwareTableSeeder::class,
+            ImagedsTableSeeder::class,
         ]);
     }
 }
