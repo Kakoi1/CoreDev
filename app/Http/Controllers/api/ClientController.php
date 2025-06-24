@@ -74,7 +74,17 @@ class ClientController extends Controller
             'address' => $validated['address']
         ];
 
-        Mail::to(env( $validated['type'] === 'Software' ? 'MAIL_SOFTWARE_ADDRESS':'MAIL_HARDWARE_ADDRESS'))->send(new CoreDevEmail($data));
+        $type = $validated['type'];
+
+        $recipientEmail = match(strtolower($type)){
+            'software' => env('MAIL_SOFTWARE_ADDRESS'),
+            'hardware' => env('MAIL_HARDWARE_ADDRESS'),
+            'cloud' => env('MAIL_CLOUD_ADDRESS'),
+            default => env('MAIL_DEFAULT_ADDRESS')
+        };
+
+
+        Mail::to($recipientEmail)->send(new CoreDevEmail($data));
 
 
         // You can return a success response or something else here

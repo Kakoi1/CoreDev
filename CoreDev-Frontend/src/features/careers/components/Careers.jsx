@@ -10,6 +10,8 @@ import { useQuery } from "@tanstack/react-query";
 import { getToken } from "../services/fetchToken.service";
 import { useState } from "react";
 import { Badge } from "@components/ui";
+import { AnimatePresence } from "framer-motion";
+import { RiCheckLine } from "react-icons/ri";
 
 export const Careers = () => {
     const jobOffers = [
@@ -147,8 +149,6 @@ export const Careers = () => {
                     Are You Ready <span>To Become One Of Us?</span>
                 </h2>
 
-                <p>Click &apos;Apply Now&apos; for more details about each position</p>
-
                 {jobLists &&
                     jobLists.map((job, index) => (
                         <JobOfferCard
@@ -156,6 +156,7 @@ export const Careers = () => {
                             title={job.job_title}
                             address={job.city}
                             link={job.details}
+                            descriptions={job.cleanTags_jobDescription}
                         />
                     ))}
             </motion.div>
@@ -163,7 +164,13 @@ export const Careers = () => {
     );
 };
 
-const JobOfferCard = ({ title, address, link }) => {
+const JobOfferCard = ({ title, address, link, descriptions }) => {
+    const [showDetails, setShowDetails] = useState(false);
+
+    const cleanedDescriptionText = descriptions.replace(/([a-z])([A-Z])/g, '$1.$2');
+    const descriptionText = cleanedDescriptionText.split('.').map(s => s.trim()).filter(Boolean);
+    console.log(descriptionText);
+
     return (
         <motion.div
             layout
@@ -196,6 +203,40 @@ const JobOfferCard = ({ title, address, link }) => {
                     onClick={() => window.open(link, "_blank")}
                 />
             </div>
+            <p onClick={() => setShowDetails(!showDetails)}>
+                {showDetails ? "Hide Details" : "Show Details"}
+            </p>
+            <AnimatePresence>
+                {showDetails && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="job-details"
+                    >
+                        <h4>Qualifications</h4>
+                        {descriptionText.map((description, index) =>
+                            Array.isArray(description) ? (
+                                <ul key={index}>
+                                    {description.map(
+                                        (sub_qualification, index) => (
+                                            <li key={index}>
+                                                {sub_qualification}
+                                            </li>
+                                        )
+                                    )}
+                                </ul>
+                            ) : (
+                                <p key={index}>
+                                    <RiCheckLine className="icon" />{" "}
+                                    {description}
+                                </p>
+                            )
+                        )}
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </motion.div>
     );
 };

@@ -159,13 +159,14 @@ export default function HardwareProduct() {
                                     }
                                     onClick={() => toggleDetails(index)}
                                     variant="full"
-                                    size="sm"
+                                    size="md"
                                 />
 
                                 <ProductInquiryForm
                                     productName={item.name}
                                     picUrl={`../../src/assets/hardwareImage/${item.image}`}
                                     type={"Hardware"}
+                                    buttonSize="md"
                                 />
                             </div>
                         </motion.div>
