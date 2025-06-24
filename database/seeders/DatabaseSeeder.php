@@ -13,7 +13,6 @@ class DatabaseSeeder extends Seeder
             ImagedsTableSeeder::class,
             CloudTableSeeder::class,
             SoftwareTableSeeder::class,
-            ImagedsTableSeeder::class,
         ]);
     }
 }

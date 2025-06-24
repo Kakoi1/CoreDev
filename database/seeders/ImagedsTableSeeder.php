@@ -37,7 +37,7 @@ class ImagedsTableSeeder extends Seeder
             [
                 'id' => 4,
                 'name' => '205th THW Multi-Purpose Cooperative',
-                'image' => '205th THW MPC.jpg',
+                'image' => '205th THW MPC.png',
                 'category' => 'Police and Military-Related',
                 'created_at' => now(),
                 'updated_at' => now(),
