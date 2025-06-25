@@ -75,7 +75,7 @@ export default function HardwareProduct() {
     const [ShowFeature, setShowFeature] = useState(false);
 
     const { data: hardwareProducts } = useQuery({
-        queryKey: HARDWARE_PRODUCT_KEYS,
+        queryKey: [HARDWARE_PRODUCT_KEYS, category],
         queryFn: () => getHardwareProducts(category),
     });
 

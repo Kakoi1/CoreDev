@@ -1,9 +1,9 @@
 import api from "@lib/axios";
 import { handleApiError } from "@lib/errorHandler";
 
-export const getHardwareProducts = async () => {
+export const getHardwareProducts = async (category) => {
     try {
-        const response = await api.get(`api/hardware`, {
+        const response = await api.get(`api/hardware/${category}`, {
         });
         return response;
         

@@ -9,7 +9,7 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::get('/clients/{type}', [ClientController::class, 'index']);
-Route::get('/hardware', [ClientController::class, 'hardware']);
+Route::get('/hardware/{category}', [ClientController::class, 'hardware']);
 Route::get('/software', [ClientController::class, 'software']);
 Route::get('/cloud', [ClientController::class, 'cloud']);
 Route::get('/Client-Logo', [ClientController::class, 'homeLogo']);

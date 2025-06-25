@@ -27,9 +27,9 @@ class ClientController extends Controller
         // Change '5' to the number of items per page
         return response()->json($clients);
     }
-    public function hardware()
+    public function hardware($category)
     {
-        $hardware = Hardware::all();
+        $hardware = Hardware::where('category', $category)->get();
         return response()->json($hardware);
     }
     
